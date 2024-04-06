@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 
 const Landing = () => {
 
     return (
         <>
-            <h1>landing</h1>
+            <h1>tailwind landing</h1>
         </>
     )
 }

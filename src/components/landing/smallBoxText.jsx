@@ -1,7 +1,7 @@
-export default function SmallBoxText({ title }) {
+export default function SmallBoxText({ title, styles }) {
     return (
         <>
-            <span className="font-medium text-purple-1000 text-sm mt-3 ">
+            <span className={`font-medium  text-sm mt-3 ${styles}`}>
                 {title}
             </span>
         </>

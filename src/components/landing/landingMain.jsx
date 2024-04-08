@@ -12,11 +12,15 @@ import LandingSecondMainText from './landingSecondMainText'
 import LandingMainBox from "./landingMainBox"
 import { FaCamera } from "react-icons/fa";
 import coloredLogo from '../../assets/images/NewzKast new Final Truly Verified-01.png'
+import { FiTrendingUp } from "react-icons/fi";
+import postScreenShot from '../../assets/images/Annotation 2024-04-08 235717.png'
+
 
 export default function LandingMain() {
 
     return (
         <>
+
             <LandingContainer styles={'min-h-lvh bg-white py-10'}>
 
                 <LandingWrapper>
@@ -34,19 +38,19 @@ export default function LandingMain() {
                         </h1>
 
                         <div className="flex items-center space-x-2  ">
-                            <SmallBox styles={'border border-1 border-purple-1000 '}>
-                                <SmallBoxIcon icon={<IoMdMusicalNote />} styles={'text-2xl'} />
-                                <SmallBoxText title={'Music 1'}  />
+                            <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28'}>
+                                <SmallBoxIcon icon={<IoMdMusicalNote />} styles={'text-2xl text-purple-1000'} />
+                                <SmallBoxText title={'Music 1'} styles={'text-purple-1000'} />
                                 <SmallBoxCloseBTN />
                             </SmallBox>
-                            <SmallBox styles={'border border-1 border-purple-1000 '}>
-                                <SmallBoxIcon icon={<BsCameraVideoFill />}  styles={'text-2xl'}/>
-                                <SmallBoxText title={'36 Sec'} />
+                            <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28 '}>
+                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
+                                <SmallBoxText title={'36 Sec'} styles={'text-purple-1000'} />
                                 <SmallBoxCloseBTN />
                             </SmallBox>
-                            <SmallBox styles={'border border-dashed	 border-1 border-purple-1000 '}>
-                                <SmallBoxIcon icon={<BsCameraVideoFill />}  styles={'text-2xl'} />
-                                <SmallBoxText title={'Add'} />
+                            <SmallBox styles={'border border-dashed	 border-1 border-purple-1000  w-36 h-28 '}>
+                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
+                                <SmallBoxText title={'Add'} styles={'text-purple-1000'} />
                                 <SmallBoxCloseBTN />
                             </SmallBox>
                         </div>
@@ -56,6 +60,7 @@ export default function LandingMain() {
                                 66/100
                             </span>
                             <LandingButton title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
+
                         </div>
 
 
@@ -64,11 +69,12 @@ export default function LandingMain() {
 
 
             </LandingContainer>
+
             <LandingContainer styles={'min-h-lvh bg-white py-10'}>
 
                 <LandingWrapper>
 
-                    <img src={coloredLogo} className="w-[150px]"/>
+                    <img src={coloredLogo} className="w-[150px]" />
 
                     <LandingMainBox>
 
@@ -83,14 +89,14 @@ export default function LandingMain() {
 
                         <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-2">
-                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm'} />
+                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm text-purple-1000' } />
                                 <span className="text-sm">
                                     Video
                                 </span>
                             </div>
 
                             <div className="flex items-center space-x-2">
-                                <SmallBoxIcon icon={<FaCamera />} styles={'text-sm'} />
+                                <SmallBoxIcon icon={<FaCamera />} styles={'text-sm text-purple-1000'} />
                                 <span className="text-sm">
                                     Photo
                                 </span>
@@ -118,6 +124,29 @@ export default function LandingMain() {
 
 
             </LandingContainer>
+
+            <LandingContainer styles={'min-h-lvh bg-white py-10'}>
+
+                <LandingWrapper>
+
+                    <SmallBox styles={'bg-purple-1000 border border-1  w-16 h-20 '}>
+                        <SmallBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
+                        <SmallBoxText title={'Trending'} styles={'text-white'} />
+                    </SmallBox>
+                    <LandingMainText text={"See all the trending Newsposts in one app.."} />
+
+                    <LandingButton title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                </LandingWrapper>
+
+                <LandingWrapper>
+
+                    <img src={postScreenShot} className=" hover:scale-110 duration-200"/>
+                </LandingWrapper>
+
+
+
+
+            </LandingContainer >
         </>
     )
 }

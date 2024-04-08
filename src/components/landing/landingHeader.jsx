@@ -5,7 +5,7 @@ export default function LandingHeader() {
 
     return (
         <header>
-            <div className=" bg-blue-950 w-full  h-lvh py-10 ">
+            <div className=" bg-blue-950 w-full  h-lvh py-4 md:py-10 ">
                 <LandingNav />
                 <LandingContainer />
             </div>

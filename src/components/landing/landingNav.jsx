@@ -4,7 +4,7 @@ import NavButton from "./navButton"
 export default function LandingNav() {
     return (
         <nav>
-            <div className="flex justify-between items-center w-[80%] h-14  mx-auto   ">
+            <div className="flex flex-col  justify-between items-center w-[80%] h-14  mx-auto md:flex-row   ">
 
                 <Logo />
 

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+    .header-bg {
+        background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));
+    }
+
+    .test {
+        background-color: rgb(11, 45, 131);
+    }
+}

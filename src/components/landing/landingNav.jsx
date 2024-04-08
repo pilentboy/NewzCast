@@ -1,5 +1,5 @@
 import Logo from "./logo"
-import NavButton from "./navButton"
+import LandingButton from "./landingButton"
 
 export default function LandingNav() {
     return (
@@ -9,8 +9,8 @@ export default function LandingNav() {
                 <Logo />
 
                 <div className="flex space-x-6">
-                    <NavButton title={'Log in'} styles={'bg-transparent border border-1  border-white  w-28 h-9'} />
-                    <NavButton title={'Sign Up'} styles={'bg-[#FF9A00] w-28 h-9 '} />
+                    <LandingButton title={'Log in'} styles={'bg-transparent border border-1  border-white  w-28 h-9'} />
+                    <LandingButton title={'Sign Up'} styles={'bg-[#FF9A00] w-28 h-9 '} />
                 </div>
 
             </div>

@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
+import LandingHeader from "../components/landing/landingHeader"
 
 const Landing = () => {
 
     return (
         <>
-            <h1>tailwind landing</h1>
+            <LandingHeader />
+            
         </>
     )
 }

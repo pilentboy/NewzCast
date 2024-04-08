@@ -1,7 +1,9 @@
 
-export default function NavButton({ styles, title, }) {
+export default function NavButton({ styles, title, icon }) {
+    console.log(icon)
     return (
-        <button className={`w-28 h-10  rounded-sm   text-white font-medium text-center  ${styles}`}>
+        <button className={` flex items-center justify-center  rounded-sm   text-white font-medium text-center  ${styles}`}>
+            {icon}
             {title}
         </button >
     )

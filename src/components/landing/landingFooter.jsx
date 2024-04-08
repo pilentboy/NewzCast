@@ -6,7 +6,7 @@ export default function LandingFooter() {
     return (
         <footer>
             <div className="py-10 px-6 mx-auto border-t-2 border-gray-200 w-[80%] h-[250px] ">
-
+                
                 <div className="flex justify-between  w-2/5">
                     <LandingFooterULWrapper>
                         <LandingFooterLI title={'Downloads'} target={'#'} />

@@ -14,12 +14,8 @@ import { FaCamera } from "react-icons/fa";
 import coloredLogo from '../../assets/images/NewzKast new Final Truly Verified-01.png'
 import { FiTrendingUp } from "react-icons/fi";
 import postScreenShot from '../../assets/images/Annotation 2024-04-08 235717.png'
-<<<<<<< HEAD
 import followingScreenShot from '../../assets/images/Annotation 2024-04-09 002220.png'
 import { IoIosAddCircleOutline } from "react-icons/io";
-=======
-
->>>>>>> ee33e411ecdda126a0fcb7ccbeaa2bddeff6208c
 
 export default function LandingMain() {
 
@@ -54,11 +50,7 @@ export default function LandingMain() {
                                 <SmallBoxCloseBTN />
                             </SmallBox>
                             <SmallBox styles={'border border-dashed	 border-1 border-purple-1000  w-36 h-28 '}>
-<<<<<<< HEAD
                                 <SmallBoxIcon icon={<IoIosAddCircleOutline />} styles={'text-2xl text-purple-1000'} />
-=======
-                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
->>>>>>> ee33e411ecdda126a0fcb7ccbeaa2bddeff6208c
                                 <SmallBoxText title={'Add'} styles={'text-purple-1000'} />
                                 <SmallBoxCloseBTN />
                             </SmallBox>
@@ -98,11 +90,7 @@ export default function LandingMain() {
 
                         <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-2">
-<<<<<<< HEAD
                                 <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm text-purple-1000'} />
-=======
-                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm text-purple-1000' } />
->>>>>>> ee33e411ecdda126a0fcb7ccbeaa2bddeff6208c
                                 <span className="text-sm">
                                     Video
                                 </span>
@@ -153,18 +141,13 @@ export default function LandingMain() {
 
                 <LandingWrapper>
 
-<<<<<<< HEAD
                     <img src={postScreenShot} className=" hover:scale-110 duration-200" />
-=======
-                    <img src={postScreenShot} className=" hover:scale-110 duration-200"/>
->>>>>>> ee33e411ecdda126a0fcb7ccbeaa2bddeff6208c
                 </LandingWrapper>
 
 
 
 
             </LandingContainer >
-<<<<<<< HEAD
 
 
             <LandingContainer styles={'min-h-lvh bg-white py-10'}>
@@ -185,8 +168,6 @@ export default function LandingMain() {
 
 
             </LandingContainer >
-=======
->>>>>>> ee33e411ecdda126a0fcb7ccbeaa2bddeff6208c
         </>
     )
 }

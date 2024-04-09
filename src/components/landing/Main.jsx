@@ -11,10 +11,10 @@ import { BsCameraVideoFill } from "react-icons/bs";
 import SecondMainText from './SecondMainText'
 import MaindBox from "./MainBox"
 import { FaCamera } from "react-icons/fa";
-import coloredLogo from '../../assets/images/NewzKast new Final Truly Verified-01.png'
 import { FiTrendingUp } from "react-icons/fi";
 import postScreenShot from '../../assets/images/Annotation 2024-04-08 235717.png'
 import followingScreenShot from '../../assets/images/Annotation 2024-04-09 002220.png'
+import ColoredLogo from "../ColoredLogo"
 
 export default function LandingMain() {
 
@@ -74,7 +74,7 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <img src={coloredLogo} className="w-[150px]" />
+                    <ColoredLogo />
 
                     <MaindBox>
 

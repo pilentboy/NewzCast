@@ -6,6 +6,9 @@
     body{
         @apply font-roboto  overflow-x-hidden
       }
+    button{
+        @apply text-white font-medium
+    }
 }
 
 @layer components {

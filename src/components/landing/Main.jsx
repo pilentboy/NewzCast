@@ -6,7 +6,7 @@ import SmallBox from "./SmallBox"
 import SmallBoxIcon from "./SmallBoxIcon"
 import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
 import SmallBoxText from "./SmallBoxText"
-import SmallBoxCloseBTN from "./SmallBoxCloseBTN"
+import CloseBTN from "./CloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
 import SecondMainText from './SecondMainText'
 import MaindBox from "./MainBox"
@@ -41,17 +41,17 @@ export default function LandingMain() {
                             <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28'}>
                                 <SmallBoxIcon icon={<IoMdMusicalNote />} styles={'text-2xl text-purple-1000'} />
                                 <SmallBoxText title={'Music 1'} styles={'text-purple-1000'} />
-                                <SmallBoxCloseBTN />
+                                <CloseBTN />
                             </SmallBox>
                             <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28 '}>
                                 <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
                                 <SmallBoxText title={'36 Sec'} styles={'text-purple-1000'} />
-                                <SmallBoxCloseBTN />
+                                <CloseBTN />
                             </SmallBox>
                             <SmallBox styles={'border border-dashed	 border-1 border-purple-1000  w-36 h-28 '}>
                                 <SmallBoxIcon icon={<IoIosAddCircleOutline />} styles={'text-2xl text-purple-1000'} />
                                 <SmallBoxText title={'Add'} styles={'text-purple-1000'} />
-                                <SmallBoxCloseBTN />
+                                <CloseBTN />
                             </SmallBox>
                         </div>
 

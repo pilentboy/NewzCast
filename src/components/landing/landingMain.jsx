@@ -4,7 +4,7 @@ import LandingButton from './landingButton'
 import LandingMainText from "./landingMainText"
 import SmallBox from "./smallBox"
 import SmallBoxIcon from "./smallBoxIcon"
-import { IoMdMusicalNote } from "react-icons/io";
+import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
 import SmallBoxText from "./smallBoxText"
 import SmallBoxCloseBTN from "./smallBoxCloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
@@ -15,7 +15,6 @@ import coloredLogo from '../../assets/images/NewzKast new Final Truly Verified-0
 import { FiTrendingUp } from "react-icons/fi";
 import postScreenShot from '../../assets/images/Annotation 2024-04-08 235717.png'
 import followingScreenShot from '../../assets/images/Annotation 2024-04-09 002220.png'
-import { IoIosAddCircleOutline } from "react-icons/io";
 
 export default function LandingMain() {
 

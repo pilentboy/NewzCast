@@ -39,11 +39,11 @@ export default function LandingFooter() {
                         Find NewzKast on:
                     </span>
                     <div className="flex flex-row items-center space-x-3">
-                        <SocialMediaLink icon={<FaFacebookF />} target={'#'} />
-                        <SocialMediaLink icon={<FaYoutube />} target={'#'} />
-                        <SocialMediaLink icon={<FaTelegramPlane />} target={'#'} />
-                        <SocialMediaLink icon={<FaInstagram />} target={'#'} />
-                        <SocialMediaLink icon={<FaLinkedinIn />} target={'#'} />
+                        <SocialMediaLink icon={<FaFacebookF />} target={'#'} label={'Facebook'} />
+                        <SocialMediaLink icon={<FaYoutube />} target={'#'} label={'YouTube'} />
+                        <SocialMediaLink icon={<FaTelegramPlane />} target={'#'} label={'Telegram'} />
+                        <SocialMediaLink icon={<FaInstagram />} target={'#'} label={'Instagram'} />
+                        <SocialMediaLink icon={<FaLinkedinIn />} target={'#'} label={'Linkedin'} />
                     </div>
                 </div>
 

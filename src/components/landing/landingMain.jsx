@@ -140,7 +140,7 @@ export default function LandingMain() {
 
                 <LandingWrapper>
 
-                    <img src={postScreenShot} className=" hover:scale-110 duration-200" />
+                    <img src={postScreenShot} />
                 </LandingWrapper>
 
 
@@ -155,7 +155,7 @@ export default function LandingMain() {
 
                 <LandingWrapper>
 
-                    <img src={followingScreenShot} className=" hover:scale-110 duration-200" />
+                    <img src={followingScreenShot} />
                 </LandingWrapper>
 
                 <LandingWrapper>

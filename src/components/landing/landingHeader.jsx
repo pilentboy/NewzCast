@@ -30,7 +30,7 @@ export default function LandingHeader() {
                         </div>
 
                     </div>
-                    <img src={appScreenshot} className="lg:w-[250px] lg:h-[460px] hover:scale-110 duration-200 " />
+                    <img src={appScreenshot} className="lg:w-[250px] lg:h-[460px]" />
                 </LandingContainer>
 
 

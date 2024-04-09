@@ -4,7 +4,7 @@ import LandingButton from "./landingButton"
 export default function LandingNav() {
     return (
         <nav>
-            <div className="flex flex-col  justify-between items-center w-[80%] h-14  mx-auto md:flex-row   ">
+            <div className="flex flex-col space-y-6 justify-between items-center w-[80%] h-14  mx-auto md:flex-row  md:space-y-0 ">
 
                 <Logo />
 

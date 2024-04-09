@@ -1,8 +1,8 @@
 
-export default function LandingFooterULWrapper({ children }) {
+export default function LandingFooterULWrapper({ children, styles }) {
     return (
-        <div className="flex flex-col space-y-3 ">
+        <div className={`space-y-3  ${styles} `} >
             {children}
-        </div>
+        </ div>
     )
 }

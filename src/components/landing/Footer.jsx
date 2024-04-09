@@ -1,6 +1,6 @@
-import LandingFooterLI from "./landingFooterLI";
-import LandingFooterULWrapper from "./landingFooterULWrapper";
-import SocialMediaLink from "./socialMedialLink";
+import FooterLI from "./FooterLI";
+import FooterULWrapper from "./FooterULWrapper";
+import SocialMediaLink from "./SocialMedialLink";
 import {
     FaInstagram,
     FaTelegramPlane,
@@ -11,7 +11,7 @@ import {
 
 import { FaLinkedinIn } from "react-icons/fa6";
 
-export default function LandingFooter() {
+export default function Footer() {
 
     return (
         <footer>
@@ -19,18 +19,18 @@ export default function LandingFooter() {
 
                 <div className="flex flex-col justify-between space-y-6 lg:space-y-0 lg:flex-row md:w-2/5">
 
-                    <LandingFooterULWrapper styles={'flex flex-col'}>
-                        <LandingFooterLI title={'Downloads'} target={'#'} />
-                        <LandingFooterLI title={'Terms'} target={'#'} />
-                        <LandingFooterLI title={'Privacy'} target={'#'} />
-                        <LandingFooterLI title={'Disclaimer'} target={'#'} />
-                    </LandingFooterULWrapper>
-                    <LandingFooterULWrapper styles={'flex flex-col'}>
-                        <LandingFooterLI title={'Advertising'} target={'#'} />
-                        <LandingFooterLI title={'Advertising Policies'} target={'#'} />
-                        <LandingFooterLI title={'Promote/Boost'} target={'#'} />
-                        <LandingFooterLI title={'Contact Us'} target={'#'} />
-                    </LandingFooterULWrapper>
+                    <FooterULWrapper styles={'flex flex-col'}>
+                        <FooterLI title={'Downloads'} target={'#'} />
+                        <FooterLI title={'Terms'} target={'#'} />
+                        <FooterLI title={'Privacy'} target={'#'} />
+                        <FooterLI title={'Disclaimer'} target={'#'} />
+                    </FooterULWrapper>
+                    <FooterULWrapper styles={'flex flex-col'}>
+                        <FooterLI title={'Advertising'} target={'#'} />
+                        <FooterLI title={'Advertising Policies'} target={'#'} />
+                        <FooterLI title={'Promote/Boost'} target={'#'} />
+                        <FooterLI title={'Contact Us'} target={'#'} />
+                    </FooterULWrapper>
 
                 </div>
 

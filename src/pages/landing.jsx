@@ -1,14 +1,14 @@
-import LandingFooter from "../components/landing/landingFooter"
-import LandingHeader from "../components/landing/landingHeader"
-import LandingMain from "../components/landing/landingMain"
+import Footer from "../components/landing/Footer"
+import Header from "../components/landing/Header"
+import Main from "../components/landing/Main"
 
 const Landing = () => {
 
     return (
         <>
-            <LandingHeader />
-            <LandingMain />
-            <LandingFooter />
+            <Header />
+            <Main />
+            <Footer />
         </>
     )
 }

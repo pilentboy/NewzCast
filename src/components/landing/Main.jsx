@@ -1,15 +1,15 @@
-import LandingContainer from "./landingContainer"
-import LandingWrapper from "./landingWrapper"
-import LandingButton from './landingButton'
-import LandingMainText from "./landingMainText"
-import SmallBox from "./smallBox"
-import SmallBoxIcon from "./smallBoxIcon"
+import Container from "./Container"
+import Wrapper from "./Wrapper"
+import Button from './Button'
+import MainText from "./MainText"
+import SmallBox from "./SmallBox"
+import SmallBoxIcon from "./SmallBoxIcon"
 import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
-import SmallBoxText from "./smallBoxText"
-import SmallBoxCloseBTN from "./smallBoxCloseBTN"
+import SmallBoxText from "./SmallBoxText"
+import SmallBoxCloseBTN from "./SmallBoxCloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
-import LandingSecondMainText from './landingSecondMainText'
-import LandingMainBox from "./landingMainBox"
+import SecondMainText from './SecondMainText'
+import MaindBox from "./MainBox"
 import { FaCamera } from "react-icons/fa";
 import coloredLogo from '../../assets/images/NewzKast new Final Truly Verified-01.png'
 import { FiTrendingUp } from "react-icons/fi";
@@ -21,16 +21,16 @@ export default function LandingMain() {
     return (
         <>
 
-            <LandingContainer styles={'min-h-lvh bg-white py-10'}>
+            <Container styles={'min-h-lvh bg-white py-10'}>
 
-                <LandingWrapper>
+                <Wrapper>
 
-                    <LandingMainText text={"Share videos upto 1 min timeframe with selecting news zingle."} />
+                    <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} />
 
-                    <LandingButton title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
-                </LandingWrapper>
+                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                </Wrapper>
 
-                <LandingWrapper>
+                <Wrapper>
                     <div className="rounded-md border border-1 border-gray-200  w-[65%] mx-auto h-[280px] flex flex-col px-6 py-6 space-y-8 md:w-[400px] lg:w-[350px]">
 
                         <h1 className="font-medium">
@@ -59,24 +59,24 @@ export default function LandingMain() {
                             <span className="text-gray-400 text-sm">
                                 66/100
                             </span>
-                            <LandingButton title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
+                            <Button title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
 
                         </div>
 
 
                     </div>
-                </LandingWrapper>
+                </Wrapper>
 
 
-            </LandingContainer>
+            </Container>
 
-            <LandingContainer styles={'min-h-lvh bg-white py-10'}>
+            <Container styles={'min-h-lvh bg-white py-10'}>
 
-                <LandingWrapper>
+                <Wrapper>
 
                     <img src={coloredLogo} className="w-[150px]" />
 
-                    <LandingMainBox>
+                    <MaindBox>
 
                         <div className="flex justify-between items-center">
                             <span className="font-medium">
@@ -102,71 +102,70 @@ export default function LandingMain() {
                                 </span>
                             </div>
 
-                            <LandingButton title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
+                            <Button title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
 
                         </div>
 
-                    </LandingMainBox>
+                    </MaindBox>
 
-                </LandingWrapper>
+                </Wrapper>
 
-                <LandingWrapper>
+                <Wrapper>
 
-                    <LandingMainText text={"Share the news upto 100 words per segment. However for Truly Verifiedupto 300."} />
+                    <MainText text={"Share the news upto 100 words per segment. However for Truly Verifiedupto 300."} />
 
-                    <LandingSecondMainText text={'Talk about truly verified. Ex- Celibrities,Media Journalists etc'} />
+                    <SecondMainText text={'Talk about truly verified. Ex- Celibrities,Media Journalists etc'} />
 
-                    <LandingButton title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
 
-                </LandingWrapper>
-
-
+                </Wrapper>
 
 
-            </LandingContainer>
 
-            <LandingContainer styles={'min-h-lvh bg-white py-10'}>
 
-                <LandingWrapper>
+            </Container>
+
+            <Container styles={'min-h-lvh bg-white py-10'}>
+
+                <Wrapper>
 
                     <SmallBox styles={'bg-purple-1000 border border-1  w-16 h-20 '}>
                         <SmallBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
                         <SmallBoxText title={'Trending'} styles={'text-white'} />
                     </SmallBox>
-                    <LandingMainText text={"See all the trending Newsposts in one app.."} />
+                    <MainText text={"See all the trending Newsposts in one app.."} />
 
-                    <LandingButton title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
-                </LandingWrapper>
+                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                </Wrapper>
 
-                <LandingWrapper>
-
+                <Wrapper>
                     <img src={postScreenShot} />
-                </LandingWrapper>
+                </Wrapper>
 
 
 
 
-            </LandingContainer >
+            </Container >
 
 
-            <LandingContainer styles={'min-h-lvh bg-white py-10'}>
+            <Container styles={'min-h-lvh bg-white py-10'}>
 
 
 
-                <LandingWrapper>
+                <Wrapper>
 
                     <img src={followingScreenShot} />
-                </LandingWrapper>
+                </Wrapper>
 
-                <LandingWrapper>
+                <Wrapper>
 
-                    <LandingMainText text={"Follow your favourite Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News."} />
+                    <MainText text={"Follow your favourite Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News."} />
 
-                    <LandingButton title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
-                </LandingWrapper>
+                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                </Wrapper>
 
 
-            </LandingContainer >
+            </Container >
         </>
     )
 }

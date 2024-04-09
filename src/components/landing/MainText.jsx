@@ -1,5 +1,5 @@
 
-export default function LandingMainText({ text }) {
+export default function MainText({ text }) {
     return (
         <>
             <h1 className=" text-3xl  font-bold leading-10">

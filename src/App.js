@@ -2,8 +2,8 @@ import './style/index.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Landing from './pages/landing';
-import Authenticate from './pages/authenticate';
+import Landing from './pages/Landing';
+import Authenticate from './pages/Authenticate';
 function App() {
 
 	return (

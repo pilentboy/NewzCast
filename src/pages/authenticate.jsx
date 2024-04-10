@@ -2,8 +2,6 @@ import ColoredLogo from "../components/ColoredLogo"
 import Container from "../components/authenticate/Container"
 import Wrapper from "../components/authenticate/Wrapper"
 import Button from "../components/landing/Button"
-import MainText from "../components/landing/MainText"
-import ShareVideo from '../assets/images/share-video.png'
 import SliderContainer from "../components/slider/SliderContainer"
 
 

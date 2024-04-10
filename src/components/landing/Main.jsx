@@ -25,7 +25,7 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} />
+                    <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} styles={'text-3xl'}/>
 
                     <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
                 </Wrapper>
@@ -115,7 +115,7 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <MainText text={"Share the news upto 100 words per segment. However for Truly Verifiedupto 300."} />
+                    <MainText text={"Share the news upto 100 words per segment. However for Truly Verifiedupto 300."} styles={'text-3xl'} />
 
                     <SecondMainText text={'Talk about truly verified. Ex- Celibrities,Media Journalists etc'} />
 
@@ -136,7 +136,7 @@ export default function LandingMain() {
                         <SmallBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
                         <SmallBoxText title={'Trending'} styles={'text-white'} />
                     </SmallBox>
-                    <MainText text={"See all the trending Newsposts in one app.."} />
+                    <MainText text={"See all the trending Newsposts in one app.."} styles={'text-3xl'}/>
 
                     <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
                 </Wrapper>
@@ -162,7 +162,7 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <MainText text={"Follow your favourite Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News."} />
+                    <MainText text={"Follow your favourite Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News."} styles={'text-3xl'} />
 
                     <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
                 </Wrapper>

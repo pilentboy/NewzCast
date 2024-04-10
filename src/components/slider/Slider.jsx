@@ -28,13 +28,13 @@ export default function Slider() {
     ]
 
     const Sliders = () => {
-        const myImages = SlideShowData.map((item, id) => (
+        const SliderItems = SlideShowData.map((item, id) => (
             <SliderItemWrapper key={id}>
                 <MainText styles={'text-white text-2xl'} text={item.text} />
                 <img src={item.src} className="rounded-md h-1/2 " />
             </SliderItemWrapper>
         ))
-        return myImages
+        return SliderItems
     }
 
     const handleSliderChangeButton = (sliderID) => {
@@ -44,6 +44,15 @@ export default function Slider() {
     useEffect(() => {
         setMySliders(Sliders())
     }, [])
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            SetSliderIndex(prevIndex => (prevIndex >= SlideShowData.length - 1 ? 0 : prevIndex + 1));
+        }, 3000); 
+
+        return () => clearInterval(interval);
+    }, []);
+
 
     return (
         <Wrapper styles={'header-bg px-40 hidden lg:flex lg:flex-col'}>

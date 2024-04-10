@@ -9,7 +9,7 @@ import SmallBoxText from "./SmallBoxText"
 import CloseBTN from "./CloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
 import SecondMainText from './SecondMainText'
-import MaindBox from "./MainBox"
+import MainBox from "./MainBox"
 import { FaCamera } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import postScreenShot from '../../assets/images/Annotation 2024-04-08 235717.png'
@@ -31,7 +31,10 @@ export default function LandingMain() {
                 </Wrapper>
 
                 <Wrapper>
-                    <div className="rounded-md border border-1 border-gray-200  w-[65%] mx-auto h-[280px] flex flex-col px-6 py-6 space-y-8 md:w-[400px] lg:w-[350px]">
+
+
+                    <MainBox styles={'h-[280px] w-[65%] px-6 py-6  md:w-[400px] lg:w-[350px]'}>
+
 
                         <h1 className="font-medium">
                             My sons first Rugby Match Live!
@@ -64,7 +67,7 @@ export default function LandingMain() {
                         </div>
 
 
-                    </div>
+                    </MainBox>
                 </Wrapper>
 
 
@@ -76,7 +79,7 @@ export default function LandingMain() {
 
                     <ColoredLogo />
 
-                    <MaindBox>
+                    <MainBox styles={'w-[340px] h-[210px] px-4 py-3 justify-between '}>
 
                         <div className="flex justify-between items-center">
                             <span className="font-medium">
@@ -106,7 +109,7 @@ export default function LandingMain() {
 
                         </div>
 
-                    </MaindBox>
+                    </MainBox>
 
                 </Wrapper>
 

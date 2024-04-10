@@ -5,11 +5,13 @@ import Following from '../../assets/images/following.png'
 import ShareTextPost from '../../assets/images/share-post.png'
 import MainText from "../landing/MainText"
 import { useEffect, useState } from "react"
+import SliderCircleBTN from "./SliderCircleBTN"
 
 export default function SliderContainer() {
 
     const [sliderIndex, SetSliderIndex] = useState(0)
     const [mySliders, setMySliders] = useState([])
+
     const SlideShowData = [
         {
             src: ShareVideoIMG,
@@ -45,6 +47,18 @@ export default function SliderContainer() {
             {
                 mySliders[sliderIndex]
             }
+
+
+            {/* <h1 className=" absolute  bottom-10 ">test</h1> */}
+            <div className="flex items-center space-x-2">
+
+                {
+                    SlideShowData.map((item, id) => (
+                        <SliderCircleBTN key={id} active={sliderIndex === id ? true : false} />
+                    ))
+                }
+
+            </div>
 
         </Wrapper>
     )

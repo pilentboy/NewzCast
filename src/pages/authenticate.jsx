@@ -3,28 +3,19 @@ import Container from "../components/authenticate/Container"
 import Wrapper from "../components/authenticate/Wrapper"
 import Button from "../components/landing/Button"
 import MainText from "../components/landing/MainText"
-
 import ShareVideo from '../assets/images/share-video.png'
+import SliderContainer from "../components/slider/SliderContainer"
+
 
 const Authenticate = () => {
+
 
     return (
         <>
             <Container>
 
 
-                <Wrapper styles={'header-bg hidden lg:flex lg:flex-col justify-center'}>
-
-
-                    <div className="flex flex-col  items-center space-y-4">
-                        <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} styles={'text-white px-40'} />
-                        <img src={ShareVideo} className="w-1/2 rounded-md" />
-                    </div>
-
-
-
-
-                </Wrapper>
+                <SliderContainer />
 
 
                 <Wrapper styles={'bg-white flex flex-col px-20  lg:justify-between '}>

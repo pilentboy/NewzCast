@@ -7,7 +7,7 @@ import MainText from "../landing/MainText"
 import { useEffect, useState } from "react"
 import SliderCircleBTN from "./SliderCircleBTN"
 
-export default function SliderContainer() {
+export default function Slider() {
 
     const [sliderIndex, SetSliderIndex] = useState(0)
     const [mySliders, setMySliders] = useState([])
@@ -19,7 +19,7 @@ export default function SliderContainer() {
         },
         {
             src: Following,
-            text: 'Follow your favourite  Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News.'
+            text: 'Follow your favourite  Celebrities, Media Journalists and many more.'
         },
         {
             src: ShareTextPost,
@@ -37,6 +37,10 @@ export default function SliderContainer() {
         return myImages
     }
 
+    const handleSliderChangeButton = (sliderID) => {
+        SetSliderIndex(sliderID)
+    }
+
     useEffect(() => {
         setMySliders(Sliders())
     }, [])
@@ -49,12 +53,11 @@ export default function SliderContainer() {
             }
 
 
-            {/* <h1 className=" absolute  bottom-10 ">test</h1> */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 absolute bottom-10">
 
                 {
                     SlideShowData.map((item, id) => (
-                        <SliderCircleBTN key={id} active={sliderIndex === id ? true : false} />
+                        <SliderCircleBTN key={id} handleClick={handleSliderChangeButton} buttonID={id} active={sliderIndex === id ? true : false} />
                     ))
                 }
 

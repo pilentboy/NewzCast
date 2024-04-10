@@ -2,7 +2,7 @@ import ColoredLogo from "../components/ColoredLogo"
 import Container from "../components/authenticate/Container"
 import Wrapper from "../components/authenticate/Wrapper"
 import Button from "../components/landing/Button"
-import SliderContainer from "../components/slider/SliderContainer"
+import Slider from "../components/slider/Slider"
 
 
 const Authenticate = () => {
@@ -13,7 +13,7 @@ const Authenticate = () => {
             <Container>
 
 
-                <SliderContainer />
+                <Slider />
 
 
                 <Wrapper styles={'bg-white flex flex-col px-20  lg:justify-between '}>

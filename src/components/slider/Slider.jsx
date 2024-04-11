@@ -9,7 +9,7 @@ import SliderCircleBTN from "./SliderCircleBTN"
 
 export default function Slider() {
 
-    const [sliderIndex, SetSliderIndex] = useState(0)
+    const [currentSlideIndex, SetCurrentSlideIndex] = useState(0)
     const [mySliders, setMySliders] = useState([])
 
     const SlideShowData = [
@@ -38,7 +38,7 @@ export default function Slider() {
     }
 
     const handleSliderChangeButton = (sliderID) => {
-        SetSliderIndex(sliderID)
+        SetCurrentSlideIndex(sliderID)
     }
 
     useEffect(() => {
@@ -47,8 +47,8 @@ export default function Slider() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            SetSliderIndex(prevIndex => (prevIndex >= SlideShowData.length - 1 ? 0 : prevIndex + 1));
-        }, 3000); 
+            SetCurrentSlideIndex(prevIndex => (prevIndex >= SlideShowData.length - 1 ? 0 : prevIndex + 1));
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);
@@ -58,7 +58,7 @@ export default function Slider() {
         <Wrapper styles={'header-bg px-40 hidden lg:flex lg:flex-col'}>
 
             {
-                mySliders[sliderIndex]
+                mySliders[currentSlideIndex]
             }
 
 
@@ -66,7 +66,7 @@ export default function Slider() {
 
                 {
                     SlideShowData.map((item, id) => (
-                        <SliderCircleBTN key={id} handleClick={handleSliderChangeButton} buttonID={id} active={sliderIndex === id ? true : false} />
+                        <SliderCircleBTN key={id} handleClick={handleSliderChangeButton} buttonID={id} active={currentSlideIndex === id ? true : false} />
                     ))
                 }
 

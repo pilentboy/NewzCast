@@ -48,7 +48,7 @@ export default function Slider() {
     useEffect(() => {
         const interval = setInterval(() => {
             SetCurrentSlideIndex(prevIndex => (prevIndex >= SlideShowData.length - 1 ? 0 : prevIndex + 1));
-        }, 3000);
+        }, 10000);
 
         return () => clearInterval(interval);
     }, []);

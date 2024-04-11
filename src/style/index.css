@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        @apply font-roboto  overflow-x-hidden
-      }
-    button{
+@layer base {
+    body {
+        @apply font-roboto overflow-x-hidden
+    }
+
+    button {
         @apply text-white font-medium
     }
 }
@@ -17,6 +18,23 @@
     }
 
     .test {
-        background-color: rgb(11, 45, 131);
+        animation-name: slideShow;
+        animation-duration: 10s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes slideShow {
+        0% {
+            transform: scale(0.8)
+        }
+
+        50% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0.8);
+        }
     }
 }

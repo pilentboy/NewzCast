@@ -17,7 +17,7 @@
         background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));
     }
 
-    .test {
+    .slide-anima{
         animation-name: slideShow;
         animation-duration: 10s;
         animation-fill-mode: both;

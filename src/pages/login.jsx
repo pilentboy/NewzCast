@@ -20,7 +20,7 @@ const Login = () => {
 
     return (
 
-        <Wrapper styles={'w-screen bg-white flex flex-col px-20 '}>
+        <Wrapper styles={'w-screen  bg-white flex flex-col px-20'}>
             <div className="flex flex-col items-center space-y-4">
                 <ColoredLogo />
 
@@ -62,7 +62,7 @@ const Login = () => {
                                     )
                                 }
                             </button>
-                            <span className="font-bold text-xs  text-gray-400">
+                            <span className="font-bold text-xs  text-gray-500">
                                 Stay Sigened in
                             </span>
                         </div>
@@ -75,7 +75,7 @@ const Login = () => {
 
             </div>
 
-            <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 w-72'} containerStlye={'mt-8 lg:mt-0'} />
+            <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 w-72 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
 
         </Wrapper>
 

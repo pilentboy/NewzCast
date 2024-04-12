@@ -16,6 +16,8 @@ const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
+    const [loginPass, setLoginPass] = useState('')
+    const [loginEmail, setLoginEmail] = useState('')
 
 
     return (
@@ -29,7 +31,7 @@ const Login = () => {
 
                     <InputWrapper>
                         <InputTitle title={'Email'} />
-                        <FormInput type={'email'} />
+                        <FormInput type={'email'} value={loginEmail} handleValue={setLoginEmail}/>
                     </InputWrapper>
                     <InputWrapper>
 
@@ -43,7 +45,7 @@ const Login = () => {
                                 }
                             </button>
                         </div>
-                        <FormInput type={loginInputPassType} />
+                        <FormInput type={loginInputPassType} value={loginPass} handleValue={setLoginPass}/>
                     </InputWrapper>
 
                     <div className="flex flex-row justify-between items-center w-72">
@@ -62,7 +64,7 @@ const Login = () => {
                                     )
                                 }
                             </button>
-                            <span className="font-bold text-xs  text-gray-500">
+                            <span className="font-bold text-xs  text-gray-400">
                                 Stay Sigened in
                             </span>
                         </div>

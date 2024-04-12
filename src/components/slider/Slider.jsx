@@ -55,7 +55,7 @@ export default function Slider() {
 
 
     return (
-        <Wrapper styles={'header-bg px-40 hidden lg:flex lg:flex-col'}>
+        <Wrapper styles={'header-bg px-40 hidden lg:w-1/2  lg:flex lg:flex-col'}>
 
             {
                 mySliders[currentSlideIndex]

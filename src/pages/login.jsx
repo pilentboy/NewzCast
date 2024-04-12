@@ -48,7 +48,7 @@ const Login = () => {
                         <FormInput type={loginInputPassType} value={loginPass} handleValue={setLoginPass}/>
                     </InputWrapper>
 
-                    <div className="flex flex-row justify-between items-center w-72">
+                    <div className="flex flex-row justify-between items-center w-72 py-2 ">
 
                         <Link to={'#'} className="text-xs font-bold underline text-purple-1000">
                             Forgot Password?

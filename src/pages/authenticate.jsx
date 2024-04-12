@@ -33,6 +33,7 @@ const Authenticate = () => {
                             styles={'text-gray-500 text-sm font-normal   border border-gray-200  py-4 w-72 relative hover:text-gray-600 duration-200 '}
                             icon={<FcGoogle className="absolute text-lg right-6  traslate-y-[50%]" />}
                             target={'/'}
+                            disabled={true}
                         />
 
                         <Button
@@ -40,6 +41,8 @@ const Authenticate = () => {
                             styles={'text-gray-500 text-sm font-normal relative   border border-gray-200  py-4 w-72 flex-row-reverse hover:text-gray-600 duration-200 '}
                             icon={<FaFacebookF className="absolute  text-lg right-6 text-blue-500  traslate-y-[50%]" />}
                             target={'/'}
+                            disabled={true}
+
                         />
                     </div>
 

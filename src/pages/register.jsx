@@ -5,8 +5,13 @@ import InputWrapper from '../components/form/InputWrapper'
 import FormInput from '../components/form/FormInput'
 import InputTitle from '../components/form/InputTitle'
 import Button from '../components/landing/Button'
+import AcceptButton from '../components/form/AcceptButton'
+import TermsOfUse from '../components/authenticate/TermsOfUse'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
+    const [acceptRules, setAcceptRules] = useState(false)
 
     return (
         <Wrapper styles={'flex-col'}>
@@ -15,7 +20,7 @@ const Register = () => {
 
                 <ColoredLogo />
 
-                <form className='flex flex-col justify-center items-center space-y-4' >
+                <form className='flex flex-col justify-center items-center space-y-4' onSubmit={(e) => e.preventDefault()} >
                     <FormTitle title={'Register'} />
                     <div className='flex justify-between  w-72'>
 
@@ -54,6 +59,15 @@ const Register = () => {
                         <InputTitle title={'Confirm Password'} />
                         <FormInput type={'password'} />
                     </InputWrapper>
+
+                    <div className='space-x-2 flex items-center w-72 px-4 '>
+
+                        <AcceptButton styles={'bg-purple-1000'} ariaLabel={'Accept terms of use'} handleAcceptState={setAcceptRules} AcceptState={acceptRules} />
+
+                        <TermsOfUse />
+
+
+                    </div>
 
                     <Button title={'Register'} styles={'w-72 py-3 text-sm bg-purple-1000'} />
 

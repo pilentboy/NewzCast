@@ -5,12 +5,12 @@ import FormTitle from "../components/form/FormTitle"
 import InputTitle from "../components/form/InputTitle"
 import InputWrapper from "../components/form/InputWrapper"
 import Button from "../components/landing/Button"
-import { MdDone } from "react-icons/md";
-import { RxCross1 } from "react-icons/rx";
+
 import { RxEyeOpen, RxEyeClosed } from "react-icons/rx"
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
+import AcceptButton from "../components/form/AcceptButton"
 
 const Login = () => {
 
@@ -56,14 +56,8 @@ const Login = () => {
 
                         <div className="flex flex-row items-center space-x-2">
 
-                            <button className=' rounded-full bg-gray-500 text-xs   text-white w-4 h-4  text-center ' aria-label="stay signed in" onClick={() => SetStatySignedIn(!staySignedIn)} type='button'>
-                                {
-                                    staySignedIn ? (<MdDone className="mx-auto" />
-                                    ) : (
-                                        <RxCross1 className="mx-auto" />
-                                    )
-                                }
-                            </button>
+                            <AcceptButton styles={'bg-gray-500'} ariaLabel={"stay signed in"} handleAcceptState={SetStatySignedIn} AcceptState={staySignedIn} type='button' />
+
                             <span className="font-bold text-xs  text-gray-400">
                                 Stay Sigened in
                             </span>
@@ -75,11 +69,11 @@ const Login = () => {
                 </form>
 
 
-            </div>
+            </div >
 
             <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 w-72 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
 
-        </Wrapper>
+        </Wrapper >
 
     )
 }

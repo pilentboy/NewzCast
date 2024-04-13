@@ -8,10 +8,39 @@ import Button from '../components/landing/Button'
 import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const Register = () => {
     const [acceptRules, setAcceptRules] = useState(false)
+
+    const [SignUpValues, setSignUpValues] = useState([
+        {
+            FirstName: '',
+            title: 'First Name'
+        },
+        {
+            LastName: '',
+            title: 'Last Name'
+        },
+        {
+            Email: '',
+            title: 'Email',
+            type: 'email'
+        },
+        {
+            Password: '',
+            title: 'Password',
+            type: 'password'
+        },
+        {
+            ConfirmPassword: '',
+            title: 'Confirm Password',
+            type: 'password'
+        },
+        {
+            PhoneNumber: '',
+            title: 'phone'
+        },
+    ])
 
     return (
         <Wrapper styles={'flex-col'}>
@@ -21,6 +50,7 @@ const Register = () => {
                 <ColoredLogo />
 
                 <form className='flex flex-col justify-center items-center space-y-4' onSubmit={(e) => e.preventDefault()} >
+
                     <FormTitle title={'Register'} />
                     <div className='flex justify-between  w-72'>
 

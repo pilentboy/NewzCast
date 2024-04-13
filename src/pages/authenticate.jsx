@@ -34,6 +34,7 @@ const Authenticate = () => {
                             icon={<FcGoogle className="absolute text-lg right-6  traslate-y-[50%]" />}
                             target={'/'}
                             disabled={true}
+
                         />
 
                         <Button

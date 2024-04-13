@@ -29,11 +29,11 @@ const Login = () => {
                 <form className="space-y-4 flex flex-col" onSubmit={(e) => e.preventDefault()}>
                     <FormTitle title={'Log in'} />
 
-                    <InputWrapper>
+                    <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Email'} />
-                        <FormInput type={'email'} value={loginEmail} handleValue={setLoginEmail}/>
+                        <FormInput type={'email'} value={loginEmail} handleValue={setLoginEmail} />
                     </InputWrapper>
-                    <InputWrapper>
+                    <InputWrapper styles={'w-72'}>
 
                         <div className="flex flex-row justify-between items-center">
                             <InputTitle title={'Password'} />
@@ -45,7 +45,7 @@ const Login = () => {
                                 }
                             </button>
                         </div>
-                        <FormInput type={loginInputPassType} value={loginPass} handleValue={setLoginPass}/>
+                        <FormInput type={loginInputPassType} value={loginPass} handleValue={setLoginPass} />
                     </InputWrapper>
 
                     <div className="flex flex-row justify-between items-center w-72 py-2 ">

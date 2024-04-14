@@ -38,7 +38,7 @@ export default function LandingMain() {
                     <MainBox styles={'h-[280px] w-[65%] px-6 py-6  md:w-[400px] lg:w-[350px]'}>
 
 
-                        <h1 className="font-medium">
+                        <h1 id="4" className="font-medium">
                             My sons first Rugby Match Live!
                         </h1>
 

@@ -4,6 +4,7 @@ import appScreenshot from '../../assets/images/homephoneview.png'
 import Button from "./Button"
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaAppStore } from "react-icons/fa";
+import GetStartedBTN from "./GetStartedBTN";
 
 export default function LandingHeader() {
 
@@ -17,7 +18,7 @@ export default function LandingHeader() {
                     <div className="flex flex-col items-center  lg:items-start  ">
                         <div className="space-y-7 my-16 hidden md:block lg:my-0">
                             <h1 className="text-white text-5xl  font-bold"> Share the Newz!</h1>
-                            <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                            <GetStartedBTN anima={true} />
                         </div>
                         <div className=" w-[260px] h-24 bg-white rounded-md flex flex-col justify-around  md:mt-20 px-4 py-4 ">
                             <h3 className="font-bold text-sm ">

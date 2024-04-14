@@ -8,6 +8,7 @@ import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
 import SmallBoxText from "./SmallBoxText"
 import CloseBTN from "./CloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
+import GetStartedBTN from "./GetStartedBTN"
 import SecondMainText from './SecondMainText'
 import MainBox from "./MainBox"
 import { FaCamera } from "react-icons/fa";
@@ -25,9 +26,10 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} styles={'text-3xl'}/>
+                    <MainText text={"Share videos upto 1 min timeframe with selecting news zingle."} styles={'text-3xl'} />
 
-                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                    <GetStartedBTN />
+
                 </Wrapper>
 
                 <Wrapper>
@@ -119,7 +121,8 @@ export default function LandingMain() {
 
                     <SecondMainText text={'Talk about truly verified. Ex- Celibrities,Media Journalists etc'} />
 
-                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                    <GetStartedBTN />
+
 
                 </Wrapper>
 
@@ -136,9 +139,10 @@ export default function LandingMain() {
                         <SmallBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
                         <SmallBoxText title={'Trending'} styles={'text-white'} />
                     </SmallBox>
-                    <MainText text={"See all the trending Newsposts in one app.."} styles={'text-3xl'}/>
+                    <MainText text={"See all the trending Newsposts in one app.."} styles={'text-3xl'} />
 
-                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                    <GetStartedBTN />
+
                 </Wrapper>
 
                 <Wrapper>
@@ -164,7 +168,8 @@ export default function LandingMain() {
 
                     <MainText text={"Follow your favourite Celebrities, Influencers, Media Journalists and many more for getting realtime unbaised News."} styles={'text-3xl'} />
 
-                    <Button title={'Get Started'} styles={' font-bold bg-purple-1000  w-28 h-9 text-sm'} />
+                    <GetStartedBTN />
+
                 </Wrapper>
 
 

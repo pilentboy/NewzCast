@@ -6,7 +6,6 @@ export default function Button({ styles, title, icon, target, disabled }) {
     const handleNavigate = () => {
         navigate(target)
     }
-    console.log(icon)
     
     return (
         <button disabled={disabled} className={` flex items-center justify-center  rounded-md  text-center  ${styles}`} onClick={handleNavigate}>

@@ -41,4 +41,20 @@
             opacity: 0;
         }
     }
+
+
+    .scroll-top {
+        animation-name: scrolly;
+        animation-duration: 300ms;
+    }
+
+    @keyframes scrolly {
+        from {
+            top: 60%;
+        }
+
+        to {
+            top: 50%;
+        }
+    }
 }

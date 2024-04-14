@@ -70,7 +70,7 @@ const Register = () => {
                         <FormInput type={'password'} value={confirmPassword} handleValue={setConfirmPassword} />
                     </InputWrapper>
 
-                    <div className='space-x-2 flex items-center w-72 px-4 '>
+                    <div className='space-x-4 flex items-center justify-center w-72 px-4 '>
 
                         <AcceptButton styles={'bg-purple-1000'} ariaLabel={'Accept terms of use'} handleAcceptState={setAcceptRules} AcceptState={acceptRules} />
 

@@ -13,6 +13,14 @@ const Register = () => {
 
     const [acceptRules, setAcceptRules] = useState(false)
 
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastname] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [phoneNumber, SetPhoneNumber] = useState('')
+    const [userName, setUserName] = useState('')
+
 
     return (
         <Wrapper styles={'flex-col'}>
@@ -28,38 +36,38 @@ const Register = () => {
 
                         <InputWrapper styles={'w-[140px]'}>
                             <InputTitle title={'First Name'} />
-                            <FormInput type={'text'} />
+                            <FormInput type={'text'} value={firstName} handleValue={setFirstName} />
                         </InputWrapper>
 
                         <InputWrapper styles={'w-[140px]'}>
                             <InputTitle title={'Last Name'} />
-                            <FormInput type={'text'} />
+                            <FormInput type={'text'} value={lastName} handleValue={setLastname} />
                         </InputWrapper>
                     </div>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Username'} />
-                        <FormInput type={'text'} />
+                        <FormInput type={'text'} value={userName} handleValue={setUserName} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Email'} />
-                        <FormInput type={'email'} />
+                        <FormInput type={'email'} value={email} handleValue={setEmail} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Phone Number'} />
-                        <FormInput type={'phone'} />
+                        <FormInput type={'phone'} value={phoneNumber} handleValue={SetPhoneNumber} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Password'} />
-                        <FormInput type={'password'} />
+                        <FormInput type={'password'} value={password} handleValue={setPassword} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Confirm Password'} />
-                        <FormInput type={'password'} />
+                        <FormInput type={'password'} value={confirmPassword} handleValue={setConfirmPassword} />
                     </InputWrapper>
 
                     <div className='space-x-2 flex items-center w-72 px-4 '>

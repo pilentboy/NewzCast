@@ -4,8 +4,7 @@ import FormInput from "../components/form/FormInput"
 import FormTitle from "../components/form/FormTitle"
 import InputTitle from "../components/form/InputTitle"
 import InputWrapper from "../components/form/InputWrapper"
-import Button from "../components/landing/Button"
-
+import MainButton from '../components/landing/MainButton'
 import { RxEyeOpen, RxEyeClosed } from "react-icons/rx"
 import { Link } from 'react-router-dom'
 import { useState } from "react"
@@ -65,13 +64,13 @@ const Login = () => {
 
                     </div>
 
-                    <Button title={'Log in'} styles={'bg-purple-1000 py-3 w-72 text-sm'} />
+                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} />
                 </form>
 
 
             </div >
 
-            <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 w-72 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
+            <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
 
         </Wrapper >
 

@@ -1,6 +1,6 @@
 import Container from "./Container"
 import Wrapper from "./Wrapper"
-import Button from './Button'
+import MainLink from './MainLink'
 import MainText from "./MainText"
 import SmallBox from "./SmallBox"
 import SmallBoxIcon from "./SmallBoxIcon"
@@ -64,7 +64,7 @@ export default function LandingMain() {
                             <span className="text-gray-400 text-sm">
                                 66/100
                             </span>
-                            <Button title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
+                            <MainLink title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
 
                         </div>
 
@@ -107,7 +107,7 @@ export default function LandingMain() {
                                 </span>
                             </div>
 
-                            <Button title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
+                            <MainLink title={'Share'} styles={'bg-purple-1000 w-24 h-8 '} />
 
                         </div>
 

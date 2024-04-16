@@ -1,7 +1,7 @@
 import Nav from "./Nav"
 import Container from "./Container"
 import appScreenshot from '../../assets/images/homephoneview.png'
-import Button from "./Button"
+import MainLink from "./MainLink"
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaAppStore } from "react-icons/fa";
 import GetStartedBTN from "./GetStartedBTN";
@@ -34,8 +34,8 @@ export default function LandingHeader() {
                                 Available in
                             </h3>
                             <div className="flex justify-between items-center">
-                                <Button title={'App Store'} styles={'w-28 h-7 rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<FaAppStore />} />
-                                <Button title={'Play Store'} styles={'w-28 h-7  rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<IoLogoGooglePlaystore />} />
+                                <MainLink title={'App Store'} styles={'w-28 h-7 rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<FaAppStore />} />
+                                <MainLink title={'Play Store'} styles={'w-28 h-7  rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<IoLogoGooglePlaystore />} />
                             </div>
                         </div>
 

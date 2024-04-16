@@ -4,7 +4,7 @@ import FormTitle from '../components/form/FormTitle'
 import InputWrapper from '../components/form/InputWrapper'
 import FormInput from '../components/form/FormInput'
 import InputTitle from '../components/form/InputTitle'
-import Button from '../components/landing/Button'
+import MainButton from '../components/landing/MainButton'
 import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import { useState } from 'react'
@@ -79,7 +79,7 @@ const Register = () => {
 
                     </div>
 
-                    <Button title={'Register'} styles={'w-72 py-3 text-sm bg-purple-1000'} />
+                    <MainButton title={'Register'} type={'submit'} styles={'py-3 text-sm bg-purple-1000'} lgBTN={true} />
 
                 </form>
 

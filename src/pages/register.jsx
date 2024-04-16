@@ -7,6 +7,8 @@ import InputTitle from '../components/form/InputTitle'
 import MainButton from '../components/landing/MainButton'
 import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
+import ModalBox from '../components/modal/ModalBox'
+
 import { useState } from 'react'
 
 const Register = () => {
@@ -20,6 +22,12 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [phoneNumber, SetPhoneNumber] = useState('')
     const [userName, setUserName] = useState('')
+    const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
+
+    const handleRegisterSubmit = (e) => {
+        e.preventDefault()
+        setPhonenVerifyModalIDisplay("flex")
+    }
 
 
     return (
@@ -29,7 +37,7 @@ const Register = () => {
 
                 <ColoredLogo />
 
-                <form className='flex flex-col  justify-center items-center space-y-4' onSubmit={(e) => e.preventDefault()} >
+                <form className='flex flex-col  justify-center items-center space-y-4' onSubmit={handleRegisterSubmit} >
 
                     <FormTitle title={'Register'} />
                     <div className='flex justify-between  w-72'>
@@ -79,7 +87,9 @@ const Register = () => {
 
                     </div>
 
-                    <MainButton title={'Register'} type={'submit'} styles={'py-3 text-sm bg-purple-1000'} lgBTN={true} />
+                    <MainButton title={'Register'} type={'submit'} styles={'py-3 text-sm bg-purple-1000'} action={() => console.log('open verify phone number box')} lgBTN={true} />
+
+                    <ModalBox display={phonenVerifyModalIDisplay} phoneNumber={phoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
 
                 </form>
 

@@ -47,7 +47,7 @@ const Authenticate = () => {
                         />
                     </div>
 
-                    <RegisterLinkItems buttonStyles={'bg-purple-1000 w-80'} />
+                    <RegisterLinkItems buttonStyles={'bg-purple-1000 w-72'} />
 
                 </Wrapper>
             </Container>

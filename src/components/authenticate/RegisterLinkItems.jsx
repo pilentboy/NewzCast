@@ -4,7 +4,7 @@ export default function RegisterLinkItems({ buttonStyles, containerStlye, titleS
     return (
         <>
             <div className={`flex flex-col items-center space-y-2 ${containerStlye}`}>
-                <span className={` text-[14px] font-bold text-red-500  ${titleStyles}`}>
+                <span className={` text-[14px] font-bold text-gray-500  ${titleStyles}`}>
                     Don’t have an account?
                 </span>
                 <Button title={'Register'} styles={` py-3   text-sm  ${buttonStyles}`} target={'/register'} />

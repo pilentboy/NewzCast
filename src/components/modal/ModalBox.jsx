@@ -11,6 +11,17 @@ export default function ModalBox({ setDisplay, phoneNumber }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
 
+    // testing pin code value
+    const PinCode = '12345'
+    
+    const checkVerifyPin = () => {
+        if (verificationCode === PinCode) {
+            setDisplay('hidden')
+        } else {
+            alert("pin code error")
+        }
+    }
+
 
     return (
 
@@ -23,17 +34,17 @@ export default function ModalBox({ setDisplay, phoneNumber }) {
 
             <p className=" text-base text-gray-500 font-normal ">
                 We have sent a pin to your <span className=" font-bold  text-gray-700">{phoneNumber}</span>.
-                Please enter the pint to verify your account.
+                Please enter the pin to verify your account.
             </p>
 
             <InputWrapper styles={'w-72'}>
                 <InputTitle title={'Enter pin'} />
-                <FormInput value={verificationCode} handleValue={SetVerificationCode} />
+                <FormInput value={verificationCode} handleValue={(e) => SetVerificationCode(e.target.value)} />
             </InputWrapper>
 
-            <MainButton title={'Verify'} lgBTN={true} styles={'bg-purple-1000 p-3'} />
+            <MainButton title={'Verify'} action={checkVerifyPin} lgBTN={true} styles={'bg-purple-1000 p-3'} type={'button'} />
 
-            <MainButton title={'Resend verification code'} styles={'text-black text-sm text-gray-700'} action={() => alert("not available")} />
+            <MainButton title={'Resend verification code'} styles={'text-black text-sm text-gray-700'} type={'button'} action={() => alert("not available")} />
 
         </div>
     )

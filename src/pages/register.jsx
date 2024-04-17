@@ -17,13 +17,6 @@ const Register = () => {
 
     const [acceptRules, setAcceptRules] = useState(false)
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
-    const [phoneNumber, SetPhoneNumber] = useState('')
-    const [userName, setUserName] = useState('')
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
 
     const handleRegisterSubmit = (e) => {
@@ -107,7 +100,7 @@ const Register = () => {
 
                     <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
 
-                        <ModalBox phoneNumber={phoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
+                        <ModalBox phoneNumber={handleRegister.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
 
                     </ModalContainer>
 

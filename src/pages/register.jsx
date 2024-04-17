@@ -11,6 +11,7 @@ import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
 
 import { useState } from 'react'
+import { useFormik } from 'formik'
 
 const Register = () => {
 
@@ -30,6 +31,20 @@ const Register = () => {
         setPhonenVerifyModalIDisplay("flex")
     }
 
+    const handleRegister = useFormik({
+        initialValues: {
+            FirstName: '',
+            LastName: '',
+            UserName: '',
+            Email: '',
+            PhoneNumber: '',
+            Password: '',
+            ConfirmPassword: ''
+        },
+        onSubmit: values => {
+            console.log(JSON.stringify(values))
+        }
+    })
 
     return (
         <Wrapper styles={'flex-col'} >
@@ -38,45 +53,45 @@ const Register = () => {
 
                 <ColoredLogo />
 
-                <form className='flex flex-col  justify-center items-center ' onSubmit={handleRegisterSubmit} >
+                <form className='flex flex-col  justify-center items-center ' onSubmit={handleRegister.handleSubmit} >
 
                     <FormTitle title={'Register'} />
                     <div className='flex justify-between mt-2 w-72'>
 
                         <InputWrapper styles={'w-[140px]'}>
                             <InputTitle title={'First Name'} />
-                            <FormInput type={'text'} value={firstName} handleValue={setFirstName} />
+                            <FormInput type={'text'} name={'FirstName'} value={handleRegister.values.FirstName} handleValue={handleRegister.handleChange} />
                         </InputWrapper>
 
                         <InputWrapper styles={'w-[140px]'}>
                             <InputTitle title={'Last Name'} />
-                            <FormInput type={'text'} value={lastName} handleValue={setLastname} />
+                            <FormInput type={'text'} name={'LastName'} value={handleRegister.values.LastName} handleValue={handleRegister.handleChange} />
                         </InputWrapper>
                     </div>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Username'} />
-                        <FormInput type={'text'} value={userName} handleValue={setUserName} />
+                        <FormInput type={'text'} name={'UserName'} value={handleRegister.values.UserName} handleValue={handleRegister.handleChange} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Email'} />
-                        <FormInput type={'email'} value={email} handleValue={setEmail} />
+                        <FormInput type={'email'} name={'Email'} value={handleRegister.values.Email} handleValue={handleRegister.handleChange} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Phone Number'} />
-                        <FormInput type={'phone'} value={phoneNumber} handleValue={SetPhoneNumber} />
+                        <FormInput type={'phone'} name={'PhoneNumber'} value={handleRegister.values.PhoneNumber} handleValue={handleRegister.handleChange} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Password'} />
-                        <FormInput type={'password'} value={password} handleValue={setPassword} />
+                        <FormInput type={'password'} name={'Password'} value={handleRegister.values.Password} handleValue={handleRegister.handleChange} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}>
                         <InputTitle title={'Confirm Password'} />
-                        <FormInput type={'password'} value={confirmPassword} handleValue={setConfirmPassword} />
+                        <FormInput type={'password'} name={'ConfirmPassword'} value={handleRegister.values.ConfirmPassword} handleValue={handleRegister.handleChange} />
                     </InputWrapper>
 
                     <div className='space-x-4 flex items-center justify-center w-72 px-4 '>

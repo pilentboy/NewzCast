@@ -11,6 +11,10 @@
     button, a {
         @apply text-white font-medium
     }
+
+    li {
+        @apply list-none
+    }
 }
 
 @layer components {

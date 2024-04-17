@@ -45,7 +45,7 @@ export default function LandingHeader() {
 
                 {
                     scrollyValue > window.innerHeight ? (
-                        <a href="#header" aria-label="go to header" className="fixed text-2xl text-black top-[50%] left-[2%] scroll-top z-[999]">
+                        <a href="#header" aria-label="go to header" className="fixed top-[90%] text-2xl text-black md:top-[50%] left-[2%] scroll-top z-[999]">
                             <FaCircleArrowUp />
                         </a>
                     ) : null

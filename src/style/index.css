@@ -54,11 +54,11 @@
 
     @keyframes scrolly {
         from {
-            top: 60%;
+            left: -100%;
         }
 
         to {
-            top: 50%;
+            left: 2%;
         }
     }
 }

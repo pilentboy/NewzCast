@@ -19,11 +19,6 @@ const Register = () => {
 
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
 
-    const handleRegisterSubmit = (e) => {
-        e.preventDefault()
-        setPhonenVerifyModalIDisplay("flex")
-    }
-
     const handleRegister = useFormik({
         initialValues: {
             FirstName: '',
@@ -49,6 +44,7 @@ const Register = () => {
                 <form className='flex flex-col  justify-center items-center ' onSubmit={handleRegister.handleSubmit} >
 
                     <FormTitle title={'Register'} />
+
                     <div className='flex justify-between mt-2 w-72'>
 
                         <InputWrapper styles={'w-[140px]'}>

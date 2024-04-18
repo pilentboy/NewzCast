@@ -25,14 +25,12 @@ const Login = () => {
             Password: ''
         },
         onSubmit: values => {
-            alert("loged in")
+            CheckLoginData(values)
         },
     })
 
 
-    const { Username, token } = useContext(LoginContext)
-
-    console.log(Username,token)
+    const { CheckLoginData, token } = useContext(LoginContext)
 
 
     return (
@@ -84,7 +82,7 @@ const Login = () => {
 
                     </div>
 
-                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} action={() => console.log("logged in")} />
+                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} action={() => HandleLogin.handleSubmit} />
                 </form>
 
 

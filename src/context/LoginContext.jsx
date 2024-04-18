@@ -1,14 +1,30 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
 
-    const [Username, setUsername] = useState("username")
-    const [token, setToken] = useState("token")
+    
+    const [UsersData, setUsersData] = useState([])
+    const [token, setToken] = useState()
+
+    const GetUsersInfo = () => {
+        const UserData = window.localStorage.getItem("User Info")
+        setUsersData(UserData)
+    }
+
+    const CheckLoginData = async ({ Username, Password }) => {
+        console.log(Username, Password)
+        console.log(UsersData)
+    }
+
+    useEffect(() => {
+        GetUsersInfo()
+    }, [])
+
 
     return (
-        <LoginContext.Provider value={{ Username, token }}>
+        <LoginContext.Provider value={{ UsersData, CheckLoginData, token }}>
             {children}
         </LoginContext.Provider>
     )

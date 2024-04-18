@@ -10,32 +10,45 @@ import { Link } from 'react-router-dom'
 import { useState } from "react"
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
+import { useFormik } from "formik"
+
 
 const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
-    const [loginPass, setLoginPass] = useState('')
-    const [loginEmail, setLoginEmail] = useState('')
+
+    const HandleLogin = useFormik({
+        initialValues: {
+            Username: '',
+            Password: ''
+        },
+        onSubmit: values => {
+            alert("loged in")
+        },
+    })
 
 
     return (
 
         <Wrapper styles={'w-screen  bg-white flex flex-col px-20'}>
+
             <div className="flex flex-col items-center space-y-4">
                 <ColoredLogo />
 
-                <form className="space-y-4 flex flex-col" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
                     <FormTitle title={'Log in'} />
 
                     <InputWrapper styles={'w-72'}>
-                        <InputTitle title={'Email'} />
-                        <FormInput type={'email'} value={loginEmail} handleValue={setLoginEmail} />
+                        <InputTitle title={'Username'} />
+                        <FormInput type={'text'} value={HandleLogin.values.Username} name={'Username'} handleValue={HandleLogin.handleChange} />
                     </InputWrapper>
                     <InputWrapper styles={'w-72'}>
 
                         <div className="flex flex-row justify-between items-center">
+
                             <InputTitle title={'Password'} />
+
                             <button className="text-gray-400" onClick={() => setLoginInputPassType(inputType => inputType === 'password' ? 'text' : 'password')} type='button'>
                                 {
                                     loginInputPassType === 'text' ? (
@@ -44,7 +57,8 @@ const Login = () => {
                                 }
                             </button>
                         </div>
-                        <FormInput type={loginInputPassType} value={loginPass} handleValue={setLoginPass} />
+
+                        <FormInput type={loginInputPassType} value={HandleLogin.values.Password} name={'Password'} handleValue={HandleLogin.handleChange} />
                     </InputWrapper>
 
                     <div className="flex flex-row justify-between items-center w-72 py-2 ">
@@ -64,7 +78,7 @@ const Login = () => {
 
                     </div>
 
-                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} />
+                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} action={() => console.log("logged in")} />
                 </form>
 
 

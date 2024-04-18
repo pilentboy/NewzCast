@@ -10,14 +10,13 @@ import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 const Register = () => {
 
     const [acceptRules, setAcceptRules] = useState(false)
-    const [registerDisable, setRegisterDisable] = useState(true)
 
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
 
@@ -25,7 +24,7 @@ const Register = () => {
         FirstName: Yup.string().max(19, 'Must be 19 characters or less').required('Required'),
         LastName: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
         Email: Yup.string().email('Invalid email address').required('Required'),
-        UserName: Yup.string().min(6, 'Must be at least 6 characters').max(30, 'Can not be more than 30 characters').required('Required'),
+        Username: Yup.string().min(6, 'Must be at least 6 characters').max(30, 'Can not be more than 30 characters').required('Required'),
         PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number').required("Required"),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
@@ -36,7 +35,7 @@ const Register = () => {
         initialValues: {
             FirstName: '',
             LastName: '',
-            UserName: '',
+            Username: '',
             Email: '',
             PhoneNumber: '',
             Password: '',
@@ -44,7 +43,6 @@ const Register = () => {
         },
         onSubmit: values => {
             setPhonenVerifyModalIDisplay("flex")
-            setRegisterDisable(true)
         },
         validationSchema: RegisterSchema
     })
@@ -98,12 +96,12 @@ const Register = () => {
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.UserName && handleRegister.errors.UserName ? true : false
+                            handleRegister.touched.Username && handleRegister.errors.Username ? true : false
                         }
                     >
                         <InputTitle title={'Username'} />
-                        <FormInput type={'text'} name={'UserName'}
-                            value={handleRegister.values.UserName}
+                        <FormInput type={'text'} name={'Username'}
+                            value={handleRegister.values.Username}
                             handleValue={handleRegister.handleChange}
                             handleBlur={handleRegister.handleBlur}
                         />

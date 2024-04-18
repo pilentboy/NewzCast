@@ -3,24 +3,31 @@ import FormTitle from "../form/FormTitle";
 import InputTitle from "../form/InputTitle";
 import InputWrapper from "../form/InputWrapper";
 import MainButton from "../landing/MainButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModalClsoeBTN from "./ModalCloseBTN";
 
 
-export default function ModalBox({ setDisplay, phoneNumber }) {
+export default function ModalBox({ setDisplay, phoneNumber, createPinCode }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
+    const [pindCode, setPinCode] = useState('12345')
 
-    // testing pin code value
-    const PinCode = '12345'
-    
+
+
     const checkVerifyPin = () => {
-        if (verificationCode === PinCode) {
+        if (verificationCode === pindCode) {
             setDisplay('hidden')
         } else {
             alert("pin code error")
         }
     }
+
+    useEffect(() => {
+        if (createPinCode) {
+            alert(`pin code: ${pindCode}`)
+        }
+    }, [createPinCode])
+
 
 
     return (

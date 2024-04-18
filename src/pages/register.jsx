@@ -19,6 +19,7 @@ const Register = () => {
     const [acceptRules, setAcceptRules] = useState(false)
 
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
+    const [createPinCode, setCreatePinCode] = useState(false)
 
     const RegisterSchema = Yup.object({
         FirstName: Yup.string().max(19, 'Must be 19 characters or less').required('Required'),
@@ -45,7 +46,7 @@ const Register = () => {
         },
         onSubmit: values => {
             HandleRegister()
-            // setPhonenVerifyModalIDisplay("flex")
+            setPhonenVerifyModalIDisplay("flex")
         },
         validationSchema: RegisterSchema
     })
@@ -54,8 +55,8 @@ const Register = () => {
     // save register in the local storage -- testing
 
     const HandleRegister = () => {
-
         window.localStorage.setItem('User Info', JSON.stringify(RegisterControl.values))
+        setCreatePinCode(true)
     }
 
 
@@ -193,7 +194,7 @@ const Register = () => {
 
                     <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
 
-                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
+                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} createPinCode={createPinCode} />
 
                     </ModalContainer>
 

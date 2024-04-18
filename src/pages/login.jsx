@@ -11,7 +11,8 @@ import { useState } from "react"
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
-
+import { useContext } from "react"
+import { LoginContext } from "../context/LoginContext"
 
 const Login = () => {
 
@@ -27,6 +28,11 @@ const Login = () => {
             alert("loged in")
         },
     })
+
+
+    const { Username, token } = useContext(LoginContext)
+
+    console.log(Username,token)
 
 
     return (

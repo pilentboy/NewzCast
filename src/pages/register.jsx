@@ -45,19 +45,11 @@ const Register = () => {
             ConfirmPassword: ''
         },
         onSubmit: values => {
-            HandleRegister()
+            setCreatePinCode(true)
             setPhonenVerifyModalIDisplay("flex")
         },
         validationSchema: RegisterSchema
     })
-
-
-    // save register in the local storage -- testing
-
-    const HandleRegister = () => {
-        window.localStorage.setItem('User Info', JSON.stringify(RegisterControl.values))
-        setCreatePinCode(true)
-    }
 
 
 
@@ -194,7 +186,7 @@ const Register = () => {
 
                     <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
 
-                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} createPinCode={createPinCode} />
+                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} createPinCode={createPinCode} RegisterFormValues={RegisterControl.values} />
 
                     </ModalContainer>
 

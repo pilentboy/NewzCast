@@ -18,6 +18,7 @@ const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
+    const { CheckLoginData, token } = useContext(LoginContext)
 
     const HandleLogin = useFormik({
         initialValues: {
@@ -30,7 +31,6 @@ const Login = () => {
     })
 
 
-    const { CheckLoginData, token } = useContext(LoginContext)
 
 
     return (

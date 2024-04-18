@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
 
-    
+    const navigate = useNavigate()
+
     const [UsersData, setUsersData] = useState([])
     const [token, setToken] = useState()
 
@@ -14,8 +16,13 @@ const LoginProvider = ({ children }) => {
     }
 
     const CheckLoginData = async ({ Username, Password }) => {
-        console.log(Username, Password)
-        console.log(UsersData)
+        GetUsersInfo()
+        const Res = JSON.parse(UsersData)
+        if (Username === Res['Username'] && Password === Res['Password']) {
+            navigate("/")
+        } else {
+            alert("login error")
+        }
     }
 
     useEffect(() => {
@@ -23,8 +30,10 @@ const LoginProvider = ({ children }) => {
     }, [])
 
 
+
+
     return (
-        <LoginContext.Provider value={{ UsersData, CheckLoginData, token }}>
+        <LoginContext.Provider value={{ UsersData, CheckLoginData, token, GetUsersInfo }}>
             {children}
         </LoginContext.Provider>
     )

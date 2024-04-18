@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import ModalClsoeBTN from "./ModalCloseBTN";
 import HandleRegister from "../../utils/HandleRegister";
 
-export default function ModalBox({ setDisplay, phoneNumber, createPinCode,RegisterFormValues }) {
+export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
     const [pindCode, setPinCode] = useState('12345')

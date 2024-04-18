@@ -9,10 +9,10 @@ import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { LoginContext } from '../context/LoginContext'
 
 const Register = () => {
 
@@ -52,6 +52,7 @@ const Register = () => {
     })
 
 
+  
 
 
 

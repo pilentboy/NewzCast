@@ -31,7 +31,9 @@ const Register = () => {
             .required('Required'),
     })
 
-    const handleRegister = useFormik({
+
+
+    const RegisterControl = useFormik({
         initialValues: {
             FirstName: '',
             LastName: '',
@@ -42,10 +44,20 @@ const Register = () => {
             ConfirmPassword: ''
         },
         onSubmit: values => {
-            setPhonenVerifyModalIDisplay("flex")
+            HandleRegister()
+            // setPhonenVerifyModalIDisplay("flex")
         },
         validationSchema: RegisterSchema
     })
+
+
+    // save register in the local storage -- testing
+
+    const HandleRegister = () => {
+
+        window.localStorage.setItem('User Info', JSON.stringify(RegisterControl.values))
+    }
+
 
 
 
@@ -57,7 +69,7 @@ const Register = () => {
 
                 <ColoredLogo />
 
-                <form className='flex flex-col  justify-center items-center ' onSubmit={handleRegister.handleSubmit} >
+                <form className='flex flex-col  justify-center items-center ' onSubmit={RegisterControl.handleSubmit} >
 
                     <FormTitle title={'Register'} />
 
@@ -66,28 +78,28 @@ const Register = () => {
                         <InputWrapper
                             styles={'w-[140px]'}
                             errorStyle={
-                                handleRegister.touched.FirstName && handleRegister.errors.FirstName ? true : false
+                                RegisterControl.touched.FirstName && RegisterControl.errors.FirstName ? true : false
                             }
                         >
                             <InputTitle title={'First Name'} />
                             <FormInput type={'text'} name={'FirstName'}
-                                value={handleRegister.values.FirstName}
-                                handleValue={handleRegister.handleChange}
-                                handleBlur={handleRegister.handleBlur}
+                                value={RegisterControl.values.FirstName}
+                                handleValue={RegisterControl.handleChange}
+                                handleBlur={RegisterControl.handleBlur}
                             />
                         </InputWrapper>
 
                         <InputWrapper
                             styles={'w-[140px]'}
                             errorStyle={
-                                handleRegister.touched.LastName && handleRegister.errors.LastName ? true : false
+                                RegisterControl.touched.LastName && RegisterControl.errors.LastName ? true : false
                             }
                         >
                             <InputTitle title={'Last Name'} />
                             <FormInput type={'text'} name={'LastName'}
-                                value={handleRegister.values.LastName}
-                                handleValue={handleRegister.handleChange}
-                                handleBlur={handleRegister.handleBlur}
+                                value={RegisterControl.values.LastName}
+                                handleValue={RegisterControl.handleChange}
+                                handleBlur={RegisterControl.handleBlur}
                             />
 
                         </InputWrapper>
@@ -96,69 +108,69 @@ const Register = () => {
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.Username && handleRegister.errors.Username ? true : false
+                            RegisterControl.touched.Username && RegisterControl.errors.Username ? true : false
                         }
                     >
                         <InputTitle title={'Username'} />
                         <FormInput type={'text'} name={'Username'}
-                            value={handleRegister.values.Username}
-                            handleValue={handleRegister.handleChange}
-                            handleBlur={handleRegister.handleBlur}
+                            value={RegisterControl.values.Username}
+                            handleValue={RegisterControl.handleChange}
+                            handleBlur={RegisterControl.handleBlur}
                         />
                     </InputWrapper>
 
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.Email && handleRegister.errors.Email ? true : false
+                            RegisterControl.touched.Email && RegisterControl.errors.Email ? true : false
                         }
                     >
                         <InputTitle title={'Email'} />
                         <FormInput type={'email'} name={'Email'}
-                            value={handleRegister.values.Email}
-                            handleValue={handleRegister.handleChange}
-                            handleBlur={handleRegister.handleBlur}
+                            value={RegisterControl.values.Email}
+                            handleValue={RegisterControl.handleChange}
+                            handleBlur={RegisterControl.handleBlur}
                         />
                     </InputWrapper>
 
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.PhoneNumber && handleRegister.errors.PhoneNumber ? true : false
+                            RegisterControl.touched.PhoneNumber && RegisterControl.errors.PhoneNumber ? true : false
                         }
                     >
                         <InputTitle title={'Phone Number'} />
                         <FormInput type={'phone'} name={'PhoneNumber'}
-                            value={handleRegister.values.PhoneNumber}
-                            handleValue={handleRegister.handleChange}
-                            handleBlur={handleRegister.handleBlur}
+                            value={RegisterControl.values.PhoneNumber}
+                            handleValue={RegisterControl.handleChange}
+                            handleBlur={RegisterControl.handleBlur}
                         />
                     </InputWrapper>
 
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.Password && handleRegister.errors.Password ? true : false}
+                            RegisterControl.touched.Password && RegisterControl.errors.Password ? true : false}
                     >
                         <InputTitle title={'Password'} />
                         <FormInput type={'password'} name={'Password'}
-                            value={handleRegister.values.Password}
-                            handleValue={handleRegister.handleChange}
-                            handleBlur={handleRegister.handleBlur}
+                            value={RegisterControl.values.Password}
+                            handleValue={RegisterControl.handleChange}
+                            handleBlur={RegisterControl.handleBlur}
                         />
                     </InputWrapper>
 
                     <InputWrapper
                         styles={'w-72'}
                         errorStyle={
-                            handleRegister.touched.ConfirmPassword && handleRegister.errors.ConfirmPassword ? true : false
+                            RegisterControl.touched.ConfirmPassword && RegisterControl.errors.ConfirmPassword ? true : false
                         }
                     >
                         <InputTitle title={'Confirm Password'} />
                         <FormInput type={'password'} name={'ConfirmPassword'}
-                            value={handleRegister.values.ConfirmPassword}
-                            handleValue={handleRegister.handleChange}
-                            handleBlur={handleRegister.handleBlur}
+                            value={RegisterControl.values.ConfirmPassword}
+                            handleValue={RegisterControl.handleChange}
+                            handleBlur={RegisterControl.handleBlur}
                         />
                     </InputWrapper>
 
@@ -181,7 +193,7 @@ const Register = () => {
 
                     <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
 
-                        <ModalBox phoneNumber={handleRegister.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
+                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} />
 
                     </ModalContainer>
 

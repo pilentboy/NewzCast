@@ -6,17 +6,19 @@ import MainButton from "../landing/MainButton";
 import { useState, useEffect } from "react";
 import ModalClsoeBTN from "./ModalCloseBTN";
 import HandleRegister from "../../utils/HandleRegister";
+import { useNavigate } from "react-router-dom";
 
 export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
     const [pindCode, setPinCode] = useState('12345')
 
-
+    const navigate = useNavigate()
     const checkVerifyPin = () => {
         if (verificationCode === pindCode) {
             HandleRegister(RegisterFormValues)
             setDisplay('hidden')
+            navigate("/login")
         } else {
             alert("pin code error")
         }

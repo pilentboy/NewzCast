@@ -12,7 +12,6 @@ import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
 import { useContext } from "react"
-import * as Yup from 'yup'
 import { LoginContext } from "../context/LoginContext"
 
 const Login = () => {

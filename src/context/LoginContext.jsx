@@ -19,6 +19,7 @@ const LoginProvider = ({ children }) => {
     }
 
     const CheckLoginData = async ({ Username, Password }) => {
+        GetUsersInfo()
         if (window.localStorage.getItem("User Info")) {
             const Res = JSON.parse(UsersData)
             console.log(Res)

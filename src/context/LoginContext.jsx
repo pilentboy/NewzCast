@@ -19,10 +19,8 @@ const LoginProvider = ({ children }) => {
     }
 
     const CheckLoginData = async ({ Username, Password }) => {
-        GetUsersInfo()
         if (window.localStorage.getItem("User Info")) {
             const Res = JSON.parse(UsersData)
-            console.log(Res)
             if (Username === Res['Username'] && Password === Res['Password']) {
                 setLoginRes(false)
                 alert("logged in successfuly!")
@@ -32,7 +30,7 @@ const LoginProvider = ({ children }) => {
                 setLoginRes(true)
             }
         } else {
-            console.log("no data")
+            alert("NO DATA!")
         }
 
 

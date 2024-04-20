@@ -3,25 +3,30 @@ import FormTitle from "../form/FormTitle";
 import InputTitle from "../form/InputTitle";
 import InputWrapper from "../form/InputWrapper";
 import MainButton from "../landing/MainButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ModalClsoeBTN from "./ModalCloseBTN";
 import HandleRegister from "../../utils/HandleRegister";
 import { useNavigate } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
     const [pindCode, setPinCode] = useState('12345')
+    const { GetUsersInfo } = useContext(LoginContext)
 
     const navigate = useNavigate()
     const checkVerifyPin = () => {
         if (verificationCode === pindCode) {
             HandleRegister(RegisterFormValues)
             setDisplay('hidden')
+            GetUsersInfo()
             navigate("/login")
         } else {
             alert("pin code error")
         }
+
+
     }
 
     useEffect(() => {

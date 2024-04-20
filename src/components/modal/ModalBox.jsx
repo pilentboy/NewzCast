@@ -13,7 +13,6 @@ export default function ModalBox({ setDisplay, phoneNumber, createPinCode, Regis
     const [pindCode, setPinCode] = useState('12345')
 
 
-
     const checkVerifyPin = () => {
         if (verificationCode === pindCode) {
             HandleRegister(RegisterFormValues)

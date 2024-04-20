@@ -13,12 +13,13 @@ const LoginProvider = ({ children }) => {
     const GetUsersInfo = () => {
         const UserData = window.localStorage.getItem("User Info")
         setUsersData(UserData)
+        console.log(UserData, "from context")
     }
 
     const CheckLoginData = async ({ Username, Password }) => {
-        GetUsersInfo()
         const Res = JSON.parse(UsersData)
         if (Username === Res['Username'] && Password === Res['Password']) {
+            alert("logged in successfuly!")
             navigate("/")
         } else {
             alert("login error")
@@ -33,7 +34,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{ UsersData, CheckLoginData, token, GetUsersInfo }}>
+        <LoginContext.Provider value={{ UsersData, CheckLoginData, GetUsersInfo }}>
             {children}
         </LoginContext.Provider>
     )

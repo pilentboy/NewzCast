@@ -82,7 +82,7 @@ const Login = () => {
 
                     </div>
 
-                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} action={() => HandleLogin.handleSubmit} />
+                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true}  />
                 </form>
 
 

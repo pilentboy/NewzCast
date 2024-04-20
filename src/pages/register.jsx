@@ -12,7 +12,6 @@ import ModalContainer from '../components/modal/ModalContainer'
 import { useContext, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { LoginContext } from '../context/LoginContext'
 
 const Register = () => {
 

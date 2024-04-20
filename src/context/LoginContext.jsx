@@ -8,6 +8,8 @@ const LoginProvider = ({ children }) => {
     const navigate = useNavigate()
 
     const [UsersData, setUsersData] = useState([])
+    const [loginRes, setLoginRes] = useState(null)
+
     const [token, setToken] = useState()
 
     const GetUsersInfo = () => {
@@ -17,13 +19,22 @@ const LoginProvider = ({ children }) => {
     }
 
     const CheckLoginData = async ({ Username, Password }) => {
-        const Res = JSON.parse(UsersData)
-        if (Username === Res['Username'] && Password === Res['Password']) {
-            alert("logged in successfuly!")
-            navigate("/")
+        if (window.localStorage.getItem("User Info")) {
+            const Res = JSON.parse(UsersData)
+            console.log(Res)
+            if (Username === Res['Username'] && Password === Res['Password']) {
+                setLoginRes(false)
+                alert("logged in successfuly!")
+                navigate("/")
+            } else {
+                console.log("login error")
+                setLoginRes(true)
+            }
         } else {
-            alert("login error")
+            console.log("no data")
         }
+
+
     }
 
     useEffect(() => {
@@ -34,7 +45,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{ UsersData, CheckLoginData, GetUsersInfo }}>
+        <LoginContext.Provider value={{ UsersData, CheckLoginData, GetUsersInfo, loginRes }}>
             {children}
         </LoginContext.Provider>
     )

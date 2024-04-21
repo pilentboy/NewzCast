@@ -16,11 +16,12 @@ function App() {
 			
 				<LoginProvider>
 					<Routes>
+
 						<Route path='/' element={<Landing />} />
 						<Route path='authenticate' element={<Authenticate />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
-
+						
 					</Routes>
 				</LoginProvider>
 

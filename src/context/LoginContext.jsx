@@ -10,7 +10,7 @@ const LoginProvider = ({ children }) => {
     const [UsersData, setUsersData] = useState([])
     const [loginRes, setLoginRes] = useState(null)
 
-    const [token, setToken] = useState()
+    // const [token, setToken] = useState()
 
     const GetUsersInfo = () => {
         const UserData = window.localStorage.getItem("User Info")
@@ -53,3 +53,6 @@ const LoginProvider = ({ children }) => {
 
 export default LoginProvider
 export { LoginContext }
+
+
+

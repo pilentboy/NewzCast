@@ -12,7 +12,7 @@ import { LoginContext } from "../../context/LoginContext";
 export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
 
     const [verificationCode, SetVerificationCode] = useState('')
-    const [pindCode, setPinCode] = useState('12345')
+    const [pindCode, setPinCode] = useState('12345') 
     const { GetUsersInfo } = useContext(LoginContext)
 
     const navigate = useNavigate()
@@ -20,7 +20,7 @@ export default function ModalBox({ setDisplay, phoneNumber, createPinCode, Regis
         if (verificationCode === pindCode) {
             HandleRegister(RegisterFormValues)
             setDisplay('hidden')
-            GetUsersInfo()
+            GetUsersInfo() // update data from local storage
             navigate("/login")
         } else {
             alert("pin code error")

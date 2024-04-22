@@ -9,7 +9,7 @@ import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-import { useContext, useState } from 'react'
+import {useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -21,10 +21,7 @@ const Register = () => {
     const [createPinCode, setCreatePinCode] = useState(false)
 
     const RegisterSchema = Yup.object({
-        FirstName: Yup.string().max(19, 'Must be 19 characters or less').required('Required'),
-        LastName: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
         Email: Yup.string().email('Invalid email address').required('Required'),
-        Username: Yup.string().min(6, 'Must be at least 6 characters').max(30, 'Can not be more than 30 characters').required('Required'),
         PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number').required("Required"),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
@@ -32,12 +29,8 @@ const Register = () => {
     })
 
 
-
     const RegisterControl = useFormik({
         initialValues: {
-            FirstName: '',
-            LastName: '',
-            Username: '',
             Email: '',
             PhoneNumber: '',
             Password: '',
@@ -65,52 +58,6 @@ const Register = () => {
                 <form className='flex flex-col  justify-center items-center ' onSubmit={RegisterControl.handleSubmit} >
 
                     <FormTitle title={'Register'} />
-
-                    <div className='flex justify-between mt-2 w-72'>
-
-                        <InputWrapper
-                            styles={'w-[140px]'}
-                            errorStyle={
-                                RegisterControl.touched.FirstName && RegisterControl.errors.FirstName ? true : false
-                            }
-                        >
-                            <InputTitle title={'First Name'} />
-                            <FormInput type={'text'} name={'FirstName'}
-                                value={RegisterControl.values.FirstName}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
-                            />
-                        </InputWrapper>
-
-                        <InputWrapper
-                            styles={'w-[140px]'}
-                            errorStyle={
-                                RegisterControl.touched.LastName && RegisterControl.errors.LastName ? true : false
-                            }
-                        >
-                            <InputTitle title={'Last Name'} />
-                            <FormInput type={'text'} name={'LastName'}
-                                value={RegisterControl.values.LastName}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
-                            />
-
-                        </InputWrapper>
-                    </div>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.Username && RegisterControl.errors.Username ? true : false
-                        }
-                    >
-                        <InputTitle title={'Username'} />
-                        <FormInput type={'text'} name={'Username'}
-                            value={RegisterControl.values.Username}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
 
                     <InputWrapper
                         styles={'w-72'}

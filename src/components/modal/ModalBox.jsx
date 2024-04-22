@@ -5,28 +5,28 @@ import InputWrapper from "../form/InputWrapper";
 import MainButton from "../landing/MainButton";
 import { useState, useEffect, useContext } from "react";
 import ModalClsoeBTN from "./ModalCloseBTN";
-import HandleRegister from "../../utils/HandleRegister";
 import { useNavigate } from "react-router-dom";
-import { LoginContext } from "../../context/LoginContext";
+import SignUp from "../../utils/SignUp";
 
 export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
 
-    const [verificationCode, SetVerificationCode] = useState('')
-    const [pindCode, setPinCode] = useState('12345') 
-    const { GetUsersInfo } = useContext(LoginContext)
+    const [verificationCode, SetVerificationCode] = useState('') // user entered value
+    const [pindCode, setPinCode] = useState('12345')  // default pin code! just for testing
 
     const navigate = useNavigate()
-    const checkVerifyPin = () => {
+    const checkVerifyPin = async () => {
         if (verificationCode === pindCode) {
-            HandleRegister(RegisterFormValues)
             setDisplay('hidden')
-            GetUsersInfo() // update data from local storage
-            navigate("/login")
+            const res = await SignUp(RegisterFormValues)
+            if (res) {
+                alert("signed up successfuly!, PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION MESSAGE.")
+                navigate("/login")
+            } else {
+                alert("sign up failed!")
+            }
         } else {
             alert("pin code error")
         }
-
-
     }
 
     useEffect(() => {

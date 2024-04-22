@@ -13,6 +13,7 @@ const LoginProvider = ({ children }) => {
     const [loginRes, setLoginRes] = useState(null)
 
     const apiKey = process.env.REACT_APP_API_KEY;
+    const supabaseURL = "https://sftspirecsaiuswinvmc.supabase.co";
 
     const GetUsersInfo = () => {
         const UserData = window.localStorage.getItem("User Info")
@@ -20,60 +21,58 @@ const LoginProvider = ({ children }) => {
         console.log(UserData, "from context")
     }
 
-    const CheckLoginData = async ({ Username, Password }) => {
+    const CheckLoginData = async ({ Email, Password }) => {
 
         const supabase = createClient(
-            "https://sftspirecsaiuswinvmc.supabase.co",
+            supabaseURL,
             apiKey
         )
+
         async function getUsersData() {
             const { data, error } = await supabase
                 .from('NewzCastUsers')
                 .select("*")
             data.forEach(user => console.log(user))
 
-
-
         }
+
         async function signUpUser() {
-            const { data, error } = await supabase.auth.signUp({ email: "dqdqd@yahoo.com", password: "213213124123" })
+            const { data, error } = await supabase.auth.signUp({ email: "sirxmahdi79@gmail.com", password: "11111111" })
 
-            console.log(data)
+            console.log(data, "signed up")
 
         }
 
-        async function addUser() {
-            const { data, error } = await supabase
-                .from('NewzCastUsers')
-                .insert({ FirstName: 'Mohamad', LastName: "Ebrahimi", PhoneNumber: "09000000000", Password: "00000000", Username: "Mohamad44" })
+        async function signInUser() {
 
-            console.log(data)
-        }
-
-        getUsersData()
-        signUpUser()
-        // addUser()
-
-        if (window.localStorage.getItem("User Info")) {
-            const Res = JSON.parse(UsersData)
-            if (Username === Res['Username'] && Password === Res['Password']) {
-                setLoginRes(false)
-                alert("logged in successfuly!")
-                navigate("/")
-            } else {
-                console.log("login error")
+            try {
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: Email,
+                    password: Password,
+                })
+                console.log(Email, Password)
+                if (data["user"] !== null) {
+                    setLoginRes(false)
+                    navigate("/")
+                    console.log(data)
+                } else {
+                    console.log("eror", error)
+                    setLoginRes(true)
+                }
+            } catch (error) {
+                console.log(error)
                 setLoginRes(true)
             }
-        } else {
-            alert("NO DATA!")
         }
+
+        // getUsersData()
+        // signUpUser()
+        signInUser()
+    
 
 
     }
 
-    useEffect(() => {
-        GetUsersInfo()
-    }, [])
 
 
 

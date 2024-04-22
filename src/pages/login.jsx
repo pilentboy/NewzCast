@@ -24,7 +24,7 @@ const Login = () => {
 
     const HandleLogin = useFormik({
         initialValues: {
-            Username: '',
+            Email: '',
             Password: ''
         },
         onSubmit: values => {
@@ -52,8 +52,8 @@ const Login = () => {
                             loginRes ? true : false
                         }
                     >
-                        <InputTitle title={'Username'} />
-                        <FormInput type={'text'} value={HandleLogin.values.Username} name={'Username'} handleValue={HandleLogin.handleChange} />
+                        <InputTitle title={'Email'} />
+                        <FormInput type={'email'} value={HandleLogin.values.Email} name={'Email'} handleValue={HandleLogin.handleChange} />
                     </InputWrapper>
 
                     <InputWrapper styles={'w-72'}

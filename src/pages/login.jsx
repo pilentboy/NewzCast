@@ -45,16 +45,18 @@ const Login = () => {
 
 
 
-
     if (!loading) {
         return (
 
             <Wrapper styles={'w-screen  bg-white flex flex-col px-20'}>
 
                 <div className="flex flex-col items-center space-y-4">
+
                     <ColoredLogo />
 
                     <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
+                        <button onClick={notify} type="button">Notify!</button>
+
                         <FormTitle title={'Log in'} />
 
                         <InputWrapper

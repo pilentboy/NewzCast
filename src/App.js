@@ -13,7 +13,7 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>
-			
+
 				<LoginProvider>
 					<Routes>
 
@@ -21,7 +21,7 @@ function App() {
 						<Route path='authenticate' element={<Authenticate />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
-						
+
 					</Routes>
 				</LoginProvider>
 

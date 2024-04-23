@@ -55,7 +55,7 @@ const Register = () => {
 
                 <ColoredLogo />
 
-                <form className='flex flex-col  justify-center items-center ' onSubmit={RegisterControl.handleSubmit} >
+                <form className='flex flex-col  justify-center  items-center space-y-4 ' onSubmit={RegisterControl.handleSubmit} >
 
                     <FormTitle title={'Register'} />
 

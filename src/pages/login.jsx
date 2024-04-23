@@ -6,30 +6,35 @@ import InputTitle from "../components/form/InputTitle"
 import InputWrapper from "../components/form/InputWrapper"
 import MainButton from '../components/landing/MainButton'
 import { RxEyeOpen, RxEyeClosed } from "react-icons/rx"
-import { Link } from 'react-router-dom'
-import { useState } from "react"
+import { Link, useNavigate } from 'react-router-dom'
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
-import { useContext } from "react"
-import { LoginContext } from "../context/LoginContext"
+import { useState } from "react"
+import handleLogIn from "../utils/HandleLogIn"
 
 const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
-    const { CheckLoginData, loginRes } = useContext(LoginContext)
+    const [loginRes, setLoginRes] = useState(null)
 
-
+    const navigate = useNavigate()
 
     const HandleLogin = useFormik({
         initialValues: {
             Email: '',
             Password: ''
         },
-        onSubmit: values => {
-            CheckLoginData(values)
-            console.log(loginRes)
+        onSubmit: async (values) => {
+            const res = await handleLogIn(values)
+            if (res) {
+                alert("logged in successfuly")
+                setLoginRes(false)
+                navigate("/")
+            } else {
+                setLoginRes(true)
+            }
         },
 
     })

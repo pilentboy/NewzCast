@@ -1,4 +1,4 @@
-import supabase from "./ApiAuth";
+import supabase from "./SupabaseClient";
 
 const handleLogIn = async (LoginFormValues) => {
 
@@ -13,7 +13,7 @@ const handleLogIn = async (LoginFormValues) => {
             console.log(data)
             return true
         }
-        
+
         console.log(error, "log in error")
         return false
 

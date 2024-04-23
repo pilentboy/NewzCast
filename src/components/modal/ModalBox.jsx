@@ -17,7 +17,7 @@ export default function ModalBox({ setDisplay, phoneNumber, createPinCode, Regis
     const checkVerifyPin = async () => {
         if (verificationCode === pindCode) {
             setDisplay('hidden')
-            const res = await SignUp(RegisterFormValues)
+            const res = await SignUp(RegisterFormValues) // send form data to api
             if (res) {
                 alert("signed up successfuly!, PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION MESSAGE.")
                 navigate("/login")

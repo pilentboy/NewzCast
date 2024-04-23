@@ -1,4 +1,4 @@
-import supabase from "./ApiAuth";
+import supabase from "./SupabaseClient";
 
 const SignUp = async (RegisterFormValues) => {
 
@@ -11,7 +11,6 @@ const SignUp = async (RegisterFormValues) => {
 
         if (!error) {
             console.log("sign up successfuly!")
-            console.log(data)
             return true
         } else {
             console.log(error, "sign up error")

@@ -12,12 +12,14 @@ import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
 import { useState } from "react"
 import handleLogIn from "../utils/HandleLogIn"
+import Loading from '../components/Loading'
 
 const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
     const [loginRes, setLoginRes] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -27,6 +29,7 @@ const Login = () => {
             Password: ''
         },
         onSubmit: async (values) => {
+            setLoading(true)
             const res = await handleLogIn(values)
             if (res) {
                 alert("logged in successfuly")
@@ -35,6 +38,7 @@ const Login = () => {
             } else {
                 setLoginRes(true)
             }
+            setLoading(false)
         },
 
     })
@@ -42,76 +46,83 @@ const Login = () => {
 
 
 
-    return (
+    if (!loading) {
+        return (
 
-        <Wrapper styles={'w-screen  bg-white flex flex-col px-20'}>
+            <Wrapper styles={'w-screen  bg-white flex flex-col px-20'}>
 
-            <div className="flex flex-col items-center space-y-4">
-                <ColoredLogo />
+                <div className="flex flex-col items-center space-y-4">
+                    <ColoredLogo />
 
-                <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
-                    <FormTitle title={'Log in'} />
+                    <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
+                        <FormTitle title={'Log in'} />
 
-                    <InputWrapper
-                        errorStyle={
-                            loginRes ? true : false
-                        }
-                    >
-                        <InputTitle title={'Email'} />
-                        <FormInput type={'email'} value={HandleLogin.values.Email} name={'Email'} handleValue={HandleLogin.handleChange} />
-                    </InputWrapper>
+                        <InputWrapper
+                            errorStyle={
+                                loginRes ? true : false
+                            }
+                        >
+                            <InputTitle title={'Email'} />
+                            <FormInput type={'email'} value={HandleLogin.values.Email} name={'Email'} handleValue={HandleLogin.handleChange} />
+                        </InputWrapper>
 
-                    <InputWrapper 
-                        errorStyle={
-                            loginRes ? true : false
-                        }
-                    >
+                        <InputWrapper
+                            errorStyle={
+                                loginRes ? true : false
+                            }
+                        >
 
-                        <div className="flex flex-row justify-between items-center">
+                            <div className="flex flex-row justify-between items-center">
 
-                            <InputTitle title={'Password'} />
+                                <InputTitle title={'Password'} />
 
-                            <button className="text-gray-400" onClick={() => setLoginInputPassType(inputType => inputType === 'password' ? 'text' : 'password')} type='button'>
-                                {
-                                    loginInputPassType === 'text' ? (
-                                        <RxEyeOpen />
-                                    ) : (<RxEyeClosed />)
-                                }
-                            </button>
+                                <button className="text-gray-400" onClick={() => setLoginInputPassType(inputType => inputType === 'password' ? 'text' : 'password')} type='button'>
+                                    {
+                                        loginInputPassType === 'text' ? (
+                                            <RxEyeOpen />
+                                        ) : (<RxEyeClosed />)
+                                    }
+                                </button>
+                            </div>
+
+                            <FormInput type={loginInputPassType} value={HandleLogin.values.Password} name={'Password'} handleValue={HandleLogin.handleChange} />
+
+                        </InputWrapper>
+
+                        <div className="flex flex-row justify-between items-center w-72 py-2 ">
+
+                            <Link to={'#'} className="text-xs font-bold underline text-purple-1000">
+                                Forgot Password?
+                            </Link>
+
+                            <div className="flex flex-row items-center space-x-2">
+
+                                <AcceptButton styles={'bg-gray-500'} ariaLabel={"stay signed in"} handleAcceptState={SetStatySignedIn} AcceptState={staySignedIn} type='button' />
+
+                                <span className="font-bold text-xs  text-gray-400">
+                                    Stay Sigened in
+                                </span>
+                            </div>
+
                         </div>
 
-                        <FormInput type={loginInputPassType} value={HandleLogin.values.Password} name={'Password'} handleValue={HandleLogin.handleChange} />
-
-                    </InputWrapper>
-
-                    <div className="flex flex-row justify-between items-center w-72 py-2 ">
-
-                        <Link to={'#'} className="text-xs font-bold underline text-purple-1000">
-                            Forgot Password?
-                        </Link>
-
-                        <div className="flex flex-row items-center space-x-2">
-
-                            <AcceptButton styles={'bg-gray-500'} ariaLabel={"stay signed in"} handleAcceptState={SetStatySignedIn} AcceptState={staySignedIn} type='button' />
-
-                            <span className="font-bold text-xs  text-gray-400">
-                                Stay Sigened in
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} />
-                </form>
+                        <MainButton title={'Log in'} type={'submit'} styles={'bg-purple-1000 py-3 text-sm'} lgBTN={true} />
+                    </form>
 
 
-            </div >
+                </div >
 
-            <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
+                <RegisterLinkItems buttonStyles={'border border-1  border-purple-1000 text-purple-1000 hover:bg-purple-1000 hover:text-white duration-200'} containerStlye={'mt-8 lg:mt-0'} />
 
-        </Wrapper >
+            </Wrapper >
+        )
+    } else {
+        return (
+            <Loading display={loading ? 'flex' : 'hidden'} />
+        )
+    }
 
-    )
 }
+
 
 export default Login

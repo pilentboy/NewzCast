@@ -60,7 +60,6 @@ const Register = () => {
                     <FormTitle title={'Register'} />
 
                     <InputWrapper
-                        styles={'w-72'}
                         errorStyle={
                             RegisterControl.touched.Email && RegisterControl.errors.Email ? true : false
                         }
@@ -74,7 +73,6 @@ const Register = () => {
                     </InputWrapper>
 
                     <InputWrapper
-                        styles={'w-72'}
                         errorStyle={
                             RegisterControl.touched.PhoneNumber && RegisterControl.errors.PhoneNumber ? true : false
                         }
@@ -88,7 +86,6 @@ const Register = () => {
                     </InputWrapper>
 
                     <InputWrapper
-                        styles={'w-72'}
                         errorStyle={
                             RegisterControl.touched.Password && RegisterControl.errors.Password ? true : false}
                     >
@@ -101,7 +98,6 @@ const Register = () => {
                     </InputWrapper>
 
                     <InputWrapper
-                        styles={'w-72'}
                         errorStyle={
                             RegisterControl.touched.ConfirmPassword && RegisterControl.errors.ConfirmPassword ? true : false
                         }

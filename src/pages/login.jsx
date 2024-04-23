@@ -52,7 +52,7 @@ const Login = () => {
                 <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
                     <FormTitle title={'Log in'} />
 
-                    <InputWrapper styles={'w-72'}
+                    <InputWrapper
                         errorStyle={
                             loginRes ? true : false
                         }
@@ -61,7 +61,7 @@ const Login = () => {
                         <FormInput type={'email'} value={HandleLogin.values.Email} name={'Email'} handleValue={HandleLogin.handleChange} />
                     </InputWrapper>
 
-                    <InputWrapper styles={'w-72'}
+                    <InputWrapper 
                         errorStyle={
                             loginRes ? true : false
                         }

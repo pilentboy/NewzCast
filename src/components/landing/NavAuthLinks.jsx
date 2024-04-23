@@ -1,4 +1,3 @@
-import React from 'react'
 import MainLink from './MainLink'
 
 function NavAuthLinks() {

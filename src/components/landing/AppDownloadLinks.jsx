@@ -1,4 +1,3 @@
-import React from 'react'
 import MainLink from './MainLink'
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { FaAppStore } from "react-icons/fa";

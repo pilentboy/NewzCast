@@ -1,9 +1,9 @@
-import supabase from "./SupabaseClient";
+import supabaseClient from "./supabaseClient"
 
 const handleLogIn = async (LoginFormValues) => {
 
     try {
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
             email: LoginFormValues.Email,
             password: LoginFormValues.Password
         })

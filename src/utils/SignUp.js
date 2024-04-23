@@ -1,9 +1,9 @@
-import supabase from "./SupabaseClient";
+import supabaseClient from "./supabaseClient";
 
 const SignUp = async (RegisterFormValues) => {
 
     try {
-        const { data, error } = await supabase.auth.signUp({
+        const { data, error } = await supabaseClient.auth.signUp({
             email: RegisterFormValues.Email,
             password: RegisterFormValues.Password,
             phone: RegisterFormValues.PhoneNumber,

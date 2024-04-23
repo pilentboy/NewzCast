@@ -8,16 +8,18 @@ import ModalClsoeBTN from "./ModalCloseBTN";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../../utils/SignUp";
 
-export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, RegisterFormValues }) {
+export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, RegisterFormValues, setLoading }) {
 
-    const [verificationCode, SetVerificationCode] = useState('') // user entered value
+    const [verificationCode, SetVerificationCode] = useState('') // user entered pin code value
     const [pindCode, setPinCode] = useState('12345')  // default pin code! just for testing
 
     const navigate = useNavigate()
     const checkVerifyPin = async () => {
         if (verificationCode === pindCode) {
             setDisplay('hidden')
+            setLoading(true)
             const res = await SignUp(RegisterFormValues) // send form data to api
+            setLoading(false)
             if (res) {
                 alert("signed up successfuly!, PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION MESSAGE.")
                 navigate("/login")
@@ -28,17 +30,6 @@ export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, Registe
             alert("pin code error")
         }
     }
-
-
-    const SendOTPCode = () => {
-        if (sendPinCode) {
-            alert(`pin code: ${pindCode}`)
-        }
-    }
-    useEffect(() => {
-        SendOTPCode()
-    }, [sendPinCode])
-
 
 
     return (
@@ -57,12 +48,12 @@ export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, Registe
 
             <InputWrapper styles={'w-72'}>
                 <InputTitle title={'Enter pin'} />
-                <FormInput value={verificationCode} handleValue={(e) => SetVerificationCode(e.target.value)} />
+                <FormInput value={verificationCode} handleValue={(e) => SetVerificationCode(e.target.value)} placeholder={'12345'}/>
             </InputWrapper>
 
             <MainButton title={'Verify'} action={checkVerifyPin} lgBTN={true} styles={'bg-purple-1000 p-3'} type={'button'} />
 
-            <MainButton title={'Resend verification code'} styles={'text-black text-sm text-gray-700'} type={'button'} action={() => alert("not available")} />
+            <MainButton title={'Resend verification code'} styles={'text-black text-sm text-gray-700'} type={'button'} action={() => console.log('not available')} />
 
         </div>
     )

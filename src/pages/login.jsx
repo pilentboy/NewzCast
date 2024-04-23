@@ -118,7 +118,7 @@ const Login = () => {
         )
     } else {
         return (
-            <Loading display={loading ? 'flex' : 'hidden'} />
+            <Loading display={loading} />
         )
     }
 

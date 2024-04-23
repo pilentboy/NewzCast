@@ -1,7 +1,6 @@
 import Nav from "./Nav"
 import Container from "./Container"
 import appScreenshot from '../../assets/images/homephoneview.png'
-import MainLink from "./MainLink"
 import GetStartedBTN from "./GetStartedBTN";
 import { useState } from "react";
 import AppDownloadLinks from "./AppDownloadLinks";

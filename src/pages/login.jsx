@@ -55,7 +55,6 @@ const Login = () => {
                     <ColoredLogo />
 
                     <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
-                        <button onClick={notify} type="button">Notify!</button>
 
                         <FormTitle title={'Log in'} />
 

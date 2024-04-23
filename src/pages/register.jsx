@@ -9,7 +9,7 @@ import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-import {useState } from 'react'
+import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -44,7 +44,7 @@ const Register = () => {
     })
 
 
-  
+
 
 
 
@@ -133,7 +133,7 @@ const Register = () => {
 
                     <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
 
-                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} createPinCode={createPinCode} RegisterFormValues={RegisterControl.values} />
+                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} sendPinCode={createPinCode} RegisterFormValues={RegisterControl.values} />
 
                     </ModalContainer>
 

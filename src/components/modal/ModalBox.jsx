@@ -8,7 +8,7 @@ import ModalClsoeBTN from "./ModalCloseBTN";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../../utils/SignUp";
 
-export default function ModalBox({ setDisplay, phoneNumber, createPinCode, RegisterFormValues }) {
+export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, RegisterFormValues }) {
 
     const [verificationCode, SetVerificationCode] = useState('') // user entered value
     const [pindCode, setPinCode] = useState('12345')  // default pin code! just for testing
@@ -29,11 +29,15 @@ export default function ModalBox({ setDisplay, phoneNumber, createPinCode, Regis
         }
     }
 
-    useEffect(() => {
-        if (createPinCode) {
+
+    const SendOTPCode = () => {
+        if (sendPinCode) {
             alert(`pin code: ${pindCode}`)
         }
-    }, [createPinCode])
+    }
+    useEffect(() => {
+        SendOTPCode()
+    }, [sendPinCode])
 
 
 

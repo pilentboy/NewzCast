@@ -10,7 +10,7 @@ const SignUp = async (RegisterFormValues) => {
         })
 
         if (!error) {
-            console.log("sign up successfuly!")
+            console.log("sign up successfuly!",data)
             return true
         } else {
             console.log(error, "sign up error")

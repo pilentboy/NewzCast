@@ -9,7 +9,7 @@ import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useFormik } from 'formik'
 import Loading from '../components/Loading'
 import * as Yup from 'yup'
@@ -29,6 +29,7 @@ const Register = () => {
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
+        Accept: Yup.boolean().oneOf([true], 'You must accept the terms of use').required('Required')
     })
 
 
@@ -37,7 +38,8 @@ const Register = () => {
             Email: '',
             PhoneNumber: '',
             Password: '',
-            ConfirmPassword: ''
+            ConfirmPassword: '',
+            Accept: false
         },
         onSubmit: values => {
             setCreatePinCode(true)
@@ -113,7 +115,15 @@ const Register = () => {
 
                         <div className='space-x-4 flex items-center justify-center w-72 px-4 '>
 
-                            <AcceptButton styles={'bg-purple-1000'} ariaLabel={'Accept terms of use'} handleAcceptState={setAcceptRules} AcceptState={acceptRules} />
+                            <AcceptButton
+                                styles={'bg-purple-1000'}
+                                ariaLabel={'Accept terms of use'}
+                                errorStyle={
+                                    RegisterControl.touched.Accept && RegisterControl.errors.Accept ? true : false
+                                }
+                                handleAcceptState={RegisterControl}
+                                handleBlur={RegisterControl.handleBlur}
+                                AcceptState={RegisterControl.values.Accept} />
 
                             <TermsOfUse />
 

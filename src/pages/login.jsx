@@ -56,6 +56,7 @@ const Login = () => {
 
                     <form className="space-y-4 flex flex-col" onSubmit={HandleLogin.handleSubmit}>
 
+
                         <FormTitle title={'Log in'} />
 
                         <InputWrapper

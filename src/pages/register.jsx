@@ -15,11 +15,18 @@ import handleSignUp from '../utils/handleSignUp'
 import Loading from '../components/Loading'
 import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
+import AlertModal from '../components/alert/alertModal'
+import { FaCheckSquare } from "react-icons/fa";
+import { MdError } from "react-icons/md";
+
+
 const Register = () => {
 
-    const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
     const [createPinCode, setCreatePinCode] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
+    const [displayRegisterAlert, setDisplayRegisterAlert] = useState('hidden')
+    const [displayRegisterErrorAlert, setDisplayRegisterErrorAlert] = useState('hidden')
 
     const navigate = useNavigate()
 
@@ -52,10 +59,9 @@ const Register = () => {
                 setLoading(true)
                 const res = await handleSignUp(RegisterControl.values)
                 if (res) {
-                    alert("signed up successfuly")
-                    navigate("/login")
+                    setDisplayRegisterAlert("flex")
                 } else {
-                    alert("error")
+                    setDisplayRegisterErrorAlert("flex")
                 }
                 setLoading(false)
             }
@@ -140,6 +146,27 @@ const Register = () => {
                             />
 
                         </ModalContainer>
+
+                        <ModalContainer display={displayRegisterAlert} setDisplay={setDisplayRegisterAlert}>
+                            <AlertModal
+                                title={'Signed up successfuly!'}
+                                alertInfo={'Please check your email for a confirmation message from NewzCast.'}
+                                icon={<FaCheckSquare className="mx-1 text-lg text-purple-1000" />}
+                                btnTitle={'Ok'}
+                                action={() => navigate("/login")}
+                            />
+                        </ModalContainer>
+
+                        <ModalContainer display={displayRegisterErrorAlert} setDisplay={setDisplayRegisterErrorAlert}>
+                            <AlertModal
+                                title={'Sign up error!'}
+                                alertInfo={'Please check your Internet connection and try again.'}
+                                icon={<MdError className="mx-1 text-lg text-red-600" />}
+                                btnTitle={'Ok'}
+                                action={() => setDisplayRegisterErrorAlert('hidden')}
+                            />
+                        </ModalContainer>
+
 
 
                     </form>

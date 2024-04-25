@@ -25,7 +25,7 @@ const Register = () => {
 
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
-        PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number').required("Required"),
+        PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number'),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
@@ -67,11 +67,15 @@ const Register = () => {
                                 RegisterControl.touched.Email && RegisterControl.errors.Email ? true : false
                             }
                         >
-                            <InputTitle title={'Email'} />
+                            <InputTitle
+                                title={'Email'}
+                                requiredInput={true}
+                            />
                             <FormInput type={'email'} name={'Email'}
                                 value={RegisterControl.values.Email}
                                 handleValue={RegisterControl.handleChange}
                                 handleBlur={RegisterControl.handleBlur}
+
                             />
                         </InputWrapper>
 
@@ -92,7 +96,10 @@ const Register = () => {
                             errorStyle={
                                 RegisterControl.touched.Password && RegisterControl.errors.Password ? true : false}
                         >
-                            <InputTitle title={'Password'} />
+                            <InputTitle
+                                title={'Password'}
+                                requiredInput={true}
+                            />
                             <FormInput type={'password'} name={'Password'}
                                 value={RegisterControl.values.Password}
                                 handleValue={RegisterControl.handleChange}
@@ -105,11 +112,15 @@ const Register = () => {
                                 RegisterControl.touched.ConfirmPassword && RegisterControl.errors.ConfirmPassword ? true : false
                             }
                         >
-                            <InputTitle title={'Confirm Password'} />
+                            <InputTitle
+                                title={'Confirm Password'}
+                                requiredInput={true}
+                            />
                             <FormInput type={'password'} name={'ConfirmPassword'}
                                 value={RegisterControl.values.ConfirmPassword}
                                 handleValue={RegisterControl.handleChange}
                                 handleBlur={RegisterControl.handleBlur}
+
                             />
                         </InputWrapper>
 

@@ -13,6 +13,7 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import handleSignUp from '../utils/handleSignUp'
 import Loading from '../components/Loading'
+import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 const Register = () => {
 
@@ -20,7 +21,7 @@ const Register = () => {
     const [createPinCode, setCreatePinCode] = useState(false)
     const [loading, setLoading] = useState(false)
 
-
+    const navigate = useNavigate()
 
 
 
@@ -43,12 +44,20 @@ const Register = () => {
             ConfirmPassword: '',
             Accept: false
         },
-        onSubmit: values => {
+        onSubmit: async (values) => {
             if (RegisterControl.values.PhoneNumber !== '') {
                 setCreatePinCode(true)
                 setPhonenVerifyModalIDisplay("flex")
             } else {
-                console.log("test")
+                setLoading(true)
+                const res = await handleSignUp(RegisterControl.values)
+                if (res) {
+                    alert("signed up successfuly")
+                    navigate("/login")
+                } else {
+                    alert("error")
+                }
+                setLoading(false)
             }
 
 

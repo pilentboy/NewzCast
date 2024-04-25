@@ -13,14 +13,16 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import Loading from '../components/Loading'
 import * as Yup from 'yup'
-import { type } from '@testing-library/user-event/dist/type'
-
 const Register = () => {
 
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
     const [createPinCode, setCreatePinCode] = useState(false)
     const [loading, setLoading] = useState(false)
 
+
+
+
+  
 
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
@@ -41,8 +43,14 @@ const Register = () => {
             Accept: false
         },
         onSubmit: values => {
-            setCreatePinCode(true)
-            setPhonenVerifyModalIDisplay("flex")
+            if (RegisterControl.values.PhoneNumber !== '') {
+                setCreatePinCode(true)
+                setPhonenVerifyModalIDisplay("flex")
+            }else{
+                console.log("test")
+            }
+    
+
         },
         validationSchema: RegisterSchema
     })

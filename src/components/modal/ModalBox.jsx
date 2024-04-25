@@ -5,7 +5,7 @@ import InputWrapper from "../form/InputWrapper";
 import MainButton from "../landing/MainButton";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SignUp from "../../utils/SignUp";
+import handleSignUp from "../../utils/handleSignUp";
 
 export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, RegisterFormValues, setLoading }) {
 
@@ -17,7 +17,7 @@ export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, Registe
         if (verificationCode === pindCode) {
             setDisplay('hidden')
             setLoading(true)
-            const res = await SignUp(RegisterFormValues) // send form data to api
+            const res = await handleSignUp(RegisterFormValues) // send form data to api
             setLoading(false)
             if (res) {
                 alert("signed up successfuly!, PLEASE CHECK YOUR EMAIL FOR A CONFIRMATION MESSAGE.")

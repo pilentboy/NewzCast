@@ -11,6 +11,7 @@ import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
 import { useState } from 'react'
 import { useFormik } from 'formik'
+import handleSignUp from '../utils/handleSignUp'
 import Loading from '../components/Loading'
 import * as Yup from 'yup'
 const Register = () => {
@@ -22,7 +23,7 @@ const Register = () => {
 
 
 
-  
+
 
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
@@ -46,10 +47,10 @@ const Register = () => {
             if (RegisterControl.values.PhoneNumber !== '') {
                 setCreatePinCode(true)
                 setPhonenVerifyModalIDisplay("flex")
-            }else{
+            } else {
                 console.log("test")
             }
-    
+
 
         },
         validationSchema: RegisterSchema

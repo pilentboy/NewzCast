@@ -1,6 +1,6 @@
 import supabaseClient from "./supabaseClient";
 
-const SignUp = async (RegisterFormValues) => {
+const handleSignUp = async (RegisterFormValues) => {
 
     try {
         const { data, error } = await supabaseClient.auth.signUp({
@@ -24,4 +24,4 @@ const SignUp = async (RegisterFormValues) => {
 
 }
 
-export default SignUp
+export default handleSignUp

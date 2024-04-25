@@ -53,11 +53,11 @@ const Register = () => {
         return (
             <Wrapper styles={'flex-col'} >
 
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col space-y-4 items-center">
 
                     <ColoredLogo />
 
-                    <form className='flex flex-col  justify-center  items-center space-y-4 ' onSubmit={RegisterControl.handleSubmit} >
+                    <form className='flex flex-col items-center py-4 ' onSubmit={RegisterControl.handleSubmit} >
 
                         <FormTitle title={'Register'} />
 
@@ -90,7 +90,7 @@ const Register = () => {
                             )
                         }
 
-                        <div className='space-x-4 flex items-center justify-center w-72 px-4 '>
+                        <div className='space-x-4 flex items-center justify-center w-72 px-4 my-2'>
 
                             <AcceptButton
                                 styles={'bg-purple-1000'}

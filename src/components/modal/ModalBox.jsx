@@ -3,8 +3,7 @@ import FormTitle from "../form/FormTitle";
 import InputTitle from "../form/InputTitle";
 import InputWrapper from "../form/InputWrapper";
 import MainButton from "../landing/MainButton";
-import { useState, useEffect, useContext } from "react";
-import ModalClsoeBTN from "./ModalCloseBTN";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SignUp from "../../utils/SignUp";
 
@@ -36,10 +35,8 @@ export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, Registe
 
         <div className="w-[340px] h-[350px] p-4 rounded-md bg-white flex flex-col items-center justify-around"
         >
-            <div className="flex items-center justify-center space-x-4">
-                <ModalClsoeBTN handleClose={setDisplay} />
-                <FormTitle title={'Verify'} />
-            </div>
+
+            <FormTitle title={'Verify'} />
 
             <p className=" text-base text-gray-500 font-normal ">
                 We have sent a pin to your <span className=" font-bold  text-gray-700">{phoneNumber}</span>.
@@ -48,7 +45,7 @@ export default function ModalBox({ setDisplay, phoneNumber, sendPinCode, Registe
 
             <InputWrapper styles={'w-72'}>
                 <InputTitle title={'Enter pin'} />
-                <FormInput value={verificationCode} handleValue={(e) => SetVerificationCode(e.target.value)} placeholder={'12345'}/>
+                <FormInput value={verificationCode} handleValue={(e) => SetVerificationCode(e.target.value)} placeholder={'12345'} />
             </InputWrapper>
 
             <MainButton title={'Verify'} action={checkVerifyPin} lgBTN={true} styles={'bg-purple-1000 p-3'} type={'button'} />

@@ -13,10 +13,9 @@ import { useState } from 'react'
 import { useFormik } from 'formik'
 import Loading from '../components/Loading'
 import * as Yup from 'yup'
+import { type } from '@testing-library/user-event/dist/type'
 
 const Register = () => {
-
-    const [acceptRules, setAcceptRules] = useState(false)
 
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
     const [createPinCode, setCreatePinCode] = useState(false)
@@ -62,67 +61,34 @@ const Register = () => {
 
                         <FormTitle title={'Register'} />
 
-                        <InputWrapper
-                            errorStyle={
-                                RegisterControl.touched.Email && RegisterControl.errors.Email ? true : false
+                        {
+                            Object.keys(RegisterControl.values).map((value, id) => {
+                                if (value !== 'Accept') {
+                                    return (
+                                        <InputWrapper
+                                            errorStyle={
+                                                RegisterControl.touched[value] && RegisterControl.errors[value] ? true : false
+                                            }
+                                            key={id}
+                                        >
+                                            <InputTitle
+                                                title={value}
+                                                requiredInput={value !== 'PhoneNumber' ? true : false}
+                                            />
+                                            <FormInput type={value.toLowerCase()} name={value}
+                                                value={RegisterControl.values[value]}
+                                                handleValue={RegisterControl.handleChange}
+                                                handleBlur={RegisterControl.handleBlur}
+
+                                            />
+                                        </InputWrapper>
+                                    )
+                                }
+
                             }
-                        >
-                            <InputTitle
-                                title={'Email'}
-                                requiredInput={true}
-                            />
-                            <FormInput type={'email'} name={'Email'}
-                                value={RegisterControl.values.Email}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
 
-                            />
-                        </InputWrapper>
-
-                        <InputWrapper
-                            errorStyle={
-                                RegisterControl.touched.PhoneNumber && RegisterControl.errors.PhoneNumber ? true : false
-                            }
-                        >
-                            <InputTitle title={'Phone Number'} />
-                            <FormInput type={'phone'} name={'PhoneNumber'}
-                                value={RegisterControl.values.PhoneNumber}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
-                            />
-                        </InputWrapper>
-
-                        <InputWrapper
-                            errorStyle={
-                                RegisterControl.touched.Password && RegisterControl.errors.Password ? true : false}
-                        >
-                            <InputTitle
-                                title={'Password'}
-                                requiredInput={true}
-                            />
-                            <FormInput type={'password'} name={'Password'}
-                                value={RegisterControl.values.Password}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
-                            />
-                        </InputWrapper>
-
-                        <InputWrapper
-                            errorStyle={
-                                RegisterControl.touched.ConfirmPassword && RegisterControl.errors.ConfirmPassword ? true : false
-                            }
-                        >
-                            <InputTitle
-                                title={'Confirm Password'}
-                                requiredInput={true}
-                            />
-                            <FormInput type={'password'} name={'ConfirmPassword'}
-                                value={RegisterControl.values.ConfirmPassword}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
-
-                            />
-                        </InputWrapper>
+                            )
+                        }
 
                         <div className='space-x-4 flex items-center justify-center w-72 px-4 '>
 

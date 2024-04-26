@@ -1,7 +1,22 @@
 import supabaseClient from "./supabaseClient";
 
-const handleSignUp = async (RegisterFormValues) => {
+const handleSignedUpEmail=async (email)=>{
+	const { data, error } = await supabaseClient
+    .from('auth.users')
+    .select()
+    .eq('email', email);
+	  if (data && data.length > 0) {
+	console.log(data,error,'check email')
+    return false;
+  }
+}
 
+const handleSignUp = async (RegisterFormValues) => {
+	
+	if(!handleSignedUpEmail()){
+		return false
+	}
+	
     try {
         const { data, error } = await supabaseClient.auth.signUp({
             email: RegisterFormValues.Email,

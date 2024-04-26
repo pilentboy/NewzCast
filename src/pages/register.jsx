@@ -18,6 +18,7 @@ import * as Yup from 'yup'
 import AlertModal from '../components/alert/alertModal'
 import { FaCheckSquare } from "react-icons/fa";
 import { MdError } from "react-icons/md";
+import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
 
 
 const Register = () => {
@@ -27,6 +28,7 @@ const Register = () => {
     const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
     const [displayRegisterAlert, setDisplayRegisterAlert] = useState('hidden')
     const [displayRegisterErrorAlert, setDisplayRegisterErrorAlert] = useState('hidden')
+    const [errorText, setErrorText] = useState('')
 
     const navigate = useNavigate()
 
@@ -52,19 +54,29 @@ const Register = () => {
             Accept: false
         },
         onSubmit: async (values) => {
-            if (RegisterControl.values.PhoneNumber !== '') {
-                setCreatePinCode(true)
-                setPhonenVerifyModalIDisplay("flex")
-            } else {
-                setLoading(true)
-                const res = await handleSignUp(RegisterControl.values)
-                if (res) {
-                    setDisplayRegisterAlert("flex")
+
+            setLoading(true)
+            const checkEmail = await HandleSignedUpEmails(RegisterControl.values['Email'])
+
+            if (checkEmail) {
+                if (RegisterControl.values.PhoneNumber !== '') {
+                    setCreatePinCode(true)
+                    setPhonenVerifyModalIDisplay("flex")
                 } else {
-                    setDisplayRegisterErrorAlert("flex")
+                    const res = await handleSignUp(RegisterControl.values)
+                    if (res) {
+                        setDisplayRegisterAlert("flex")
+                    } else {
+                        setErrorText("Please check your internet connection and try again.")
+                        setDisplayRegisterErrorAlert("flex")
+                    }
                 }
-                setLoading(false)
+            } else {
+                setErrorText("A user is using this email on NewzKast! Please use another email and try again!")
+                setDisplayRegisterErrorAlert("flex")
             }
+
+            setLoading(false)
 
 
         },
@@ -160,7 +172,7 @@ const Register = () => {
                         <ModalContainer display={displayRegisterErrorAlert} setDisplay={setDisplayRegisterErrorAlert}>
                             <AlertModal
                                 title={'Sign up error!'}
-                                alertInfo={'Please check your Internet connection and try again.'}
+                                alertInfo={errorText}
                                 icon={<MdError className="mx-1 text-lg text-red-600" />}
                                 btnTitle={'Ok'}
                                 action={() => setDisplayRegisterErrorAlert('hidden')}

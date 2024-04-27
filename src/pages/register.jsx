@@ -19,17 +19,16 @@ import AlertModal from '../components/alert/alertModal'
 import { FaCheckSquare } from "react-icons/fa";
 import { MdError } from "react-icons/md";
 import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
+import TextModal from '../components/modal/TextModal'
 
 
 const Register = () => {
 
-    const [createPinCode, setCreatePinCode] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
     const [displayRegisterAlert, setDisplayRegisterAlert] = useState('hidden')
     const [displayRegisterErrorAlert, setDisplayRegisterErrorAlert] = useState('hidden')
     const [errorText, setErrorText] = useState('')
-
+    const [tofDisplay, setTofDisplay] = useState("hidden")
     const navigate = useNavigate()
 
 
@@ -57,7 +56,7 @@ const Register = () => {
             const checkEmail = await HandleSignedUpEmails(RegisterControl.values['Email'])
 
             if (checkEmail) {
-                
+
                 const res = await handleSignUp(RegisterControl.values)
                 if (res) {
                     setDisplayRegisterAlert("flex")
@@ -133,10 +132,16 @@ const Register = () => {
                                 handleBlur={RegisterControl.handleBlur}
                                 AcceptState={RegisterControl.values.Accept} />
 
-                            <TermsOfUse />
+                            <TermsOfUse setDisplay={() => setTofDisplay("flex")} />
+
+
 
 
                         </div>
+
+                        <ModalContainer display={tofDisplay} setDisplay={setTofDisplay}>
+                            <TextModal setDisplay={() => setTofDisplay("hidden")} />
+                        </ModalContainer>
 
                         <MainButton
                             title={'Register'}

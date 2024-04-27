@@ -37,7 +37,6 @@ const Register = () => {
 
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
-        PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number'),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
@@ -48,7 +47,6 @@ const Register = () => {
     const RegisterControl = useFormik({
         initialValues: {
             Email: '',
-            PhoneNumber: '',
             Password: '',
             ConfirmPassword: '',
             Accept: false
@@ -59,18 +57,15 @@ const Register = () => {
             const checkEmail = await HandleSignedUpEmails(RegisterControl.values['Email'])
 
             if (checkEmail) {
-                if (RegisterControl.values.PhoneNumber !== '') {
-                    setCreatePinCode(true)
-                    setPhonenVerifyModalIDisplay("flex")
+                
+                const res = await handleSignUp(RegisterControl.values)
+                if (res) {
+                    setDisplayRegisterAlert("flex")
                 } else {
-                    const res = await handleSignUp(RegisterControl.values)
-                    if (res) {
-                        setDisplayRegisterAlert("flex")
-                    } else {
-                        setErrorText("Please check your internet connection and try again.")
-                        setDisplayRegisterErrorAlert("flex")
-                    }
+                    setErrorText("Please check your internet connection and try again.")
+                    setDisplayRegisterErrorAlert("flex")
                 }
+
             } else {
                 setErrorText("A user is using this email on NewzKast! Please use another email and try again!")
                 setDisplayRegisterErrorAlert("flex")
@@ -109,7 +104,7 @@ const Register = () => {
                                         >
                                             <InputTitle
                                                 title={value}
-                                                requiredInput={value !== 'PhoneNumber' ? true : false}
+                                                requiredInput={true}
                                             />
                                             <FormInput type={value.toLowerCase()} name={value}
                                                 value={RegisterControl.values[value]}
@@ -150,14 +145,6 @@ const Register = () => {
                             styles={'py-3 my-2 text-sm bg-purple-1000'}
                             action={() => console.log('open verify phone number box')}
                         />
-
-                        <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
-
-                            <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} sendPinCode={createPinCode} RegisterFormValues={RegisterControl.values}
-                                setLoading={setLoading}
-                            />
-
-                        </ModalContainer>
 
                         <ModalContainer display={displayRegisterAlert} setDisplay={setDisplayRegisterAlert}>
                             <AlertModal

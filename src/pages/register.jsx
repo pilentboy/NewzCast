@@ -105,7 +105,7 @@ const Register = () => {
                                                 title={value}
                                                 requiredInput={true}
                                             />
-                                            <FormInput type={value.toLowerCase()} name={value}
+                                            <FormInput type={value === 'ConfirmPassword' ? 'password' : value.toLowerCase()} name={value}
                                                 value={RegisterControl.values[value]}
                                                 handleValue={RegisterControl.handleChange}
                                                 handleBlur={RegisterControl.handleBlur}

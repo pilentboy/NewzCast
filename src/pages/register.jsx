@@ -20,6 +20,8 @@ import { FaCheckSquare } from "react-icons/fa";
 import { MdError } from "react-icons/md";
 import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
 import TextModal from '../components/modal/TextModal'
+import Verify from '../components/verify/Verify'
+import VerifyInfo from '../components/verify/VerifyInfo'
 
 
 const Register = () => {
@@ -119,6 +121,9 @@ const Register = () => {
 
                             )
                         }
+
+                        <Verify icon={<VerifyInfo />} />
+
 
                         <div className='space-x-4 flex items-center justify-center w-72 px-4 my-2'>
 

@@ -15,12 +15,13 @@ export default function LandingHeader() {
     })
 
     return (
-        <header id="header">
-            <div className="header-bg w-full  px-2 lg:px-10  min-h-lvh py-4 md:py-12 ">
+        <header id="header" className="header-bg h-full">
+
+            <div className="container py-4 md:py-12  min-h-lvh">
 
                 <Nav />
 
-                <Container styles={'mt-28 md:mt-14'}>
+                <Container styles={'mt-28 md:mt-14'} noContainer={true}>
                     <div className="flex flex-col items-center  lg:items-start  ">
                         <div className="space-y-7 my-16 hidden md:block lg:my-0">
                             <h1 className="text-white text-6xl  font-bold"> Share the Newz!</h1>
@@ -38,7 +39,6 @@ export default function LandingHeader() {
                         </a>
                     ) : null
                 }
-
             </div>
         </header>
     )

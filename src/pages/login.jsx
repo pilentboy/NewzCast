@@ -34,7 +34,7 @@ const Login = () => {
             if (res) {
                 alert("logged in successfuly")
                 setLoginRes(false)
-                navigate("/")
+                navigate("/home")
             } else {
                 setLoginRes(true)
             }

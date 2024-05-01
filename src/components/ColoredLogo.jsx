@@ -1,9 +1,9 @@
 import Logo from '../assets/images/NewzKast new Final Truly Verified-01.png'
 import { Link } from 'react-router-dom'
 
-export default function ColoredLogo({ size }) {
+export default function ColoredLogo({ styles, size }) {
     return (
-        <Link to={'/'}>
+        <Link to={'/'} className={`${styles}`}>
             <img src={Logo} className={`${size ? size : null}`} />
         </Link>
     )

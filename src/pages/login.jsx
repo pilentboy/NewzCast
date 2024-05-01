@@ -99,7 +99,7 @@ const Login = () => {
 
                             <div className="flex flex-row items-center space-x-2">
 
-                                <AcceptButton styles={'bg-gray-500'} ariaLabel={"stay signed in"} handleAcceptState={SetStatySignedIn} AcceptState={staySignedIn} type='button' />
+                                <AcceptButton styles={'bg-gray-500'} ariaLabel={"stay signed in"} handleAcceptState={SetStatySignedIn} AcceptState={staySignedIn} signIn={true} type='button' />
 
                                 <span className="font-bold text-xs  text-gray-400">
                                     Stay Sigened in

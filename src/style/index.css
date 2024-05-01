@@ -52,7 +52,7 @@
 
     .scroll-top {
         animation-name: scrolly;
-        animation-duration: 300ms;
+        animation-duration: 500ms;
     }
 
     @keyframes scrolly {

@@ -7,6 +7,7 @@ import Authenticate from './pages/Authenticate';
 import Login from './pages/Login'
 import Register from './pages/Register'
 import LoginProvider from './context/LoginContext';
+import Home from './pages/Home';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 						<Route path='authenticate' element={<Authenticate />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
+						<Route path='/home' element={<Home />} />
 
 					</Routes>
 				</LoginProvider>

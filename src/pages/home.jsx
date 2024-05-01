@@ -1,11 +1,11 @@
 
-const Trending = () => {
+const Home = () => {
 
     return (
         <>
-            <h1>Trending</h1>
+            <h1>Home</h1>
         </>
     )
 }
 
-export default Trending
+export default Home

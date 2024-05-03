@@ -12,8 +12,10 @@ import UserPic from '../../assets/images/userprof.jpg'
 function HomeNav() {
     return (
         <>
-            <div className="w-lvw relative px-4 py-7 bg-white ">
-                <ColoredLogo styles={'absolute left-10 top-2'} size={'h-16'} />
+            <div className="w-lvw relative px-4 py-7 bg-white flex flex-col items-center space-y-2 lg:block">
+
+                <ColoredLogo styles={' lg:absolute lg:left-10 lg:top-2'} size={'h-16'} />
+
                 <ul className="w-[480px] flex items-center justify-between mx-auto
                 ">
 

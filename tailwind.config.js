@@ -19,7 +19,7 @@ module.exports = {
       },
       colors: {
         'purple': {
-          1000: 'rgb(11, 45, 131)'
+          1000: '#1e418d'
         },
       }
     },

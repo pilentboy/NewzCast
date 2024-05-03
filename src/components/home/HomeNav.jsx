@@ -21,7 +21,7 @@ function HomeNav() {
 
 
                     <Link to={'trending'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
-                        <SlEnergy className="text-purple-1000 text-xl mx-1" />
+                        <SlEnergy className="text-purple-1000  text-xl mx-1" />
 
                         Trending
                     </Link>
@@ -34,7 +34,7 @@ function HomeNav() {
                         <GoSearch />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden text-xl mx-1 md:block"
+                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden duration-200 hover:mt-2 text-xl mx-1 md:block"
                         onClick={() => alert("profile")}
                     />}>
                         <ProfilePic src={UserPic} />

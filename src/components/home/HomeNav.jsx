@@ -12,11 +12,11 @@ import UserPic from '../../assets/images/userprof.jpg'
 function HomeNav() {
     return (
         <>
-            <div className="w-lvw relative px-4 py-7 bg-white flex flex-col items-center space-y-2 lg:block">
+            <div className=" py-2 px-2  fixed bottom-0 left-0 bg-white flex flex-col items-center w-lvw space-y-2 lg:block md:bottom-0 md:relative md:rounded-none md:py-7">
 
-                <ColoredLogo styles={' lg:absolute lg:left-10 lg:top-2'} size={'h-16'} />
+                <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 
-                <ul className="w-[480px] flex items-center justify-between mx-auto
+                <ul className="w-lvw justify-evenly flex items-center md:justify-between  mx-auto  md:w-[480px]
                 ">
 
 
@@ -26,7 +26,7 @@ function HomeNav() {
                         Trending
                     </Link>
 
-                    <HomeNavLink target={'favorites'} linkTitle={'Favorites'}>
+                    <HomeNavLink target={'favorites'} styles={'hidden md:block'} linkTitle={'Favorites'}>
                         <FaHeart />
                     </HomeNavLink>
 
@@ -34,7 +34,7 @@ function HomeNav() {
                         <GoSearch />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer text-xl mx-1"
+                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden text-xl mx-1 md:block"
                         onClick={() => alert("profile")}
                     />}>
                         <ProfilePic src={UserPic} />

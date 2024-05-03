@@ -18,21 +18,21 @@ function HomeNav() {
                 ">
 
 
-                    <Link to={'/trending'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
+                    <Link to={'trending'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
                         <SlEnergy className="text-purple-1000 text-xl mx-1" />
 
                         Trending
                     </Link>
 
-                    <HomeNavLink target={'/favorites'} linkTitle={'Favorites'}>
+                    <HomeNavLink target={'favorites'} linkTitle={'Favorites'}>
                         <FaHeart />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'/search'} linkTitle={'Search'}>
+                    <HomeNavLink target={'search'} linkTitle={'Search'}>
                         <GoSearch />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'/profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer text-xl mx-1"
+                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer text-xl mx-1"
                         onClick={() => alert("profile")}
                     />}>
                         <ProfilePic src={UserPic} />

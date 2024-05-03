@@ -5,8 +5,9 @@ import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
-import { FaUserCircle } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import ProfilePic from "../profile/ProfilePic";
+import UserPic from '../../assets/images/userprof.jpg'
 
 function HomeNav() {
     return (
@@ -31,8 +32,10 @@ function HomeNav() {
                         <GoSearch />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'/profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black text-xl mx-1" />}>
-                        <FaUserCircle />
+                    <HomeNavLink target={'/profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer text-xl mx-1"
+                        onClick={() => alert("profile")}
+                    />}>
+                        <ProfilePic src={UserPic} />
                     </HomeNavLink>
                 </ul>
             </div>

@@ -1,8 +1,11 @@
-
+import HomeContent from '../components/home/HomeContent'
 
 function Trending() {
     return (
-        <div>Trending</div>
+        <>
+            <HomeContent />
+            <h1>test</h1>
+        </>
     )
 }
 

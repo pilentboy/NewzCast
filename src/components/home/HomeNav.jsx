@@ -20,7 +20,7 @@ function HomeNav() {
                 ">
 
 
-                    <Link to={'trending'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
+                    <Link to={'/newznav'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
                         <SlEnergy className="text-purple-1000  text-xl mx-1" />
 
                         Trending

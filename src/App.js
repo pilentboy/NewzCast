@@ -12,6 +12,7 @@ import Trending from './pages/Trending'
 import Profile from './pages/Profile'
 import Favorites from './pages/Favorites'
 import Search from './pages/Search';
+import HomeContainer from './components/home/HomeContainer';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
 						<Route path='/register' element={<Register />} />
 
 						<Route path='/newznav' element={<NewzNav />} >
-							<Route index  element={<Trending />} />
+							<Route index element={<Trending />} />
 							<Route path='profile' element={<Profile />} />
 							<Route path='favorites' element={<Favorites />} />
 							<Route path='search' element={<Search />} />

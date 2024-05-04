@@ -1,11 +1,11 @@
-import HomeContent from '../components/home/HomeContent'
-
+import SharePost from '../components/post/SharePost'
+import HomeContainer from '../components/home/HomeContainer'
 function Trending() {
     return (
-        <>
-            <HomeContent />
-            <h1>test</h1>
-        </>
+        <HomeContainer>
+            <SharePost />
+
+        </HomeContainer>
     )
 }
 

@@ -3,7 +3,7 @@ import MainButton from '../landing/MainButton'
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
 import { useState } from "react"
-import PostFile from "./PostFile";
+import PostMedia from "./PostMedia";
 
 function SharePost() {
     const [postText, setPostText] = useState("")
@@ -17,14 +17,14 @@ function SharePost() {
 
                     <div className="flex items-center justify-between w-2/5 ">
 
-                        <PostFile
+                        <PostMedia
                             title={'Video'}
                             accept={'video/mp4,video/x-matroska'}
                             logo={<BsFillCameraVideoFill className="text-lg text-purple-1000" />} />
 
                         <span className="bg-gray-300 w-[1px] h-4 "></span>
 
-                        <PostFile
+                        <PostMedia
                             title={'Photo'}
                             accept={'image/*'}
                             logo={<IoMdCamera className="text-lg text-purple-1000" />} />

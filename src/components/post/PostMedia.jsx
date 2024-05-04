@@ -1,5 +1,5 @@
 
-function PostFile({ title, logo, accept }) {
+function PostMedia({ title, logo, accept }) {
 
     const handleFileSelect = () => {
         const input = document.createElement('input');
@@ -17,4 +17,4 @@ function PostFile({ title, logo, accept }) {
     )
 }
 
-export default PostFile
+export default PostMedia

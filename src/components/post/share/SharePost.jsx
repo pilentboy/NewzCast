@@ -1,5 +1,5 @@
 import PostText from "./PostText"
-import MainButton from '../landing/MainButton'
+import MainButton from '../../landing/MainButton'
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
 import { useState } from "react"
@@ -10,7 +10,7 @@ function SharePost() {
 
     return (
         <form action="">
-            <div className="w-[480px] min-h-[110px] duration-500 bg-white rounded-md flex flex-col justify-between px-2 py-3">
+            <div className=" w-[400px]  min-h-[110px] duration-500 bg-white rounded-md flex flex-col justify-between px-2 py-3 md:w-480">
                 <PostText text={postText} handleChange={setPostText} />
                 <div className="flex justify-between items-center w-full">
 

@@ -17,6 +17,8 @@
 }
 
 @layer components {
+
+
     .header-bg {
         background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));
     }

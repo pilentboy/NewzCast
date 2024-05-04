@@ -21,6 +21,9 @@ module.exports = {
         'purple': {
           1000: '#1e418d'
         },
+      },
+      width: {
+        '480': '480px'
       }
     },
   },

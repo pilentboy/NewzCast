@@ -16,11 +16,11 @@ function HomeNav() {
 
                 <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 
-                <ul className="w-lvw justify-evenly flex items-center md:justify-between  mx-auto  md:w-[480px]
+                <ul className="w-lvw justify-evenly flex items-center md:justify-between  mx-auto  md:w-480
                 ">
 
 
-                    <Link to={'/newznav'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
+                    <Link to={'/newzcast'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
                         <SlEnergy className="text-purple-1000  text-xl mx-1" />
 
                         Trending

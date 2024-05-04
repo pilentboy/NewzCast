@@ -28,7 +28,7 @@ function App() {
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
 
-						<Route path='/newznav' element={<NewzNav />} >
+						<Route path='/newzcast' element={<NewzNav />} >
 							<Route index element={<Trending />} />
 							<Route path='profile' element={<Profile />} />
 							<Route path='favorites' element={<Favorites />} />

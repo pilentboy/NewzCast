@@ -2,10 +2,10 @@ import './style/index.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Landing from './pages/Landing';
+import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';
-import Login from './pages/Login'
-import Register from './pages/Register'
+import Login from './pages/login'
+import Register from './pages/register'
 import LoginProvider from './context/LoginContext';
 import NewzNav from './pages/NewzNav';
 import Trending from './pages/Trending'

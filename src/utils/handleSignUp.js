@@ -1,4 +1,4 @@
-import supabaseClient from "./supabaseClient";
+import supabaseClient from "./SupabaseClient";
 
 
 const handleSignUp = async (RegisterFormValues) => {

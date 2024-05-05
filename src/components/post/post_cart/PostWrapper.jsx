@@ -7,7 +7,7 @@ import { IoMdShare } from "react-icons/io";
 
 function PostWrapper() {
     return (
-        <div className="w-[95%]  min-h-[200px] max-h-[600px] overflow-hidden my-2 rounded-md bg-white flex flex-col justify-between md:w-480">
+        <div className=" w-[90%]  min-h-[200px] max-h-[600px] overflow-hidden my-2 rounded-md bg-white flex flex-col justify-between md:w-480">
             <img src={postimg} className='w-full' />
 
             <div className='flex flex-col space-y-3 p-2 '>

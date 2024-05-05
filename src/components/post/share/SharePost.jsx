@@ -10,7 +10,7 @@ function SharePost() {
 
     return (
         <form action="">
-            <div className=" w-[400px]  min-h-[110px] duration-500 bg-white rounded-md flex flex-col justify-between px-2 py-3 md:w-480">
+            <div className="w-[346px]  min-h-[110px] duration-500 bg-white rounded-md flex flex-col justify-between px-2 py-3 md:w-480">
                 <PostText text={postText} handleChange={setPostText} />
                 <div className="flex justify-between items-center w-full">
 
@@ -31,8 +31,9 @@ function SharePost() {
 
                     </div>
 
-                    <MainButton title={'Share'} type={'submit'} lgBTN={false} styles={'bg-purple-1000 text-white p-2'} action={() => alert("share")} />
-
+                    <button type="submit" className="w-20 h-8 rounded-md bg-purple-1000 text-white text-center hover:opacity-90 md:w-28 md:h-10">
+                        Share
+                    </button>
 
                 </div>
             </div>

@@ -9,194 +9,185 @@ import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { useFormik } from 'formik'
+import handleSignUp from '../utils/handleSignUp'
+import Loading from '../components/Loading'
+import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
+import AlertModal from '../components/alert/alertModal'
+import { FaCheckSquare } from "react-icons/fa";
+import { MdError } from "react-icons/md";
+import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
+import TextModal from '../components/modal/TextModal'
+import Verify from '../components/verify/Verify'
+import VerifyInfo from '../components/verify/VerifyInfo'
+
 
 const Register = () => {
 
-    const [acceptRules, setAcceptRules] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [displayRegisterAlert, setDisplayRegisterAlert] = useState('hidden')
+    const [displayRegisterErrorAlert, setDisplayRegisterErrorAlert] = useState('hidden')
+    const [errorText, setErrorText] = useState('')
+    const [tofDisplay, setTofDisplay] = useState("hidden")
+    const navigate = useNavigate()
 
-    const [phonenVerifyModalIDisplay, setPhonenVerifyModalIDisplay] = useState('hidden')
-    const [createPinCode, setCreatePinCode] = useState(false)
+
+
 
     const RegisterSchema = Yup.object({
-        FirstName: Yup.string().max(19, 'Must be 19 characters or less').required('Required'),
-        LastName: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
         Email: Yup.string().email('Invalid email address').required('Required'),
-        Username: Yup.string().min(6, 'Must be at least 6 characters').max(30, 'Can not be more than 30 characters').required('Required'),
-        PhoneNumber: Yup.string().min(11, 'Invalid Phone number').max(11, 'Invalid Phone number').required("Required"),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
+        Accept: Yup.boolean().oneOf([true], 'You must accept the terms of use').required('Required')
     })
-
 
 
     const RegisterControl = useFormik({
         initialValues: {
-            FirstName: '',
-            LastName: '',
-            Username: '',
             Email: '',
-            PhoneNumber: '',
             Password: '',
-            ConfirmPassword: ''
+            ConfirmPassword: '',
+            Accept: false
         },
-        onSubmit: values => {
-            setCreatePinCode(true)
-            setPhonenVerifyModalIDisplay("flex")
+        onSubmit: async (values) => {
+
+            setLoading(true)
+            const checkEmail = await HandleSignedUpEmails(RegisterControl.values['Email'])
+
+            if (checkEmail) {
+
+                const res = await handleSignUp(RegisterControl.values)
+                if (res) {
+                    setDisplayRegisterAlert("flex")
+                } else {
+                    setErrorText("Please check your internet connection and try again.")
+                    setDisplayRegisterErrorAlert("flex")
+                }
+
+            } else {
+                setErrorText("A user is using this email on NewzKast! Please use another email and try again!")
+                setDisplayRegisterErrorAlert("flex")
+            }
+
+            setLoading(false)
+
+
         },
         validationSchema: RegisterSchema
     })
 
 
-  
 
+    if (!loading) {
+        return (
+            <Wrapper styles={'flex-col'} >
 
+                <div className="flex flex-col space-y-4 items-center">
 
-    return (
-        <Wrapper styles={'flex-col'} >
+                    <ColoredLogo />
 
-            <div className="flex flex-col items-center">
+                    <form className='flex flex-col items-center py-4 ' onSubmit={RegisterControl.handleSubmit} >
 
-                <ColoredLogo />
+                        <FormTitle title={'Register'} />
 
-                <form className='flex flex-col  justify-center items-center ' onSubmit={RegisterControl.handleSubmit} >
+                        {
+                            Object.keys(RegisterControl.values).map((value, id) => {
+                                if (value !== 'Accept') {
+                                    return (
+                                        <InputWrapper
+                                            errorStyle={
+                                                RegisterControl.touched[value] && RegisterControl.errors[value] ? true : false
+                                            }
+                                            key={id}
+                                        >
+                                            <InputTitle
+                                                title={value}
+                                                requiredInput={true}
+                                            />
+                                            <FormInput type={value === 'ConfirmPassword' ? 'password' : value.toLowerCase()} name={value}
+                                                value={RegisterControl.values[value]}
+                                                handleValue={RegisterControl.handleChange}
+                                                handleBlur={RegisterControl.handleBlur}
 
-                    <FormTitle title={'Register'} />
+                                            />
+                                        </InputWrapper>
+                                    )
+                                }
 
-                    <div className='flex justify-between mt-2 w-72'>
-
-                        <InputWrapper
-                            styles={'w-[140px]'}
-                            errorStyle={
-                                RegisterControl.touched.FirstName && RegisterControl.errors.FirstName ? true : false
                             }
-                        >
-                            <InputTitle title={'First Name'} />
-                            <FormInput type={'text'} name={'FirstName'}
-                                value={RegisterControl.values.FirstName}
-                                handleValue={RegisterControl.handleChange}
+
+                            )
+                        }
+
+                        <Verify icon={<VerifyInfo />} />
+
+
+                        <div className='space-x-4 flex items-center justify-center w-72 px-4 my-2'>
+
+                            <AcceptButton
+                                styles={'bg-purple-1000'}
+                                ariaLabel={'Accept terms of use'}
+                                errorStyle={
+                                    RegisterControl.touched.Accept && RegisterControl.errors.Accept ? true : false
+                                }
+                                handleAcceptState={RegisterControl}
                                 handleBlur={RegisterControl.handleBlur}
+                                AcceptState={RegisterControl.values.Accept} />
+
+                            <TermsOfUse setDisplay={() => setTofDisplay("flex")} />
+
+
+
+
+                        </div>
+
+                        <ModalContainer display={tofDisplay} setDisplay={setTofDisplay}>
+                            <TextModal setDisplay={() => setTofDisplay("hidden")} />
+                        </ModalContainer>
+
+                        <MainButton
+                            title={'Register'}
+                            type={'submit'}
+                            lgBTN={true}
+                            styles={'py-3 my-2 text-sm bg-purple-1000'}
+                            action={() => console.log('open verify phone number box')}
+                        />
+
+                        <ModalContainer display={displayRegisterAlert} setDisplay={setDisplayRegisterAlert}>
+                            <AlertModal
+                                title={'Signed up successfuly!'}
+                                alertInfo={'Please check your email for a confirmation message from NewzCast.'}
+                                icon={<FaCheckSquare className="mx-1 text-lg text-purple-1000" />}
+                                btnTitle={'Ok'}
+                                action={() => navigate("/login")}
                             />
-                        </InputWrapper>
+                        </ModalContainer>
 
-                        <InputWrapper
-                            styles={'w-[140px]'}
-                            errorStyle={
-                                RegisterControl.touched.LastName && RegisterControl.errors.LastName ? true : false
-                            }
-                        >
-                            <InputTitle title={'Last Name'} />
-                            <FormInput type={'text'} name={'LastName'}
-                                value={RegisterControl.values.LastName}
-                                handleValue={RegisterControl.handleChange}
-                                handleBlur={RegisterControl.handleBlur}
+                        <ModalContainer display={displayRegisterErrorAlert} setDisplay={setDisplayRegisterErrorAlert}>
+                            <AlertModal
+                                title={'Sign up error!'}
+                                alertInfo={errorText}
+                                icon={<MdError className="mx-1 text-lg text-red-600" />}
+                                btnTitle={'Ok'}
+                                action={() => setDisplayRegisterErrorAlert('hidden')}
                             />
-
-                        </InputWrapper>
-                    </div>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.Username && RegisterControl.errors.Username ? true : false
-                        }
-                    >
-                        <InputTitle title={'Username'} />
-                        <FormInput type={'text'} name={'Username'}
-                            value={RegisterControl.values.Username}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.Email && RegisterControl.errors.Email ? true : false
-                        }
-                    >
-                        <InputTitle title={'Email'} />
-                        <FormInput type={'email'} name={'Email'}
-                            value={RegisterControl.values.Email}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.PhoneNumber && RegisterControl.errors.PhoneNumber ? true : false
-                        }
-                    >
-                        <InputTitle title={'Phone Number'} />
-                        <FormInput type={'phone'} name={'PhoneNumber'}
-                            value={RegisterControl.values.PhoneNumber}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.Password && RegisterControl.errors.Password ? true : false}
-                    >
-                        <InputTitle title={'Password'} />
-                        <FormInput type={'password'} name={'Password'}
-                            value={RegisterControl.values.Password}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
-
-                    <InputWrapper
-                        styles={'w-72'}
-                        errorStyle={
-                            RegisterControl.touched.ConfirmPassword && RegisterControl.errors.ConfirmPassword ? true : false
-                        }
-                    >
-                        <InputTitle title={'Confirm Password'} />
-                        <FormInput type={'password'} name={'ConfirmPassword'}
-                            value={RegisterControl.values.ConfirmPassword}
-                            handleValue={RegisterControl.handleChange}
-                            handleBlur={RegisterControl.handleBlur}
-                        />
-                    </InputWrapper>
-
-                    <div className='space-x-4 flex items-center justify-center w-72 px-4 '>
-
-                        <AcceptButton styles={'bg-purple-1000'} ariaLabel={'Accept terms of use'} handleAcceptState={setAcceptRules} AcceptState={acceptRules} />
-
-                        <TermsOfUse />
+                        </ModalContainer>
 
 
-                    </div>
 
-                    <MainButton
-                        title={'Register'}
-                        type={'submit'}
-                        lgBTN={true}
-                        styles={'py-3 my-2 text-sm bg-purple-1000'}
-                        action={() => console.log('open verify phone number box')}
-                    />
+                    </form>
 
-                    <ModalContainer display={phonenVerifyModalIDisplay} setDisplay={setPhonenVerifyModalIDisplay} >
+                </div>
 
-                        <ModalBox phoneNumber={RegisterControl.values.PhoneNumber} setDisplay={setPhonenVerifyModalIDisplay} createPinCode={createPinCode} RegisterFormValues={RegisterControl.values} />
+            </Wrapper >
+        )
 
-                    </ModalContainer>
-
-
-                </form>
-
-            </div>
-
-        </Wrapper >
-    )
+    } else {
+        return <Loading display={loading} />
+    }
 }
 
 export default Register

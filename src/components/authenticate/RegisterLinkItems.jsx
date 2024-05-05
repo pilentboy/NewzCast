@@ -2,9 +2,7 @@ import MainLink from '../landing/MainLink'
 
 export default function RegisterLinkItems({ buttonStyles, containerStlye, titleStyles }) {
 
-    function test() {
-        console.log("test")
-    }
+    
     return (
         <>
             <div className={`flex flex-col items-center space-y-2 ${containerStlye}`}>

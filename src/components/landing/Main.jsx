@@ -20,7 +20,10 @@ import ColoredLogo from "../ColoredLogo"
 export default function LandingMain() {
 
     return (
-        <>
+        <main>
+
+
+
 
             <Container styles={'min-h-lvh bg-white py-10'}>
 
@@ -174,6 +177,6 @@ export default function LandingMain() {
 
 
             </Container >
-        </>
+        </main>
     )
 }

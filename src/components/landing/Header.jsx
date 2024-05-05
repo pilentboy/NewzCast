@@ -1,13 +1,10 @@
 import Nav from "./Nav"
 import Container from "./Container"
 import appScreenshot from '../../assets/images/homephoneview.png'
-import MainLink from "./MainLink"
-import { IoLogoGooglePlaystore } from "react-icons/io5";
-import { FaAppStore } from "react-icons/fa";
 import GetStartedBTN from "./GetStartedBTN";
-import { FaCircleArrowUp } from "react-icons/fa6";
 import { useState } from "react";
-
+import AppDownloadLinks from "./AppDownloadLinks";
+import { FaCircleArrowUp } from "react-icons/fa6";
 
 export default function LandingHeader() {
 
@@ -18,27 +15,19 @@ export default function LandingHeader() {
     })
 
     return (
-        <header id="header">
-            <div className="header-bg w-full  px-2 lg:px-10  min-h-lvh py-4 md:py-12 ">
+        <header id="header" className="header-bg h-full">
+
+            <div className="container py-4 md:py-12  min-h-lvh">
 
                 <Nav />
 
-                <Container styles={'mt-28 md:mt-14'}>
+                <Container styles={'mt-28 md:mt-14'} noContainer={true}>
                     <div className="flex flex-col items-center  lg:items-start  ">
                         <div className="space-y-7 my-16 hidden md:block lg:my-0">
                             <h1 className="text-white text-6xl  font-bold"> Share the Newz!</h1>
                             <GetStartedBTN anima={true} />
                         </div>
-                        <div className=" w-[260px] h-24 bg-white rounded-md flex flex-col justify-around  md:mt-20 px-4 py-4 ">
-                            <h3 className="font-bold text-sm ">
-                                Available in
-                            </h3>
-                            <div className="flex justify-between items-center">
-                                <MainLink title={'App Store'} styles={'w-28 h-7 rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<FaAppStore />} />
-                                <MainLink title={'Play Store'} styles={'w-28 h-7  rounded-xl text-sm  bg-blue-900 justify-evenly '} icon={<IoLogoGooglePlaystore />} />
-                            </div>
-                        </div>
-
+                        <AppDownloadLinks />
                     </div>
                     <img src={appScreenshot} alt="app screenshot" className="lg:w-[250px] lg:h-[460px] duration-150 lg:hover:scale-110 " />
                 </Container>
@@ -50,7 +39,6 @@ export default function LandingHeader() {
                         </a>
                     ) : null
                 }
-
             </div>
         </header>
     )

@@ -8,10 +8,22 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto']
       },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '6rem'
+        },
+      },
       colors: {
         'purple': {
-          1000: 'rgb(11, 45, 131)'
+          1000: '#1e418d'
         },
+      },
+      width: {
+        '480': '480px'
       }
     },
   },

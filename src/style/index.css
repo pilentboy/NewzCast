@@ -17,6 +17,8 @@
 }
 
 @layer components {
+
+
     .header-bg {
         background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));
     }
@@ -26,6 +28,10 @@
         animation-duration: 10s;
         animation-fill-mode: both;
         animation-timing-function: ease-in-out;
+    }
+
+    .main-btn-hover {
+        @apply hover:bg-white border hover:border-purple-1000 hover:text-purple-1000 duration-150
     }
 
     @keyframes slideShow {
@@ -48,7 +54,7 @@
 
     .scroll-top {
         animation-name: scrolly;
-        animation-duration: 300ms;
+        animation-duration: 500ms;
     }
 
     @keyframes scrolly {

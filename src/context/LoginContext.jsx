@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
+
 
 const LoginContext = createContext()
 
@@ -10,41 +12,14 @@ const LoginProvider = ({ children }) => {
     const [UsersData, setUsersData] = useState([])
     const [loginRes, setLoginRes] = useState(null)
 
-    // const [token, setToken] = useState()
 
-    const GetUsersInfo = () => {
-        const UserData = window.localStorage.getItem("User Info")
-        setUsersData(UserData)
-        console.log(UserData, "from context")
-    }
-
-    const CheckLoginData = async ({ Username, Password }) => {
-        if (window.localStorage.getItem("User Info")) {
-            const Res = JSON.parse(UsersData)
-            if (Username === Res['Username'] && Password === Res['Password']) {
-                setLoginRes(false)
-                alert("logged in successfuly!")
-                navigate("/")
-            } else {
-                console.log("login error")
-                setLoginRes(true)
-            }
-        } else {
-            alert("NO DATA!")
-        }
-
+    const CheckLoginData = async ({ Email, Password }) => {
+        console.log(Email,Password)
 
     }
-
-    useEffect(() => {
-        GetUsersInfo()
-    }, [])
-
-
-
 
     return (
-        <LoginContext.Provider value={{ UsersData, CheckLoginData, GetUsersInfo, loginRes }}>
+        <LoginContext.Provider value={{ UsersData, CheckLoginData, loginRes }}>
             {children}
         </LoginContext.Provider>
     )

@@ -7,13 +7,19 @@ import Authenticate from './pages/Authenticate';
 import Login from './pages/login'
 import Register from './pages/register'
 import LoginProvider from './context/LoginContext';
+import NewzNav from './pages/NewzNav';
+import Trending from './pages/Trending'
+import Profile from './pages/Profile'
+import Favorites from './pages/Favorites'
+import Search from './pages/Search';
+import HomeContainer from './components/home/HomeContainer';
 
 function App() {
 
 	return (
 		<>
 			<BrowserRouter>
-			
+
 				<LoginProvider>
 					<Routes>
 
@@ -21,7 +27,15 @@ function App() {
 						<Route path='authenticate' element={<Authenticate />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
-						
+
+						<Route path='/newzcast' element={<NewzNav />} >
+							<Route index element={<Trending />} />
+							<Route path='profile' element={<Profile />} />
+							<Route path='favorites' element={<Favorites />} />
+							<Route path='search' element={<Search />} />
+						</Route>
+
+
 					</Routes>
 				</LoginProvider>
 

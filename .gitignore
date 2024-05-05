@@ -7,7 +7,7 @@
 *.pdf
 .env
 
-supabaseAdmin.js
+
 supabaseClient.js
 
 

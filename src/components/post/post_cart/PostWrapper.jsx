@@ -1,14 +1,17 @@
-import postimg from '../../../assets/images/postimg.jpg'
+
 import ProfilePic from '../../profile/ProfilePic'
 import PostInfoContainer from './PostInfoContainer'
 import { FaHeart } from "react-icons/fa";
 import { BiSolidLike } from "react-icons/bi";
 import { IoMdShare } from "react-icons/io";
 
-function PostWrapper() {
+import postimg3 from '../../../assets/images/3.jpg'
+
+
+function PostWrapper({ img }) {
     return (
         <div className=" w-[90%]  min-h-[200px] max-h-[600px] overflow-hidden my-2 rounded-md bg-white flex flex-col justify-between md:w-480">
-            <img src={postimg} className='w-full' />
+            <img src={img} className='w-full max-h-80 object-cover				' />
 
             <div className='flex flex-col space-y-3 p-2 '>
 
@@ -18,7 +21,7 @@ function PostWrapper() {
 
                 <div className='flex items-center space-x-3'>
                     <div className='flex items-center space-x-2'>
-                        <ProfilePic src={postimg} />
+                        <ProfilePic src={postimg3} />
                         <span className='text-purple-1000 text-[11px] font-medium'>Pilent Boy</span>
                     </div>
                 </div>

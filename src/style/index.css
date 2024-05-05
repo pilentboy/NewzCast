@@ -18,6 +18,26 @@
 
 @layer components {
 
+ 
+    .likeAnima {
+        animation-name: like;
+        animation-duration: 200ms;
+    }
+
+    @keyframes like {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10%);
+
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
 
     .header-bg {
         background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));

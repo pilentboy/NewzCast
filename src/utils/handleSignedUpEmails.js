@@ -1,4 +1,4 @@
-import supabaseAdmin from "./supabaseAdmin"
+import supabaseAdmin from "./SupabaseAdmin"
 
 async function HandleSignedUpEmails(userEmail) {
     const { data: { users } } = await supabaseAdmin.auth.admin.listUsers()

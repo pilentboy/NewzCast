@@ -32,7 +32,6 @@ const Login = () => {
             setLoading(true)
             const res = await handleLogIn(values)
             if (res) {
-                alert("logged in successfuly")
                 setLoginRes(false)
                 navigate("/newzcast")
             } else {

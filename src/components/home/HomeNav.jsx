@@ -12,7 +12,8 @@ import UserPic from '../../assets/images/userprof.jpg'
 function HomeNav() {
     return (
         <>
-            <div className=" py-2 px-2  fixed bottom-0 left-0 bg-white flex flex-col items-center w-lvw space-y-2 lg:block md:bottom-0 md:relative md:rounded-none md:py-7">
+
+            <div className="w-full  py-2 px-2  fixed bottom-0 left-0  flex flex-col items-center space-y-2  bg-white border-t  border-gray-100  lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
 
                 <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 
@@ -42,7 +43,9 @@ function HomeNav() {
                 </ul>
             </div>
             <Outlet />
+
         </>
+
 
     )
 }

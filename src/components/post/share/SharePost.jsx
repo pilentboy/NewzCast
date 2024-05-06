@@ -10,7 +10,7 @@ function SharePost() {
 
     return (
         <form action="">
-            <div className="w-[346px]  min-h-[110px] duration-500 bg-white rounded-md flex flex-col justify-between px-2 py-3 md:w-480">
+            <div className="w-[346px]  min-h-[110px] duration-300 bg-white border border-gray-100 shadow-md rounded-md flex flex-col justify-between px-2 py-3 md:w-480">
                 <PostText text={postText} handleChange={setPostText} />
                 <div className="flex justify-between items-center w-full">
 

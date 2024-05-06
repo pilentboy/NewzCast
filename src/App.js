@@ -24,7 +24,7 @@ function App() {
 					<Routes>
 
 						<Route path='/' element={<Landing />} />
-						<Route path='authenticate' element={<Authenticate />} />
+						<Route path='/authenticate' element={<Authenticate />} />
 						<Route path='/login' element={<Login />} />
 						<Route path='/register' element={<Register />} />
 

@@ -1,25 +1,19 @@
 import { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { createClient } from "@supabase/supabase-js";
 
 
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
 
-    const navigate = useNavigate()
-
-    const [UsersData, setUsersData] = useState([])
-    const [loginRes, setLoginRes] = useState(null)
+    const [userInfo, setUserInfo] = useState([])
 
 
-    const CheckLoginData = async ({ Email, Password }) => {
-        console.log(Email,Password)
-
-    }
+    useEffect(() => {
+        console.log(userInfo)
+    }, [userInfo])
 
     return (
-        <LoginContext.Provider value={{ UsersData, CheckLoginData, loginRes }}>
+        <LoginContext.Provider value={{ userInfo, setUserInfo }}>
             {children}
         </LoginContext.Provider>
     )

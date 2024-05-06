@@ -10,16 +10,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import handleLogIn from "../utils/HandleLogIn"
 import Loading from '../components/Loading'
-
+import { LoginContext } from "../context/LoginContext"
 const Login = () => {
 
     const [staySignedIn, SetStatySignedIn] = useState(false)
     const [loginInputPassType, setLoginInputPassType] = useState('password')
     const [loginRes, setLoginRes] = useState(null)
     const [loading, setLoading] = useState(false)
+
+    const { setUserInfo } = useContext(LoginContext)
 
     const navigate = useNavigate()
 
@@ -32,9 +34,11 @@ const Login = () => {
             setLoading(true)
             const res = await handleLogIn(values)
             if (res) {
+                setUserInfo(res)
                 setLoginRes(false)
                 navigate("/newzcast")
             } else {
+                setUserInfo([])
                 setLoginRes(true)
             }
             setLoading(false)

@@ -8,8 +8,15 @@ import { GoSearch } from "react-icons/go";
 import { IoIosArrowDown } from "react-icons/io";
 import ProfilePic from "../profile/ProfilePic";
 import UserPic from '../../assets/images/userprof.jpg'
+import { useContext } from "react";
+import { LoginContext } from "../../context/LoginContext";
+import { CiLogin } from "react-icons/ci";
 
 function HomeNav() {
+
+
+    const { userInfo } = useContext(LoginContext)
+
     return (
         <>
 
@@ -35,11 +42,18 @@ function HomeNav() {
                         <GoSearch />
                     </HomeNavLink>
 
-                    <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden duration-200 hover:mt-2 text-xl mx-1 md:block"
-                        onClick={() => alert("profile")}
-                    />}>
-                        <ProfilePic src={UserPic} />
-                    </HomeNavLink>
+                    {
+                        userInfo.length == 0 ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                            <CiLogin />
+                        </HomeNavLink> : (
+
+                            <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden duration-200 hover:mt-2 text-xl mx-1 md:block"
+                                onClick={() => alert("profile")}
+                            />}>
+                                <ProfilePic src={UserPic} />
+                            </HomeNavLink>
+                        )
+                    }
                 </ul>
             </div>
             <Outlet />

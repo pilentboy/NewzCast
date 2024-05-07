@@ -11,11 +11,25 @@ import UserPic from '../../assets/images/userprof.jpg'
 import { useContext } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
-
+import { CgLogOut } from "react-icons/cg";
+import handleSignOut from "../../utils/handleSignOut";
+import { useNavigate } from "react-router-dom";
 function HomeNav() {
 
+    const navigate = useNavigate()
+    const { userInfo, handleUserAuth } = useContext(LoginContext)
 
-    const { userInfo } = useContext(LoginContext)
+    const logOutUser = async () => {
+        const res = await handleSignOut()
+        res ? navigate('/') : alert("error")
+        if (res) {
+            handleUserAuth()
+            navigate("/")
+        } else {
+            alert("error")
+        }
+    }
+
 
     return (
         <>
@@ -51,6 +65,10 @@ function HomeNav() {
                                 onClick={() => alert("profile")}
                             />}>
                                 <ProfilePic src={UserPic} />
+                                <CgLogOut className="text-red-500 mr-3"
+                                    onClick={logOutUser}
+                                />
+
                             </HomeNavLink>
                         )
                     }

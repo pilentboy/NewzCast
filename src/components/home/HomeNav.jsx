@@ -43,7 +43,7 @@ function HomeNav() {
                     </HomeNavLink>
 
                     {
-                        userInfo.length == 0 ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                        !userInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
                             <CiLogin />
                         </HomeNavLink> : (
 

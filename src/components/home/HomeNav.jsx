@@ -14,6 +14,9 @@ import { CiLogin } from "react-icons/ci";
 import { CgLogOut } from "react-icons/cg";
 import handleSignOut from "../../utils/handleSignOut";
 import { useNavigate } from "react-router-dom";
+
+
+
 function HomeNav() {
 
     const navigate = useNavigate()
@@ -21,7 +24,6 @@ function HomeNav() {
 
     const logOutUser = async () => {
         const res = await handleSignOut()
-        res ? navigate('/') : alert("error")
         if (res) {
             handleUserAuth()
             navigate("/")

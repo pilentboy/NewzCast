@@ -8,12 +8,14 @@ import { GoSearch } from "react-icons/go";
 import { IoIosArrowDown } from "react-icons/io";
 import ProfilePic from "../profile/ProfilePic";
 import UserPic from '../../assets/images/userprof.jpg'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
 import { CgLogOut } from "react-icons/cg";
+import ArrowBTN from "./ArrowBTN";
 import handleSignOut from "../../utils/handleSignOut";
 import { useNavigate } from "react-router-dom";
+import OptionBox from "./OptionBox";
 
 
 
@@ -21,6 +23,10 @@ function HomeNav() {
 
     const navigate = useNavigate()
     const { userInfo, handleUserAuth } = useContext(LoginContext)
+    const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
+    const optionBoxItems = [
+        'Profile', 'Settings'
+    ]
 
     const logOutUser = async () => {
         const res = await handleSignOut()
@@ -63,11 +69,27 @@ function HomeNav() {
                             <CiLogin />
                         </HomeNavLink> : (
 
-                            <HomeNavLink target={'profile'} linkTitle={'Username'} button={<IoIosArrowDown className="text-black cursor-pointer hidden duration-200 hover:mt-2 text-xl mx-1 md:block"
-                                onClick={() => alert("profile")}
-                            />}>
+                            <HomeNavLink
+                                target={'profile'}
+                                linkTitle={'Username'}
+                                button={
+                                    <ArrowBTN action={setOptionBoxDisplay}>
+                                        <OptionBox
+                                            display={optionBoxDisplay}
+                                            items={optionBoxItems}
+                                            button={
+                                                <button
+                                                    type="button"
+                                                    onClick={logOutUser}
+                                                    className=" text-gray-400 font-semibold duration-200  text-sm py-1 text-start my-1  hover:text-red-500   "
+                                                >
+                                                    Log out
+                                                </button>
+                                            }
+                                        />
+                                    </ArrowBTN>}>
                                 <ProfilePic src={UserPic} />
-                                
+
                                 {/* <CgLogOut className="text-red-500 mr-3"
                                     onClick={logOutUser}
                                 /> */}

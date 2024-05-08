@@ -5,6 +5,7 @@ const handleSignOut = async () => {
     if (!error) {
         return true
     }
+    console.log(error)
 }
 
 export default handleSignOut

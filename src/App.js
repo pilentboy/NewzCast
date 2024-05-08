@@ -12,7 +12,7 @@ import Trending from './pages/Trending'
 import Profile from './pages/Profile'
 import Favorites from './pages/Favorites'
 import Search from './pages/Search';
-import HomeContainer from './components/home/HomeContainer';
+import Settings from './pages/Settings';
 
 function App() {
 
@@ -33,6 +33,7 @@ function App() {
 							<Route path='profile' element={<Profile />} />
 							<Route path='favorites' element={<Favorites />} />
 							<Route path='search' element={<Search />} />
+							<Route path='settings' element={<Settings />} />
 						</Route>
 
 

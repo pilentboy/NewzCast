@@ -67,9 +67,10 @@ function HomeNav() {
                                 onClick={() => alert("profile")}
                             />}>
                                 <ProfilePic src={UserPic} />
-                                <CgLogOut className="text-red-500 mr-3"
+                                
+                                {/* <CgLogOut className="text-red-500 mr-3"
                                     onClick={logOutUser}
-                                />
+                                /> */}
 
                             </HomeNavLink>
                         )

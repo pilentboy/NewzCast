@@ -17,6 +17,8 @@ function Trending() {
 
     const { userInfo } = useContext(LoginContext)
 
+    console.log(userInfo)
+
     return (
 
         <HomeContainer>

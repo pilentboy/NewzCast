@@ -13,7 +13,7 @@ const LoginProvider = ({ children }) => {
         if (!userData) {
             setUserInfo(null)
         } else {
-            const sumData = [userData, getUsersInfo("sirxmahdi79@gmail.com")]
+            const sumData = [userData, getUsersInfo(userData['user']['email'])]
             setUserInfo(sumData)
         }
     }

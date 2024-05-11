@@ -10,7 +10,7 @@ import LikePost from './LikePost';
 function PostWrapper({ img, like, favorite }) {
 
     return (
-        <div className=" w-[90%]  min-h-[200px] max-h-[600px] border border-gray-200 overflow-hidden my-2  rounded-lg bg-white flex flex-col justify-between md:w-480">
+        <div className=" w-[90%]  min-h-[200px] max-h-[600px] border border-gray-200 overflow-hidden my-2  rounded-lg bg-white flex flex-col justify-between md:w-460">
             <img src={img} className='w-full h-80 object-cover mb-4 shadow-lg		' />
 
             <div className='flex flex-col space-y-3 p-2 '>

@@ -46,7 +46,7 @@ function HomeNav() {
 
                 <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 
-                <ul className="w-lvw justify-evenly flex items-center md:justify-between  mx-auto  md:w-480
+                <ul className="w-lvw justify-evenly flex items-center md:justify-between  mx-auto  md:w-460
                 ">
 
 
@@ -57,7 +57,7 @@ function HomeNav() {
                     </Link>
 
                     <HomeNavLink target={'favorites'} styles={'hidden md:block'} linkTitle={'Favorites'}>
-                        <FaHeart />
+                        <FaHeart className="duration-200  hover:text-red-700 " />
                     </HomeNavLink>
 
                     <HomeNavLink target={'search'} linkTitle={'Search'}>

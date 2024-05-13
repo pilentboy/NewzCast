@@ -1,11 +1,11 @@
 import ProfilePic from "./ProfilePic"
 import { Link } from "react-router-dom"
 
-function UserProfile({ styles, username, profileImage }) {
+function UserProfile({ styles, target, username, userNameStyle, profileImage, imageStyle }) {
     return (
-        <Link to={'profile'} className={`flex items-center ${styles}`}>
-            <ProfilePic src={profileImage} />
-            <span className=" text-gray-500 text-sm font-sens">{username}</span>
+        <Link to={!target ? 'profile' : target} className={`flex items-center ${styles}`}>
+            <ProfilePic src={profileImage} size={imageStyle} />
+            <span className={`text-sm font-sens ${userNameStyle ? userNameStyle : 'text-gray-500'}`}>{username}</span>
         </Link>
     )
 }

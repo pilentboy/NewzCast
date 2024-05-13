@@ -5,7 +5,6 @@ import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
-import ProfilePic from "../profile/ProfilePic";
 import UserPic from '../../assets/images/userprof.jpg'
 import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
@@ -61,7 +60,7 @@ function HomeNav() {
                             Trending
                         </Link>
 
-                        <HomeNavLink target={'favorites'} styles={'hidden md:block'} linkTitle={'Favorites'}>
+                        <HomeNavLink target={'favorites'}  linkTitle={'Favorites'}>
                             <FaHeart className="duration-200  hover:text-red-700 " />
                         </HomeNavLink>
 

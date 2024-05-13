@@ -1,11 +1,15 @@
+import HomeContainer from "../components/home/HomeContainer"
 
 
 const Profile = () => {
 
     return (
-        <>
-            <h1>Profile</h1>
-        </>
+        <HomeContainer>
+            <div className="flex flex-col w-460 rounded-md ">
+                
+            </div>
+        </HomeContainer>
+
     )
 }
 

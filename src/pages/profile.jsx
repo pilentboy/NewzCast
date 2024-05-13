@@ -5,8 +5,15 @@ import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import UserProfileInfo from "../components/profile/UserProfileInfo"
+import postimg2 from '../assets/images/2.jpg'
+import PostWrapper from "../components/post/post_cart/PostWrapper"
+import { useState } from "react"
+
 
 const Profile = () => {
+
+    const [favorite, setFavorite] = useState(false)
+    const [like2, setLike2] = useState(false)
 
     return (
         <HomeContainer>
@@ -28,6 +35,10 @@ const Profile = () => {
                 <UserProfileInfo />
 
             </div>
+
+            <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
+
+            <PostWrapper favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
         </HomeContainer>
 
     )

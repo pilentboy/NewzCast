@@ -3,7 +3,6 @@ import HomeContainer from '../components/home/HomeContainer'
 import PostWrapper from '../components/post/post_cart/PostWrapper'
 import { useState, useContext } from 'react'
 import { LoginContext } from '../context/LoginContext'
-import postimg1 from '../assets/images/1.jpg'
 import postimg2 from '../assets/images/2.jpg'
 import postimg3 from '../assets/images/3.jpg'
 

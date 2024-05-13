@@ -15,6 +15,7 @@ import handleSignOut from "../../utils/handleSignOut";
 import { useNavigate } from "react-router-dom";
 import OptionBox from "./OptionBox";
 import NavTopSmallScreen from "./NavTopSmallScreen";
+import UserProfile from "../profile/UserProfile";
 
 
 
@@ -68,15 +69,16 @@ function HomeNav() {
                             <GoSearch />
                         </HomeNavLink>
 
-                        {
-                            !userInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
-                                <CiLogin />
-                            </HomeNavLink> : (
 
-                                <HomeNavLink
-                                    target={'profile'}
-                                    linkTitle={'Username'}
-                                    button={
+                        <div className="hidden md:block">
+
+                            {
+                                !userInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                                    <CiLogin />
+                                </HomeNavLink> : (
+
+                                    <div className="flex items-center">
+                                        <UserProfile username={'Mahdi'} profileImage={UserPic} styles={'flex-row space-x-2'} />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}
@@ -91,12 +93,12 @@ function HomeNav() {
                                                     </button>
                                                 }
                                             />
-                                        </ArrowBTN>}>
-                                    <ProfilePic src={UserPic} />
+                                        </ArrowBTN>
+                                    </div>
+                                )
+                            }
+                        </div>
 
-                                </HomeNavLink>
-                            )
-                        }
                     </ul>
                 </div>
 

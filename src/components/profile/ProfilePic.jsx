@@ -1,6 +1,6 @@
-function ProfilePic({ size, src }) {
+function ProfilePic({ size, src, imgStyles }) {
     return (
-        <img src={src} className={`rounded-full ${!size ? 'w-7 h-7' : size}   `} />
+        <img src={src} className={`rounded-full ${!size ? 'w-7 h-7' : size}  ${imgStyles}  `} />
     )
 }
 

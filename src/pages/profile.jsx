@@ -21,7 +21,7 @@ const Profile = () => {
 
                 <div className="flex flex-col border-b border-gray-200 pb-10 ">
                     <div className="flex flex-col items-center">
-                        <UserProfile profileImage={pic} target={' '} username={'Mahdi'} styles={'flex-col space-y-2'} imageStyle={'h-20 border-4 border-purple-1000 '} userNameStyle={'text-purple-1000'} />
+                        <UserProfile profileImage={pic} target={' '} username={'Mahdi'} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
                         <UserID id='pilentboy' />
                     </div>
                     <div className="flex justify-between items-center px-10 mt-3">

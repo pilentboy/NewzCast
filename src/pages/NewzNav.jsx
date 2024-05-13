@@ -11,7 +11,7 @@ const NewzNav = () => {
 
     useEffect(() => {
 
-        const interval = setInterval(() => handleTokenExpiration(handleUserAuth), 60000);
+        const interval = setInterval(() => handleTokenExpiration(handleUserAuth), 10000);
 
         return () => clearInterval(interval)
     }, []);

@@ -18,7 +18,7 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
-    const [userProfileActivityList, setx] = useState([
+    const userProfileActivityList = [
         {
             title: 'Followers', value: '22'
         },
@@ -31,7 +31,7 @@ const Profile = () => {
         {
             title: 'Newz', value: '2'
         },
-    ])
+    ]
 
 
 

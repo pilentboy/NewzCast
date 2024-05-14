@@ -5,7 +5,7 @@ import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
-import postimg2 from '../assets/images/2.jpg'
+import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import { useState } from "react"
 

@@ -1,11 +1,12 @@
 
-import ProfilePic from '../../profile/ProfilePic'
 import PostInfoContainer from './PostInfoContainer'
+
 import { IoMdShare } from "react-icons/io";
 import postimg3 from '../../../assets/images/3.webp'
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';
+import EditPost from './EditPost';
 
 
 function PostWrapper({ img, like, favorite }) {
@@ -24,10 +25,11 @@ function PostWrapper({ img, like, favorite }) {
                     This is my first post on NewzCast!
                 </h1>
 
-                <div className='flex items-center space-x-3'>
+                <div className='flex items-center justify-between space-x-3'>
                     <div className='flex items-center space-x-2'>
                         <UserProfile styles={'space-x-2'} username={'PilentBoy'} profileImage={postimg3} userNameStyle={'text-[11px] text-purple-1000'} />
                     </div>
+                    <EditPost />
                 </div>
 
                 <PostInfoContainer styles={'justify-between'}>

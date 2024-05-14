@@ -17,7 +17,7 @@ const Profile = () => {
 
     return (
         <HomeContainer>
-            <div className="flex flex-col w-[370px]   h-[360px] py-3 border border-gray-200 rounded-md md:w-460 ">
+            <div className="flex flex-col w-[90%]   h-[360px] py-3 border border-gray-200 rounded-md md:w-460 ">
 
                 <div className="flex flex-col border-b border-gray-200 pb-10 ">
                     <div className="flex flex-col items-center">

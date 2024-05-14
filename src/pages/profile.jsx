@@ -4,7 +4,7 @@ import pic from '../assets/images/userprof.jpg'
 import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import UserProfileInfo from "../components/profile/UserProfileInfo"
+import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import postimg2 from '../assets/images/2.jpg'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import { useState } from "react"
@@ -32,7 +32,7 @@ const Profile = () => {
 
                 </div>
 
-                <UserProfileInfo />
+                <UserProfileActivityInfo />
 
             </div>
 

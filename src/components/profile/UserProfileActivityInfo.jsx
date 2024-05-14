@@ -1,5 +1,5 @@
 
-function UserProfileInfo() {
+function UserProfileActivityInfo() {
     return (
         <ul className="py-2 px-8  flex justify-between items-start">
             <ProfileInfoLI title='Followers' value='240' />
@@ -24,4 +24,4 @@ function ProfileInfoLI({ title, value }) {
 }
 
 
-export default UserProfileInfo
+export default UserProfileActivityInfo

@@ -16,6 +16,7 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
 
     return (
+        // user's profile box -- some info about user
         <HomeContainer>
             <div className="flex flex-col w-[90%]   h-[360px] py-3 border border-gray-200 rounded-md md:w-460 ">
 
@@ -35,6 +36,8 @@ const Profile = () => {
                 <UserProfileActivityInfo />
 
             </div>
+
+            {/*  user's posts */}
 
             <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
 

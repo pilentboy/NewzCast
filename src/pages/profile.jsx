@@ -7,6 +7,7 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
+import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import { useState } from "react"
 
 
@@ -21,8 +22,8 @@ const Profile = () => {
             <div className="flex flex-col w-[90%]   h-[360px] py-3 border border-gray-200 rounded-md md:w-460 ">
 
                 <div className="flex flex-col border-b border-gray-200 pb-10 ">
-                    <div className="flex flex-col items-center">
-                        <UserProfile profileImage={pic} target={' '} username={'Mahdi'} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
+                    <div className="flex flex-col items-center relative">
+                        <UserProfile profileImage={pic} target={' '} username={'Mahdi'} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
                         <UserID id='pilentboy' />
                     </div>
                     <div className="flex justify-between items-center px-10 mt-3">

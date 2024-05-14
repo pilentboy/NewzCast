@@ -18,6 +18,23 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
+    const [userProfileActivityList, setx] = useState([
+        {
+            title: 'Followers', value: '22'
+        },
+        {
+            title: 'Follwing', value: '30'
+        },
+        {
+            title: 'Videos', value: '12'
+        },
+        {
+            title: 'Newz', value: '2'
+        },
+    ])
+
+
+
     return (
         // user's profile box -- some info about user
         <HomeContainer>
@@ -37,14 +54,29 @@ const Profile = () => {
                 </div>
 
                 <ul className="py-2 px-8  flex justify-between items-start">
-                    <UserProfileActivityInfo title='Followers' value='240' action={() => setModalContainerDisplay("flex")} />
-                    <UserProfileActivityInfo title='Following' value='62' />
-                    <UserProfileActivityInfo title='Videos' value='2' />
-                    <UserProfileActivityInfo title='Newz' value='43' />
+
+                    {
+                        userProfileActivityList.map((list, id) => {
+                            return (
+                                <UserProfileActivityInfo
+                                    title={list.title}
+                                    value={list.value}
+                                    action={() => setModalContainerDisplay("flex")}
+                                    setActivityInfoClickedTitle={setActivityInfoClickedTitle}
+                                    key={id} />
+                            )
+                        })
+
+                    }
                 </ul>
+
                 <ModalContainer
                     display={modalContainerDisplay}
                     setDisplay={setModalContainerDisplay}>
+
+                    <h1 className="text-red text-lg">
+                        {activityInfoClickedTitle}
+                    </h1>
 
                 </ModalContainer>
             </div>

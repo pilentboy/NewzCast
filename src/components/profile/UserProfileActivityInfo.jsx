@@ -1,10 +1,14 @@
 
 
-function UserProfileActivityInfo({ title, value, action }) {
+function UserProfileActivityInfo({ title, value, action, setActivityInfoClickedTitle }) {
     return (
         <li
             className="flex flex-col items-center space-y-2 cursor-pointer"
-            onClick={() => action()}
+            onClick={() => {
+                action()
+                setActivityInfoClickedTitle(title)
+            }
+            }
         >
             <span className=" text-sm  text-gray-500 font-medium">
                 {title}

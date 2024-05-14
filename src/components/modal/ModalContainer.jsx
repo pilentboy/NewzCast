@@ -1,5 +1,5 @@
 
-export default function ModalContainer({ children, display = 'hidden', setDisplay }) {
+export default function ModalContainer({ children, display, setDisplay }) {
 
     const handleClick = (e) => {
 

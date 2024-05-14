@@ -12,7 +12,10 @@ function UserProfileActivityInfo() {
 
 function ProfileInfoLI({ title, value }) {
     return (
-        <li className="flex flex-col items-center space-y-2">
+        <li
+            className="flex flex-col items-center space-y-2 cursor-pointer"
+            onClick={() => alert('test')}
+        >
             <span className=" text-sm  text-gray-500 font-medium">
                 {title}
             </span>

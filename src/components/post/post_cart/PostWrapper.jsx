@@ -5,6 +5,7 @@ import { IoMdShare } from "react-icons/io";
 import postimg3 from '../../../assets/images/3.webp'
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
+import UserProfile from '../../profile/UserProfile';
 
 
 function PostWrapper({ img, like, favorite }) {
@@ -25,8 +26,7 @@ function PostWrapper({ img, like, favorite }) {
 
                 <div className='flex items-center space-x-3'>
                     <div className='flex items-center space-x-2'>
-                        <ProfilePic src={postimg3} />
-                        <span className='text-purple-1000 text-[11px] font-medium'>Pilent Boy</span>
+                        <UserProfile styles={'space-x-2'} username={'PilentBoy'} profileImage={postimg3} userNameStyle={'text-[11px] text-purple-1000'} />
                     </div>
                 </div>
 

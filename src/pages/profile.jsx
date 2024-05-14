@@ -9,13 +9,15 @@ import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import { useState } from "react"
+import ModalContainer from "../components/modal/ModalContainer"
 
 
 const Profile = () => {
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
-
+    const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
+    const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
     return (
         // user's profile box -- some info about user
         <HomeContainer>
@@ -34,8 +36,17 @@ const Profile = () => {
 
                 </div>
 
-                <UserProfileActivityInfo />
+                <ul className="py-2 px-8  flex justify-between items-start">
+                    <UserProfileActivityInfo title='Followers' value='240' action={() => setModalContainerDisplay("flex")} />
+                    <UserProfileActivityInfo title='Following' value='62' />
+                    <UserProfileActivityInfo title='Videos' value='2' />
+                    <UserProfileActivityInfo title='Newz' value='43' />
+                </ul>
+                <ModalContainer
+                    display={modalContainerDisplay}
+                    setDisplay={setModalContainerDisplay}>
 
+                </ModalContainer>
             </div>
 
             {/*  user's posts */}

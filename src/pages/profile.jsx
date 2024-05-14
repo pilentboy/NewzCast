@@ -10,6 +10,7 @@ import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import { useState } from "react"
 import ModalContainer from "../components/modal/ModalContainer"
+import ProfileActivityList from "../components/modal/ProfileActivityList"
 
 
 const Profile = () => {
@@ -61,7 +62,7 @@ const Profile = () => {
                                 <UserProfileActivityInfo
                                     title={list.title}
                                     value={list.value}
-                                    action={() => setModalContainerDisplay("flex")}
+                                    action={list.title !== 'Newz' && list.title !== 'Videos' ? () => setModalContainerDisplay("flex") : null}
                                     setActivityInfoClickedTitle={setActivityInfoClickedTitle}
                                     key={id} />
                             )
@@ -73,10 +74,10 @@ const Profile = () => {
                 <ModalContainer
                     display={modalContainerDisplay}
                     setDisplay={setModalContainerDisplay}>
-
-                    <h1 className="text-red text-lg">
-                        {activityInfoClickedTitle}
-                    </h1>
+                    <ProfileActivityList
+                        title={activityInfoClickedTitle}
+                        handleClose={setModalContainerDisplay}
+                    />
 
                 </ModalContainer>
             </div>

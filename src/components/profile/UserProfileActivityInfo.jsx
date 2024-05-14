@@ -3,10 +3,13 @@
 function UserProfileActivityInfo({ title, value, action, setActivityInfoClickedTitle }) {
     return (
         <li
-            className="flex flex-col items-center space-y-2 cursor-pointer"
+            className={`flex flex-col items-center space-y-2 ${action ? 'cursor-pointer' : 'cursor-default'}`}
+
             onClick={() => {
-                action()
-                setActivityInfoClickedTitle(title)
+                if (action) {
+                    action()
+                    setActivityInfoClickedTitle(title)
+                }
             }
             }
         >

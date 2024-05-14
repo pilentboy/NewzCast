@@ -7,7 +7,20 @@
         @apply font-roboto overflow-x-hidden
     }
 
-    button, a {
+    body::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300
+    }
+
+    button,
+    a {
         @apply text-white font-medium
     }
 
@@ -17,8 +30,17 @@
 }
 
 @layer components {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
 
- 
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
     .likeAnima {
         animation-name: like;
         animation-duration: 200ms;

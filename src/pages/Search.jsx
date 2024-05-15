@@ -1,7 +1,10 @@
+import HomeContainer from "../components/home/HomeContainer"
 
 function Search() {
   return (
-    <div>Search</div>
+    <HomeContainer>
+      <h1>search</h1>
+    </HomeContainer>
   )
 }
 

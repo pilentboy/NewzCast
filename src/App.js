@@ -30,9 +30,9 @@ function App() {
 						<Route path='/newzcast' element={<NewzNav />} >
 							<Route index element={<Trending />} />
 							<Route path='profile' element={<Profile />} />
+							<Route path='settings' element={<Settings />} />
 							<Route path='favorites' element={<Favorites />} />
 							<Route path='search' element={<Search />} />
-							<Route path='settings' element={<Settings />} />
 						</Route>
 
 

@@ -1,11 +1,12 @@
+import HomeContainer from "../components/home/HomeContainer"
 
 
 const Favorites = () => {
 
     return (
-        <>
-            <h1>Favorites</h1>
-        </>
+        <HomeContainer>
+            <h1>Favorite</h1>
+        </HomeContainer>
     )
 }
 

@@ -1,7 +1,10 @@
+import HomeContainer from "../components/home/HomeContainer"
 
 function Settings() {
   return (
-    <div>Settings</div>
+    <HomeContainer>
+      <h1>settings</h1>
+    </HomeContainer>
   )
 }
 

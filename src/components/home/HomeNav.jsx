@@ -24,9 +24,11 @@ function HomeNav() {
     const { userInfo, userDBJsonInfo, handleUserAuth } = useContext(LoginContext)
 
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
+
     const optionBoxItems = [
         'Profile', 'Settings'
     ]
+
 
 
     const logOutUser = async () => {

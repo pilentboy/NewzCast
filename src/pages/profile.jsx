@@ -8,7 +8,7 @@ import UserProfileActivityInfo from "../components/profile/UserProfileActivityIn
 import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import ProfileActivityList from "../components/modal/ProfileActivityList"
@@ -22,20 +22,7 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
-    const userProfileActivityList = [
-        {
-            title: 'Followers', value: '22'
-        },
-        {
-            title: 'Follwing', value: '30'
-        },
-        {
-            title: 'Videos', value: '12'
-        },
-        {
-            title: 'Newz', value: '2'
-        },
-    ]
+
 
 
 

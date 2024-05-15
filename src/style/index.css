@@ -19,6 +19,10 @@
         @apply bg-gray-300
     }
 
+    ::-webkit-scrollbar-thumb:active {
+        @apply bg-purple-1000;
+    }
+
     button,
     a {
         @apply text-white font-medium

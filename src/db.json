@@ -4,10 +4,30 @@
             "name": "Mahdi",
             "lastname": "Ebrahimi",
             "username": "pilentboy",
+            "profileImage": "",
             "age": "23",
             "email": "sirxmahdi79@gmail.com",
             "posts": [
                 "empty"
+            ],
+            "verified": true,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "12K"
+                },
+                {
+                    "title": "Follwing",
+                    "value": 42
+                },
+                {
+                    "title": "Videos",
+                    "value": 320
+                },
+                {
+                    "title": "Newz",
+                    "value": 251
+                }
             ]
         }
     ]

@@ -21,15 +21,18 @@ import UserProfile from "../profile/UserProfile";
 function HomeNav() {
 
     const navigate = useNavigate()
-    const { userInfo, handleUserAuth } = useContext(LoginContext)
+    const { userInfo, userDBJsonInfo, handleUserAuth } = useContext(LoginContext)
+
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
     const optionBoxItems = [
         'Profile', 'Settings'
     ]
 
+
     const logOutUser = async () => {
         const res = await handleSignOut()
         if (res) {
+
             handleUserAuth()
             navigate("/")
         } else {
@@ -60,7 +63,7 @@ function HomeNav() {
                             Trending
                         </Link>
 
-                        <HomeNavLink target={'favorites'}  linkTitle={'Favorites'}>
+                        <HomeNavLink target={'favorites'} linkTitle={'Favorites'}>
                             <FaHeart className="duration-200  hover:text-red-700 " />
                         </HomeNavLink>
 
@@ -77,7 +80,7 @@ function HomeNav() {
                                 </HomeNavLink> : (
 
                                     <div className="flex items-center">
-                                        <UserProfile username={'Mahdi'} profileImage={UserPic} styles={'flex-row space-x-2'} />
+                                        <UserProfile username={userDBJsonInfo['name']} profileImage={UserPic} styles={'flex-row space-x-2'} />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}

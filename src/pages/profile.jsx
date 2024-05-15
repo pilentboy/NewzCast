@@ -8,12 +8,15 @@ import UserProfileActivityInfo from "../components/profile/UserProfileActivityIn
 import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
-import { useState } from "react"
+import { useState, useContext, useEffect } from "react"
+import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import ProfileActivityList from "../components/modal/ProfileActivityList"
 
 
 const Profile = () => {
+
+    const { userDBJsonInfo } = useContext(LoginContext)
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
@@ -39,48 +42,63 @@ const Profile = () => {
     return (
         // user's profile box -- some info about user
         <HomeContainer>
-            <div className="flex flex-col w-[90%] mb-6   h-[360px] py-3 border border-gray-200 rounded-md md:w-460 ">
 
-                <div className="flex flex-col border-b border-gray-200 pb-10 ">
-                    <div className="flex flex-col items-center relative">
-                        <UserProfile profileImage={pic} target={' '} username={'Mahdi'} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
-                        <UserID id='pilentboy' />
-                    </div>
-                    <div className="flex justify-between items-center px-10 mt-3">
-                        <span></span>
-                        <ColoredLogo target={' '} />
-                        <IoIosInformationCircleOutline className='text-2xl text-purple-1000' />
+            {
+                userDBJsonInfo && <div className={`flex flex-col w-[90%] mb-6  ${userDBJsonInfo['verified'] ? 'h-[360px]' : 'h-[270px]'} py-3 border border-gray-200 rounded-md md:w-460 `}>
+
+                    <div className="flex flex-col border-b border-gray-200 pb-10 ">
+                        <div className="flex flex-col items-center relative">
+                            <UserProfile profileImage={pic} target={' '} username={userDBJsonInfo['name']} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
+                            <UserID id='pilentboy' />
+                        </div>
+
+
+                        {
+                            userDBJsonInfo['verified'] && (
+                                <div className="flex justify-between items-center px-10 mt-3">
+                                    <span></span>
+                                    <ColoredLogo target={' '} />
+                                    <IoIosInformationCircleOutline className='text-2xl text-purple-1000' />
+                                </div>
+                            )
+
+
+                        }
+
+
+
                     </div>
 
+                    <ul className="py-2 px-8  flex justify-between items-start">
+
+                        {
+                            userDBJsonInfo['userActiviyInfo'].map((activity, id) => {
+                                return (
+                                    <UserProfileActivityInfo
+                                        title={activity.title}
+                                        value={activity.value}
+                                        action={activity.title !== 'Newz' && activity.title !== 'Videos' ? () => setModalContainerDisplay("flex") : null}
+                                        setActivityInfoClickedTitle={setActivityInfoClickedTitle}
+                                        key={id} />
+                                )
+                            })
+
+                        }
+                    </ul>
+
+                    <ModalContainer
+                        display={modalContainerDisplay}
+                        setDisplay={setModalContainerDisplay}>
+                        <ProfileActivityList
+                            title={activityInfoClickedTitle}
+                            handleClose={setModalContainerDisplay}
+                        />
+
+                    </ModalContainer>
                 </div>
 
-                <ul className="py-2 px-8  flex justify-between items-start">
+            }
 
-                    {
-                        userProfileActivityList.map((list, id) => {
-                            return (
-                                <UserProfileActivityInfo
-                                    title={list.title}
-                                    value={list.value}
-                                    action={list.title !== 'Newz' && list.title !== 'Videos' ? () => setModalContainerDisplay("flex") : null}
-                                    setActivityInfoClickedTitle={setActivityInfoClickedTitle}
-                                    key={id} />
-                            )
-                        })
-
-                    }
-                </ul>
-
-                <ModalContainer
-                    display={modalContainerDisplay}
-                    setDisplay={setModalContainerDisplay}>
-                    <ProfileActivityList
-                        title={activityInfoClickedTitle}
-                        handleClose={setModalContainerDisplay}
-                    />
-
-                </ModalContainer>
-            </div>
 
             {/*  user's posts */}
 

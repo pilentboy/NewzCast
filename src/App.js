@@ -1,7 +1,6 @@
 import './style/index.css'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';
 import Login from './pages/login'

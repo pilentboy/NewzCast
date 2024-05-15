@@ -6,15 +6,17 @@ const LoginContext = createContext()
 const LoginProvider = ({ children }) => {
 
     const [userInfo, setUserInfo] = useState()
+    const [userDBJsonInfo, setUserDBJsonInfo] = useState()
 
 
     const handleUserAuth = () => {
         const userData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
         if (!userData) {
             setUserInfo(null)
+            setUserDBJsonInfo(null)
         } else {
-            const sumData = [userData, getUsersInfo(userData['user']['email'])]
-            setUserInfo(sumData)
+            setUserInfo(userData)
+            setUserDBJsonInfo(getUsersInfo(userData['user']['email']))
         }
     }
 
@@ -23,7 +25,7 @@ const LoginProvider = ({ children }) => {
     }, [])
 
     return (
-        <LoginContext.Provider value={{ userInfo, setUserInfo, handleUserAuth }}>
+        <LoginContext.Provider value={{ userInfo, setUserInfo, handleUserAuth, userDBJsonInfo }}>
             {children}
         </LoginContext.Provider>
     )

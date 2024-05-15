@@ -29,14 +29,15 @@ const Profile = () => {
 
     return (
         <>
-        {/* user's profile box -- some info about user */}
+            {/* user's profile box -- some info about user */}
             <HomeContainer>
 
                 {
                     userDBJsonInfo && <div className={`flex flex-col w-[90%] mb-6  ${userDBJsonInfo['verified'] ? 'h-[360px]' : 'h-[270px]'} py-3 border border-gray-200 rounded-md md:w-460 `}>
 
                         <div className="flex flex-col border-b border-gray-200 pb-10 ">
-                            <div className="flex flex-col items-center relative">
+
+                            <div className="flex flex-col mx-auto items-center relative">
                                 <UserProfile profileImage={pic} target={' '} username={userDBJsonInfo['name']} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
                                 <UserID id='pilentboy' />
                             </div>

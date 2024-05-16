@@ -1,6 +1,5 @@
 
 import PostInfoContainer from './PostInfoContainer'
-
 import { IoMdShare } from "react-icons/io";
 import postimg3 from '../../../assets/images/3.webp'
 import AddFavorites from './AddFavorites';
@@ -9,34 +8,36 @@ import UserProfile from '../../profile/UserProfile';
 import EditPost from './EditPost';
 
 
-function PostWrapper({ img, like, favorite }) {
+function PostWrapper({ userInfo, postInfo, favorite, like }) {
+    console.log(userInfo[0])
 
+    console.log(postInfo, "X")
     return (
         <div className=" w-[90%]  min-h-[200px] max-h-[600px] border border-gray-200 overflow-hidden my-2  rounded-lg bg-white flex flex-col justify-between md:w-460">
             {
-                img ? (
-                    <img src={img} className='w-full h-80 object-cover mb-4 shadow-lg' alt='post image' />
+                postInfo['image'] ? (
+                    <img src={postInfo['image']} className='w-full h-80 object-cover mb-4 shadow-lg' alt='post image' />
                 ) : null
             }
 
             <div className='flex flex-col space-y-3 p-2 '>
 
                 <h1 className='text-black font-medium text-base'>
-                    This is my first post on NewzCast!
+                    {postInfo['title']}
                 </h1>
 
                 <div className='flex items-center justify-between space-x-3'>
                     <div className='flex items-center space-x-2'>
-                        <UserProfile styles={'space-x-2'} username={'PilentBoy'} profileImage={postimg3} userNameStyle={'text-[11px] text-purple-1000'} />
+                        <UserProfile styles={'space-x-2'} name={userInfo[0]} profileImage={userInfo[1]} userNameStyle={'text-[11px] text-purple-1000'} target={'./'} />
                     </div>
                     <EditPost />
                 </div>
 
                 <PostInfoContainer styles={'justify-between'}>
 
-                    <span>15 likes</span>
+                    <span>{postInfo['likes']} likes</span>
                     <div className='flex items-center space-x-4'>
-                        <span className='mr-10'>views 45k</span>
+                        <span className='mr-10'>views {postInfo['views']}k</span>
                         <span className='px-2'>3 days ago</span>
                         <AddFavorites favoritePost={favorite[0]} handleFavorite={favorite[1]} />
                     </div>

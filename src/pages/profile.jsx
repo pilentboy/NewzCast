@@ -8,7 +8,7 @@ import UserProfileActivityInfo from "../components/profile/UserProfileActivityIn
 import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import ProfileActivityList from "../components/modal/ProfileActivityList"
@@ -22,8 +22,14 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
+    const [userInfo, setUsername] = useState([])
 
 
+    useEffect(() => {
+        if (userDBJsonInfo) {
+            setUsername([userDBJsonInfo['username'], userDBJsonInfo['profileImage']])
+        }
+    }, [userDBJsonInfo])
 
 
     return (
@@ -37,8 +43,8 @@ const Profile = () => {
                         <div className="flex flex-col border-b border-gray-200 pb-10 ">
 
                             <div className="flex flex-col mx-auto items-center relative">
-                                <UserProfile profileImage={userDBJsonInfo['profileImage']} target={' '} userFullName={`${userDBJsonInfo['firstName']} ${userDBJsonInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
-                                <UserID id='pilentboy' />
+                                <UserProfile profileImage={userDBJsonInfo['profileImage']} target={' '} name={`${userDBJsonInfo['firstName']} ${userDBJsonInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 border-4 border-purple-1000 '} profileImageButton={<ChangeProfilePic />} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
+                                <UserID id={userDBJsonInfo['username']} />
                             </div>
 
 
@@ -86,14 +92,27 @@ const Profile = () => {
                         </ModalContainer>
                     </div>
 
+
+                    /*  user's posts */
+
+                }
+
+                {
+                    userDBJsonInfo &&
+                    userDBJsonInfo['posts'].map((postInfo, id) => (
+                        <PostWrapper
+                            key={id}
+                            postInfo={postInfo}
+                            userInfo={userInfo}
+                            favorite={[favorite, setFavorite]}
+                            like={[like2, setLike2]}
+                        />
+                    ))
+
                 }
 
 
-                {/*  user's posts */}
 
-                <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
-
-                <PostWrapper favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
             </HomeContainer>
 
         </>

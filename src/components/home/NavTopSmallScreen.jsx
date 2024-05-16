@@ -11,7 +11,7 @@ function NavTopSmallScreen() {
             <span> </span>
             <ColoredLogo styles={'ms-6'} />
             {
-                userDBJsonInfo && <UserProfile userFullName={userDBJsonInfo['firstName']} styles={'flex-col mt-3'} profileImage={userDBJsonInfo['profileImage']} imageSize={'h-8'} />
+                userDBJsonInfo && <UserProfile name={userDBJsonInfo['firstName']} styles={'flex-col mt-3'} profileImage={userDBJsonInfo['profileImage']} imageSize={'h-8'} />
             }
         </div>)
 

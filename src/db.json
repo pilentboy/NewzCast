@@ -6,9 +6,6 @@
             "username": "pilentboy",
             "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
             "email": "sirxmahdi79@gmail.com",
-            "posts": [
-                "empty"
-            ],
             "verified": true,
             "userActiviyInfo": [
                 {
@@ -27,6 +24,44 @@
                     "title": "Newz",
                     "value": 251
                 }
+            ],
+            "posts": [
+                {
+                    "title": "This is my first post on NewzCast!",
+                    "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
+                    "likes": 20,
+                    "views": 112,
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw123",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
+                    "likes": 16,
+                    "views": 25,
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -35,9 +70,6 @@
             "username": "selexted",
             "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
             "email": "volode7210@facais.com",
-            "posts": [
-                "empty"
-            ],
             "verified": false,
             "userActiviyInfo": [
                 {
@@ -55,6 +87,56 @@
                 {
                     "title": "Newz",
                     "value": 262
+                }
+            ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
+                    "likes": 256,
+                    "views": 23,
+                    "comments": [
+                        {
+                            "username": "dq2223",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw1ddq23",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "eli212",
+                            "comment": "great!!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
+                    "likes": 16,
+                    "views": 25,
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my third post on NewzCast!",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
+                    "likes": 260,
+                    "views": 54,
+                    "comments": [
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
                 }
             ]
         }

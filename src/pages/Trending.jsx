@@ -26,10 +26,10 @@ function Trending() {
                 userInfo ? <SharePost /> : null
             }
 
-            <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
+            {/* <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
 
             <PostWrapper favorite={[favorite, setFavorite]} like={[like, setLike]} />
-            <PostWrapper img={postimg3} favorite={[favorite, setFavorite]} like={[like3, setLike3]} />
+            <PostWrapper img={postimg3} favorite={[favorite, setFavorite]} like={[like3, setLike3]} /> */}
 
         </HomeContainer>
     )

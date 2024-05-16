@@ -12,7 +12,6 @@ import { useState, useContext } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import ProfileActivityList from "../components/modal/ProfileActivityList"
-import { Outlet } from "react-router-dom"
 
 
 const Profile = () => {

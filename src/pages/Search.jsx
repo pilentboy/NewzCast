@@ -7,9 +7,10 @@ function Search() {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    const test = userdata['UsersData'].filter((username) => username.name.toLowerCase().includes('a'))
+    const test = userdata['UsersData'].filter((user) => user.firstName.toLowerCase().includes('a'))
     setUsers(test)
   }, [])
+
   return (
     <HomeContainer>
       <h1>search</h1>

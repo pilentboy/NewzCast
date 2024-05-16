@@ -29,7 +29,7 @@ function HomeNav() {
         'Profile', 'Settings'
     ]
 
-
+    console.log(userDBJsonInfo, "XQDQ")
 
     const logOutUser = async () => {
         const res = await handleSignOut()
@@ -82,7 +82,7 @@ function HomeNav() {
                                 </HomeNavLink> : (
 
                                     <div className="flex items-center">
-                                        <UserProfile username={userDBJsonInfo['name']} profileImage={UserPic} styles={'flex-row space-x-2'} />
+                                        <UserProfile username={userDBJsonInfo['firstName']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'} />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}

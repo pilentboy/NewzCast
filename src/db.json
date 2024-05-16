@@ -9,6 +9,35 @@
             "posts": [
                 "empty"
             ],
+            "verified": false,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "12K"
+                },
+                {
+                    "title": "Following",
+                    "value": 42
+                },
+                {
+                    "title": "Videos",
+                    "value": 320
+                },
+                {
+                    "title": "Newz",
+                    "value": 251
+                }
+            ]
+        },
+        {
+            "name": "Yasna",
+            "lastname": "Ebrahimi",
+            "username": "selected",
+            "profileImage": "",
+            "email": "sirxmahdidqd79@gmail.com",
+            "posts": [
+                "empty"
+            ],
             "verified": true,
             "userActiviyInfo": [
                 {

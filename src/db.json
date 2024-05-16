@@ -9,7 +9,7 @@
             "posts": [
                 "empty"
             ],
-            "verified": false,
+            "verified": true,
             "userActiviyInfo": [
                 {
                     "title": "Followers",

@@ -14,7 +14,7 @@ function Trending() {
     const [like2, setLike2] = useState(false)
     const [like3, setLike3] = useState(false)
 
-    const { userInfo } = useContext(LoginContext)
+    const { userInfo, userDBJsonInfo } = useContext(LoginContext)
 
     console.log(userInfo)
 
@@ -23,13 +23,18 @@ function Trending() {
         <HomeContainer>
 
             {
-                userInfo ? <SharePost /> : null
+                userInfo && <SharePost />
             }
 
-            {/* <PostWrapper img={postimg2} favorite={[favorite, setFavorite]} like={[like2, setLike2]} />
+            {/* {
+                userDBJsonInfo && userDBJsonInfo.map((post, id) => (
+                    <PostWrapper
+                        key={id}
 
-            <PostWrapper favorite={[favorite, setFavorite]} like={[like, setLike]} />
-            <PostWrapper img={postimg3} favorite={[favorite, setFavorite]} like={[like3, setLike3]} /> */}
+                    />
+                ))
+            } */}
+
 
         </HomeContainer>
     )

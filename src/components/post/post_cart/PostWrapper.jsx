@@ -1,7 +1,6 @@
 
 import PostInfoContainer from './PostInfoContainer'
 import { IoMdShare } from "react-icons/io";
-import postimg3 from '../../../assets/images/3.webp'
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';

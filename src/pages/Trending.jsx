@@ -23,8 +23,8 @@ function Trending() {
             }
 
             {
-                userPosts['UsersData'].map((post) => (
-                    <PostWrapper userPostsInfo={post} favorite={[favorite, setFavorite]} like={[like, setLike]} />
+                userPosts['UsersData'].map((post, id) => (
+                    <PostWrapper userPostsInfo={post} favorite={[favorite, setFavorite]} like={[like, setLike]} key={id} />
                 ))
             }
 

@@ -20,16 +20,9 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
-    const [userInfo, setUsername] = useState([])
 
 
-    useEffect(() => {
-        if (userDBJsonInfo) {
-            setUsername([userDBJsonInfo['username'], userDBJsonInfo['profileImage']])
-        }
-    }, [userDBJsonInfo])
 
-    console.log(userDBJsonInfo, "test")
 
     return (
         <>

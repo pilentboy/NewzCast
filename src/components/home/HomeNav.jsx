@@ -5,7 +5,6 @@ import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
-import UserPic from '../../assets/images/userprof.jpg'
 import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";

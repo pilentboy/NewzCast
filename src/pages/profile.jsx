@@ -1,11 +1,9 @@
 import HomeContainer from "../components/home/HomeContainer"
 import UserProfile from "../components/profile/UserProfile"
-import pic from '../assets/images/userprof.jpg'
 import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
-import postimg2 from '../assets/images/3.webp'
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import { useState, useContext, useEffect } from "react"

@@ -10,12 +10,9 @@ function Trending() {
 
     const [favorite, setFavorite] = useState(false)
     const [like, setLike] = useState(true)
-    const [like2, setLike2] = useState(false)
-    const [like3, setLike3] = useState(false)
 
-    const { userInfo, userDBJsonInfo } = useContext(LoginContext)
+    const { userInfo } = useContext(LoginContext)
 
-    console.log(userInfo)
 
     return (
 
@@ -25,8 +22,14 @@ function Trending() {
                 userInfo && <SharePost />
             }
 
+            {
+                userPosts['UsersData'].map((post) => (
+                    <PostWrapper userPostsInfo={post} favorite={[favorite, setFavorite]} like={[like, setLike]} />
+                ))
+            }
 
-          
+
+
 
 
 

@@ -4,7 +4,7 @@
             "firstName": "Mahdi",
             "lastName": "Ebrahimi",
             "username": "pilentboy",
-            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+            "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHS121TqtsuRK7rS3D9U0qY4EhvhUhNwKrD8_zq9QUg&s",
             "email": "sirxmahdi79@gmail.com",
             "verified": true,
             "userActiviyInfo": [
@@ -69,7 +69,7 @@
             "lastName": "Ebrahimi",
             "username": "selexted",
             "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-            "email": "volode7210@facais.com",
+            "email": "bepobe1813@lewenbo.com",
             "verified": false,
             "userActiviyInfo": [
                 {
@@ -129,6 +129,82 @@
                 {
                     "title": "This is my third post on NewzCast!",
                     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
+                    "likes": 260,
+                    "views": 54,
+                    "comments": [
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "firstName": "Reyhaneh",
+            "lastName": "Behrooz",
+            "username": "Reyhaneh212",
+            "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZTUrjs2YdHUb_BFutIvvmFf9LtVf4uiDXHLQzTrDAA&s",
+            "email": "kodoki9676@amankro.com",
+            "verified": true,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "56K"
+                },
+                {
+                    "title": "Following",
+                    "value": 155
+                },
+                {
+                    "title": "Videos",
+                    "value": 65
+                },
+                {
+                    "title": "Newz",
+                    "value": 652
+                }
+            ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "image": "https://images.freeimages.com/images/large-previews/c56/scn-prk-012-jpg-1364337.jpg?fmt=webp&w=500",
+                    "likes": 254,
+                    "views": 552,
+                    "comments": [
+                        {
+                            "username": "dq2223",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw1ddq23",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "eli212",
+                            "comment": "great!!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s",
+                    "likes": 16,
+                    "views": 25,
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my third post on NewzCast!",
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXxfc2JeHYtzG7-MTjfaVcbwLMJktgj-RSx3om4IJtA&s",
                     "likes": 260,
                     "views": 54,
                     "comments": [

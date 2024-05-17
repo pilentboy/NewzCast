@@ -29,6 +29,7 @@ const Profile = () => {
         }
     }, [userDBJsonInfo])
 
+    console.log(userDBJsonInfo, "test")
 
     return (
         <>
@@ -97,15 +98,12 @@ const Profile = () => {
 
                 {
                     userDBJsonInfo &&
-                    userDBJsonInfo['posts'].map((postInfo, id) => (
-                        <PostWrapper
-                            key={id}
-                            postInfo={postInfo}
-                            userInfo={userInfo}
-                            favorite={[favorite, setFavorite]}
-                            like={[like2, setLike2]}
-                        />
-                    ))
+                    <PostWrapper
+                        userPostsInfo={userDBJsonInfo}
+                        favorite={[favorite, setFavorite]}
+                        like={[like2, setLike2]}
+                    />
+
 
                 }
 

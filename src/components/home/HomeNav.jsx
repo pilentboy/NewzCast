@@ -28,7 +28,6 @@ function HomeNav() {
         'Profile', 'Settings'
     ]
 
-    console.log(userDBJsonInfo, "XQDQ")
 
     const logOutUser = async () => {
         const res = await handleSignOut()

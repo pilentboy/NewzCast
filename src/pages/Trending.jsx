@@ -3,8 +3,7 @@ import HomeContainer from '../components/home/HomeContainer'
 import PostWrapper from '../components/post/post_cart/PostWrapper'
 import { useState, useContext } from 'react'
 import { LoginContext } from '../context/LoginContext'
-import postimg2 from '../assets/images/2.webp'
-import postimg3 from '../assets/images/3.webp'
+import userPosts from '../db.json'
 
 
 function Trending() {
@@ -26,14 +25,9 @@ function Trending() {
                 userInfo && <SharePost />
             }
 
-            {/* {
-                userDBJsonInfo && userDBJsonInfo.map((post, id) => (
-                    <PostWrapper
-                        key={id}
 
-                    />
-                ))
-            } */}
+          
+
 
 
         </HomeContainer>

@@ -6,6 +6,7 @@
 .pnp.js
 *.pdf
 .env
+.zip
 
 supabaseAdmin.js
 supabaseClient.js

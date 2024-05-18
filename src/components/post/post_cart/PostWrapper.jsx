@@ -12,8 +12,6 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
     const UserBaseInfo = [userPostsInfo['username'], userPostsInfo['profileImage']]
 
 
-    console.log(userPostsInfo, "posts info")
-
     return (
 
         <>

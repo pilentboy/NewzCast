@@ -1,5 +1,5 @@
 
-import { FaCommentMedical } from "react-icons/fa6";
+import { IoSendSharp } from "react-icons/io5";
 
 function CommentPost({ commentValue, setCommentValue }) {
 
@@ -17,7 +17,7 @@ function CommentPost({ commentValue, setCommentValue }) {
                 placeholder='Write comment' />
 
             <button type="button" aria-label="send comment" title="Send Comment" onClick={handleSendComment}>
-                <FaCommentMedical className='text-[22px]  text-purple-1000' />
+                <IoSendSharp className='text-[22px]  text-purple-1000' />
             </button>
         </div>
     )

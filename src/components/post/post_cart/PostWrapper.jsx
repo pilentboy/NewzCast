@@ -5,6 +5,7 @@ import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';
 import EditPost from './EditPost';
 import { FaEye } from "react-icons/fa";
+import { IoStatsChart } from "react-icons/io5";
 import SharePost from './SharePost';
 import CommentPost from './CommentPost';
 import { useState } from 'react';
@@ -19,7 +20,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
         <>
             {
                 userPostsInfo['posts'].map((post, id) => (
-                    <div className=" w-[90%]  min-h-[200px] max-h-[600px]  overflow-hidden my-1  bg-white flex flex-col justify-between md:w-460" key={id}>
+                    <div className=" w-[90%]  min-h-[200px] max-h-[600px]   overflow-hidden my-2  bg-white flex flex-col justify-between md:w-460" key={id}>
                         {
                             post['image'] ? (
                                 <img src={post['image']} className='w-full h-80 object-cover mb-4 shadow-lg' alt='post image' />
@@ -42,11 +43,14 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                             <PostInfoContainer styles={'justify-between       md:justify-around'}>
 
                                 <span>{post['likes']} likes</span>
-                                <div className='mr-10 flex items-center'>
-                                    <FaEye className='text-lg  text-gray-400 mx-2' />
+
+                                <div className=' flex items-center' title='views'>
+                                    <IoStatsChart className='text-lg  text-gray-400 mx-2' />
                                     {post['views']}k
                                 </div>
-                                <span className='px-2'>3 days ago</span>
+
+                                <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>
+
                                 <span>{post['comments'].length} Comments</span>
 
                             </PostInfoContainer>

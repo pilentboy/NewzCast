@@ -80,7 +80,7 @@ function HomeNav() {
                                 </HomeNavLink> : (
 
                                     <div className="flex items-center">
-                                        <UserProfile name={userDBJsonInfo['firstName']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'} />
+                                        <UserProfile name={userDBJsonInfo['username']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'} />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}

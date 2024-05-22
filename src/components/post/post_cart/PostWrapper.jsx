@@ -35,7 +35,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                             <div className='flex items-center justify-between space-x-3'>
                                 <div className='flex items-center space-x-2'>
-                                    <UserProfile styles={'space-x-2'} name={UserBaseInfo[0]} profileImage={UserBaseInfo[1]} userNameStyle={'text-[11px] text-purple-1000'} target={'./'} />
+                                    <UserProfile styles={'space-x-1'} name={UserBaseInfo[0]} profileImage={UserBaseInfo[1]} userNameStyle={'text-[11px] text-purple-1000'} target={'./'} />
                                 </div>
                                 <EditPost />
                             </div>

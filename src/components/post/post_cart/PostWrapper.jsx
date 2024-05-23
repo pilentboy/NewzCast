@@ -4,7 +4,6 @@ import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';
 import EditPost from './EditPost';
-import { FaEye } from "react-icons/fa";
 import { IoStatsChart } from "react-icons/io5";
 import SharePost from './SharePost';
 import CommentPost from './CommentPost';
@@ -14,6 +13,8 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
     const UserBaseInfo = [userPostsInfo['username'], userPostsInfo['profileImage']]
     const [commentValue, setCommentValue] = useState('')
+
+
 
     return (
 
@@ -35,7 +36,9 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                             <div className='flex items-center justify-between space-x-3'>
                                 <div className='flex items-center space-x-2'>
-                                    <UserProfile styles={'space-x-1'} name={UserBaseInfo[0]} profileImage={UserBaseInfo[1]} userNameStyle={'text-[11px] text-purple-1000'} target={'./'} />
+                                    <UserProfile styles={'space-x-1'} name={UserBaseInfo[0]} profileImage={UserBaseInfo[1]} userNameStyle={'text-[11px] text-purple-1000'}
+                                        target={`profile/${userPostsInfo['email']}`}
+                                    />
                                 </div>
                                 <EditPost />
                             </div>
@@ -57,12 +60,12 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                             <PostInfoContainer styles={'justify-evenly border-b  border-gray-200 pb-2'}>
 
-                                <LikePost likedPost={like[0]} handleLike={like[1]} />
-
+                                <SharePost />
 
                                 <AddFavorites favoritePost={favorite[0]} handleFavorite={favorite[1]} />
+                                
+                                <LikePost likedPost={like[0]} handleLike={like[1]} />
 
-                                <SharePost />
 
 
                             </PostInfoContainer>

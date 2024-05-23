@@ -1,6 +1,4 @@
 import ModalCloseBTN from '../modal/ModalCloseBTN'
-import UserProfile from '../profile/UserProfile'
-import MainButton from '../landing/MainButton'
 import test from '../../assets/images/1.webp'
 import ActivityListItem from './ActivityListItem'
 

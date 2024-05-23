@@ -1,5 +1,5 @@
 import './style/index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
 import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';
 import Login from './pages/login';
@@ -28,7 +28,12 @@ function App() {
 						<Route path="settings" element={<Settings />} />
 						<Route path="favorites" element={<Favorites />} />
 						<Route path="search" element={<Search />} />
+						
 					</Route>
+					
+					 <Route path="*" element={<Landing />} /> 
+
+					
 				</Routes>
 			</LoginProvider>
 		</BrowserRouter>

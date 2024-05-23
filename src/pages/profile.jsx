@@ -42,7 +42,7 @@ const Profile = () => {
                 console.log("owner the page")
                 setUserPer(true)
             } else {
-                setUserProfileInfo(getUsersInfo(email))
+				setUserProfileInfo(getUsersInfo(email))
                 console.log("not owner the page")
                 setUserPer(false)
             }

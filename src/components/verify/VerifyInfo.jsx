@@ -13,7 +13,7 @@ export default function VerifyInfo() {
                 onMouseLeave={() => setIsHovered(false)}
             />
 
-            <div className={`w-[350px] py-2 px-2   rounded-md  -right-10 top-10 bg-white border border-1 border-gray-200 duration-4000 font-sans  absolute lg:-top-4  lg:right-[-370px] cursor-text ${isHovered ? 'block' : 'hidden'}`}>
+            <div className={`w-[340px] py-2 px-2   rounded-md  -right-11 top-10 bg-white border border-1 border-gray-200 duration-4000 font-sans  absolute lg:-top-4  lg:right-[-370px] cursor-text ${isHovered ? 'block' : 'hidden'}`}>
 
                 <h1 className='text-sm my-1 text-start text-purple-1000 font-medium'>
                     What types of accounts get verified?

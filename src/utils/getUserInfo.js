@@ -1,8 +1,9 @@
 import Users from '../db.json'
 
 const getUsersInfo = (userEmail) => {
-    const userFullData = Users["UsersData"].filter((usersInfo) => usersInfo.email === userEmail)
-    return userFullData[0]
+    const userInfo = Users["UsersData"].filter((usersInfo) => usersInfo.email === userEmail)
+
+    if (userInfo.length === 1) return userInfo[0]
 }
 
 export default getUsersInfo

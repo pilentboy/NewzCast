@@ -33,7 +33,6 @@ function HomeNav() {
     const logOutUser = async () => {
         const res = await handleSignOut()
         if (res) {
-
             handleUserAuth()
             navigate("/")
         } else {

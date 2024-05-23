@@ -13,12 +13,12 @@ function ProfileActivityList({ title, handleClose }) {
 
             <div className='overflow-y-auto  no-scrollbar'>
 
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={true} />
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={true} />
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={true} />
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={false} />
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={true} />
-                <ActivityListItem username={'pilentboy'} profileImage={test} followState={false} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={true} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={true} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={true} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={false} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={true} />
+                <ActivityListItem name={'pilentboy'} profileImage={test} followState={false} />
             </div>
 
         </div>

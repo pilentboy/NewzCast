@@ -9,7 +9,7 @@ import userPosts from '../db.json'
 function Trending() {
 
     const [favorite, setFavorite] = useState(false)
-    const [like, setLike] = useState(true)
+    const [like, setLike] = useState(false)
 
     const { userInfo } = useContext(LoginContext)
 

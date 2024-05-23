@@ -16,7 +16,7 @@ function LikePost({ likedPost, handleLike }) {
         >
 
             <BiSolidLike
-                className={`text-[23px] mr-2 duration-200 ${!likedPost || !userInfo ? 'text-gray-400' : 'text-green-600 '} `}
+                className={`text-[23px] mr-2 duration-200 ${!likedPost || !userInfo ? 'text-gray-400' : 'text-green-600 '} hover:text-green-600`}
             />
             {/* <span className={`${likedPost && userInfo ? 'invisible' : 'visible'}`}>
                 Like

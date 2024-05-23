@@ -1,6 +1,8 @@
 import { FaHeart } from "react-icons/fa";
 import { useContext } from "react";
 import { LoginContext } from "../../../context/LoginContext";
+
+
 function AddFavorites({ favoritePost, handleFavorite }) {
 
     const { userInfo } = useContext(LoginContext)

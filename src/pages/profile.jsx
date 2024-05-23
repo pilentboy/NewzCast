@@ -9,9 +9,11 @@ import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import { useState, useContext, useEffect } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
+import getUsersInfo from "../utils/getUserInfo";
 import { useParams } from "react-router-dom";
 import ProfileActivityList from "../components/modal/ProfileActivityList"
 import MainButton from "../components/landing/MainButton";
+import Loading from "../components/Loading";
 
 
 const Profile = () => {
@@ -20,47 +22,56 @@ const Profile = () => {
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
     const [userPer, setUserPer] = useState(false)
-
+    const [userProfileInfo, setUserProfileInfo] = useState(undefined)
 
 
     const { email } = useParams();
 
-    // just checking the user's email in Profile page
+
     useEffect(() => {
+
+        setLoading(true)
+
         if (userDBJsonInfo) {
             if (email === userDBJsonInfo['email']) {
+                setUserProfileInfo(userDBJsonInfo)
                 console.log("owner the page")
                 setUserPer(true)
             } else {
+                setUserProfileInfo(getUsersInfo(email))
                 console.log("not owner the page")
                 setUserPer(false)
             }
         }
 
+        setLoading(false)
 
-    }, [userDBJsonInfo, email])
+    }, [userDBJsonInfo, email, userProfileInfo])
 
     return (
-        <>
-            {/* user's profile box -- some info about user */}
-            <HomeContainer>
+
+        loading ? (
+            <Loading display={loading} />
+        ) : (
+            < HomeContainer >
 
                 {
-                    userDBJsonInfo && <div className={`flex flex-col w-[90%] mb-6  ${userDBJsonInfo['verified'] ? 'min-h-[360px]' : 'h-[270px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
+                    userProfileInfo && <div className={`flex flex-col w-[90%] mb-6  ${userProfileInfo['verified'] ? 'min-h-[360px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
 
                         <div className="flex flex-col border-b border-gray-200 pb-10 ">
 
                             <div className="flex flex-col mx-auto items-center relative">
-                                <UserProfile profileImage={userDBJsonInfo['profileImage']} target={' '} name={`${userDBJsonInfo['firstName']} ${userDBJsonInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
-                                <UserID id={userDBJsonInfo['username']} />
+                                <UserProfile profileImage={userProfileInfo['profileImage']} target={' '} name={`${userProfileInfo['firstName']} ${userProfileInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
+                                <UserID id={userProfileInfo['username']} />
                             </div>
 
 
                             {
-                                userDBJsonInfo['verified'] && (
+                                userProfileInfo['verified'] && (
                                     <div className="flex justify-between items-center px-10 mt-3">
                                         <span></span>
                                         <ColoredLogo target={' '} />
@@ -79,7 +90,7 @@ const Profile = () => {
                             <ul className="  flex justify-between items-start">
 
                                 {
-                                    userDBJsonInfo['userActiviyInfo'].map((activity, id) => {
+                                    userProfileInfo['userActiviyInfo'].map((activity, id) => {
                                         return (
                                             <UserProfileActivityInfo
                                                 title={activity.title}
@@ -95,7 +106,7 @@ const Profile = () => {
                             {
                                 !userPer && <MainButton
                                     title={'Follow'}
-                                    styles={'bg-purple-1000 text-white font-normal py-1 mx-auto mt-5 mb-3'}
+                                    styles={'bg-purple-1000 text-white font-normal py-1 mx-auto mt-5 mb-3 hover:opacity-90 duration-200'}
                                     lgBTN={false}
                                     action={() => alert("following")}
                                 />
@@ -119,9 +130,9 @@ const Profile = () => {
                 }
 
                 {
-                    userDBJsonInfo &&
+                    userProfileInfo &&
                     <PostWrapper
-                        userPostsInfo={userDBJsonInfo}
+                        userPostsInfo={userProfileInfo}
                         favorite={[favorite, setFavorite]}
                         like={[like2, setLike2]}
                     />
@@ -131,9 +142,9 @@ const Profile = () => {
 
 
 
-            </HomeContainer>
+            </HomeContainer >
+        )
 
-        </>
 
     )
 }

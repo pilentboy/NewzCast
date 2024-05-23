@@ -17,6 +17,7 @@ import UserProfile from "../profile/UserProfile";
 
 
 
+
 function HomeNav() {
 
     const navigate = useNavigate()
@@ -25,7 +26,7 @@ function HomeNav() {
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
 
     const optionBoxItems = [
-        'Profile', 'Settings'
+        'Settings'
     ]
 
 
@@ -80,7 +81,9 @@ function HomeNav() {
                                 </HomeNavLink> : (
 
                                     <div className="flex items-center">
-                                        <UserProfile name={userDBJsonInfo['username']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'} />
+                                        <UserProfile name={userDBJsonInfo['username']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'}
+                                            target={`profile/${userDBJsonInfo['email']}`}
+                                        />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}

@@ -12,7 +12,9 @@ function AddFavorites({ favoritePost, handleFavorite }) {
         <button type='button' onClick={handleAddFavorite}>
             <FaHeart
                 title='add to favorites'
-                className={` text-xl duration-200 hover:text-red-600  ${userInfo && favoritePost ? 'text-red-700' : 'text-gray-400'}`} />
+                className={` text-xl duration-200   ${userInfo && favoritePost ? 'text-red-700' : 'text-gray-400'}
+                ${!favoritePost ? 'hover:text-gray-500' : null}
+                `} />
 
         </button>)
 }

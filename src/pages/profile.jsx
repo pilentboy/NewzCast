@@ -3,6 +3,7 @@ import UserProfile from "../components/profile/UserProfile"
 import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
@@ -14,6 +15,7 @@ import { useParams } from "react-router-dom";
 import ProfileActivityList from "../components/modal/ProfileActivityList"
 import MainButton from "../components/landing/MainButton";
 import NotFoundProfile from "../components/profile/NotFoundProfile";
+import { IoIosSettings } from "react-icons/io";
 
 
 const Profile = () => {
@@ -52,13 +54,20 @@ const Profile = () => {
                     <>
                         <div className={`flex flex-col w-[90%] mb-6   ${userProfileInfo['verified'] ? 'min-h-[360px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
 
-                            <div className="flex flex-col border-b border-gray-200 pb-10 ">
+                            <div className="flex flex-col border-b border-gray-200 pb-10 relative">
 
-                                <div className="flex flex-col mx-auto items-center ">
+                                {
+                                    userPer &&
+                                    <Link to="/newzcast/settings" className="block md:hidden">
+                                        <IoIosSettings className="text-black absolute top-2 cursor-pointer left-5 text-lg hover:rotate-45 duration-200" />
+                                    </Link>
+
+                                }
+                                
+                                <div className="flex flex-col mx-auto items-center">
+
                                     <UserProfile profileImage={userProfileInfo['profileImage']} target={' '} name={`${userProfileInfo['firstName']} ${userProfileInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} />
                                     <UserID id={userProfileInfo['username']} />
-
-                                    <span>setting</span>
                                 </div>
 
 

@@ -10,7 +10,6 @@ function EditPost({ postID }) {
 
     const handleEnableEditgPost = () => {
         const res = userDBJsonInfo.posts.filter(post => post['postID'] === postID)
-        console.log(res.length)
         if (res.length >= 1) {
             setEnableEdit(true)
         } else {

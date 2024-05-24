@@ -13,7 +13,6 @@ import getUsersInfo from "../utils/getUserInfo";
 import { useParams } from "react-router-dom";
 import ProfileActivityList from "../components/modal/ProfileActivityList"
 import MainButton from "../components/landing/MainButton";
-import Loading from "../components/Loading";
 import NotFoundProfile from "../components/profile/NotFoundProfile";
 
 
@@ -23,7 +22,6 @@ const Profile = () => {
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
-    const [loading, setLoading] = useState(true)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
     const [userPer, setUserPer] = useState(false)
@@ -32,10 +30,7 @@ const Profile = () => {
 
     const { email } = useParams();
 
-
     useEffect(() => {
-
-        setLoading(true)
 
         if (userDBJsonInfo) {
             if (email === userDBJsonInfo['email']) {
@@ -45,20 +40,16 @@ const Profile = () => {
                 setUserProfileInfo(getUsersInfo(email))
                 setUserPer(false)
             }
-        }else{
-			  setUserProfileInfo(getUsersInfo(email))
-              setUserPer(false)
-		}
+        } else {
+            setUserProfileInfo(getUsersInfo(email))
+            setUserPer(false)
+        }
 
-        setLoading(false)
 
     }, [userDBJsonInfo, email, userProfileInfo])
 
     return (
 
-        loading ? (
-            <Loading display={loading} />
-        ) : (
             < HomeContainer >
 
                 {
@@ -145,7 +136,7 @@ const Profile = () => {
                 }
 
             </HomeContainer >
-        )
+        
 
 
     )

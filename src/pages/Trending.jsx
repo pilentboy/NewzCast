@@ -14,6 +14,7 @@ function Trending() {
     const { userInfo } = useContext(LoginContext)
 
 
+
     return (
 
         <HomeContainer>
@@ -29,11 +30,9 @@ function Trending() {
             }
 
 
-
-
-
-
         </HomeContainer>
+
+
     )
 }
 

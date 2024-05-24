@@ -45,7 +45,10 @@ const Profile = () => {
                 setUserProfileInfo(getUsersInfo(email))
                 setUserPer(false)
             }
-        }
+        }else{
+			  setUserProfileInfo(getUsersInfo(email))
+              setUserPer(false)
+		}
 
         setLoading(false)
 

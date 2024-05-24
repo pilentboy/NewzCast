@@ -64,7 +64,7 @@ const Profile = () => {
                 {
                     userProfileInfo ? (
                         <>
-                            <div className={`flex flex-col w-[90%] mb-6  ${userProfileInfo['verified'] ? 'min-h-[360px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
+                            <div className={`flex flex-col w-[90%] mb-6   ${userProfileInfo['verified'] ? 'min-h-[360px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
 
                                 <div className="flex flex-col border-b border-gray-200 pb-10 ">
 

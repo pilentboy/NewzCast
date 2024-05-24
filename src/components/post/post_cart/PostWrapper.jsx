@@ -40,7 +40,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                         target={`profile/${userPostsInfo['email']}`}
                                     />
                                 </div>
-                                <EditPost />
+                                <EditPost postID={post.postID} />
                             </div>
 
                             <PostInfoContainer styles={'justify-between       md:justify-around'}>
@@ -63,7 +63,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                 <SharePost />
 
                                 <AddFavorites favoritePost={favorite[0]} handleFavorite={favorite[1]} />
-                                
+
                                 <LikePost likedPost={like[0]} handleLike={like[1]} />
 
 

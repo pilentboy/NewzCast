@@ -31,6 +31,7 @@
                     "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
                     "likes": 20,
                     "views": 112,
+                    "postID": "123mmm321",
                     "comments": [
                         {
                             "username": "honest",
@@ -51,6 +52,7 @@
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
                     "likes": 16,
                     "views": 25,
+                    "postID": "123mmm621",
                     "comments": [
                         {
                             "username": "honest",
@@ -95,6 +97,7 @@
                     "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
                     "likes": 256,
                     "views": 23,
+                    "postID": "123m33321",
                     "comments": [
                         {
                             "username": "dq2223",
@@ -115,6 +118,7 @@
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
                     "likes": 16,
                     "views": 25,
+                    "postID": "123m99321",
                     "comments": [
                         {
                             "username": "honest",
@@ -131,6 +135,7 @@
                     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
                     "likes": 260,
                     "views": 54,
+                    "postID": "123ma321",
                     "comments": [
                         {
                             "username": "john212",
@@ -171,6 +176,7 @@
                     "image": "https://images.freeimages.com/images/large-previews/c56/scn-prk-012-jpg-1364337.jpg?fmt=webp&w=500",
                     "likes": 254,
                     "views": 552,
+                    "postID": "123mr4321",
                     "comments": [
                         {
                             "username": "dq2223",
@@ -191,6 +197,7 @@
                     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s",
                     "likes": 16,
                     "views": 25,
+                    "postID": "123mor321",
                     "comments": [
                         {
                             "username": "honest",
@@ -207,6 +214,7 @@
                     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXxfc2JeHYtzG7-MTjfaVcbwLMJktgj-RSx3om4IJtA&s",
                     "likes": 260,
                     "views": 54,
+                    "postID": "123rxm321",
                     "comments": [
                         {
                             "username": "john212",

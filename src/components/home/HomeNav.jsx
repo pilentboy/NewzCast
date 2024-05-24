@@ -9,19 +9,18 @@ import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
 import ArrowBTN from "./ArrowBTN";
-import handleSignOut from "../../utils/handleSignOut";
-import { useNavigate } from "react-router-dom";
 import OptionBox from "./OptionBox";
 import NavTopSmallScreen from "./NavTopSmallScreen";
 import UserProfile from "../profile/UserProfile";
+import Logout from "./Logout";
 
 
 
 
 function HomeNav() {
 
-    const navigate = useNavigate()
-    const { userInfo, userDBJsonInfo, handleUserAuth } = useContext(LoginContext)
+    const { userInfo, userDBJsonInfo } = useContext(LoginContext)
+
 
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
 
@@ -30,21 +29,13 @@ function HomeNav() {
     ]
 
 
-    const logOutUser = async () => {
-        const res = await handleSignOut()
-        if (res) {
-            handleUserAuth()
-            navigate("/")
-        } else {
-            alert("error")
-        }
-    }
 
 
     return (
         <>
 
             <nav className="z-[999]" >
+
                 {/* display logo and user's photo  */}
                 <NavTopSmallScreen />
 
@@ -88,13 +79,7 @@ function HomeNav() {
                                                 display={optionBoxDisplay}
                                                 items={optionBoxItems}
                                                 button={
-                                                    <button
-                                                        type="button"
-                                                        onClick={logOutUser}
-                                                        className=" text-gray-400 font-semibold duration-200  text-sm py-1 text-start my-1  hover:text-red-500   "
-                                                    >
-                                                        Log out
-                                                    </button>
+                                                    <Logout />
                                                 }
                                             />
                                         </ArrowBTN>
@@ -108,8 +93,8 @@ function HomeNav() {
 
             </nav>
 
-            <Outlet />
 
+            < Outlet />
         </>
 
 

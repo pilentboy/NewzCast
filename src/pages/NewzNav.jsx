@@ -2,12 +2,13 @@ import HomeNav from "../components/home/HomeNav"
 import { useContext } from "react";
 import { LoginContext } from "../context/LoginContext";
 import handleTokenExpiration from "../utils/handleTokenExpiration";
+import Loading from "../components/Loading";
 
 import { useEffect } from "react";
 
 const NewzNav = () => {
 
-    const { handleUserAuth } = useContext(LoginContext)
+    const { handleUserAuth, loading } = useContext(LoginContext)
 
     useEffect(() => {
 
@@ -17,9 +18,12 @@ const NewzNav = () => {
     }, []);
 
     return (
+
         <>
             <HomeNav />
+            <Loading display={loading} />
         </>
+
     )
 }
 

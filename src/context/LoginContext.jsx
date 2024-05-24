@@ -7,7 +7,7 @@ const LoginProvider = ({ children }) => {
 
     const [userInfo, setUserInfo] = useState()
     const [userDBJsonInfo, setUserDBJsonInfo] = useState()
-
+    const [loading, setLoading] = useState(false)
 
     const handleUserAuth = () => {
         const userData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
@@ -20,14 +20,14 @@ const LoginProvider = ({ children }) => {
         }
     }
 
-  
+
 
     useEffect(() => {
         handleUserAuth()
     }, [])
 
     return (
-        <LoginContext.Provider value={{ userInfo, setUserInfo, handleUserAuth, userDBJsonInfo }}>
+        <LoginContext.Provider value={{ userInfo, setUserInfo, handleUserAuth, userDBJsonInfo, loading, setLoading }}>
             {children}
         </LoginContext.Provider>
     )

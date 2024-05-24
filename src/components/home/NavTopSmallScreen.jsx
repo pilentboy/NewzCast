@@ -14,7 +14,9 @@ function NavTopSmallScreen() {
             <span> </span>
             <ColoredLogo styles={'ms-6'} />
             {
-                userDBJsonInfo ? <UserProfile name={userDBJsonInfo['username']} styles={'flex-col mt-3'} profileImage={userDBJsonInfo['profileImage']} imageSize={'h-8 w-8'} /> : <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                userDBJsonInfo ? <UserProfile name={userDBJsonInfo['username']} styles={'flex-col mt-3'} profileImage={userDBJsonInfo['profileImage']} imageSize={'h-8 w-8'} 
+				target={`profile/${userDBJsonInfo['email']}`} // not test yet
+				/> : <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
                     <CiLogin />
                 </HomeNavLink>
 

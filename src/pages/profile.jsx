@@ -122,7 +122,6 @@ const Profile = () => {
                                     setDisplay={setModalContainerDisplay}>
                                     <ProfileActivityList
                                         title={activityInfoClickedTitle}
-                                        handleClose={setModalContainerDisplay}
                                     />
 
                                 </ModalContainer>

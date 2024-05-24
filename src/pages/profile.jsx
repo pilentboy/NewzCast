@@ -54,9 +54,11 @@ const Profile = () => {
 
                             <div className="flex flex-col border-b border-gray-200 pb-10 ">
 
-                                <div className="flex flex-col mx-auto items-center relative">
-                                    <UserProfile profileImage={userProfileInfo['profileImage']} target={' '} name={`${userProfileInfo['firstName']} ${userProfileInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} imgStyles={'relative'} />
+                                <div className="flex flex-col mx-auto items-center ">
+                                    <UserProfile profileImage={userProfileInfo['profileImage']} target={' '} name={`${userProfileInfo['firstName']} ${userProfileInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} />
                                     <UserID id={userProfileInfo['username']} />
+
+                                    <span>setting</span>
                                 </div>
 
 

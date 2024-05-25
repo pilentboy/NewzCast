@@ -11,7 +11,8 @@ function Trending() {
     const [favorite, setFavorite] = useState(false)
     const [like, setLike] = useState(false)
 
-    const { userInfo } = useContext(LoginContext)
+
+    const { userDBJsonInfo, verifyUser } = useContext(LoginContext)
 
 
 
@@ -20,7 +21,7 @@ function Trending() {
         <HomeContainer>
 
             {
-                userInfo && <SharePost />
+                userDBJsonInfo && <SharePost TextLimit={verifyUser} />
             }
 
             {

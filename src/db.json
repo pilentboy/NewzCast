@@ -48,6 +48,26 @@
                     ]
                 },
                 {
+                    "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
+                    "likes": 20,
+                    "views": 112,
+                    "postID": "1230mm321",
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw123",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "john212",
+                            "comment": "great! keep going!"
+                        }
+                    ]
+                },
+                {
                     "title": "This is my second post on NewzCast!",
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
                     "likes": 16,

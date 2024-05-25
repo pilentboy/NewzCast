@@ -1,29 +1,16 @@
 import { useEffect, useState } from "react"
 import HomeContainer from "../components/home/HomeContainer"
 import userdata from '../db.json'
+import SearchBox from "../components/search/SearchBox"
 
 function Search() {
 
-  const [users, setUsers] = useState([])
+  const [searchValue, setSearchValue] = useState("")
 
-  useEffect(() => {
-    const test = userdata['UsersData'].filter((user) => user.firstName.toLowerCase().includes('a'))
-    setUsers(test)
-  }, [])
 
   return (
     <HomeContainer>
-      <h1>search</h1>
-      <h1>result</h1>
-      <ul>
-        {
-          users.map((user, id) => (
-            <li key={id}>
-              {user.username}
-            </li>
-          )
-          )}
-      </ul>
+      <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
     </HomeContainer>
   )
 }

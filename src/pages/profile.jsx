@@ -26,14 +26,14 @@ const Profile = () => {
     const [like2, setLike2] = useState(false)
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
-    const [userPer, setUserPer] = useState(false)
+    const [userPer, setUserPer] = useState(false) // handle access to profile settings
     const [userProfileInfo, setUserProfileInfo] = useState(undefined)
-
+    const [loading, setLoading] = useState(true)
 
     const { email } = useParams();
 
     useEffect(() => {
-
+        setLoading(true)
         if (userDBJsonInfo && email === userDBJsonInfo['email']) {
             setUserProfileInfo(userDBJsonInfo)
             setUserPer(true)
@@ -41,13 +41,13 @@ const Profile = () => {
             setUserProfileInfo(getUsersInfo(email))
             setUserPer(false)
         }
-
+        setLoading(false)
 
     }, [userDBJsonInfo, email, userProfileInfo])
 
     return (
 
-        < HomeContainer >
+        !loading && <HomeContainer>
 
             {
                 userProfileInfo ? (
@@ -63,7 +63,7 @@ const Profile = () => {
                                     </Link>
 
                                 }
-                                
+
                                 <div className="flex flex-col mx-auto items-center">
 
                                     <UserProfile profileImage={userProfileInfo['profileImage']} target={' '} name={`${userProfileInfo['firstName']} ${userProfileInfo['lastName']} `} styles={'flex-col space-y-2'} imageSize={'h-20 w-20 border-4 border-purple-1000 '} profileImageButton={userPer ? <ChangeProfilePic /> : null} userNameStyle={'text-purple-1000'} />

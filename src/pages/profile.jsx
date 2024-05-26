@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext, useEffect,useMemo  } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import getUsersInfo from "../utils/getUserInfo";
@@ -31,7 +31,7 @@ const Profile = () => {
     const [loading, setLoading] = useState(true)
 
     const { email } = useParams();
-
+	
     useEffect(() => {
         setLoading(true)
         if (userDBJsonInfo && email === userDBJsonInfo['email']) {

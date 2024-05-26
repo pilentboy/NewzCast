@@ -8,6 +8,7 @@ import { IoStatsChart } from "react-icons/io5";
 import SharePost from './SharePost';
 import CommentPost from './CommentPost';
 import { useState } from 'react';
+import DisplayPostComments from './DisplayPostComments';
 
 function PostWrapper({ userPostsInfo, favorite, like }) {
 
@@ -21,7 +22,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
         <>
             {
                 userPostsInfo['posts'].map((post, id) => (
-			<div className={` w-[90%]  min-h-[200px] max-h-[600px] overflow-hidden my-3  bg-white flex flex-col justify-between md:w-460 ${!post['image'] ? 'border border-gray-200 rounded-md' : null }`} key={id}>
+                    <div className={` w-[90%]  min-h-[200px] max-h-[600px] overflow-hidden my-3  bg-white flex flex-col justify-between md:w-460 ${!post['image'] ? 'border border-gray-200 rounded-md' : null}`} key={id}>
                         {
                             post['image'] ? (
                                 <img src={post['image']} className='w-full h-80 object-cover mb-4 shadow-lg' alt='post image' />
@@ -54,8 +55,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                                 <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>
 
-                                <span>{post['comments'].length} Comments</span>
-
+                                <DisplayPostComments commentsLength={post['comments'].length} />
                             </PostInfoContainer>
 
                             <PostInfoContainer styles={'justify-evenly border-b  border-gray-200 pb-2'}>

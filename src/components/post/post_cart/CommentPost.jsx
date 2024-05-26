@@ -1,6 +1,5 @@
 
 import { IoSendSharp } from "react-icons/io5";
-import { BiSolidSend } from "react-icons/bi";
 
 function CommentPost({ commentValue, setCommentValue }) {
 

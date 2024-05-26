@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 
-function SearchBox({ searchValue, setSearchValue }) {
+function SearchBox({ searchValue, setSearchValue, handleSearch }) {
 
     const [displaySearchBTN, setDisplaySearchBTN] = useState(false)
 
     const handleChange = (e) => {
         setSearchValue(e.target.value);
     }
-
 
 
     useEffect(() => {
@@ -19,10 +18,7 @@ function SearchBox({ searchValue, setSearchValue }) {
     }, [searchValue])
 
     return (
-        <form action="/" onSubmit={(e) => {
-            e.preventDefault()
-            setSearchValue("")
-        }}>
+        <form action="/" onSubmit={handleSearch}>
             <div className="w-64 h-10 flex  overflow-hidden items-center ps-1 justify-between rounded-md border border-gray-400 ">
                 <input
                     value={searchValue}

@@ -5,6 +5,7 @@ import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
+import { FaSearch } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
@@ -36,7 +37,7 @@ function HomeNav() {
 
             <nav className="z-[999]" >
 
-                {/* display logo and user's photo  */}
+                {/* display logo and usesr's photo  */}
                 <NavTopSmallScreen />
 
                 {/* main nav */}
@@ -53,14 +54,17 @@ function HomeNav() {
 
                             Trending
                         </Link>
+                        
+                        <HomeNavLink target={'search'} linkTitle={'Search'}>
+                            <FaSearch />
+
+                        </HomeNavLink>
+
 
                         <HomeNavLink target={'favorites'} linkTitle={'Favorites'}>
                             <FaHeart className="duration-200  hover:text-red-700 " />
                         </HomeNavLink>
 
-                        <HomeNavLink target={'search'} linkTitle={'Search'}>
-                            <GoSearch />
-                        </HomeNavLink>
 
 
                         <div className="hidden md:block">

@@ -112,4 +112,19 @@
             left: 2%;
         }
     }
+
+    .search-result {
+        animation-name: searchResult;
+        animation-duration: 600ms;
+    }
+
+    @keyframes searchResult {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 }

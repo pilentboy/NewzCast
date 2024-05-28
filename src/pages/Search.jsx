@@ -25,7 +25,7 @@ function Search() {
   }
 
   useEffect(() => {
-    if (searchValue == "") {
+    if (searchValue === "") {
       setSearchResult(null)
       setSearching(false)
     }

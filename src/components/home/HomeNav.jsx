@@ -14,6 +14,8 @@ import OptionBox from "./OptionBox";
 import NavTopSmallScreen from "./NavTopSmallScreen";
 import UserProfile from "../profile/UserProfile";
 import Logout from "./Logout";
+import { MdHome } from "react-icons/md";
+
 
 
 
@@ -26,7 +28,8 @@ function HomeNav() {
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
 
     const optionBoxItems = [
-        'Settings'
+        'Settings',
+		'Favorites'
     ]
 
 
@@ -61,8 +64,8 @@ function HomeNav() {
                         </HomeNavLink>
 
 
-                        <HomeNavLink target={'favorites'} linkTitle={'Favorites'}>
-                            <FaHeart className="duration-200  hover:text-red-700 " />
+                        <HomeNavLink target={'home'} linkTitle={'Home'}>
+                            <MdHome className="text-[19px]" />
                         </HomeNavLink>
 
 

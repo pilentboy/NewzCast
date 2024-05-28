@@ -12,6 +12,7 @@ import Profile from './pages/Profile';
 import Favorites from './pages/Favorites';
 import Search from './pages/Search';
 import Settings from './pages/Settings';
+import Home from './pages/Home';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 
 					<Route path="/newzcast" element={<NewzNav />}>
 						<Route index element={<Trending />} />
+						<Route path="home" element={<Home />} />
 						<Route path="profile/:email" element={<Profile />} />
 						<Route path="settings" element={
 							<PrivateRoute /> 

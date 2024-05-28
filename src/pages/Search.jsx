@@ -14,7 +14,7 @@ function Search() {
     e.preventDefault()
     setSearching(true)
     if (searchValue !== "") {
-      const res = userdata['UsersData'].filter(username => username['username'].toLowerCase().includes(searchValue))
+      const res = userdata['UsersData'].filter(username => username['username'].toLowerCase().includes(searchValue.toLowerCase()))
       console.log(res)
       if (res.length >= 1) {
         setSearchResult(res)

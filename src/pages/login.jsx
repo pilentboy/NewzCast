@@ -10,7 +10,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import AcceptButton from "../components/form/AcceptButton"
 import { useFormik } from "formik"
-import { useState, useContext } from "react"
+import { useState, useContext,useEffect } from "react"
 import handleLogIn from "../utils/HandleLogIn"
 import Loading from '../components/Loading'
 import { LoginContext } from "../context/LoginContext"
@@ -46,6 +46,9 @@ const Login = () => {
 
     })
 
+	useEffect(()=>{
+		document.title = "Login"
+	},[])
 
 
     if (!loading) {

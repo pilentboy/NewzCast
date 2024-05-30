@@ -8,7 +8,7 @@ import MainButton from '../components/landing/MainButton'
 import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
 import ModalContainer from '../components/modal/ModalContainer'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useFormik } from 'formik'
 import handleSignUp from '../utils/handleSignUp'
 import Loading from '../components/Loading'
@@ -77,6 +77,12 @@ const Register = () => {
         },
         validationSchema: RegisterSchema
     })
+	
+	
+	useEffect(()=>{
+		document.title = "Register"
+	},[])
+
 
 
 

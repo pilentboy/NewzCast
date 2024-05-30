@@ -1,7 +1,11 @@
 import HomeContainer from "../components/home/HomeContainer"
+import {useEffect} from 'react'
 
+const Home = () => {	
 
-const Home = () => {
+	useEffect(()=>{
+		document.title = "Home"
+	},[])
 
     return (
         <HomeContainer>

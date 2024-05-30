@@ -9,6 +9,11 @@ function Search() {
   const [searchValue, setSearchValue] = useState("")
   const [searching, setSearching] = useState(false)
   const [searchResult, setSearchResult] = useState(null)
+  
+  	useEffect(()=>{
+		document.title = "Search"
+	},[])
+
 
   const handleSearch = (e) => {
     e.preventDefault()

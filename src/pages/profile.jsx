@@ -46,6 +46,12 @@ const Profile = () => {
         setLoading(false)
 
     }, [userDBJsonInfo, email, userProfileInfo])
+	
+	
+	useEffect(()=>{
+		document.title = "Profile"
+	},[])
+
 
     return (
 

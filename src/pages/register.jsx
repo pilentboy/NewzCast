@@ -20,7 +20,7 @@ import { MdError } from "react-icons/md";
 import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
 import TextModal from '../components/modal/TextModal'
 import Verify from '../components/verify/Verify'
-import VerifyInfo from '../components/verify/VerifyInfo'
+import InfoBox from '../components/verify/InfoBox'
 
 
 const Register = () => {
@@ -121,7 +121,14 @@ const Register = () => {
                             )
                         }
 
-                        <Verify icon={<VerifyInfo />} />
+                        <Verify icon={<InfoBox 
+                        title='What types of accounts get verified?'
+                        textContent='An account may be verified if it is determined to be an
+                        account of public interest. Typically this includes accounts
+                        maintained by users in media, journalism, government,
+                        politics, business, religion,music, sports, celebrity, and other
+                        areas of public interests.'
+                        />} />
 
 
                         <div className='space-x-4 flex items-center justify-center w-72 px-4 my-2'>

@@ -127,4 +127,38 @@
             opacity: 1;
         }
     }
+
+
+
+    .info-box {
+        animation-name: info-box-anima;
+        animation-duration: 400ms;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes info-box-anima {
+        from {
+            margin-right: 10px;
+        }
+
+        to {
+            margin-right: 0px;
+        }
+    }
+
+    .modal-container{
+        animation-name: modal-container-anima;
+        animation-duration: 200ms;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes modal-container-anima{
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
 }

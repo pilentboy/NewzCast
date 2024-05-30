@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
+import Verify from "../components/verify/Verify";
+import InfoBox from "../components/verify/InfoBox";
 import { useState, useContext, useEffect,useMemo  } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
@@ -52,7 +54,7 @@ const Profile = () => {
             {
                 userProfileInfo ? (
                     <>
-                        <div className={`flex flex-col w-[90%] mb-6   ${userProfileInfo['verified'] ? 'min-h-[360px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
+                        <div className={`flex flex-col w-[90%] mb-6   ${userProfileInfo['verified'] ? 'min-h-[330px]' : 'h-[320px]'} pt-2 border border-gray-200 rounded-md md:w-460 `}>
 
                             <div className="flex flex-col border-b border-gray-200 pb-10 relative">
 
@@ -73,11 +75,14 @@ const Profile = () => {
 
                                 {
                                     userProfileInfo['verified'] && (
-                                        <div className="flex justify-between items-center px-10 mt-3">
-                                            <span></span>
-                                            <ColoredLogo target={' '} />
-                                            <IoIosInformationCircleOutline className='text-2xl text-purple-1000' />
-                                        </div>
+                                   
+
+                                        <Verify 
+                                        Cborder='border-none'
+                                        icon={<InfoBox 
+                                            title='Verified Account'
+                                            textContent=' This user is a trusted member of our community. Verified users enjoy enhanced security and exclusive features.'
+                                            />} />
                                     )
 
 

@@ -1,7 +1,7 @@
 import UserProfile from "../profile/UserProfile"
 import MainButton from "../landing/MainButton"
 
-function ActivityListItem({ name, profileImage, followState }) {
+function UserConnectiosItem({ name, profileImage, followState }) {
     return (
         <div className='border border-gray-200 rounded-md flex items-center justify-between my-1 p-2'>
             <UserProfile styles='space-x-2' name={name} profileImage={profileImage} />
@@ -14,4 +14,4 @@ function ActivityListItem({ name, profileImage, followState }) {
         </div>)
 }
 
-export default ActivityListItem
+export default UserConnectiosItem

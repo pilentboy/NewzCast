@@ -1,8 +1,6 @@
 import HomeContainer from "../components/home/HomeContainer"
 import UserProfile from "../components/profile/UserProfile"
-import ColoredLogo from "../components/ColoredLogo"
 import UserID from "../components/profile/UserID"
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
 import PostWrapper from "../components/post/post_cart/PostWrapper"
@@ -14,7 +12,7 @@ import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import getUsersInfo from "../utils/getUserInfo";
 import { useParams } from "react-router-dom";
-import ProfileActivityList from "../components/modal/ProfileActivityList"
+import UserConnectiosList from "../components/modal/UserConnectiosList"
 import MainButton from "../components/landing/MainButton";
 import NotFoundProfile from "../components/profile/NotFoundProfile";
 import { IoIosSettings } from "react-icons/io";
@@ -128,7 +126,7 @@ const Profile = () => {
                             <ModalContainer
                                 display={modalContainerDisplay}
                                 setDisplay={setModalContainerDisplay}>
-                                <ProfileActivityList
+                                <UserConnectiosList
                                     title={activityInfoClickedTitle}
                                 />
 

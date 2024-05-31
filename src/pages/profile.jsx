@@ -2,7 +2,7 @@ import HomeContainer from "../components/home/HomeContainer"
 import UserProfile from "../components/profile/UserProfile"
 import UserID from "../components/profile/UserID"
 import { Link } from "react-router-dom";
-import UserProfileActivityInfo from "../components/profile/UserProfileActivityInfo"
+import UserConnectionActiviyInfo from "../components/profile/UserConnectionActiviyInfo"
 import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import Verify from "../components/verify/Verify";
@@ -102,7 +102,7 @@ const Profile = () => {
                                     {
                                         userProfileInfo['userActiviyInfo'].map((activity, id) => {
                                             return (
-                                                <UserProfileActivityInfo
+                                                <UserConnectionActiviyInfo
                                                     title={activity.title}
                                                     value={activity.value}
                                                     action={activity.title !== 'Newz' && activity.title !== 'Videos' ? () => setModalContainerDisplay("flex") : null}

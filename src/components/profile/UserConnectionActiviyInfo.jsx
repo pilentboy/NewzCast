@@ -1,6 +1,6 @@
 
 
-function UserProfileActivityInfo({ title, value, action, setActivityInfoClickedTitle }) {
+function UserConnectionActiviyInfo({ title, value, action, setActivityInfoClickedTitle }) {
     return (
         <li
             className={`flex flex-col items-center space-y-2 ${action ? 'cursor-pointer' : 'cursor-default'}`}
@@ -24,4 +24,4 @@ function UserProfileActivityInfo({ title, value, action, setActivityInfoClickedT
 }
 
 
-export default UserProfileActivityInfo
+export default UserConnectionActiviyInfo

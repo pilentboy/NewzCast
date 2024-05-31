@@ -11,7 +11,13 @@ function UserConnectiosList({ title }) {
             <div className='overflow-y-auto  no-scrollbar'>
 
                 <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={true} />
-            
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={false} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={false} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={true} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={false} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={true} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={false} />
+                <UserConnectiosItem name={'pilentboy'} profileImage={test} followState={true} />
             </div>
 
         </div>

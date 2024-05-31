@@ -43,11 +43,11 @@ function Search() {
 
       {
         searching &&
-        <div>
+        <div className="mt-1">
           {
 
             searchResult ? (
-              <ul>
+              <ul className="border  border-gray-200 h-80 p-1  overflow-y-auto  w-fit user-search">
                 {
                   searchResult.map((user, index) => (
                     <UserProfile
@@ -56,10 +56,35 @@ function Search() {
                       key={index}
                       usernameMargin={'ml-1'}
                       target={`/newzcast/profile/${user['email']}`}
-                      styles={'search-result border border-gray-300 w-64 mt-2 rounded-md p-2 hover:bg-gray-200 duration-200'}
+                      styles={'search-result border border-gray-300 w-64 my-1 rounded-md p-2 hover:bg-gray-200 duration-200'}
                     />
                   ))
                 }
+                {
+                  searchResult.map((user, index) => (
+                    <UserProfile
+                      name={user['username']}
+                      profileImage={user['profileImage']}
+                      key={index}
+                      usernameMargin={'ml-1'}
+                      target={`/newzcast/profile/${user['email']}`}
+                      styles={'search-result border border-gray-300 w-64 my-1 rounded-md p-2 hover:bg-gray-200 duration-200'}
+                    />
+                  ))
+                }
+                   {
+                  searchResult.map((user, index) => (
+                    <UserProfile
+                      name={user['username']}
+                      profileImage={user['profileImage']}
+                      key={index}
+                      usernameMargin={'ml-1'}
+                      target={`/newzcast/profile/${user['email']}`}
+                      styles={'search-result border border-gray-300 w-64 my-1 rounded-md p-2 hover:bg-gray-200 duration-200'}
+                    />
+                  ))
+                }
+
               </ul>
             ) : <h1 className="text-red-600 font-bold">No Result!</h1>
           }

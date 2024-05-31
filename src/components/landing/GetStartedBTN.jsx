@@ -1,8 +1,9 @@
-import MainLink from "./MainLink"
+import { Link } from "react-router-dom"
 
-export default function GetStartedBTN({ anima = false ,styles}) {
+export default function GetStartedBTN({styles,hover}) {
     return (
-        <MainLink title={'Get Started'} target={'/newzcast'} styles={` font-bold bg-purple-1000 duration-150  w-28 h-9 text-sm ${anima ? 'hover:ms-2 ' : null} ${styles}`} />
-
+		 <Link to={'newzcast'} className={`w-28 py-2  bg-purple-1000  rounded-md  text-center ${hover? 'hover:ms-6' : null} duration-500 ${styles}`}>
+			Get Started
+        </Link >
     )
 }

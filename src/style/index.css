@@ -161,4 +161,45 @@
             opacity: 1;
         }
     }
+
+    .screen-shot-anima{
+        animation-name: screen-shot-anima;
+        animation-duration: 600ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes screen-shot-anima{
+        from {
+            transform: translateX(0);
+            scale: 1;
+        }
+
+        to {
+            transform: translateX(-25%);
+            scale: 0.7;
+        }
+    }
+    .started-btn-anima {
+        animation-name: started-btn-anima ;
+        animation-duration: 500ms;
+        animation-delay: 1000ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes started-btn-anima {
+        from {
+            opacity: 0;
+            margin-left: -100px;
+        }
+
+        to {
+            opacity: 1;
+            margin-left: -60px;
+        }
+    }
+
+
+
 }

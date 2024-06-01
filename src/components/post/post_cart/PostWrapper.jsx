@@ -5,15 +5,19 @@ import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';
 import EditPost from './EditPost';
 import { IoStatsChart } from "react-icons/io5";
+import BottomBox from '../../modal/BottomBox';
 import SharePost from './SharePost';
 import CommentPost from './CommentPost';
 import { useState } from 'react';
 import DisplayPostComments from './DisplayPostComments';
+import ModalContainer from '../../modal/ModalContainer';
 
 function PostWrapper({ userPostsInfo, favorite, like }) {
 
     const UserBaseInfo = [userPostsInfo['username'], userPostsInfo['profileImage']]
     const [commentValue, setCommentValue] = useState('')
+
+    const [commentDisplay,setCommentDisplay]=useState("hidden")
 
 
 
@@ -29,14 +33,14 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                             ) : null
                         }
 
-                        <div className='flex flex-col space-y-3 p-2 '>
+                        <div className='flex flex-col  p-2 '>
 
                             <h1 className='text-black font-medium text-base'>
                                 {post['title']}
                             </h1>
 
                             <div className='flex items-center justify-between space-x-3'>
-                                <div className='flex items-center space-x-2'>
+                                <div className='flex items-center mt-2 mb-2 space-x-2'>
                                     <UserProfile styles={'space-x-1'} name={UserBaseInfo[0]} profileImage={UserBaseInfo[1]} userNameStyle={'text-[11px] text-purple-1000'}
                                         target={`profile/${userPostsInfo['email']}`}
                                     />
@@ -44,7 +48,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                 <EditPost postID={post.postID} />
                             </div>
 
-                            <PostInfoContainer styles={'justify-between       md:justify-around'}>
+                            <PostInfoContainer styles={'justify-between mb-3      md:justify-around'}>
 
                                 <span>{post['likes']} likes</span>
 
@@ -55,10 +59,13 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                                 <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>
 
-                                <DisplayPostComments commentsLength={post['comments'].length} />
+                                <DisplayPostComments 
+                                commentsLength={post['comments'].length}
+                                setDisplay={setCommentDisplay}
+                                />
                             </PostInfoContainer>
 
-                            <PostInfoContainer styles={'justify-evenly border-b  border-gray-200 pb-2'}>
+                            <PostInfoContainer styles={'justify-evenly border-b mb-3 border-gray-200 pb-2'}>
 
                                 <SharePost />
 
@@ -71,6 +78,35 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                             </PostInfoContainer>
 
                             <CommentPost commentValue={commentValue} setCommentValue={setCommentValue} />
+
+                            <ModalContainer display={commentDisplay} setDisplay={setCommentDisplay}
+                            
+                            >
+                                 <BottomBox>
+                                {
+                                    post['comments'].map((comment,index) => (
+                                        <div className='flex items-start my-4   justify-between w-full border-b  border-slate-500  pb-1 
+                                        '
+                                        key={index}
+                                        >
+                                        <UserProfile
+                                        name={UserBaseInfo[0]}
+                                        profileImage={post['image']}
+                                        styles={'space-x-2 '}
+                                        
+                                        />
+                                        <p className='text-white w-3/4  ms-2 
+                                         text-justify
+                                        font-medium'>
+                                            Omg, is it real? Start building your own. Get you car Insurance in California.
+                                        </p>
+                                        </div>
+    
+                                    ))
+                                }
+                               
+                                 </BottomBox>
+                            </ModalContainer>
 
                         </div>
                     </div>

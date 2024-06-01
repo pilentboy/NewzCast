@@ -19,7 +19,7 @@ function SearchBox({ searchValue, setSearchValue, handleSearch }) {
 
     return (
         <form action="/" onSubmit={handleSearch}>
-            <div className="w-64 h-10 flex  overflow-hidden items-center ps-1 justify-between rounded-md border border-gray-400 duration-200 ">
+            <div className="w-[270px] h-10 flex  overflow-hidden items-center ps-1 justify-between rounded-md border border-gray-400 duration-200 ">
                 <input
                     autoFocus
                     value={searchValue}

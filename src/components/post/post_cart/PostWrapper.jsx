@@ -96,7 +96,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                         
                                         />
                                         <p className='text-white w-3/4  ms-2 
-                                         text-justify
+                                        
                                         font-medium'>
                                             Omg, is it real? Start building your own. Get you car Insurance in California.
                                         </p>

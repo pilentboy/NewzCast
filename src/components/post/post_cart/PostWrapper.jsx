@@ -29,7 +29,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                     <div className={` w-[90%]  min-h-[200px] max-h-[600px] overflow-hidden my-3  bg-white flex flex-col justify-between md:w-460 ${!post['image'] ? 'border border-gray-200 rounded-md' : null}`} key={id}>
                         {
                             post['image'] ? (
-                                <img src={post['image']} className='w-full h-80 object-cover mb-4 shadow-lg' loading='lazy' alt='post image' />
+                                <img src={post['image']} className='w-full h-80 object-cover mb-4 shadow-lg rounded-md' loading='lazy' alt='post image' />
                             ) : null
                         }
 

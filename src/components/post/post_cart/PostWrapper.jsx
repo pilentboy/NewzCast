@@ -5,9 +5,9 @@ import LikePost from './LikePost';
 import UserProfile from '../../profile/UserProfile';
 import EditPost from './EditPost';
 import { IoStatsChart } from "react-icons/io5";
-import BottomBox from '../../modal/BottomBox';
+import CommentBoxModal from '../../modal/CommentBoxModal';
 import SharePost from './SharePost';
-import CommentPost from './CommentPost';
+import CommentPostInput from './CommentPostInput';
 import { useState } from 'react';
 import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
@@ -77,12 +77,12 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
 
                             </PostInfoContainer>
 
-                            <CommentPost commentValue={commentValue} setCommentValue={setCommentValue} />
+                            <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} />
 
                             <ModalContainer display={commentDisplay} setDisplay={setCommentDisplay}
                             
                             >
-                                 <BottomBox>
+                                 <CommentBoxModal>
                                 {
                                     post['comments'].map((comment,index) => (
                                         <div className='flex items-start my-4   justify-between w-full border-b  border-slate-500  pb-1 
@@ -105,7 +105,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                     ))
                                 }
                                
-                                 </BottomBox>
+                                 </CommentBoxModal>
                             </ModalContainer>
 
                         </div>

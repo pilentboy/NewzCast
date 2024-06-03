@@ -1,7 +1,7 @@
 
 import { IoSendSharp } from "react-icons/io5";
 
-function CommentPost({ commentValue, setCommentValue }) {
+function CommentPostInput({ commentValue, setCommentValue }) {
 
     const handleSendComment = () => {
         setCommentValue('')
@@ -34,4 +34,4 @@ function CommentPost({ commentValue, setCommentValue }) {
     )
 }
 
-export default CommentPost
+export default CommentPostInput

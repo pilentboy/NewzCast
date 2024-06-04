@@ -1,13 +1,15 @@
 import { BiSolidLike } from "react-icons/bi";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
 
-function LikePost({ likedPost, handleLike }) {
+function LikePost({ likedPost }) {
+
+    const [liked,setLiked]=useState(likedPost ? likedPost : false)
 
     const { userInfo } = useContext(LoginContext)
 
     const handlePostLike = () => {
-        userInfo ? handleLike(e => !e) : alert("Please log in first!")
+        userInfo ? setLiked(v => !v) : alert("Please log in first!")
     }
 
     return (
@@ -16,11 +18,9 @@ function LikePost({ likedPost, handleLike }) {
         >
 
             <BiSolidLike
-                className={`text-[23px] mr-2 duration-200 ${!likedPost || !userInfo ? 'text-gray-400' : 'text-green-600 '} ${!likedPost ? 'hover:text-gray-500' : null}`}
+                className={`text-[23px] mr-2 duration-200 ${!liked ? 'text-gray-400' : 'text-green-600 '} ${!liked ? 'hover:text-gray-500' : null}`}
             />
-            {/* <span className={`${likedPost && userInfo ? 'invisible' : 'visible'}`}>
-                Like
-            </span> */}
+      
         </button>)
 }
 

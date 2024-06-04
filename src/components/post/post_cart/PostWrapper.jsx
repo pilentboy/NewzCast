@@ -11,7 +11,7 @@ import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
 
-function PostWrapper({ userPostsInfo, favorite, like }) {
+function PostWrapper({ userPostsInfo }) {
     const UserBaseInfo = [userPostsInfo['username'], userPostsInfo['profileImage']];
     const [commentValue, setCommentValue] = useState('');
     const [activePostId, setActivePostId] = useState(null);
@@ -55,8 +55,8 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                         </PostInfoContainer>
                         <PostInfoContainer styles={'justify-evenly border-b mb-3 border-gray-200 pb-2'}>
                             <SharePost />
-                            <AddFavorites favoritePost={favorite[0]} handleFavorite={favorite[1]} />
-                            <LikePost likedPost={like[0]} handleLike={like[1]} />
+                            <AddFavorites/>
+                            <LikePost />
                         </PostInfoContainer>
 
                         {/* comment input */}

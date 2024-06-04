@@ -1,21 +1,23 @@
 import { FaHeart } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
 
 
-function AddFavorites({ favoritePost, handleFavorite }) {
+function AddFavorites({ favoritePost }) {
 
     const { userInfo } = useContext(LoginContext)
+    const [favorite,setFavorite]=useState(favoritePost ? favoritePost : false)
+
 
     const handleAddFavorite = () => {
-        userInfo ? handleFavorite(e => !e) : alert("Please log in first!")
+        userInfo ? setFavorite(e => !e) : alert("Please log in first!")
     }
     return (
         <button type='button' onClick={handleAddFavorite}>
             <FaHeart
                 title='add to favorites'
-                className={` text-xl duration-200   ${userInfo && favoritePost ? 'text-red-700' : 'text-gray-400'}
-                ${!favoritePost ? 'hover:text-gray-500' : null}
+                className={` text-xl duration-200   ${userInfo && favorite ? 'text-red-700' : 'text-gray-400'}
+                ${!favorite ? 'hover:text-gray-500' : null}
                 `} />
 
         </button>)

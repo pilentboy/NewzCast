@@ -29,6 +29,7 @@ const Profile = () => {
     const [userPer, setUserPer] = useState(false) // handle access to profile settings
     const [userProfileInfo, setUserProfileInfo] = useState(undefined)
     const [loading, setLoading] = useState(true)
+    const [userConnecton,setUserConnection]=useState(false)
 
     const { email } = useParams();
 	
@@ -115,10 +116,10 @@ const Profile = () => {
                                 </ul>
                                 {
                                     !userPer && <MainButton
-                                        title={'Follow'}
-                                        styles={'bg-purple-1000 text-white font-normal py-1 mx-auto mt-5 mb-3 hover:opacity-90 duration-200'}
+                                        title={userConnecton ? "Following" : "Follow"}
+                                        styles={` font-normal h-9 mx-auto mt-5 mb-3 hover:opacity-90 duration-200 ${userConnecton ? 'bg-white border border-purple-1000 text-purple-1000' : 'bg-purple-1000 text-white'}`}
                                         lgBTN={false}
-                                        action={() => alert("following")}
+                                        action={() => setUserConnection(v => !v)}
                                     />
                                 }
                             </div>

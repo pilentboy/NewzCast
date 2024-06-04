@@ -1,7 +1,7 @@
 import SharePost from '../components/post/share/SharePost'
 import HomeContainer from '../components/home/HomeContainer'
 import PostWrapper from '../components/post/post_cart/PostWrapper'
-import {useEffect, useContext } from 'react'
+import {useEffect, useContext, useState } from 'react'
 import { LoginContext } from '../context/LoginContext'
 import userPosts from '../db.json'
 
@@ -10,12 +10,15 @@ function Trending() {
 
  
     const { userDBJsonInfo, verifyUser } = useContext(LoginContext)
-	
+    const [trendPosts,setTrendPosts]=useState([])
 	useEffect(()=>{
 		document.title = "Trending"
 	},[])
 
 
+    useEffect(()=>{
+        const trends= userPosts
+    },[])
 
     return (
 

@@ -43,7 +43,7 @@ function PostWrapper({ userPostsInfo }) {
                             <span>{post['likes']} likes</span>
                             <div className='flex items-center' title='views'>
                                 <IoStatsChart className='text-lg text-gray-400 mx-2' />
-                                {post['views']}k
+                                {post['views']}
                             </div>
                             {/* date post uploaded */}
                             <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>

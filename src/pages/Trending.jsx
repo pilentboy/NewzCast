@@ -30,7 +30,7 @@ function Trending() {
 
             {
                 userPosts['UsersData'].map((post, id) => (
-                    <PostWrapper userPostsInfo={post} key={id} />
+                    <PostWrapper userPostsInfo={post}  key={id} />
                 ))
             }
 

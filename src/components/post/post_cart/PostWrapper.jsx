@@ -60,7 +60,10 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                             <AddFavorites favoritePost={favorite[0]} handleFavorite={favorite[1]} />
                             <LikePost likedPost={like[0]} handleLike={like[1]} />
                         </PostInfoContainer>
+
+                        {/* comment input */}
                         <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} />
+
                         {activePostId === post.postID && (
                             <ModalContainer  
                             handleCommentDisplay={handleCommentDisplay} 
@@ -69,14 +72,15 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                             >
                                 <CommentBoxModal>
                                     {post['comments'].map((commentInfo, index) => (
-                                        <div className='flex items-start my-3 justify-between w-full border-b border-slate-500 pb-1' key={index}>
+                                        <div className='flex items-start  my-3 justify-between w-full border-b border-slate-500 pb-1' key={index}>
                                             <UserProfile
                                                 name={commentInfo.username}
                                                 profileImage={commentInfo.profileImage}
                                                 target={`profile/${commentInfo['email']}`}
                                                 styles={'space-x-2 '}
+                                                userNameStyle={'text-white text-sm '}
                                             />
-                                            <p className='text-white w-3/4 ms-2 font-medium'>
+                                            <p className='text-white w-3/5  font-medium'>
                                                 {commentInfo.comment}
                                             </p>
                                         </div>

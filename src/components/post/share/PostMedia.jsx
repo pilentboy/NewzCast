@@ -1,10 +1,10 @@
 
-function PostMedia({ title, logo, accept, handleInputChange }) {
+function PostMedia({ title, logo, validFormats, handleInputChange }) {
 
     const handleFileSelect = () => {
         const input = document.createElement('input');
         input.type = 'file';
-        input.accept = accept
+        input.accept = validFormats
         input.addEventListener("change", handleInputChange)
         input.click();
     };

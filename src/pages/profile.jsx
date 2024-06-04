@@ -7,7 +7,7 @@ import PostWrapper from "../components/post/post_cart/PostWrapper"
 import ChangeProfilePic from "../components/profile/ChangeProfilePic"
 import Verify from "../components/verify/Verify";
 import InfoBox from "../components/verify/InfoBox";
-import { useState, useContext, useEffect,useMemo  } from "react"
+import { useState, useContext, useEffect  } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import getUsersInfo from "../utils/getUserInfo";

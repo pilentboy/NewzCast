@@ -39,7 +39,7 @@ function SharePost({ TextLimit }) {
 
                         <PostMedia
                             title={'Video'}
-                            accept={'video/mp4,video/x-matroska'}
+                            validFormats={'video/mp4,video/x-matroska'}
                             logo={<BsFillCameraVideoFill className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />
@@ -48,7 +48,7 @@ function SharePost({ TextLimit }) {
 
                         <PostMedia
                             title={'Photo'}
-                            accept={'image/*'}
+                            validFormats={'image/*'}
                             logo={<IoMdCamera className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />

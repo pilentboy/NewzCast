@@ -20,10 +20,6 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
         setActivePostId(postId === activePostId ? null : postId);
     };
 
-    useEffect(()=>{
-        console.log(activePostId)
-    },[activePostId])
-
     return (
         <>
             {userPostsInfo['posts'].map((post, id) => (
@@ -49,7 +45,9 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                                 <IoStatsChart className='text-lg text-gray-400 mx-2' />
                                 {post['views']}k
                             </div>
+                            {/* date post uploaded */}
                             <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>
+                            {/* display post comments button */}
                             <DisplayPostComments 
                                 commentsLength={post['comments'].length}
                                 setDisplay={() => handleCommentDisplay(post.postID)}
@@ -64,6 +62,7 @@ function PostWrapper({ userPostsInfo, favorite, like }) {
                         {/* comment input */}
                         <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} />
 
+                        {/* display post comments */}
                         {activePostId === post.postID && (
                             <ModalContainer  
                             handleCommentDisplay={handleCommentDisplay} 

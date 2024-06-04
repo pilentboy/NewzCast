@@ -21,9 +21,13 @@ const LoginProvider = ({ children }) => {
         }
     }
 
+    const updateUserProfile=()=>{
+        console.log(userDBJsonInfo ? userDBJsonInfo : "no info")
+    }
+
 
     useEffect(() => {
-        
+        updateUserProfile()
         handleUserAuth()
 
         if (userDBJsonInfo) {

@@ -28,7 +28,7 @@ function EditPost({ postID }) {
         enableEdit ? (
 
             <button type="button"
-                className="text-gray-600"
+                className="text-gray-600 p-1 hover:bg-gray-200  duration-200 rounded-md"
                 aria-label="editing post"
                 title="Eidit"
                 onClick={() => alert("eiditing post")}

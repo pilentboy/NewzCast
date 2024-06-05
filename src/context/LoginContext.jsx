@@ -5,9 +5,9 @@ const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
 
+    const [mainDB,setMainDB]=useState(UsersDB.UsersData)
     const [userTokenInfo, setUserTokenInfo] = useState()
     const [userLoggedInfo, setUserLoggedInfo] = useState()
-    const [mainDB,setMainDB]=useState(UsersDB.UsersData)
     const [loading, setLoading] = useState(false)
     const [verifyUser, setVerifyUser] = useState()
 
@@ -18,7 +18,12 @@ const LoginProvider = ({ children }) => {
     
         if (userInfo.length === 1) return userInfo[0]
     }
-
+    
+    const handleDeleteUser=(useremail)=>{
+        const db=mainDB
+        const newDB=db.filter(users => users.username !== useremail)
+        setMainDB(newDB)
+    }
     const handleUserAuth = () => {
         const userSessionData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
         if (!userSessionData) {
@@ -30,11 +35,7 @@ const LoginProvider = ({ children }) => {
         }
     }
 
-    const handleDeleteUser=()=>{
-        const db=mainDB
-        const newDB=db.filter(users => users.username !== 'selexted')
-        setMainDB(newDB)
-    }
+
 
     useEffect(() => {
 
@@ -48,7 +49,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser,getUserInfo}}>
+        <LoginContext.Provider value={{mainDB,handleDeleteUser, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser,getUserInfo}}>
             {children}
         </LoginContext.Provider>
     )

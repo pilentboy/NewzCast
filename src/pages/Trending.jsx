@@ -1,15 +1,14 @@
 import SharePost from '../components/post/share/SharePost'
 import HomeContainer from '../components/home/HomeContainer'
 import PostWrapper from '../components/post/post_cart/PostWrapper'
-import {useEffect, useContext, useState } from 'react'
+import {useEffect, useContext } from 'react'
 import { LoginContext } from '../context/LoginContext'
-import userPosts from '../db.json'
 
 
 function Trending() {
 
  
-    const { userLoggedInfo, verifyUser } = useContext(LoginContext)
+    const { userLoggedInfo, mainDB, verifyUser } = useContext(LoginContext)
 	useEffect(()=>{
 		document.title = "Trending"
 	},[])
@@ -25,7 +24,7 @@ function Trending() {
             }
 
             {
-                userPosts['UsersData'].map((post, id) => (
+                mainDB.map((post, id) => (
                     <PostWrapper userPostsInfo={post}  key={id} />
                 ))
             }

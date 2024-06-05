@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import HomeContainer from "../components/home/HomeContainer"
-import userdata from '../db.json'
 import SearchBox from "../components/search/SearchBox"
 import UserProfile from "../components/profile/UserProfile"
 import { LoginContext } from "../context/LoginContext"

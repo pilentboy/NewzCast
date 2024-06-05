@@ -10,7 +10,6 @@ import InfoBox from "../components/verify/InfoBox";
 import { useState, useContext, useEffect  } from "react"
 import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
-import getUsersInfo from "../utils/getUserInfo";
 import { useParams } from "react-router-dom";
 import UserConnectiosList from "../components/modal/UserConnectiosList"
 import MainButton from "../components/landing/MainButton";
@@ -20,7 +19,7 @@ import { IoIosSettings } from "react-icons/io";
 
 const Profile = () => {
 
-    const { userLoggedInfo } = useContext(LoginContext)
+    const { userLoggedInfo, getUserInfo} = useContext(LoginContext)
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
@@ -39,7 +38,7 @@ const Profile = () => {
             setUserProfileInfo(userLoggedInfo)
             setUserPer(true)
         } else {
-            setUserProfileInfo(getUsersInfo(email))
+            setUserProfileInfo(getUserInfo(email))
             setUserPer(false)
         }
         setLoading(false)

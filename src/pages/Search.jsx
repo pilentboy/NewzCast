@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import HomeContainer from "../components/home/HomeContainer"
 import userdata from '../db.json'
 import SearchBox from "../components/search/SearchBox"
 import UserProfile from "../components/profile/UserProfile"
+import { LoginContext } from "../context/LoginContext"
 
 function Search() {
 
   const [searchValue, setSearchValue] = useState("")
   const [searching, setSearching] = useState(false)
   const [searchResult, setSearchResult] = useState(null)
+  const {mainDB} = useContext(LoginContext)
   
   	useEffect(()=>{
 		document.title = "Search"
@@ -19,8 +21,7 @@ function Search() {
     e.preventDefault()
     setSearching(true)
     if (searchValue !== "") {
-      const res = userdata['UsersData'].filter(username => username['username'].toLowerCase().includes(searchValue.toLowerCase()))
-      console.log(res)
+      const res = mainDB.filter(username => username['username'].toLowerCase().includes(searchValue.toLowerCase()))
       if (res.length >= 1) {
         setSearchResult(res)
       } else {

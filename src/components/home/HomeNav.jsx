@@ -22,7 +22,7 @@ import { MdHome } from "react-icons/md";
 
 function HomeNav() {
 
-    const { userInfo, userDBJsonInfo } = useContext(LoginContext)
+    const { userTokenInfo, userDBJsonInfo } = useContext(LoginContext)
 
 
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
@@ -73,7 +73,7 @@ function HomeNav() {
                         <div className="hidden md:block">
 
                             {
-                                !userInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                                !userTokenInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
                                     <CiLogin />
                                 </HomeNavLink> : (
 

@@ -8,7 +8,7 @@ import LoginProvider from './context/LoginContext';
 import NewzNav from './pages/NewzNav';
 import Trending from './pages/Trending';
 import PrivateRoute from './components/PrivateRoute';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 import Favorites from './pages/Favorites';
 import Search from './pages/Search';
 import Settings from './pages/Settings';

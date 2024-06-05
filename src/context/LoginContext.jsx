@@ -1,34 +1,48 @@
 import { createContext, useEffect, useState } from "react";
 import getUsersInfo from "../utils/getUserInfo";
+import UsersDB from '../db.json'
 
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
 
-    const [userInfo, setUserInfo] = useState()
+    const [userTokenInfo, setUserTokenInfo] = useState()
     const [userDBJsonInfo, setUserDBJsonInfo] = useState()
+    const [mainDB,setMainDB]=useState(UsersDB.UsersData)
     const [loading, setLoading] = useState(false)
     const [verifyUser, setVerifyUser] = useState()
 
     const handleUserAuth = () => {
         const userData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
         if (!userData) {
-            setUserInfo(null)
+            setUserTokenInfo(null)
             setUserDBJsonInfo(null)
         } else {
-            setUserInfo(userData)
+            setUserTokenInfo(userData)
             setUserDBJsonInfo(getUsersInfo(userData['user']['email']))
         }
     }
 
-    const updateUserProfile=()=>{
-        console.log(userDBJsonInfo ? userDBJsonInfo : "no info")
+    const getUserInfo = (userEmail) => {
+        const userInfo = mainDB.filter((usersInfo) => usersInfo.email === userEmail)
+    
+        if (userInfo.length === 1) return userInfo[0]
+    }
+    
+
+    const handleDeleteUser=()=>{
+        const db=mainDB
+        const newDB=db.filter(users => users.username !== 'selexted')
+        setMainDB(newDB)
     }
 
-
     useEffect(() => {
-        updateUserProfile()
+
         handleUserAuth()
+
+        if(mainDB){
+            handleDeleteUser()
+        }
 
         if (userDBJsonInfo) {
             setVerifyUser(userDBJsonInfo['verified'])
@@ -38,7 +52,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{ userInfo, setUserInfo, handleUserAuth, userDBJsonInfo, loading, setLoading, verifyUser }}>
+        <LoginContext.Provider value={{mainDB, userTokenInfo, setUserTokenInfo, handleUserAuth, userDBJsonInfo, loading, setLoading, verifyUser,getUserInfo}}>
             {children}
         </LoginContext.Provider>
     )

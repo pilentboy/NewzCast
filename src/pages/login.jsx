@@ -21,7 +21,7 @@ const Login = () => {
     const [loginRes, setLoginRes] = useState(null)
     const [loading, setLoading] = useState(false)
 
-    const { setUserInfo, handleUserAuth } = useContext(LoginContext)
+    const { setUserTokenInfo, handleUserAuth } = useContext(LoginContext)
 
     const navigate = useNavigate()
 
@@ -38,7 +38,7 @@ const Login = () => {
                 setLoginRes(false)
                 navigate("/newzcast")
             } else {
-                setUserInfo(null)
+                setUserTokenInfo(null)
                 setLoginRes(true)
             }
             setLoading(false)

@@ -5,18 +5,18 @@ import { LoginContext } from "../../../context/LoginContext";
 
 function AddFavorites({ favoritePost }) {
 
-    const { userInfo } = useContext(LoginContext)
+    const { userTokenInfo } = useContext(LoginContext)
     const [favorite,setFavorite]=useState(favoritePost ? favoritePost : false)
 
 
     const handleAddFavorite = () => {
-        userInfo ? setFavorite(e => !e) : alert("Please log in first!")
+        userTokenInfo ? setFavorite(e => !e) : alert("Please log in first!")
     }
     return (
         <button type='button' onClick={handleAddFavorite}>
             <FaHeart
                 title='add to favorites'
-                className={` text-xl duration-200   ${userInfo && favorite ? 'text-red-700' : 'text-gray-400'}
+                className={` text-xl duration-200   ${userTokenInfo && favorite ? 'text-red-700' : 'text-gray-400'}
                 ${!favorite ? 'hover:text-gray-500' : null}
                 `} />
 

@@ -15,6 +15,7 @@ import UserConnectiosList from "../components/modal/UserConnectiosList"
 import MainButton from "../components/landing/MainButton";
 import NotFoundProfile from "../components/profile/NotFoundProfile";
 import { IoIosSettings } from "react-icons/io";
+import ConnectionBTN from "../components/profile/ConnectionBTN";
 
 
 const Profile = () => {
@@ -114,12 +115,7 @@ const Profile = () => {
                                     }
                                 </ul>
                                 {
-                                    !userPer && <MainButton
-                                        title={userConnecton ? "Following" : "Follow"}
-                                        styles={` font-normal h-9 mx-auto mt-5 mb-3 hover:opacity-90 duration-200 ${userConnecton ? 'bg-white border border-purple-1000 text-purple-1000' : 'bg-purple-1000 text-white'}`}
-                                        lgBTN={false}
-                                        action={() => setUserConnection(v => !v)}
-                                    />
+                                    !userPer && <ConnectionBTN/>
                                 }
                             </div>
 

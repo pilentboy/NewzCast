@@ -7,15 +7,15 @@ import { CiLogin } from "react-icons/ci";
 
 function NavTopSmallScreen() {
 
-    const { userDBJsonInfo } = useContext(LoginContext)
+    const { userLoggedInfo } = useContext(LoginContext)
 
     return (
         <div className="flex justify-between items-center w-full px-5 py-2 border-b-8 border-gray-200  bg-white md:hidden ">
             <span> </span>
             <ColoredLogo styles={'ms-6'} />
             {
-                userDBJsonInfo ? <UserProfile name={userDBJsonInfo['username']} styles={'flex-col mt-3'} profileImage={userDBJsonInfo['profileImage']} imageSize={'h-8 w-8'} 
-				target={`profile/${userDBJsonInfo['email']}`} // not test yet
+                userLoggedInfo ? <UserProfile name={userLoggedInfo['username']} styles={'flex-col mt-3'} profileImage={userLoggedInfo['profileImage']} imageSize={'h-8 w-8'} 
+				target={`profile/${userLoggedInfo['email']}`} // not test yet
 				/> : <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
                     <CiLogin />
                 </HomeNavLink>

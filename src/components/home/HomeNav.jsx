@@ -22,7 +22,7 @@ import { MdHome } from "react-icons/md";
 
 function HomeNav() {
 
-    const { userTokenInfo, userDBJsonInfo } = useContext(LoginContext)
+    const { userTokenInfo, userLoggedInfo } = useContext(LoginContext)
 
 
     const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
@@ -78,8 +78,8 @@ function HomeNav() {
                                 </HomeNavLink> : (
 
                                     <div className="flex items-center">
-                                        <UserProfile name={userDBJsonInfo['username']} profileImage={userDBJsonInfo['profileImage']} styles={'flex-row space-x-2'}
-                                            target={`profile/${userDBJsonInfo['email']}`}
+                                        <UserProfile name={userLoggedInfo['username']} profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2'}
+                                            target={`profile/${userLoggedInfo['email']}`}
                                         />
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox

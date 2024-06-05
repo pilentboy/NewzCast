@@ -20,7 +20,7 @@ import { IoIosSettings } from "react-icons/io";
 
 const Profile = () => {
 
-    const { userDBJsonInfo } = useContext(LoginContext)
+    const { userLoggedInfo } = useContext(LoginContext)
 
     const [favorite, setFavorite] = useState(false)
     const [like2, setLike2] = useState(false)
@@ -35,8 +35,8 @@ const Profile = () => {
 	
     useEffect(() => {
         setLoading(true)
-        if (userDBJsonInfo && email === userDBJsonInfo['email']) {
-            setUserProfileInfo(userDBJsonInfo)
+        if (userLoggedInfo && email === userLoggedInfo['email']) {
+            setUserProfileInfo(userLoggedInfo)
             setUserPer(true)
         } else {
             setUserProfileInfo(getUsersInfo(email))
@@ -44,7 +44,7 @@ const Profile = () => {
         }
         setLoading(false)
 
-    }, [userDBJsonInfo, email, userProfileInfo])
+    }, [userLoggedInfo, email, userProfileInfo])
 	
 	
 	useEffect(()=>{

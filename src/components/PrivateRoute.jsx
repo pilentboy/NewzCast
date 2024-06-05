@@ -3,9 +3,9 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { LoginContext } from '../context/LoginContext';
 
 const PrivateRoute = () => {
-    const { userDBJsonInfo } = useContext(LoginContext);
+    const { userLoggedInfo } = useContext(LoginContext);
 
-    return userDBJsonInfo ? <Outlet /> : <Navigate to="/authenticate" />;
+    return userLoggedInfo ? <Outlet /> : <Navigate to="/authenticate" />;
 };
 
 export default PrivateRoute;

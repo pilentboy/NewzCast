@@ -4,12 +4,12 @@ import { LoginContext } from "../../../context/LoginContext";
 
 function EditPost({ postID }) {
 
-    const { userDBJsonInfo } = useContext(LoginContext)
+    const { userLoggedInfo } = useContext(LoginContext)
 
     const [enableEdit, setEnableEdit] = useState(false)
 
     const handleEnableEditgPost = () => {
-        const res = userDBJsonInfo.posts.filter(post => post['postID'] === postID)
+        const res = userLoggedInfo.posts.filter(post => post['postID'] === postID)
         if (res.length >= 1) {
             setEnableEdit(true)
         } else {
@@ -18,10 +18,10 @@ function EditPost({ postID }) {
     }
 
     useEffect(() => {
-        if (userDBJsonInfo) {
+        if (userLoggedInfo) {
             handleEnableEditgPost()
         }
-    }, [userDBJsonInfo])
+    }, [userLoggedInfo])
 
 
     return (

@@ -9,23 +9,19 @@ import userPosts from '../db.json'
 function Trending() {
 
  
-    const { userDBJsonInfo, verifyUser } = useContext(LoginContext)
-    const [trendPosts,setTrendPosts]=useState([])
+    const { userLoggedInfo, verifyUser } = useContext(LoginContext)
 	useEffect(()=>{
 		document.title = "Trending"
 	},[])
 
 
-    useEffect(()=>{
-        const trends= userPosts
-    },[])
 
     return (
 
         <HomeContainer>
 
             {
-                userDBJsonInfo && <SharePost TextLimit={verifyUser} />
+                userLoggedInfo && <SharePost TextLimit={verifyUser} />
             }
 
             {

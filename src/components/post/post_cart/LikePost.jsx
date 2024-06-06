@@ -6,10 +6,10 @@ function LikePost({ likedPost }) {
 
     const [liked,setLiked]=useState(likedPost ? likedPost : false)
 
-    const { userInfo } = useContext(LoginContext)
+    const { userTokenInfo } = useContext(LoginContext)
 
     const handlePostLike = () => {
-        userInfo ? setLiked(v => !v) : alert("Please log in first!")
+        userTokenInfo ? setLiked(v => !v) : alert("Please log in first!")
     }
 
     return (

@@ -34,10 +34,11 @@ const Register = () => {
 
 
 
-
+	// username is not required while developing
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
+		Username: Yup.string().min(5,'username must includes at least 5 and max 20 characters').max(20,'username must includes at least 5 and max 20 characters'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
         Accept: Yup.boolean().oneOf([true], 'You must accept the terms of use').required('Required')
@@ -46,6 +47,7 @@ const Register = () => {
 
     const RegisterControl = useFormik({
         initialValues: {
+			Username:'',
             Email: '',
             Password: '',
             ConfirmPassword: '',

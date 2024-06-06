@@ -1,6 +1,6 @@
 import ColoredLogo from "../ColoredLogo"
 import { Outlet } from "react-router-dom"
-import { Link } from "react-router-dom"
+import { Link,NavLink } from "react-router-dom"
 import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
@@ -52,22 +52,18 @@ function HomeNav() {
 ">
 
 
-                        <Link to={'/newzcast'} className="text-purple-1000 text-sm border-b border-purple-1000 flex items-center py-2" >
-                            <SlEnergy className="text-purple-1000  text-xl mx-1" />
-
-                            Trending
-                        </Link>
-                        
-                        <HomeNavLink target={'search'} linkTitle={'Search'}>
-                            <FaSearch />
-
+						
+                         <HomeNavLink target={'/newzcast'} linkTitle={'Trending'}>
+                              <SlEnergy className="text-xl" />
                         </HomeNavLink>
 
+                         <HomeNavLink target={'/newzcast/search'} linkTitle={'Search'}>
+                            <FaSearch />
+                        </HomeNavLink>
 
-                        <HomeNavLink target={'home'} linkTitle={'Home'}>
+                        <HomeNavLink target={'/newzcast/home'} linkTitle={'Home'}>
                             <MdHome className="text-[19px]" />
                         </HomeNavLink>
-
 
 
                         <div className="hidden md:block">

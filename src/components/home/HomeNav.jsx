@@ -44,7 +44,7 @@ function HomeNav() {
                 <NavTopSmallScreen />
 
                 {/* main nav */}
-                <div className="w-full py-2  fixed bottom-0 left-0  flex flex-col  items-center space-y-2 shadow-md bg-white border-t  border-gray-100  lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
+<div className="w-4/5  py-3 border border-gray-300 fixed bottom-2 left-[50%] translate-x-[-50%]  flex   rounded-md items-center space-y-2 shadow-md bg-white border-t  border-gray-100 md:w-full  lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
 
                     <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 
@@ -57,9 +57,12 @@ function HomeNav() {
                               <SlEnergy className="text-xl" />
                         </HomeNavLink>
 
-                         <HomeNavLink target={'/newzcast/search'} linkTitle={'Search'}>
-                            <FaSearch />
-                        </HomeNavLink>
+                     
+					   
+						<button type='button' className='font-sans flex items-center  text-gray-600 text-sm hover:text-gray-600' onClick={()=> alert("searching")} > 
+						<FaSearch className='mx-2'/>
+						Search
+						</button>
 
                         <HomeNavLink target={'/newzcast/home'} linkTitle={'Home'}>
                             <MdHome className="text-[19px]" />

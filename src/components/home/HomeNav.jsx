@@ -84,6 +84,7 @@ function HomeNav({setSearchModalDisplay}) {
                                         <ArrowBTN action={setOptionBoxDisplay}>
                                             <OptionBox
                                                 display={optionBoxDisplay}
+                                                setOptionBoxDisplay={setOptionBoxDisplay}
                                                 items={optionBoxItems}
                                                 button={
                                                     <Logout />

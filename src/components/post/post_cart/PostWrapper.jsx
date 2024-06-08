@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import PostInfoContainer from './PostInfoContainer';
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
@@ -12,6 +12,7 @@ import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
 
 function PostWrapper({ userPostsInfo }) {
+    
     const UserBaseInfo = [userPostsInfo['username'], userPostsInfo['profileImage']];
     const [commentValue, setCommentValue] = useState('');
     const [activePostId, setActivePostId] = useState(null);

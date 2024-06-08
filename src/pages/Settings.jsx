@@ -1,7 +1,12 @@
 import HomeContainer from "../components/home/HomeContainer"
 import Logout from '../components/home/Logout'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import BoxBTN from "../components/settings/BoxBTN"
+import InputWrapper from "../components/form/InputWrapper"
+import InputTitle from "../components/form/InputTitle"
+import FormInput from "../components/form/FormInput"
+import { IoChevronBack } from "react-icons/io5";
+import { useNavigate } from "react-router-dom"
 
 function Settings() {
 
@@ -9,18 +14,120 @@ function Settings() {
 		document.title = "Settings"
 	},[])
 
+
+  const [isHover,setButtonHover]=useState(false)
+
+  const [clickedItem,setClickedItem]=useState('') // get BoxBTN Title
+
+  // variables for each inputs in settings
+  const [username,setUsername]=useState('')
+  const [email,setEmail]=useState('')
+  const [name,setName]=useState('')
+  const [currentPassword,setCurrentPassword]=useState('')
+  const [newPassword,setNewPassword]=useState('')
+  const [confirmNewPassword,setConfirmNewPassword]=useState('')
+
+
+  const navigate=useNavigate()
+  const handleSettings=(e)=>{
+    e.preventDefault()
+    navigate("/newzcast/home")
+  }
+
   return (
 
-    <HomeContainer justify={'justify-around'}>
+    <HomeContainer justify={'justify-evenly'}>
 
-      <h1 className="font-medium text-base ">Settings</h1>
+      <h1 className="font-medium text-base absolute top-[19%]">Settings</h1>
+
+      
 
       <div>
-      <BoxBTN title='Username'/>
-      <BoxBTN title='Email'/>
-      <BoxBTN title='Phone number'/>
-      <BoxBTN title='Full Name'/>
-      <BoxBTN title='Deactive account'/>
+
+      {
+        clickedItem !== '' ? <>
+
+
+        
+        <form action="" onSubmit={handleSettings}>
+
+          <div className="space-y-3 px-6">
+
+          <button aria-label="back to account settings" type="button"
+          onMouseEnter={() => setButtonHover(true)}
+          onMouseLeave={() => setButtonHover(false)}
+         className="text-black" 
+       
+        onClick={()=> {
+          setClickedItem('')
+        }}>
+          <IoChevronBack  className={` duration-200 ${isHover ? '-translate-x-2' : 'translate-x-0'}`}/>
+        </button>
+
+          <h1 className="font-semibold">{clickedItem}</h1>
+          {
+            clickedItem === 'Change Password' ? (
+              <>
+              <InputWrapper>
+              <InputTitle notFormik={true}  title={'Enter Old Password'} />
+              <FormInput notFormik={true} type={'password'} value={currentPassword} setInputValue={setCurrentPassword} name={clickedItem}/>
+            </InputWrapper>
+              <InputWrapper>
+              <InputTitle  title={'Enter New Password'} />
+              <FormInput notFormik={true}  type={'password'} value={newPassword}  setInputValue={setNewPassword} name={clickedItem}/>
+            </InputWrapper>
+            <InputWrapper>
+              <InputTitle title={'Confirm New Password'} />
+              <FormInput notFormik={true}  type={'password'} value={confirmNewPassword} setInputValue={setConfirmNewPassword} name={clickedItem}/>
+            </InputWrapper>
+
+       
+              </>
+  
+
+            ) : clickedItem === 'Deactive Account' ? <div className="flex flex-col items-center space-y-4"> 
+                  <span className="text-gray-600 text-base">Your account will be deactivated <b>untill you log in to your account</b>.</span>
+                 <button  className="bg-red-600 rounded-md text-white text-center py-1 px-6 hover:bg-red-700 duration-200" aria-label="deactive account">
+                Deactive Account
+              </button>
+
+            </div> : <> 
+             <InputWrapper>
+              <InputTitle title={'New ' + clickedItem.split(" ")[1]} />
+              <FormInput notFormik={true}  type={
+               clickedItem === 'Change Email' ? 'email' : 'text'
+              } 
+              value={clickedItem === 'Change Username' ? username : clickedItem === 'Change Name' ? name : clickedItem === 'Change Email' ? email : null} 
+               setInputValue={
+                clickedItem === 'Change Username' ? setUsername : clickedItem === 'Change Name' ? setName : clickedItem === 'Change Email' ? setEmail : setClickedItem('')
+               }/>
+            </InputWrapper>
+             </> 
+          }
+           
+              {
+                clickedItem !== 'Deactive Account' ? 
+                  <button className="text-center rounded-md py-1 px-7 bg-purple-1000 font-semibold">
+                Save
+              </button>
+                 : null
+              }
+          </div>
+      
+          </form>
+        </>
+      
+         : <>
+          <BoxBTN title='Change Username' action={setClickedItem}/>
+          <BoxBTN title='Change Email' action={setClickedItem}/>
+          <BoxBTN title='Change Password' action={setClickedItem}/>
+          <BoxBTN title='Change Name' action={setClickedItem}/>
+          <BoxBTN title='Deactive Account' action={setClickedItem} />
+         </>
+        
+      }
+     
+
 
       </div>
 

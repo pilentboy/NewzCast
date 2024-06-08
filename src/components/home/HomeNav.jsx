@@ -20,7 +20,7 @@ import { MdHome } from "react-icons/md";
 
 
 
-function HomeNav() {
+function HomeNav({setSearchModalDisplay}) {
 
     const { userTokenInfo, userLoggedInfo } = useContext(LoginContext)
 
@@ -59,7 +59,8 @@ function HomeNav() {
 
                      
 					   
-						<button type='button' className='font-sans flex items-center  text-gray-600 text-sm hover:text-gray-600' onClick={()=> alert("searching")} > 
+						<button type='button' className='font-sans flex items-center  text-gray-600 text-sm hover:text-gray-600'
+                         onClick={()=> setSearchModalDisplay('flex')} > 
 						<FaSearch className='mx-2'/>
 						Search
 						</button>

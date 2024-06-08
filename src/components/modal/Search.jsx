@@ -1,10 +1,9 @@
 import { useContext, useEffect, useState } from "react"
-import HomeContainer from "../components/home/HomeContainer"
-import SearchBox from "../components/search/SearchBox"
-import UserProfile from "../components/profile/UserProfile"
-import { LoginContext } from "../context/LoginContext"
+import SearchBox from "../search/SearchBox"
+import UserProfile from "../profile/UserProfile"
+import { LoginContext } from "../../context/LoginContext"
 
-function Search() {
+function Search({setSearchModalDisplay}) {
 
   const [searchValue, setSearchValue] = useState("")
   const [searching, setSearching] = useState(false)
@@ -38,7 +37,7 @@ function Search() {
 
 
   return (
-    <HomeContainer>
+    <div className="absolute top-10 left-[50%] -translate-x-[50%]">
       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch} />
 
       {
@@ -47,7 +46,9 @@ function Search() {
           {
 
             searchResult ? (
-              <ul className="border  border-gray-200 min-h-fit  max-h-80 p-1  overflow-y-auto  w-fit user-search">
+              <ul 
+              onClick={()=> setSearchModalDisplay('hidden')}
+              className="border  border-gray-200 min-h-fit  max-h-80 p-1  overflow-y-auto  w-fit user-search">
                 {
                   searchResult.map((user, index) => (
                     <UserProfile
@@ -56,7 +57,7 @@ function Search() {
                       key={index}
                       usernameMargin={'ml-1'}
                       target={`/newzcast/profile/${user['email']}`}
-                      styles={'search-result border border-gray-300 w-64 my-1 rounded-md p-2 hover:bg-gray-200 duration-200'}
+                      styles={'search-result bg-white border border-gray-300 w-64 my-1 rounded-md p-2 hover:bg-gray-200 duration-200'}
                     />
                   ))
                 }
@@ -71,7 +72,7 @@ function Search() {
       }
 
 
-    </HomeContainer>
+    </div>
   )
 }
 

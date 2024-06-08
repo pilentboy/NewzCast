@@ -1,4 +1,4 @@
-import './style/index.css';
+import './assets/css/index.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';
@@ -10,7 +10,6 @@ import Trending from './pages/Trending';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './pages/profile';
 import Favorites from './pages/Favorites';
-import Search from './pages/Search';
 import Settings from './pages/Settings';
 import Home from './pages/Home';
 
@@ -34,8 +33,6 @@ function App() {
 							<Route path="" element={<Settings />} />
 						</Route>
 						<Route path="favorites" element={<Favorites />} />
-						<Route path="search" element={<Search />} />
-
 					</Route>
 					<Route path="*" element={<Navigate to="/newzcast" />} />
 

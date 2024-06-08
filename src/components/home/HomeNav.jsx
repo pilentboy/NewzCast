@@ -38,13 +38,13 @@ function HomeNav({setSearchModalDisplay}) {
     return (
         <>
 
-            <nav className="z-[999]" >
+            <nav className="z-[999] " >
 
                 {/* display logo and usesr's photo  */}
                 <NavTopSmallScreen />
 
                 {/* main nav */}
-<div className="w-4/5  py-3 border border-gray-300 fixed bottom-2 left-[50%] translate-x-[-50%]  flex   rounded-md items-center space-y-2 shadow-md bg-white border-t  border-gray-100 md:w-full  lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
+<div className="w-4/5  py-3 border border-gray-300 fixed bottom-2 left-[50%] translate-x-[-50%]  flex   rounded-md items-center bg-white space-y-2 shadow-md border-t  md:w-full  lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
 
                     <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 

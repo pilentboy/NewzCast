@@ -1,70 +1,206 @@
-# Getting Started with Create React App
+Project Document (it's not updated)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Root Directory
+- `.env`
+- `.gitignore`
+- `package.json`
+- `package-lock.json`
+- `README.md`
+- `tailwind.config.js`
 
-## Available Scripts
+### Source Directory (`src`)
+- `App.js`
+- `db.json`
+- `index.js`
 
-In the project directory, you can run:
+#### Assets
+- `src/assets/css/index.css`
+- `src/assets/images/` (contains multiple images)
 
-### `npm start`
+#### Components
+- `ColoredLogo.jsx`
+- `Loading.jsx`
+- `PrivateRoute.jsx`
+- `alert/alertModal.jsx`
+- `authenticate/Container.jsx`
+- `authenticate/RegisterLinkItems.jsx`
+- `authenticate/TermsOfUse.jsx`
+- `authenticate/Wrapper.jsx`
+- `form/AcceptButton.jsx`
+- `form/FormInput.jsx`
+- `form/FormTitle.jsx`
+- `form/InputTitle.jsx`
+- `form/InputWrapper.jsx`
+- `home/ArrowBTN.jsx`
+- `home/HomeContainer.jsx`
+- `home/HomeContainerHeader.jsx`
+- `home/NewzCard.jsx`
+- `home/NewzCardContainer.jsx`
+- `home/NewzCastContainer.jsx`
+- `home/NewzCastHeader.jsx`
+- `home/NewzNavLink.jsx`
+- `home/NewzTab.jsx`
+- `home/TabNavLink.jsx`
+- `home/TabSwitcher.jsx`
+- `home/TrendingNewsTab.jsx`
+- `home/VerifiedNewzCast.jsx`
+- `home/Wrapper.jsx`
+- `landing/MainButton.jsx`
+- `landing/MainLogo.jsx`
+- `landing/Wrapper.jsx`
+- `modal/ModalBox.jsx`
+- `modal/ModalContainer.jsx`
+- `profile/ConnectionBTN.jsx`
+- `profile/NotFoundProfile.jsx`
+- `profile/ProfilePic.jsx`
+- `profile/UserConnectionActiviyInfo.jsx`
+- `profile/UserID.jsx`
+- `profile/UserProfile.jsx`
+- `search/SearchBox.jsx`
+- `settings/BoxBTN.jsx`
+- `slider/Slider.jsx`
+- `slider/SliderCircleBTN.jsx`
+- `slider/SliderItemWrapper.jsx`
+- `verify/InfoBox.jsx`
+- `verify/Verify.jsx`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Context
+- `LoginContext.jsx`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Pages
+- `Authenticate.jsx`
+- `Favorites.jsx`
+- `Home.jsx`
+- `landing.jsx`
+- `login.jsx`
+- `NewzNav.jsx`
+- `profile.jsx`
+- `ProfileSettings.jsx`
+- `register.jsx`
+- `Settings.jsx`
+- `Trending.jsx`
+- `VerifyClient.jsx`
 
-### `npm test`
+#### Utils
+- `getUsersList.js`
+- `HandleLogIn.js`
+- `handleSignedUpEmails.js`
+- `handleSignOut.js`
+- `handleSignUp.js`
+- `handleTokenExpiration.js`
+- `supabaseAdmin.js`
+- `SupabaseClient.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Public Directory
+- `favicon.ico`
+- `index.html`
+- `logo192.png`
+- `logo512.png`
+- `manifest.json`
+- `robots.txt`
 
-### `npm run build`
+### Project Documentation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here's a basic structure for your project documentation:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Documentation
 
-### `npm run eject`
+### Overview
+This is a React-based project that includes user authentication, profile management, and various other features. The project uses Supabase for backend services and Tailwind CSS for styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Directory Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Root Directory
+- **.env:** Environment variables.
+- **.gitignore:** Specifies files to be ignored by Git.
+- **package.json:** Project metadata and dependencies.
+- **package-lock.json:** Lockfile for dependencies.
+- **README.md:** Project documentation.
+- **tailwind.config.js:** Tailwind CSS configuration.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Source Directory (`src`)
+- **App.js:** Main application component.
+- **db.json:** Local database file.
+- **index.js:** Entry point for the React application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##### Assets
+- **src/assets/css/index.css:** Main CSS file.
+- **src/assets/images/:** Directory containing image assets.
 
-## Learn More
+##### Components
+- **ColoredLogo.jsx:** Component for displaying a colored logo.
+- **Loading.jsx:** Loading spinner component.
+- **PrivateRoute.jsx:** Component for protecting private routes.
+- **alert/alertModal.jsx:** Component for alert modals.
+- **authenticate/:** Directory containing components related to authentication.
+- **form/:** Directory containing form-related components.
+- **home/:** Directory containing components related to the home page.
+- **landing/:** Directory containing components related to the landing page.
+- **modal/:** Directory containing modal components.
+- **profile/:** Directory containing components related to user profiles.
+- **search/:** Directory containing search-related components.
+- **settings/:** Directory containing settings-related components.
+- **slider/:** Directory containing slider components.
+- **verify/:** Directory containing components for verification.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Context
+- **LoginContext.jsx:** Context provider for handling login state.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Pages
+- **Authenticate.jsx:** Authentication page.
+- **Favorites.jsx:** Favorites page.
+- **Home.jsx:** Home page.
+- **landing.jsx:** Landing page.
+- **login.jsx:** Login page.
+- **NewzNav.jsx:** Navigation for NewzCast.
+- **profile.jsx:** User profile page.
+- **ProfileSettings.jsx:** Profile settings page.
+- **register.jsx:** Registration page.
+- **Settings.jsx:** Settings page.
+- **Trending.jsx:** Trending news page.
+- **VerifyClient.jsx:** Client verification page.
 
-### Code Splitting
+##### Utils
+- **getUsersList.js:** Utility for fetching user list.
+- **HandleLogIn.js:** Utility for handling login.
+- **handleSignedUpEmails.js:** Utility for handling signed-up emails.
+- **handleSignOut.js:** Utility for handling sign-out.
+- **handleSignUp.js:** Utility for handling sign-up.
+- **handleTokenExpiration.js:** Utility for handling token expiration.
+- **supabaseAdmin.js:** Supabase admin utility.
+- **SupabaseClient.js:** Supabase client configuration.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Public Directory
+- **favicon.ico:** Favicon for the application.
+- **index.html:** HTML template for the application.
+- **logo192.png:** 192x192 logo.
+- **logo512.png:** 512x512 logo.
+- **manifest.json:** Web app manifest.
+- **robots.txt:** Robots.txt file for web crawlers.
 
-### Analyzing the Bundle Size
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Environment Variables
+Ensure you have the necessary environment variables set in your `.env` file. For example:
+```
+REACT_APP_SUPABASE_URL=your-supabase-url
+REACT_APP_SUPABASE_KEY=your-supabase-key
+```
 
-### Making a Progressive Web App
+#### Running the Project
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Building the Project
+To create an optimized production build:
+```bash
+npm run build
+```

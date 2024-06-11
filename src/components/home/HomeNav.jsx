@@ -10,7 +10,7 @@ import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
 import ArrowBTN from "./ArrowBTN";
-import OptionBox from "./OptionBox";
+import DropDown from "./DropDown";
 import NavTopSmallScreen from "./NavTopSmallScreen";
 import UserProfile from "../profile/UserProfile";
 import Logout from "./Logout";
@@ -25,9 +25,9 @@ function HomeNav({setSearchModalDisplay}) {
     const { userTokenInfo, userLoggedInfo } = useContext(LoginContext)
 
 
-    const [optionBoxDisplay, setOptionBoxDisplay] = useState(false)
+    const [dropDownDisplay, setDropDownDisplay] = useState(false)
 
-    const optionBoxItems = [
+    const dropDownItems = [
         'Settings',
 		'Favorites'
     ]
@@ -81,11 +81,11 @@ function HomeNav({setSearchModalDisplay}) {
                                         <UserProfile name={userLoggedInfo['username']} profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2'}
                                             target={`profile/${userLoggedInfo['email']}`}
                                         />
-                                        <ArrowBTN action={setOptionBoxDisplay}>
-                                            <OptionBox
-                                                display={optionBoxDisplay}
-                                                setOptionBoxDisplay={setOptionBoxDisplay}
-                                                items={optionBoxItems}
+                                        <ArrowBTN action={setDropDownDisplay}>
+                                            <DropDown
+                                                display={dropDownDisplay}
+                                                setDropDownDisplay={setDropDownDisplay}
+                                                items={dropDownItems}
                                                 button={
                                                     <Logout />
                                                 }

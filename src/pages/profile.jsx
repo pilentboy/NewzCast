@@ -132,11 +132,18 @@ const Profile = () => {
                         </div>
 
                         {/* user's posts  */}
-                        <PostWrapper
-                            userPostsInfo={userProfileInfo}
-                            favorite={[favorite, setFavorite]}
-                            like={[like2, setLike2]}
-                        />
+                        {
+                                userProfileInfo['posts'].map((post,id) => (
+                                    <PostWrapper
+                                        userPostsInfo={post}
+                                        userName={userProfileInfo.firstName}
+                                        profileImg={userProfileInfo.profileImage}
+                                        key={id}
+                                />
+                                ))
+                        }
+                    
+
                     </>
 
                 ) : (

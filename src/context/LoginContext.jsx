@@ -15,7 +15,7 @@ const LoginProvider = ({ children }) => {
 
     const getUserInfo = (userEmail) => {
         const userInfo = mainDB.filter((usersInfo) => usersInfo.email === userEmail)
-    
+        
         if (userInfo.length === 1) return userInfo[0]
     }
     

@@ -59,7 +59,7 @@ function HomeNav({setSearchModalDisplay}) {
 
                      
 					   
-						<button type='button' className='font-sans flex items-center  text-gray-600 text-sm hover:text-gray-600'
+						<button type='button' className='font-sans  flex items-center  text-gray-600 text-sm hover:text-gray-600'
                          onClick={()=> setSearchModalDisplay('flex')} > 
 						<FaSearch className='mx-2'/>
 						Search

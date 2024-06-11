@@ -15,11 +15,9 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
     const [commentValue, setCommentValue] = useState('');
     const [activePostId, setActivePostId] = useState(null);
-
+    const [displayComments,setDisplayComments]=useState('hidden')
     
-    const handleCommentDisplay = (postId) => {
-        setActivePostId(postId === activePostId ? null : postId);
-    };
+
 
 
 
@@ -55,9 +53,10 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 {/* display post comments button */}
                                 <DisplayPostComments 
                                     commentsLength={userPostsInfo['comments'].length}
-                                    setDisplay={() => handleCommentDisplay(userPostsInfo.postID)}
+                                    setDisplay={setDisplayComments}
                                 />
                                 </PostInfoContainer>
+
                                 <PostInfoContainer styles={'justify-evenly border-b mb-3 border-gray-200 pb-2'}>
                                     <SharePost />
                                     <AddFavorites/>
@@ -70,11 +69,10 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} />
 
                                 {/* display post comments */}
-                                {activePostId === userPostsInfo.postID && (
+                          
                                     <ModalContainer  
-                                    handleCommentDisplay={handleCommentDisplay} 
-                                    postId={userPostsInfo.postID}
-                                    activePostId={activePostId}
+                                        display={displayComments}
+                                        setDisplay={setDisplayComments}
                                     >
                                         <CommentBoxModal>
                                             {userPostsInfo['comments'].map((commentInfo, index) => (
@@ -93,7 +91,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                             ))}
                                         </CommentBoxModal>
                                     </ModalContainer>
-                                )}
+                                
               
                 
 

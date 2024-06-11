@@ -1,20 +1,15 @@
 import { useEffect } from 'react';
 
-export default function ModalContainer({ children, display,setDisplay, handleCommentDisplay, bgColor, postId,activePostId }) {
+export default function ModalContainer({ children, display,setDisplay, bgColor }) {
 
     const handleClick = (e) => {
         if (e.target === e.currentTarget) {
-            if(setDisplay){
-                setDisplay("hidden")
-            }else{
-                handleCommentDisplay(postId);
-                document.body.classList.remove("overflow-hidden");
-            }
+            setDisplay("hidden")
         }
     };
 
     useEffect(() => {
-        if (display === 'flex' || activePostId ) {
+        if (display === 'flex' ) {
             document.body.classList.add("overflow-hidden");
         } else {
             document.body.classList.remove("overflow-hidden");
@@ -25,7 +20,7 @@ export default function ModalContainer({ children, display,setDisplay, handleCom
             document.body.classList.remove("overflow-hidden");
         };
         
-    }, [display,activePostId]);
+    }, [display]);
 
     
 

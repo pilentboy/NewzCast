@@ -350,6 +350,178 @@
                     ]
                 }
             ]
+        },
+        {
+            "firstName": "James",
+            "lastName": "Wilson",
+            "username": "JamesW",
+            "profileImage": "https://randomuser.me/api/portraits/men/6.jpg",
+            "email": "jameswilson@gmail.com",
+            "verified": false,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "5K"
+                },
+                {
+                    "title": "Following",
+                    "value": 60
+                },
+                {
+                    "title": "Videos",
+                    "value": 80
+                },
+                {
+                    "title": "Newz",
+                    "value": 100
+                }
+            ],
+            "posts": [
+                {
+                    "title": "Check out my latest video!",
+                    "image": "https://picsum.photos/1000/600",
+                    "likes": 110,
+                    "views": 180,
+                    "postID": "123jw321",
+                    "comments": [
+                        {
+                            "username": "viewer",
+                            "email": "viewer@gmail.com",
+                            "profileImage":"https://randomuser.me/api/portraits/women/6.jpg",
+                            "comment": "Great video!"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "firstName": "Sophia",
+            "lastName": "Taylor",
+            "username": "SophiaT",
+            "profileImage": "https://randomuser.me/api/portraits/women/4.jpg",
+            "email": "sophiataylor@gmail.com",
+            "verified": true,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "25K"
+                },
+                {
+                    "title": "Following",
+                    "value": 200
+                },
+                {
+                    "title": "Videos",
+                    "value": 300
+                },
+                {
+                    "title": "Newz",
+                    "value": 400
+                }
+            ],
+            "posts": [
+                {
+                    "title": "Hello everyone!",
+                    "image": "https://picsum.photos/900/500",
+                    "likes": 300,
+                    "views": 450,
+                    "postID": "123st321",
+                    "comments": [
+                        {
+                            "username": "greeter",
+                            "email": "greeter@gmail.com",
+                            "profileImage":"https://randomuser.me/api/portraits/men/8.jpg",
+                            "comment": "Hi Sophia!"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "firstName": "Noah",
+            "lastName": "Brown",
+            "username": "NoahB",
+            "profileImage": "https://randomuser.me/api/portraits/men/5.jpg",
+            "email": "noahbrown@gmail.com",
+            "verified": true,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "18K"
+                },
+                {
+                    "title": "Following",
+                    "value": 130
+                },
+                {
+                    "title": "Videos",
+                    "value": 210
+                },
+                {
+                    "title": "Newz",
+                    "value": 310
+                }
+            ],
+            "posts": [
+                {
+                    "title": "Loving this app!",
+                    "image": "https://picsum.photos/800/400",
+                    "likes": 220,
+                    "views": 350,
+                    "postID": "123nb321",
+                    "comments": [
+                        {
+                            "username": "appreciator",
+                            "email": "appreciator@gmail.com",
+                            "profileImage":"https://randomuser.me/api/portraits/women/5.jpg",
+                            "comment": "Same here!"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "firstName": "Olivia",
+            "lastName": "Williams",
+            "username": "OliviaW",
+            "profileImage": "https://randomuser.me/api/portraits/women/3.jpg",
+            "email": "oliviawilliams@gmail.com",
+            "verified": false,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "10K"
+                },
+                {
+                    "title": "Following",
+                    "value": 90
+                },
+                {
+                    "title": "Videos",
+                    "value": 110
+                },
+                {
+                    "title": "Newz",
+                    "value": 145
+                }
+            ],
+            "posts": [
+                {
+                    "title": "First post on this platform!",
+                    "image": "https://picsum.photos/700/400",
+                    "likes": 180,
+                    "views": 220,
+                    "postID": "123ow321",
+                    "comments": [
+                        {
+                            "username": "welcomer",
+                            "email": "welcomer@gmail.com",
+                            "profileImage":"https://randomuser.me/api/portraits/men/7.jpg",
+                            "comment": "Welcome to the community!"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

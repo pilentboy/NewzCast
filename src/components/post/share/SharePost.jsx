@@ -5,6 +5,7 @@ import { IoMdCamera } from "react-icons/io";
 import { useEffect, useState } from "react"
 import PostMedia from "./PostMedia";
 
+
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
@@ -13,7 +14,9 @@ function SharePost({ TextLimit }) {
 
     const handleSharePost = (e) => {
         e.preventDefault()
-        console.log(selectedFiles)
+        if(postText){
+			console.log(postText)
+		}
     }
 
 

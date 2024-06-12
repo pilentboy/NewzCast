@@ -21,9 +21,12 @@ const LoginProvider = ({ children }) => {
     
     const handleDeleteUser=(useremail)=>{
         const db=mainDB
-        const newDB=db.filter(users => users.username !== useremail)
+        const newDB=db.filter(users => users.email !== useremail)
         setMainDB(newDB)
+		console.log(newDB)
     }
+	
+	
     const handleUserAuth = () => {
         const userSessionData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
         if (!userSessionData) {
@@ -44,7 +47,11 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-
+		
+		if(mainDB){
+			handleDeleteUser("sirxmahddi79@gmail.com")
+		}
+		
     }, [userLoggedInfo])
 
 

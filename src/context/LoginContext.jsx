@@ -33,6 +33,7 @@ const LoginProvider = ({ children }) => {
             "title": title,
             "image": selectedFiles[0],
             "likes": 0,
+            "usersLiked":[],
             "views": 0,
             "postID": generateRandomPostID(),
             "comments": []

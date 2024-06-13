@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import PostInfoContainer from './PostInfoContainer';
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
@@ -9,13 +9,16 @@ import CommentBoxModal from '../../modal/CommentBoxModal';
 import SharePost from './SharePost';
 import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
+import video from '../../../assets/videos/videoplayback.mp4'
 import ModalContainer from '../../modal/ModalContainer';
+import PostVideo from './PostVideo';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
     const [commentValue, setCommentValue] = useState('');
     const [activePostId, setActivePostId] = useState(null);
     const [displayComments,setDisplayComments]=useState('hidden')
+    const [playingVideo,setPlayingVideo]= useState(false)
     
 
 
@@ -23,9 +26,11 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
         <>
 
                 <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  ${!userPostsInfo['image'] ? 'border border-gray-200 rounded-md' : null}`} >
-                    {userPostsInfo['image'] ? (
+                    {/* {userPostsInfo['image'] ? (
                         <img src={userPostsInfo['image']} className={`object-cover mb-4 w-full h-80 shadow-lg rounded-md`} loading='lazy' alt='post image' />
-                    ) : null}
+                    ) : null} */}
+
+                    <PostVideo url={video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                     <div className='flex flex-col p-2'>
                         <h1 className='text-black font-medium text-base'>
                             {userPostsInfo['title']}

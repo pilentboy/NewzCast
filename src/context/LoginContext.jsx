@@ -41,7 +41,6 @@ const LoginProvider = ({ children }) => {
         updatedDB[userAccIndex].posts = [...updatedDB[userAccIndex].posts, newPost];
             
         setMainDB(updatedDB);
-        console.log(mainDB)
     };
 
 

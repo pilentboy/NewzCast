@@ -42,6 +42,18 @@ const LoginProvider = ({ children }) => {
         setMainDB(updatedDB);
         console.log(mainDB)
     };
+
+    const handlePostLike=(postID,userEmail) => {
+
+        const updatedDB = [...mainDB];
+        const userAccIndex = updatedDB.findIndex(user => user.email === userEmail);
+
+        const currentPost=updatedDB[userAccIndex].posts.findIndex(post => post.postID === postID)
+
+       updatedDB[userAccIndex].posts[currentPost].likes += 1 
+
+       setMainDB(updatedDB)
+    }
     
 	
 	
@@ -71,7 +83,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost}}>
+        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike}}>
             {children}
         </LoginContext.Provider>
     )

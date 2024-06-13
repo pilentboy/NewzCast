@@ -19,8 +19,6 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
 
 
-
-
     return (
         <>
 
@@ -60,7 +58,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 <PostInfoContainer styles={'justify-evenly border-b mb-3 border-gray-200 pb-2'}>
                                     <SharePost />
                                     <AddFavorites/>
-                                    <LikePost />
+                                    <LikePost postID={userPostsInfo.postID} userEmail={userEmail} />
                                 </PostInfoContainer>
 
 

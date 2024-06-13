@@ -136,6 +136,7 @@ const Profile = () => {
                                 userProfileInfo['posts'].map((post,id) => (
                                     <PostWrapper
                                         userPostsInfo={post}
+                                        userEmail={email}
                                         userName={userProfileInfo.firstName}
                                         profileImg={userProfileInfo.profileImage}
                                         key={id}

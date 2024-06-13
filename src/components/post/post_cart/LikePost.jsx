@@ -2,19 +2,17 @@ import { BiSolidLike } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
 
-function LikePost({ likedPost }) {
+function LikePost({ postID, userEmail}) {
 
-    const [liked,setLiked]=useState(likedPost ? likedPost : false)
+    const [liked,setLiked]=useState(false)
 
-    const { userTokenInfo } = useContext(LoginContext)
+    const { userTokenInfo, handlePostLike } = useContext(LoginContext)
 
-    const handlePostLike = () => {
-        userTokenInfo ? setLiked(v => !v) : alert("Please log in first!")
-    }
+
 
     return (
         <button type='button' className='flex items-center text-gray-600 text-[12px] font-medium'
-            onClick={handlePostLike}
+            onClick={() => handlePostLike(postID,userEmail)}
         >
 
             <BiSolidLike

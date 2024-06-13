@@ -22,7 +22,7 @@ const LoginProvider = ({ children }) => {
     
     
 
-    const handleUploadNewPost = (title) => {
+    const handleUploadNewPost = (title,selectedFiles) => {
 
         const updatedDB = [...mainDB];
         
@@ -30,7 +30,7 @@ const LoginProvider = ({ children }) => {
                
         const newPost = {
             "title": title,
-            "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
+            "image": selectedFiles[0],
             "likes": 0,
             "views": 0,
             "postID": generateRandomPostID(),

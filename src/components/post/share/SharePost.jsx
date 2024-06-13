@@ -16,16 +16,18 @@ function SharePost({ TextLimit }) {
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
-			handleUploadNewPost(postText)
+			handleUploadNewPost(postText,selectedFiles)
 		}
     }
 
 
     const handleInputChange = (e) => {
         const file = Array.from(e.target.files)
+        console.log(file)
         const newFilePath = file.map(file => URL.createObjectURL(file))
         const updatedFiles = [...selectedFiles, ...newFilePath]
         setSelectedFiles(updatedFiles)
+        console.log(updatedFiles)
     }
 
 

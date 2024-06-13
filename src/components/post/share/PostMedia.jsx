@@ -4,6 +4,7 @@ function PostMedia({ title, logo, validFormats, handleInputChange }) {
     const handleFileSelect = () => {
         const input = document.createElement('input');
         input.type = 'file';
+        // input.setAttribute('multiple',true) currenlty disabled
         input.accept = validFormats
         input.addEventListener("change", handleInputChange)
         input.click();

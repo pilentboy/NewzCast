@@ -58,7 +58,6 @@ const LoginProvider = ({ children }) => {
             currentPost.likes -= 1
             const updateCurrentPostLikes= currentPost.usersLiked.filter((usersEmail) => usersEmail !== userLoggedInfo.email)
             currentPost.usersLiked = updateCurrentPostLikes
-            console.log(currentPost,'min')
        }else{
             currentPost.likes += 1
             currentPost.usersLiked.push(userLoggedInfo.email)
@@ -95,7 +94,6 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-        console.log("dd")
 		
     }, [userLoggedInfo])
 

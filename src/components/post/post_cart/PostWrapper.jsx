@@ -9,7 +9,7 @@ import CommentBoxModal from '../../modal/CommentBoxModal';
 import SharePost from './SharePost';
 import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
-import video from '../../../assets/videos/videoplayback.mp4'
+import video from '../../../assets/videos/video.mp4'
 import ModalContainer from '../../modal/ModalContainer';
 import PostVideo from './PostVideo';
 

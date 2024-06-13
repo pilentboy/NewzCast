@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import UsersDB from '../db.json'
 import generateRandomPostID from "../utils/generateRandomPostID ";
+import manageUsersLiked from "../utils/manageUsersLikes";
 
 const LoginContext = createContext()
 
@@ -43,17 +44,35 @@ const LoginProvider = ({ children }) => {
         console.log(mainDB)
     };
 
+
     const handlePostLike=(postID,userEmail) => {
 
         const updatedDB = [...mainDB];
         const userAccIndex = updatedDB.findIndex(user => user.email === userEmail);
 
-        const currentPost=updatedDB[userAccIndex].posts.findIndex(post => post.postID === postID)
+        const currentPostIndex=updatedDB[userAccIndex].posts.findIndex(post => post.postID === postID)
 
-       updatedDB[userAccIndex].posts[currentPost].likes += 1 
+        const currentPost= updatedDB[userAccIndex].posts[currentPostIndex]
+        const manageUsersLikedRes= manageUsersLiked(currentPost.usersLiked,userLoggedInfo.email)
 
-       setMainDB(updatedDB)
+       if(manageUsersLikedRes){
+            currentPost.likes -= 1
+            const updateCurrentPostLikes= currentPost.usersLiked.filter((usersEmail) => usersEmail !== userLoggedInfo.email)
+            currentPost.usersLiked = updateCurrentPostLikes
+            console.log(currentPost,'min')
+       }else{
+            currentPost.likes += 1
+            currentPost.usersLiked.push(userLoggedInfo.email)
+        }
+
+        updatedDB[userAccIndex][currentPostIndex] = currentPost 
+
+        setMainDB(updatedDB)
+        return manageUsersLikedRes
+
     }
+
+  
     
 	
 	

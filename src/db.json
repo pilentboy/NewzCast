@@ -30,6 +30,7 @@
                     "title": "This is my first post on NewzCast!",
                     "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
                     "likes": 20,
+                    "usersLiked":["sirxmahdi79@gmail.com"],
                     "views": 100,
                     "postID": "123mmm321",
                     "comments": [
@@ -104,42 +105,13 @@
                             "email": "sirxfqwfhdi79@gmail.com",
                             "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
                             "comment": "great! keep going!"
-                        },
-                        {
-                            "username": "john212",
-                            "email": "sirxfqwfhdi79@gmail.com",
-                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-                            "comment": "great! keep going!"
-                        },
-                        {
-                            "username": "john212",
-                            "email": "sirxfqwfhdi79@gmail.com",
-                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-                            "comment": "great! keep going!"
-                        },
-                        {
-                            "username": "john212",
-                            "email": "sirxfqwfhdi79@gmail.com",
-                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-                            "comment": "great! keep going!"
-                        },
-                        {
-                            "username": "john212",
-                            "email": "sirxfqwfhdi79@gmail.com",
-                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-                            "comment": "great! keep going!"
-                        },
-                        {
-                            "username": "john212",
-                            "email": "sirxfqwfhdi79@gmail.com",
-                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
-                            "comment": "great! keep going!"
-                        }
+                        } 
                     ]
                 },
                 {
                     "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
                     "likes": 20,
+                    "usersLiked":[],
                     "views": 24,
                     "postID": "1230mm321",
                     "comments": [
@@ -156,6 +128,7 @@
                     "title": "This is my second post on NewzCast!",
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
                     "likes": 231,
+                    "usersLiked":[],
                     "views": 300,
                     "postID": "123mmm621",
                     "comments": [
@@ -199,6 +172,7 @@
                     "title": "share my posts guys!!",
                     "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
                     "likes": 52,
+                    "usersLiked":["sirxmahdi79@gmail.com"],
                     "views": 160,
                     "postID": "123m33321",
                     "comments": [
@@ -226,6 +200,7 @@
                     "title": "This is my second post on NewzCast!",
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
                     "likes": 332,
+                    "usersLiked":[],
                     "views":452,
                     "postID": "123m99321",
                     "comments": [
@@ -247,6 +222,7 @@
                     "title": "This is my third post on NewzCast!",
                     "image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
                     "likes": 62,
+                    "usersLiked":[],
                     "views": 102,
                     "postID": "123ma321",
                     "comments": [
@@ -290,6 +266,7 @@
                     "title": "share my posts guys!!",
                     "image": "https://images.freeimages.com/images/large-previews/c56/scn-prk-012-jpg-1364337.jpg?fmt=webp&w=500",
                     "likes": 65,
+                    "usersLiked":[],
                     "views": 120,
                     "postID": "123mr4321",
                     "comments": [
@@ -317,6 +294,7 @@
                     "title": "This is my second post on NewzCast!",
                     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s",
                     "likes": 62,
+                    "usersLiked":[],
                     "views": 156,
                     "postID": "123mor321",
                     "comments": [
@@ -338,6 +316,7 @@
                     "title": "This is my third post on NewzCast!",
                     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXxfc2JeHYtzG7-MTjfaVcbwLMJktgj-RSx3om4IJtA&s",
                     "likes": 205,
+                    "usersLiked":[],
                     "views": 686,
                     "postID": "123rxm321",
                     "comments": [
@@ -350,178 +329,8 @@
                     ]
                 }
             ]
-        },
-        {
-            "firstName": "James",
-            "lastName": "Wilson",
-            "username": "JamesW",
-            "profileImage": "https://randomuser.me/api/portraits/men/6.jpg",
-            "email": "jameswilson@gmail.com",
-            "verified": false,
-            "userActiviyInfo": [
-                {
-                    "title": "Followers",
-                    "value": "5K"
-                },
-                {
-                    "title": "Following",
-                    "value": 60
-                },
-                {
-                    "title": "Videos",
-                    "value": 80
-                },
-                {
-                    "title": "Newz",
-                    "value": 100
-                }
-            ],
-            "posts": [
-                {
-                    "title": "Check out my latest video!",
-                    "image": "https://picsum.photos/1000/600",
-                    "likes": 110,
-                    "views": 180,
-                    "postID": "123jw321",
-                    "comments": [
-                        {
-                            "username": "viewer",
-                            "email": "viewer@gmail.com",
-                            "profileImage":"https://randomuser.me/api/portraits/women/6.jpg",
-                            "comment": "Great video!"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "firstName": "Sophia",
-            "lastName": "Taylor",
-            "username": "SophiaT",
-            "profileImage": "https://randomuser.me/api/portraits/women/4.jpg",
-            "email": "sophiataylor@gmail.com",
-            "verified": true,
-            "userActiviyInfo": [
-                {
-                    "title": "Followers",
-                    "value": "25K"
-                },
-                {
-                    "title": "Following",
-                    "value": 200
-                },
-                {
-                    "title": "Videos",
-                    "value": 300
-                },
-                {
-                    "title": "Newz",
-                    "value": 400
-                }
-            ],
-            "posts": [
-                {
-                    "title": "Hello everyone!",
-                    "image": "https://picsum.photos/900/500",
-                    "likes": 300,
-                    "views": 450,
-                    "postID": "123st321",
-                    "comments": [
-                        {
-                            "username": "greeter",
-                            "email": "greeter@gmail.com",
-                            "profileImage":"https://randomuser.me/api/portraits/men/8.jpg",
-                            "comment": "Hi Sophia!"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "firstName": "Noah",
-            "lastName": "Brown",
-            "username": "NoahB",
-            "profileImage": "https://randomuser.me/api/portraits/men/5.jpg",
-            "email": "noahbrown@gmail.com",
-            "verified": true,
-            "userActiviyInfo": [
-                {
-                    "title": "Followers",
-                    "value": "18K"
-                },
-                {
-                    "title": "Following",
-                    "value": 130
-                },
-                {
-                    "title": "Videos",
-                    "value": 210
-                },
-                {
-                    "title": "Newz",
-                    "value": 310
-                }
-            ],
-            "posts": [
-                {
-                    "title": "Loving this app!",
-                    "image": "https://picsum.photos/800/400",
-                    "likes": 220,
-                    "views": 350,
-                    "postID": "123nb321",
-                    "comments": [
-                        {
-                            "username": "appreciator",
-                            "email": "appreciator@gmail.com",
-                            "profileImage":"https://randomuser.me/api/portraits/women/5.jpg",
-                            "comment": "Same here!"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "firstName": "Olivia",
-            "lastName": "Williams",
-            "username": "OliviaW",
-            "profileImage": "https://randomuser.me/api/portraits/women/3.jpg",
-            "email": "oliviawilliams@gmail.com",
-            "verified": false,
-            "userActiviyInfo": [
-                {
-                    "title": "Followers",
-                    "value": "10K"
-                },
-                {
-                    "title": "Following",
-                    "value": 90
-                },
-                {
-                    "title": "Videos",
-                    "value": 110
-                },
-                {
-                    "title": "Newz",
-                    "value": 145
-                }
-            ],
-            "posts": [
-                {
-                    "title": "First post on this platform!",
-                    "image": "https://picsum.photos/700/400",
-                    "likes": 180,
-                    "views": 220,
-                    "postID": "123ow321",
-                    "comments": [
-                        {
-                            "username": "welcomer",
-                            "email": "welcomer@gmail.com",
-                            "profileImage":"https://randomuser.me/api/portraits/men/7.jpg",
-                            "comment": "Welcome to the community!"
-                        }
-                    ]
-                }
-            ]
         }
     ]
 }
+
+

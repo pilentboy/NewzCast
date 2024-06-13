@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import UsersDB from '../db.json'
+import generateRandomPostID from "../utils/generateRandomPostID ";
 
 const LoginContext = createContext()
 
@@ -19,12 +20,29 @@ const LoginProvider = ({ children }) => {
         if (userInfo.length === 1) return userInfo[0]
     }
     
-    const handleDeleteUser=(useremail)=>{
-        const db=mainDB
-        const newDB=db.filter(users => users.email !== useremail)
-        setMainDB(newDB)
-		console.log(newDB)
-    }
+    
+
+    const handleUploadNewPost = (title) => {
+
+        const updatedDB = [...mainDB];
+        
+        const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
+               
+        const newPost = {
+            "title": title,
+            "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
+            "likes": 0,
+            "views": 0,
+            "postID": generateRandomPostID(),
+            "comments": []
+            };
+            
+        updatedDB[userAccIndex].posts = [...updatedDB[userAccIndex].posts, newPost];
+            
+        setMainDB(updatedDB);
+        console.log(mainDB)
+    };
+    
 	
 	
     const handleUserAuth = () => {
@@ -47,16 +65,13 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-		
-		if(mainDB){
-			handleDeleteUser("sirxmahddi79@gmail.com")
-		}
+        console.log("dd")
 		
     }, [userLoggedInfo])
 
 
     return (
-        <LoginContext.Provider value={{mainDB,handleDeleteUser, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser,}}>
+        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost}}>
             {children}
         </LoginContext.Provider>
     )

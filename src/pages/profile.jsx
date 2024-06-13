@@ -22,8 +22,7 @@ const Profile = () => {
 
     const { userLoggedInfo, getUserInfo} = useContext(LoginContext)
 
-    const [favorite, setFavorite] = useState(false)
-    const [like2, setLike2] = useState(false)
+
     const [activityInfoClickedTitle, setActivityInfoClickedTitle] = useState(null)
     const [modalContainerDisplay, setModalContainerDisplay] = useState("hidden")
     const [userPer, setUserPer] = useState(false) // handle access to profile settings
@@ -34,6 +33,7 @@ const Profile = () => {
     const { email } = useParams();
 	
     useEffect(() => {
+
         setLoading(true)
         if (userLoggedInfo && email === userLoggedInfo['email']) {
             setUserProfileInfo(userLoggedInfo)

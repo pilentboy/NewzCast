@@ -1,21 +1,22 @@
 import PostText from "./PostText"
-import MainButton from '../../landing/MainButton'
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
-import { useEffect, useState } from "react"
+import {useState, useContext } from "react"
 import PostMedia from "./PostMedia";
+import { LoginContext } from "../../../context/LoginContext";
 
 
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
     const [selectedFiles, setSelectedFiles] = useState([])
+    const {handleUploadNewPost}=useContext(LoginContext)
 
 
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
-			console.log(postText)
+			handleUploadNewPost(postText)
 		}
     }
 

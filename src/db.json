@@ -29,6 +29,7 @@
                 {
                     "title": "This is my first post on NewzCast!",
                     "image": "https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg",
+                    "video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4",
                     "likes": 20,
                     "usersLiked":["sirxmahdi79@gmail.com"],
                     "views": 100,
@@ -199,6 +200,7 @@
                 {
                     "title": "This is my second post on NewzCast!",
                     "image": "https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg",
+                    "video":"https://sample-videos.com/video321/mp4/360/big_buck_bunny_360p_5mb.mp4",
                     "likes": 332,
                     "usersLiked":[],
                     "views":452,

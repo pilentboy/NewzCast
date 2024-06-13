@@ -9,7 +9,6 @@ import CommentBoxModal from '../../modal/CommentBoxModal';
 import SharePost from './SharePost';
 import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
-import video from '../../../assets/videos/video.mp4'
 import ModalContainer from '../../modal/ModalContainer';
 import PostVideo from './PostVideo';
 
@@ -26,11 +25,17 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
         <>
 
                 <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  ${!userPostsInfo['image'] ? 'border border-gray-200 rounded-md' : null}`} >
-                    {/* {userPostsInfo['image'] ? (
-                        <img src={userPostsInfo['image']} className={`object-cover mb-4 w-full h-80 shadow-lg rounded-md`} loading='lazy' alt='post image' />
-                    ) : null} */}
 
-                    <PostVideo url={video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
+                    {
+                        userPostsInfo.video ? (
+                            <PostVideo url={userPostsInfo.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
+                        ) : (
+                            userPostsInfo['image'] ? (
+                                <img src={userPostsInfo['image']} className={`object-cover mb-4 w-full h-80 shadow-lg rounded-md`} loading='lazy' alt='post image' />
+                            ) : null
+                        )
+                    }
+                    
                     <div className='flex flex-col p-2'>
                         <h1 className='text-black font-medium text-base'>
                             {userPostsInfo['title']}

@@ -3,7 +3,7 @@ import ReactPlayer from "react-player"
 function PostVideo({playingVideo,setPlayingVideo,url}) {
   return (
     <>
-        <div className='w-full ' onClick={()=> setPlayingVideo(v=> !v)} >
+        <div className='w-full rounded-lg overflow-hidden' onClick={()=> setPlayingVideo(v=> !v)} >
              <ReactPlayer 
                 url={url}
                 playing={playingVideo}    

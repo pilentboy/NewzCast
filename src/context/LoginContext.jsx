@@ -39,7 +39,7 @@ const LoginProvider = ({ children }) => {
             "comments": []
             };
             
-        updatedDB[userAccIndex].posts = [...updatedDB[userAccIndex].posts, newPost];
+        updatedDB[userAccIndex].posts = [newPost, ...updatedDB[userAccIndex].posts];
             
         setMainDB(updatedDB);
     };

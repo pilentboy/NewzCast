@@ -18,6 +18,8 @@ function SharePost({ TextLimit }) {
         if(postText){
 			handleUploadNewPost(postText,selectedFiles)
 		}
+        setPostText("")
+        setSelectedFiles([])
     }
 
 

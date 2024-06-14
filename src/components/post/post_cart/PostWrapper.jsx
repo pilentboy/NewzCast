@@ -27,16 +27,6 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
 
                 <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  ${!userPostsInfo['image'] ? 'border border-gray-200 rounded-md' : null}`} >
 
-                    {/* {
-                        userPostsInfo.video ? (
-                            <PostVideo url={userPostsInfo.video[0]} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
-                        ) : (
-                            userPostsInfo['image'] ? (
-                             <PostImage imageSRC={userPostsInfo['image']} />
-                            ) : null
-                        )
-                    } */}
-
                     {
                         userPostsInfo.video ? <PostVideo url={userPostsInfo.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/> : 
                         userPostsInfo['image'] ? (

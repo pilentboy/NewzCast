@@ -9,8 +9,8 @@ import { LoginContext } from "../../../context/LoginContext";
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
-    const [postVideo, setPostVideo] = useState([])
-    const [postImages,setPostImages]=useState([])
+    const [postVideo, setPostVideo] = useState()
+    const [postImages,setPostImages]=useState()
     const {handleUploadNewPost}=useContext(LoginContext)
 
 
@@ -20,19 +20,19 @@ function SharePost({ TextLimit }) {
 			handleUploadNewPost(postText,postImages)
 		}
         setPostText("")
-        setPostImages([])
-        setPostVideo([])
+        setPostImages()
+        setPostVideo()
     }
 
 
     const handleInputChange = (e, mediaType) => {
         const file = Array.from(e.target.files)
         const newFilePath = file.map(file => URL.createObjectURL(file))
-        const updatedFiles = [...mediaType, ...newFilePath]
+        // const updatedFiles = [...mediaType, ...newFilePath]
         if(mediaType === postImages){
-            setPostImages(updatedFiles)
+            setPostImages(newFilePath)
         }else{
-            setPostVideo(updatedFiles)
+            setPostVideo(newFilePath)
         }
     }
 

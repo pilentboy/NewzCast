@@ -23,7 +23,7 @@ const LoginProvider = ({ children }) => {
     
     
 
-    const handleUploadNewPost = (title,postImage) => {
+    const handleUploadNewPost = (title,postImage,postVideo) => {
 
         const updatedDB = [...mainDB];
         
@@ -32,6 +32,7 @@ const LoginProvider = ({ children }) => {
         const newPost = {
             "title": title,
             "image": postImage,
+            "video":postVideo,
             "likes": 0,
             "usersLiked":[],
             "views": 0,

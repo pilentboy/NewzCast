@@ -108,10 +108,7 @@
                 },
                 {
                     "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
-                    "postMeidas":[
-                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
-                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
-                    ],
+                    "postMeidas":[],
                     "likes": 20,
                     "usersLiked":[],
                     "views": 24,

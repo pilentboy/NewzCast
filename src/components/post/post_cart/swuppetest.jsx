@@ -1,10 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper } from "swiper/react"
 import {Pagination} from "swiper/modules"
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css'
-import PostImage from "./PostImage"
-import PostVideo from "./PostVideo"
 
 function PostSlider({children}) {
 

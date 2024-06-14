@@ -23,12 +23,10 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [displayComments,setDisplayComments]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     
-    // ${userPostsInfo.postMedias['images'] == [] ? 'border border-gray-200 rounded-md' : null}
-
     return (
         <>
 
-                <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  `} >
+                <div className={`w-[90%] min-h-[200px] relative max-h-[600px] md:w-460 overflow-hidden my-3 z-[400] bg-white flex flex-col justify-between  ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null}`} >
                     
                     {
                         userPostsInfo.postMeidas.length >= 1 ?(

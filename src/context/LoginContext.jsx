@@ -31,8 +31,10 @@ const LoginProvider = ({ children }) => {
                
         const newPost = {
             "title": title,
-            "image": postImage,
-            "video":postVideo,
+            "postMeidas":{
+                "images":postImage,
+                "videos":postVideo
+            },
             "likes": 0,
             "usersLiked":[],
             "views": 0,

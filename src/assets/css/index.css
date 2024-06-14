@@ -31,6 +31,8 @@
     li {
         @apply list-none
     }
+
+  
 }
 
 @layer components {
@@ -221,10 +223,10 @@
         to {
             transform: translateY(-50%,0%);
         }
+
     }
 
+  
 
-
-
-
+ 
 }

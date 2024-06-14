@@ -1,9 +1,13 @@
 import ReactPlayer from "react-player"
+import { useState } from "react"
 
-function PostVideo({playingVideo,setPlayingVideo,url}) {
+function PostVideo({url}) {
+  
+  const [playingVideo,setPlayingVideo]= useState(false)
+
   return (
     <>
-        <div className='w-full rounded-lg overflow-hidden' onClick={()=> setPlayingVideo(v=> !v)} >
+        <div className='w-full h-80 rounded-lg overflow-hidden' onClick={()=> setPlayingVideo(v=> !v)} >
              <ReactPlayer 
                 url={url}
                 playing={playingVideo}    

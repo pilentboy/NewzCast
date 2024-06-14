@@ -12,6 +12,8 @@ import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
 import PostVideo from './PostVideo';
 import PostImage from './PostImage';
+import PostSlider from './swuppetest';
+import {SwiperSlide } from "swiper/react"
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
@@ -20,20 +22,38 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [displayComments,setDisplayComments]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     
-
+    // ${userPostsInfo.postMedias['images'] == [] ? 'border border-gray-200 rounded-md' : null}
 
     return (
         <>
 
-                <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  ${!userPostsInfo['image'] ? 'border border-gray-200 rounded-md' : null}`} >
-
-                    {
-                        userPostsInfo.video ? <PostVideo url={userPostsInfo.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/> : 
-                        userPostsInfo['image'] ? (
-                            <PostImage imageSRC={userPostsInfo['image']} />
-                           ) : null
-                    }
+                <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  `} >
                     
+                    {
+                        userPostsInfo.postMeidas.images.length >= 1 || userPostsInfo.postMeidas.videos.length >= 1 ?(
+                            <PostSlider>
+                                {
+                                    userPostsInfo.postMeidas.images.map((media,index) => (
+                                        <SwiperSlide key={index}>
+                                            <PostImage imageSRC={media}/>
+                                        </SwiperSlide>
+
+                                    ))
+                                }
+                                    {
+                                    userPostsInfo.postMeidas.videos.map((media,index) => (
+                                        <SwiperSlide key={index}>
+                                            <PostVideo url={media}/>
+                                        </SwiperSlide>
+
+                                    ))
+                                }
+                            </PostSlider>
+                        ) : null
+                    }
+                 
+                  
+                
                     <div className='flex flex-col p-2'>
                         <h1 className='text-black font-medium text-base'>
                             {userPostsInfo['title']}

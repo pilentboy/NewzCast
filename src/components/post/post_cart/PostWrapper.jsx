@@ -11,6 +11,7 @@ import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
 import PostVideo from './PostVideo';
+import PostImage from './PostImage';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
@@ -31,7 +32,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <PostVideo url={userPostsInfo.video[0]} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                         ) : (
                             userPostsInfo['image'] ? (
-                                <img src={userPostsInfo['image']} className={`object-cover mb-4 w-full h-80 shadow-lg rounded-md`} loading='lazy' alt='post image' />
+                             <PostImage imageSRC={userPostsInfo['image']} />
                             ) : null
                         )
                     }

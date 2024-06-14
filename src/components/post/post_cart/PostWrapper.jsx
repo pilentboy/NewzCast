@@ -28,7 +28,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
 
                     {
                         userPostsInfo.video ? (
-                            <PostVideo url={userPostsInfo.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
+                            <PostVideo url={userPostsInfo.video[0]} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                         ) : (
                             userPostsInfo['image'] ? (
                                 <img src={userPostsInfo['image']} className={`object-cover mb-4 w-full h-80 shadow-lg rounded-md`} loading='lazy' alt='post image' />

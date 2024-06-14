@@ -9,28 +9,33 @@ import { LoginContext } from "../../../context/LoginContext";
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
-    const [selectedFiles, setSelectedFiles] = useState([])
+    const [postVideo, setPostVideo] = useState([])
+    const [postImages,setPostImages]=useState([])
     const {handleUploadNewPost}=useContext(LoginContext)
 
 
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
-			handleUploadNewPost(postText,selectedFiles)
+			handleUploadNewPost(postText,postImages)
 		}
         setPostText("")
-        setSelectedFiles([])
+        setPostImages([])
+        setPostVideo([])
     }
 
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e, mediaType) => {
         const file = Array.from(e.target.files)
-        console.log(file)
         const newFilePath = file.map(file => URL.createObjectURL(file))
-        const updatedFiles = [...selectedFiles, ...newFilePath]
-        setSelectedFiles(updatedFiles)
-        console.log(updatedFiles)
+        const updatedFiles = [...mediaType, ...newFilePath]
+        if(mediaType === postImages){
+            setPostImages(updatedFiles)
+        }else{
+            setPostVideo(updatedFiles)
+        }
     }
+
 
 
 
@@ -40,6 +45,9 @@ function SharePost({ TextLimit }) {
 
                 <PostText text={postText} TextLength={TextLimit} handleChange={setPostText} />
 
+                <div>
+
+                </div>
                 <div className="flex justify-between items-center w-full">
 
 
@@ -48,6 +56,7 @@ function SharePost({ TextLimit }) {
                         <PostMedia
                             title={'Video'}
                             validFormats={'video/mp4,video/x-matroska'}
+                            mediaType={postVideo}
                             logo={<BsFillCameraVideoFill className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />
@@ -57,6 +66,7 @@ function SharePost({ TextLimit }) {
                         <PostMedia
                             title={'Photo'}
                             validFormats={'image/*'}
+                            mediaType={postImages}
                             logo={<IoMdCamera className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />

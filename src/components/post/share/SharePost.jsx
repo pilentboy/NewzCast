@@ -9,31 +9,32 @@ import { LoginContext } from "../../../context/LoginContext";
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
-    const [postVideo, setPostVideo] = useState([])
-    const [postImages,setPostImages]=useState([])
+    // const [postVideo, setPostVideo] = useState([])
+    // const [postImages,setPostImages]=useState([])
+    const [postMeidas,setPostMedias]=useState([])
     const {handleUploadNewPost}=useContext(LoginContext)
 
 
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
-			handleUploadNewPost(postText,postImages,postVideo)
+			handleUploadNewPost(postText,postMeidas)
 		}
         setPostText("")
-        setPostImages([])
-        setPostVideo([])
+        setPostMedias([])
     }
 
 
     const handleInputChange = (e, mediaType) => {
+
         const file = Array.from(e.target.files)
         const newFilePath = file.map(file => URL.createObjectURL(file))
-        const updatedFiles = [...mediaType, ...newFilePath]
-        if(mediaType === postImages){
-            setPostImages(updatedFiles)
-        }else{
-            setPostVideo(updatedFiles)
-        }
+
+        let objectKeyName= mediaType === 'video' ? 'video' : 'image'
+
+        const updatedFiles = [...postMeidas, { [objectKeyName]: newFilePath[0] }];
+        setPostMedias(updatedFiles)
+        
     }
 
 
@@ -56,7 +57,7 @@ function SharePost({ TextLimit }) {
                         <PostMedia
                             title={'Video'}
                             validFormats={'video/mp4,video/x-matroska'}
-                            mediaType={postVideo}
+                            mediaType={'video'}
                             logo={<BsFillCameraVideoFill className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />
@@ -66,7 +67,7 @@ function SharePost({ TextLimit }) {
                         <PostMedia
                             title={'Photo'}
                             validFormats={'image/*'}
-                            mediaType={postImages}
+                            mediaType={'image'}
                             logo={<IoMdCamera className="text-lg text-purple-1000" />}
                             handleInputChange={handleInputChange}
                         />

@@ -23,7 +23,7 @@ const LoginProvider = ({ children }) => {
     
     
 
-    const handleUploadNewPost = (title,postImage,postVideo) => {
+    const handleUploadNewPost = (title,postMedias) => {
 
         const updatedDB = [...mainDB];
         
@@ -31,10 +31,7 @@ const LoginProvider = ({ children }) => {
                
         const newPost = {
             "title": title,
-            "postMeidas":{
-                "images":postImage,
-                "videos":postVideo
-            },
+            "postMeidas":postMedias,
             "likes": 0,
             "usersLiked":[],
             "views": 0,
@@ -43,7 +40,7 @@ const LoginProvider = ({ children }) => {
             };
             
         updatedDB[userAccIndex].posts = [newPost, ...updatedDB[userAccIndex].posts];
-            
+        console.log(postMedias,"xx")
         setMainDB(updatedDB);
     };
 

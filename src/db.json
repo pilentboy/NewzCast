@@ -28,10 +28,11 @@
             "posts": [
                 {
                     "title": "This is my first post on NewzCast!",
-                    "postMeidas":{
-                        "images":["https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTVhKeS3lXU6harGiycQg63sp5_uLOSPkldVAVEi-uOgI67XwreFUFK2ugN9Ina7Pa2hw&usqp=CAU","https://img.lovepik.com/photo/48013/0603.jpg_wh860.jpg"],
-                        "videos":["https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"]
-                    },
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
                     "likes": 20,
                     "usersLiked":["sirxmahdi79@gmail.com"],
                     "views": 100,
@@ -107,10 +108,10 @@
                 },
                 {
                     "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
-                    "postMeidas":{
-                        "images":[],
-                        "videos":[]
-                    },
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                    ],
                     "likes": 20,
                     "usersLiked":[],
                     "views": 24,
@@ -127,10 +128,10 @@
                 },
                 {
                     "title": "This is my second post on NewzCast!",
-                    "postMeidas":{
-                        "images":["https://png.pngtree.com/thumb_back/fw800/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg"],
-                        "videos":[]
-                    },
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                    ],
                     "likes": 231,
                     "usersLiked":[],
                     "views": 300,

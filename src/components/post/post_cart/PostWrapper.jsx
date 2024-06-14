@@ -14,6 +14,7 @@ import PostVideo from './PostVideo';
 import PostImage from './PostImage';
 import PostSlider from './swuppetest';
 import {SwiperSlide } from "swiper/react"
+import { object } from 'yup';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
@@ -30,24 +31,19 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                 <div className={`w-[90%] min-h-[200px] max-h-[600px] md:w-460 overflow-hidden my-3 bg-white flex flex-col justify-between  `} >
                     
                     {
-                        userPostsInfo.postMeidas.images.length >= 1 || userPostsInfo.postMeidas.videos.length >= 1 ?(
+                        userPostsInfo.postMeidas.length >= 1 ?(
                             <PostSlider>
                                 {
-                                    userPostsInfo.postMeidas.images.map((media,index) => (
+                                    userPostsInfo.postMeidas.map((media,index) => (
                                         <SwiperSlide key={index}>
-                                            <PostImage imageSRC={media}/>
+                                            {
+                                                Object.keys(media)[0] === "image" ? <PostImage imageSRC={media.image}/> : <PostVideo url={media.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
+                                            }
                                         </SwiperSlide>
 
                                     ))
                                 }
-                                    {
-                                    userPostsInfo.postMeidas.videos.map((media,index) => (
-                                        <SwiperSlide key={index}>
-                                            <PostVideo url={media}/>
-                                        </SwiperSlide>
-
-                                    ))
-                                }
+                              
                             </PostSlider>
                         ) : null
                     }

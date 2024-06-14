@@ -38,7 +38,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                     } */}
 
                     {
-                        userPostsInfo.video ? <PostVideo url={userPostsInfo.video[0]} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/> : 
+                        userPostsInfo.video ? <PostVideo url={userPostsInfo.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/> : 
                         userPostsInfo['image'] ? (
                             <PostImage imageSRC={userPostsInfo['image']} />
                            ) : null

@@ -14,7 +14,7 @@ function PostSlider({children}) {
             modules={[Pagination]}
             speed={700}
             slidesPerView={1}
-            className="w-full h-80"
+            className="w-full h-80 rounded-md"
         >
           {children}
         </Swiper>

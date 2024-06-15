@@ -31,7 +31,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <PostSlider>
                                 {
                                     userPostsInfo.postMeidas.map((media,index) => (
-                                        <SwiperSlide key={index}>
+                                        <SwiperSlide key={index} className='rounded-md'>
                                             {
                                                 Object.keys(media)[0] === "image" ? <PostImage imageSRC={media.image}/> : <PostVideo url={media.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                                             }
@@ -47,7 +47,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                   
                 
                     <div className='flex flex-col p-2'>
-                        <pre className='text-black font-medium text-base font-roboto'>
+                        <pre className='text-black font-medium text-base font-roboto max-h-36  overflow-y-auto max-w-full text-wrap'>
                             {userPostsInfo['title']}
                         </pre>
                         <div className='flex items-center justify-between space-x-3'>

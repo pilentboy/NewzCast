@@ -143,7 +143,7 @@ const Profile = () => {
                                     profileImg={userProfileInfo.profileImage}
                                     key={id}
                             />
-                            )) : <h1 className=" border-b border-gray-500 text-gray-700 ">No Posts</h1>
+                            )) : <h1 className=" border-b border-gray-500 text-gray-700 ">No Post</h1>
                         }
                     
                     

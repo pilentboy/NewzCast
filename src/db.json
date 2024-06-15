@@ -33,7 +33,6 @@
                         {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
                         
                     ],
-                    "likes": 20,
                     "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com"],
                     "views": 100,
                     "postID": "123mmm321",
@@ -73,7 +72,6 @@
                 {
                     "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
                     "postMeidas":[],
-                    "likes": 20,
                     "usersLiked":["sirxmahdi7dqd9@gmail.com"],
                     "views": 24,
                     "postID": "1230mm321",
@@ -93,7 +91,6 @@
                         {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
                         {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
                     ],
-                    "likes": 231,
                     "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com","sir133dqdhdi79@gmail.com","sirxmadqdqqqqqdhdi79@gmail.com","sirxmadqdqdhdi79@yahoo.com"],
                     "views": 300,
                     "postID": "123mmm621",
@@ -107,7 +104,225 @@
                     ]
                 }
             ]
-        }
+        },
+        {
+            "firstName": "Mohammad",
+            "lastName": "Ebrahimi",
+            "username": "selexted",
+            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+            "email": "bepobe1813@lewenbo.com",
+            "verified": false,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "5K"
+                },
+                {
+                    "title": "Following",
+                    "value": 25
+                },
+                {
+                    "title": "Videos",
+                    "value": 12
+                },
+                {
+                    "title": "Newz",
+                    "value": 262
+                }
+            ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser1@example.com", "fakeuser2@example.com"],
+                    "views": 160,
+                    "postID": "123m33321",
+                    "comments": [
+                        {
+                            "username": "wdwqdq2d22",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "nice! can't wait!"
+                        },
+                        {
+                            "username": "wdgrge2",
+                            "email": "fakeuser1@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "would you like to edit your images before posting?"
+                        },
+                        {
+                            "username": "gr34324",
+                            "email": "fakeuser2@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "hey! you always post the best news earlier than others!"
+                        },
+                        {
+                            "username": "newuser1",
+                            "email": "newuser1@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Love this post!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser3@example.com", "fakeuser4@example.com"],
+                    "views": 452,
+                    "postID": "123m99321",
+                    "comments": [
+                        {
+                            "username": "pilentboy",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "hey! how you doing today?!"
+                        },
+                        {
+                            "username": "ail21234",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "amazing! honestly you are one of the best!"
+                        },
+                        {
+                            "username": "newuser2",
+                            "email": "newuser2@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Fantastic content!"
+                        }
+                    ]
+                }
+        
+            ]
+        },
+        {
+            "firstName": "Reyhaneh",
+            "lastName": "Behrooz",
+            "username": "Reyhaneh212",
+            "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZTUrjs2YdHUb_BFutIvvmFf9LtVf4uiDXHLQzTrDAA&s",
+            "email": "kodoki9676@amankro.com",
+            "verified": true,
+            "userActiviyInfo": [
+                {
+                    "title": "Followers",
+                    "value": "56K"
+                },
+                {
+                    "title": "Following",
+                    "value": 155
+                },
+                {
+                    "title": "Videos",
+                    "value": 65
+                },
+                {
+                    "title": "Newz",
+                    "value": 652
+                }
+            ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser7@example.com", "fakeuser8@example.com"],
+                    "views": 120,
+                    "postID": "123mr4321",
+                    "comments": [
+                        {
+                            "username": "dq2223",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw1ddq23",
+                            "email": "fakeuser9@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "eli212",
+                            "email": "fakeuser10@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great!!"
+                        },
+                        {
+                            "username": "newuser4",
+                            "email": "newuser4@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Nice work!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser11@example.com", "fakeuser12@example.com"],
+                    "views": 156,
+                    "postID": "123mor321",
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "fakeuser13@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "newuser5",
+                            "email": "newuser5@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Awesome post!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my third post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser14@example.com", "fakeuser15@example.com"],
+                    "views": 686,
+                    "postID": "123rxm321",
+                    "comments": [
+                        {
+                            "username": "john212",
+                            "email": "bepobe182213@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "newuser6",
+                            "email": "newuser6@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Incredible post!"
+                        }
+                    ]
+                }
+            ]
+            }
     ]
 }
 

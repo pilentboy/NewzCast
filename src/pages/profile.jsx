@@ -114,6 +114,7 @@ const Profile = () => {
 
                                     }
                                 </ul>
+                                {/* display follow btns */}
                                 {
                                     !userPer && <ConnectionBTN/>
                                 }
@@ -133,16 +134,18 @@ const Profile = () => {
 
                         {/* user's posts  */}
                         {
-                                userProfileInfo['posts'].map((post,id) => (
-                                    <PostWrapper
-                                        userPostsInfo={post}
-                                        userEmail={email}
-                                        userName={userProfileInfo.firstName}
-                                        profileImg={userProfileInfo.profileImage}
-                                        key={id}
-                                />
-                                ))
+                            userProfileInfo['posts'].length >=1 ? 
+                             userProfileInfo['posts'].map((post,id) => (
+                                <PostWrapper
+                                    userPostsInfo={post}
+                                    userEmail={email}
+                                    userName={userProfileInfo.firstName}
+                                    profileImg={userProfileInfo.profileImage}
+                                    key={id}
+                            />
+                            )) : <h1 className=" border-b border-gray-500 text-gray-700 ">No Posts</h1>
                         }
+                    
                     
 
                     </>

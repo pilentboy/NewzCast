@@ -5,7 +5,6 @@ function DropDown({ display,setDropDownDisplay,items,position, button }) {
         <div className={` absolute  py-2   bg-white border border-gray-200 ${display ? 'flex' : 'hidden'} flex-col min-h-8 w-24 rounded-lg ${position ? position : 'top-5 left-0'} `}>
             {
                 items?.map((item, index) =>{
-                    console.log(item)
                     return (
                         < Link to={item.toLowerCase()} 
                         onClick={()=> setDropDownDisplay(false)}

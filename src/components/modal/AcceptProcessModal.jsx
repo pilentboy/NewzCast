@@ -9,7 +9,12 @@ function AcceptProcessModal({title,acceptBG,acceptAction,cancelAction}) {
             {title}
         </span>
         <div className='flex items-center justify-center mt-4 space-x-4'>   
-            <button className={`w-20 py-1 duration-200 rounded-md  text-center text-base font-semibold  ${acceptBG ? acceptBG :'bg-red-500 hover:bg-red-700'}`}>Yes</button>
+            <button 
+            onClick={()=> {
+                acceptAction()
+                cancelAction()
+            }}
+            className={`w-20 py-1 duration-200 rounded-md  text-center text-base font-semibold  ${acceptBG ? acceptBG :'bg-red-500 hover:bg-red-700'}`}>Yes</button>
             <button 
             onClick={()=> {
                 cancelAction()

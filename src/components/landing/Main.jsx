@@ -2,10 +2,10 @@ import Container from "./Container"
 import Wrapper from "./Wrapper"
 import MainLink from './MainLink'
 import MainText from "./MainText"
-import SmallBox from "./SmallBox"
-import SmallBoxIcon from "./SmallBoxIcon"
+import MediaBox from "./MediaBox/MediaBox"
+import MediaBoxIcon from "./MediaBox/MediaBoxIcon"
 import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
-import SmallBoxText from "./SmallBoxText"
+import MediaBoxText from "./MediaBox/MediaBoxText"
 import CloseBTN from "./CloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
 import GetStartedBTN from "./GetStartedBTN"
@@ -46,21 +46,21 @@ export default function LandingMain() {
                         </h1>
 
                         <div className="flex items-center space-x-2  ">
-                            <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28'}>
-                                <SmallBoxIcon icon={<IoMdMusicalNote />} styles={'text-2xl text-purple-1000'} />
-                                <SmallBoxText title={'Music 1'} styles={'text-purple-1000'} />
+                            <MediaBox styles={'border border-1 border-purple-1000  w-36 h-28'}>
+                                <MediaBoxIcon icon={<IoMdMusicalNote />} styles={'text-2xl text-purple-1000'} />
+                                <MediaBoxText title={'Music 1'} styles={'text-purple-1000'} />
                                 <CloseBTN />
-                            </SmallBox>
-                            <SmallBox styles={'border border-1 border-purple-1000  w-36 h-28 '}>
-                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
-                                <SmallBoxText title={'36 Sec'} styles={'text-purple-1000'} />
+                            </MediaBox>
+                            <MediaBox styles={'border border-1 border-purple-1000  w-36 h-28 '}>
+                                <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-2xl text-purple-1000'} />
+                                <MediaBoxText title={'36 Sec'} styles={'text-purple-1000'} />
                                 <CloseBTN />
-                            </SmallBox>
-                            <SmallBox styles={'border border-dashed	 border-1 border-purple-1000  w-36 h-28 '}>
-                                <SmallBoxIcon icon={<IoIosAddCircleOutline />} styles={'text-2xl text-purple-1000'} />
-                                <SmallBoxText title={'Add'} styles={'text-purple-1000'} />
+                            </MediaBox>
+                            <MediaBox styles={'border border-dashed	 border-1 border-purple-1000  w-36 h-28 '}>
+                                <MediaBoxIcon icon={<IoIosAddCircleOutline />} styles={'text-2xl text-purple-1000'} />
+                                <MediaBoxText title={'Add'} styles={'text-purple-1000'} />
                                 <CloseBTN />
-                            </SmallBox>
+                            </MediaBox>
                         </div>
 
                         <div className="flex justify-between items-center">
@@ -97,14 +97,14 @@ export default function LandingMain() {
 
                         <div className="flex justify-between items-center">
                             <div className="flex items-center space-x-2">
-                                <SmallBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm text-purple-1000'} />
+                                <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-sm text-purple-1000'} />
                                 <span className="text-sm">
                                     Video
                                 </span>
                             </div>
 
                             <div className="flex items-center space-x-2">
-                                <SmallBoxIcon icon={<FaCamera />} styles={'text-sm text-purple-1000'} />
+                                <MediaBoxIcon icon={<FaCamera />} styles={'text-sm text-purple-1000'} />
                                 <span className="text-sm">
                                     Photo
                                 </span>
@@ -138,10 +138,10 @@ export default function LandingMain() {
 
                 <Wrapper>
 
-                    <SmallBox styles={'bg-purple-1000 border border-1  w-16 h-20 '}>
-                        <SmallBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
-                        <SmallBoxText title={'Trending'} styles={'text-white'} />
-                    </SmallBox>
+                    <MediaBox styles={'bg-purple-1000 border border-1  w-16 h-20 '}>
+                        <MediaBoxIcon icon={<FiTrendingUp />} styles={'text-white text-2xl'} />
+                        <MediaBoxText title={'Trending'} styles={'text-white'} />
+                    </MediaBox>
                     <MainText text={"See all the trending Newsposts in one app.."} styles={'text-3xl'} />
 
                     <GetStartedBTN />

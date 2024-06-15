@@ -4,6 +4,12 @@ import { IoMdCamera } from "react-icons/io";
 import {useState, useContext } from "react"
 import PostMedia from "./PostMedia";
 import { LoginContext } from "../../../context/LoginContext";
+import MediaBox from '../../landing/MediaBox/MediaBox'
+import { BsCameraVideoFill } from "react-icons/bs";
+import { FaImage } from "react-icons/fa6";
+import MediaBoxIcon from '../../landing/MediaBox/MediaBoxIcon'
+import MediaBoxText from '../../landing/MediaBox/MediaBoxText'
+import CloseBTN from "../../landing/CloseBTN";
 
 
 function SharePost({ TextLimit }) {
@@ -46,9 +52,20 @@ function SharePost({ TextLimit }) {
 
                 <PostText text={postText} TextLength={TextLimit} handleChange={setPostText} />
 
-                <div>
-
+                <div className=" h-20 px-1 flex items-center justify-start w-full my-1 space-x-2 ">
+                    <MediaBox styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                        <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-base text-purple-1000'} />
+                        <MediaBoxText title={'Video 1'} styles={'text-purple-1000 text-xs'} />
+                        <CloseBTN />
+                    </MediaBox>
+                    <MediaBox styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                        <MediaBoxIcon icon={<FaImage />} styles={'text-base text-purple-1000'} />
+                        <MediaBoxText title={'Image 2'} styles={'text-purple-1000 text-xs'} />
+                        <CloseBTN />
+                    </MediaBox>
                 </div>
+
+
                 <div className="flex justify-between items-center w-full">
 
 

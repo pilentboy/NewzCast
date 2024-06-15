@@ -1,7 +1,7 @@
 import PostText from "./PostText"
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
-import {useState, useContext } from "react"
+import {useState, useContext, useEffect } from "react"
 import PostMedia from "./PostMedia";
 import { LoginContext } from "../../../context/LoginContext";
 import MediaBox from '../../landing/MediaBox/MediaBox'
@@ -15,8 +15,6 @@ import CloseBTN from "../../landing/CloseBTN";
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
-    // const [postVideo, setPostVideo] = useState([])
-    // const [postImages,setPostImages]=useState([])
     const [postMeidas,setPostMedias]=useState([])
     const {handleUploadNewPost}=useContext(LoginContext)
 
@@ -45,25 +43,48 @@ function SharePost({ TextLimit }) {
 
 
 
-
     return (
         <form action="/" onSubmit={handleSharePost}>
             <div className="w-[350px] min-h-[150px] duration-300 bg-white border border-gray-100 shadow-md rounded-md flex flex-col justify-between px-2 py-2  mb-3 md:w-460">
 
                 <PostText text={postText} TextLength={TextLimit} handleChange={setPostText} />
 
-                <div className=" h-20 px-1 flex items-center justify-start w-full my-1 space-x-2 ">
-                    <MediaBox styles={'border border-1 border-purple-1000   w-14 h-16'}>
-                        <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-base text-purple-1000'} />
-                        <MediaBoxText title={'Video 1'} styles={'text-purple-1000 text-xs'} />
-                        <CloseBTN />
-                    </MediaBox>
-                    <MediaBox styles={'border border-1 border-purple-1000   w-14 h-16'}>
-                        <MediaBoxIcon icon={<FaImage />} styles={'text-base text-purple-1000'} />
-                        <MediaBoxText title={'Image 2'} styles={'text-purple-1000 text-xs'} />
-                        <CloseBTN />
-                    </MediaBox>
-                </div>
+                {
+                        postMeidas.length >=1 ? (
+                            <div className=" h-20 px-1 flex items-center justify-start w-full my-1 space-x-2 ">
+
+                            {
+                                postMeidas.map((media,index) => {
+                                    const mediaType=Object.keys(media)[0]
+
+                                    if(mediaType === 'image'){
+                                        console.log('xx',mediaType)
+                                        return (
+                                            <MediaBox key={index} styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                                            <MediaBoxIcon icon={<FaImage />} styles={'text-base text-purple-1000'} />
+                                            <MediaBoxText title={'Image 2'} styles={'text-purple-1000 text-xs'} />
+                                            <CloseBTN />
+                                            </MediaBox>
+                                        
+                                        )
+                                    }
+                                    return (
+                                        <MediaBox key={index} styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                                            <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-base text-purple-1000'} />
+                                            <MediaBoxText title={'Video 1'} styles={'text-purple-1000 text-xs'} />
+                                            <CloseBTN />
+                                        </MediaBox>         
+                                    )
+                          
+                                })
+                            }
+                      
+                            
+                      
+                        </div>
+                        ) : null
+                }
+             
 
 
                 <div className="flex justify-between items-center w-full">

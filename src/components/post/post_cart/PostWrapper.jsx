@@ -62,7 +62,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <EditPost postID={userPostsInfo.postID} />
                         </div>
                         <PostInfoContainer styles={'justify-between mb-3 md:justify-around'}>
-                                <span>{userPostsInfo['likes']} likes</span>
+                                <span>{userPostsInfo['usersLiked'].length} likes</span>
                                 <div className='flex items-center' title='views'>
                                     <IoStatsChart className='text-lg text-gray-400 mx-2' />
                                     {userPostsInfo['views']}

@@ -56,11 +56,9 @@ const LoginProvider = ({ children }) => {
         const manageUsersLikedRes= manageUsersLiked(currentPost.usersLiked,userLoggedInfo.email)
 
        if(manageUsersLikedRes){
-            currentPost.likes -= 1
             const updateCurrentPostLikes= currentPost.usersLiked.filter((usersEmail) => usersEmail !== userLoggedInfo.email)
             currentPost.usersLiked = updateCurrentPostLikes
        }else{
-            currentPost.likes += 1
             currentPost.usersLiked.push(userLoggedInfo.email)
         }
 

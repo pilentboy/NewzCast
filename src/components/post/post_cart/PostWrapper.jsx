@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, {useContext, useState } from 'react';
 import PostInfoContainer from './PostInfoContainer';
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
@@ -10,13 +10,12 @@ import SharePost from './SharePost';
 import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
-import { FaRegEdit } from "react-icons/fa";
-import { MdDeleteForever } from "react-icons/md";
 import PostVideo from './PostVideo';
 import PostImage from './PostImage';
 import PostSlider from './swuppetest';
 import {SwiperSlide } from "swiper/react"
 import DropDown from '../../home/DropDown';
+import { LoginContext } from '../../../context/LoginContext';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
@@ -24,6 +23,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [displayComments,setDisplayComments]=useState('hidden')
     const [displayPostEdit,setDisplayPostEdit]=useState(false)
     const [playingVideo,setPlayingVideo]= useState(false)
+    const {handleDeletePost,handlePostEdit}= useContext(LoginContext)
 
     
     return (
@@ -69,8 +69,12 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 setDropDownDisplay={setDisplayPostEdit} 
                                 position={'-left-14 top-7 md:top-5 md:left-0 '}
                                 button={<div className=' flex flex-col  items-center text-sm '>
-                                         <button className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
-                                        <button className='text-gray-700 duration-200 text-sm py-1 my-1 hover:text-red-500'>
+                                         <button
+                                         onClick={handlePostEdit}
+                                          className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
+                                        <button
+                                            onClick={() => handleDeletePost(userPostsInfo.postID)}
+                                         className='text-gray-700 duration-200 text-sm py-1 my-1 hover:text-red-500'>
                                             Delete
                                         </button>
                                     </div>

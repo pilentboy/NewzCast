@@ -85,6 +85,13 @@ const LoginProvider = ({ children }) => {
     }
 
 
+    const handleDeletePost  = postID =>{
+        alert(postID)
+    }
+    
+    const handlePostEdit  = postID =>{
+        alert("editing")
+    }
 
     useEffect(() => {
 
@@ -98,7 +105,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike}}>
+        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit}}>
             {children}
         </LoginContext.Provider>
     )

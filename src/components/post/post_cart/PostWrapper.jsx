@@ -16,12 +16,14 @@ import PostSlider from './swuppetest';
 import {SwiperSlide } from "swiper/react"
 import DropDown from '../../home/DropDown';
 import { LoginContext } from '../../../context/LoginContext';
+import AcceptProcessModal from '../../modal/AcceptProcessModal';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
     const [commentValue, setCommentValue] = useState('');
     const [displayComments,setDisplayComments]=useState('hidden')
     const [displayPostEdit,setDisplayPostEdit]=useState(false)
+    const [deletePostModalDisplay,setDeletePostModalDisplay]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     const {handleDeletePost,handlePostEdit}= useContext(LoginContext)
 
@@ -55,7 +57,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                         <pre className='text-black font-medium text-base font-roboto max-h-36  overflow-y-auto max-w-full text-wrap'>
                             {userPostsInfo['title']}
                         </pre>
-                        <div className='flex items-center justify-between space-x-3'>
+                        <div className='flex items-center justify-between'>
                             <div className='flex items-center mt-2 mb-2 space-x-2'>
                                 <UserProfile styles={'space-x-1'} name={userName}  
                                 profileImage={profileImg} 
@@ -73,7 +75,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                          onClick={handlePostEdit}
                                           className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
                                         <button
-                                            onClick={() => handleDeletePost(userPostsInfo.postID)}
+                                            onClick={()=> setDeletePostModalDisplay('flex')}
                                          className='text-gray-700 duration-200 text-sm py-1 my-1 hover:text-red-500'>
                                             Delete
                                         </button>
@@ -81,6 +83,17 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 }
                                 />
                             </EditPost>
+
+                            {/* delete post modal */}
+                            <ModalContainer display={deletePostModalDisplay} setDisplay={setDeletePostModalDisplay}>
+                                <AcceptProcessModal 
+                                title='Are you sure you want to delete this post?'
+                                cancelAction={() => {
+                                    setDeletePostModalDisplay('hidden')
+                                    setDisplayPostEdit(false)
+                                }}
+                                />
+                            </ModalContainer>
                         </div>
                         <PostInfoContainer styles={'justify-between mb-3 md:justify-around'}>
                                 <span>{userPostsInfo['usersLiked'].length} likes</span>

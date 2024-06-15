@@ -20,6 +20,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [commentValue, setCommentValue] = useState('');
     const [displayComments,setDisplayComments]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
+
     
     return (
         <>
@@ -28,10 +29,10 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                     
                     {
                         userPostsInfo.postMeidas.length >= 1 ?(
-                            <PostSlider>
+                            <PostSlider slideChange={setPlayingVideo}>
                                 {
                                     userPostsInfo.postMeidas.map((media,index) => (
-                                        <SwiperSlide key={index} className='rounded-md'>
+                                        <SwiperSlide key={index} className='rounded-md shadow-lg'>
                                             {
                                                 Object.keys(media)[0] === "image" ? <PostImage imageSRC={media.image}/> : <PostVideo url={media.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                                             }

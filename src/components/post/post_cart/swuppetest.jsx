@@ -4,7 +4,7 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css'
 
-function PostSlider({children}) {
+function PostSlider({children,slideChange}) {
 
   return (
         <Swiper
@@ -14,6 +14,7 @@ function PostSlider({children}) {
             modules={[Pagination]}
             speed={700}
             slidesPerView={1}
+            onSlideChange={()=> slideChange(false)}
             className="w-full h-80 rounded-md"
         >
           {children}

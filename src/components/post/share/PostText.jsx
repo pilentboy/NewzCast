@@ -2,7 +2,7 @@
 function PostText({ text, handleChange, TextLength }) {
 
     return (
-        <div className="flex justify-between mb-2  ">
+        <div className="flex justify-between mb-2 w-full ">
             <textarea
                 value={text}
                 rows={4} cols={10}

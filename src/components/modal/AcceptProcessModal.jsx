@@ -1,13 +1,14 @@
 import { CgBorderStyleSolid } from "react-icons/cg";
 
-function AcceptProcessModal({title,acceptBG,acceptAction,cancelAction,acceptActiontTitle}) {
+function AcceptProcessModal({title,size,acceptBG,acceptAction,cancelAction,acceptActiontTitle,children}) {
   return (
-    <div className='w-[300px] h-36 py-2 px-4 bg-white rounded-md flex flex-col justify-around items-center '>
+    <div className={` max-w-full py-2 px-4 bg-white rounded-md flex flex-col justify-around items-center ${size ? size : 'w-[300px] h-36'} `}>
              <CgBorderStyleSolid/>
 
         <span className='text-base font-medium text-black '>
             {title}
         </span>
+        {children}
         <div className='flex items-center justify-center mt-4 space-x-4'>   
             <button 
             onClick={()=> {

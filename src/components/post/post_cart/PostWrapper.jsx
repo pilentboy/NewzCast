@@ -17,6 +17,7 @@ import {SwiperSlide } from "swiper/react"
 import DropDown from '../../home/DropDown';
 import { LoginContext } from '../../../context/LoginContext';
 import AcceptProcessModal from '../../modal/AcceptProcessModal';
+import PostText from '../share/PostText';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
@@ -24,9 +25,10 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [displayComments,setDisplayComments]=useState('hidden')
     const [displayPostEdit,setDisplayPostEdit]=useState(false)
     const [deletePostModalDisplay,setDeletePostModalDisplay]=useState('hidden')
+    const [editPostModalDisplay,setEditPostModalDisplay]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
-    const {handleDeletePost,handlePostEdit}= useContext(LoginContext)
-
+    const [postText, setPostText] = useState(userPostsInfo.title)
+    const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
     
     return (
         <>
@@ -72,7 +74,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 position={'-left-14 top-7 md:top-5 md:left-0 '}
                                 button={<div className=' flex flex-col  items-center text-sm '>
                                          <button
-                                         onClick={()=> handlePostEdit(userPostsInfo.postID)}
+                                         onClick={()=> setEditPostModalDisplay('flex')}
                                           className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
                                         <button
                                             onClick={()=> setDeletePostModalDisplay('flex')}
@@ -83,6 +85,22 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 }
                                 />
                             </EditPost>
+                                
+                            {/* edit post modal */}
+                            <ModalContainer display={editPostModalDisplay} setDisplay={setEditPostModalDisplay}>
+                                <AcceptProcessModal 
+                                        size={'w-[330px] md:w-[400px] h-48'}
+                                        acceptActiontTitle='Update'
+                                        acceptBG='bg-purple-1000 hover:opacity-70'
+                                        acceptAction={() => handlePostEdit(userPostsInfo.postID,postText)}
+                                        cancelAction={() => {
+                                            setEditPostModalDisplay('hidden')
+                                            setDisplayPostEdit(false)
+                                        }}
+                                >
+                                    <PostText TextLength={userLoggedInfo && userLoggedInfo['verified']} text={postText} handleChange={setPostText}/>
+                                </AcceptProcessModal>
+                            </ModalContainer>
 
                             {/* delete post modal */}
                             <ModalContainer display={deletePostModalDisplay} setDisplay={setDeletePostModalDisplay}>
@@ -96,6 +114,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 }}
                                 />
                             </ModalContainer>
+
                         </div>
                         <PostInfoContainer styles={'justify-between mb-3 md:justify-around'}>
                                 <span>{userPostsInfo['usersLiked'].length} likes</span>

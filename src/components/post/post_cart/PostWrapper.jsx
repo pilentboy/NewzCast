@@ -88,6 +88,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <ModalContainer display={deletePostModalDisplay} setDisplay={setDeletePostModalDisplay}>
                                 <AcceptProcessModal 
                                 title='Are you sure you want to delete this post?'
+                                acceptActiontTitle='Yes'
                                 acceptAction={() => handleDeletePost(userPostsInfo.postID)}
                                 cancelAction={() => {
                                     setDeletePostModalDisplay('hidden')

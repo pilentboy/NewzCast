@@ -1,6 +1,6 @@
 import { CgBorderStyleSolid } from "react-icons/cg";
 
-function AcceptProcessModal({title,acceptBG,acceptAction,cancelAction}) {
+function AcceptProcessModal({title,acceptBG,acceptAction,cancelAction,acceptActiontTitle}) {
   return (
     <div className='w-[300px] h-36 py-2 px-4 bg-white rounded-md flex flex-col justify-around items-center '>
              <CgBorderStyleSolid/>
@@ -14,7 +14,7 @@ function AcceptProcessModal({title,acceptBG,acceptAction,cancelAction}) {
                 acceptAction()
                 cancelAction()
             }}
-            className={`w-20 py-1 duration-200 rounded-md  text-center text-base font-semibold  ${acceptBG ? acceptBG :'bg-red-500 hover:bg-red-700'}`}>Yes</button>
+            className={`w-20 py-1 duration-200 rounded-md  text-center text-base font-semibold  ${acceptBG ? acceptBG :'bg-red-500 hover:bg-red-700'}`}>{acceptActiontTitle}</button>
             <button 
             onClick={()=> {
                 cancelAction()

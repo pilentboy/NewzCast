@@ -95,8 +95,14 @@ const LoginProvider = ({ children }) => {
         console.log("xx")
     }
     
-    const handlePostEdit  = postID =>{
-        alert("editing")
+    const handlePostEdit  = (postID) =>{
+        const updatedDB = [...mainDB];
+        const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
+        const userData=updatedDB[userAccIndex]
+        const curretPost=userData.posts.findIndex(post => post.postID === postID)
+        userData.posts[curretPost].title='test'
+        updatedDB[userAccIndex] = userData
+        setMainDB(updatedDB)
     }
 
     useEffect(() => {

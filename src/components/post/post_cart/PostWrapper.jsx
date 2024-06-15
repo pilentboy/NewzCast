@@ -72,7 +72,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 position={'-left-14 top-7 md:top-5 md:left-0 '}
                                 button={<div className=' flex flex-col  items-center text-sm '>
                                          <button
-                                         onClick={handlePostEdit}
+                                         onClick={()=> handlePostEdit(userPostsInfo.postID)}
                                           className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
                                         <button
                                             onClick={()=> setDeletePostModalDisplay('flex')}

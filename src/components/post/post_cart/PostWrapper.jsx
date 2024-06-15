@@ -10,6 +10,8 @@ import SharePost from './SharePost';
 import CommentPostInput from './CommentPostInput';
 import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
+import { FaRegEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 import PostVideo from './PostVideo';
 import PostImage from './PostImage';
 import PostSlider from './swuppetest';
@@ -65,8 +67,14 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 <DropDown 
                                 display={displayPostEdit} 
                                 setDropDownDisplay={setDisplayPostEdit} 
-                                items={['test','test2']}
                                 position={'-left-14 top-7 md:top-5 md:left-0 '}
+                                button={<div className=' flex flex-col  items-center text-sm '>
+                                         <button className='text-sm w-full text-gray-700 border-b duration-200 border-gray-200 py-1 my-1 hover:text-gray-500'>Edit</button>
+                                        <button className='text-gray-700 duration-200 text-sm py-1 my-1 hover:text-red-500'>
+                                            Delete
+                                        </button>
+                                    </div>
+                                }
                                 />
                             </EditPost>
                         </div>

@@ -25,7 +25,7 @@ function Logout() {
             type="button"
             aria-label="log out"
             onClick={logOutUser}
-            className=" text-gray-400 font-semibold duration-200  text-sm py-1 text-start my-1  hover:text-red-500   "
+            className=" text-gray-400 flex items-center justify-center font-semibold duration-200  text-sm py-1 text-start my-1  hover:text-red-500   "
         >
             Log out
         </button>)

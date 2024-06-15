@@ -14,19 +14,17 @@ import PostVideo from './PostVideo';
 import PostImage from './PostImage';
 import PostSlider from './swuppetest';
 import {SwiperSlide } from "swiper/react"
-import { object } from 'yup';
 
 function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     
     const [commentValue, setCommentValue] = useState('');
-    const [activePostId, setActivePostId] = useState(null);
     const [displayComments,setDisplayComments]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     
     return (
         <>
 
-                <div className={`w-[90%] min-h-[200px] relative max-h-[600px] md:w-460 overflow-hidden my-3 z-[400] bg-white flex flex-col justify-between  ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null}`} >
+                <div className={`w-[90%] min-h-[200px]  max-h-[600px] md:w-460 overflow-hidden my-3  bg-white flex flex-col justify-between  ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null}`} >
                     
                     {
                         userPostsInfo.postMeidas.length >= 1 ?(

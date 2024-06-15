@@ -29,7 +29,7 @@ export default function ModalContainer({ children, display,setDisplay, bgColor }
 
 
     return (
-        <div className={`w-screen h-lvh overflow-clip fixed top-0 left-0 items-center justify-center modal-container ${display ? display : 'flex'}
+        <div className={`w-screen h-lvh overflow-clip fixed z-[999] top-0 left-0 items-center justify-center modal-container ${display ? display : 'flex'}
             ${bgColor ? bgColor : 'bg-[rgba(124,124,124,0.6)]'}`}
             onClick={handleClick}
             id="modalContainer"

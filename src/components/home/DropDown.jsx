@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
-function DropDown({ display,setDropDownDisplay,items, button }) {
+function DropDown({ display,setDropDownDisplay,items,position, button }) {
     return (
-        <div className={` absolute top-5 left-0 py-2 px-3  bg-white border border-gray-200 ${display ? 'flex' : 'hidden'} flex-col min-h-20 w-24 rounded-lg `}>
+        <div className={` absolute  py-2 px-3  bg-white border border-gray-200 ${display ? 'flex' : 'hidden'} flex-col min-h-20 w-24 rounded-lg ${position ? position : 'top-5 left-0'} `}>
             {
                 items.map((item, index) =>
                 (

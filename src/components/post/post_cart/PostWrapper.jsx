@@ -47,9 +47,9 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                   
                 
                     <div className='flex flex-col p-2'>
-                        <h1 className='text-black font-medium text-base'>
+                        <pre className='text-black font-medium text-base font-roboto'>
                             {userPostsInfo['title']}
-                        </h1>
+                        </pre>
                         <div className='flex items-center justify-between space-x-3'>
                             <div className='flex items-center mt-2 mb-2 space-x-2'>
                                 <UserProfile styles={'space-x-1'} name={userName}  

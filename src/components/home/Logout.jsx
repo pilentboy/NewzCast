@@ -13,7 +13,7 @@ function Logout() {
         const res = await handleSignOut()
         if (res) {
             handleUserAuth()
-            navigate("/")
+            //navigate("/")
         } else {
             alert("error")
         }

@@ -20,7 +20,9 @@ function LikePost({ postID, userEmail,usersLiked}) {
     useEffect(()=>{
         if(userLoggedInfo){
             setLiked(manageUsersLiked(usersLiked,userLoggedInfo.email))
-        }
+        }else{
+			setLiked(false)
+		}
     },[userLoggedInfo, mainDB])
 
     return (

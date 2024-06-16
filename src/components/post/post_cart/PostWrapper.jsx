@@ -67,6 +67,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 target={`profile/${userEmail}`}
                                 />
                             </div>
+							
                             <EditPost postID={userPostsInfo.postID} setDisplayPostEdit={setDisplayPostEdit}>
                                 <DropDown 
                                 display={displayPostEdit} 

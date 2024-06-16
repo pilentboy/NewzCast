@@ -20,7 +20,9 @@ function EditPost({children,postID, setDisplayPostEdit}) {
     useEffect(() => {
         if (userLoggedInfo) {
             handleEnableEditgPost()
-        }
+        }else{
+			setEnableEdit(false)
+		}
     }, [userLoggedInfo])
 
 

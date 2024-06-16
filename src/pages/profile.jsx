@@ -139,7 +139,7 @@ const Profile = () => {
                                 <PostWrapper
                                     userPostsInfo={post}
                                     userEmail={email}
-                                    userName={userProfileInfo.firstName}
+                                    userName={userProfileInfo.username}
                                     profileImg={userProfileInfo.profileImage}
                                     key={id}
                             />

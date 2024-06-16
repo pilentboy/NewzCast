@@ -1,4 +1,4 @@
-import React, {useContext, useState } from 'react';
+import React, {useContext, useState, useEffect } from 'react';
 import PostInfoContainer from './PostInfoContainer';
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
@@ -29,6 +29,15 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [playingVideo,setPlayingVideo]= useState(false)
     const [postText, setPostText] = useState(userPostsInfo.title)
     const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
+	const [uploadedDate,setuploadedDate] = useState()
+	
+	useEffect(()=>{
+			// testing 
+			const currentDate=new Date()
+			const month = currentDate.toLocaleString('default', { month: 'long' });
+			const day= currentDate.getDate()
+			setuploadedDate(month + ' ' + day)
+	},[])
     
     return (
         <>
@@ -124,7 +133,9 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                     {userPostsInfo['views']}
                                 </div>
                                 {/* date post uploaded */}
-                                <span className='px-2' title='uploaded time' aria-label='uploaded time'>3 days ago</span>
+                                <span className='px-2' title='uploaded time' aria-label='uploaded time'>
+								{uploadedDate}
+								</span>
                                 {/* display post comments button */}
                                 <DisplayPostComments 
                                     commentsLength={userPostsInfo['comments'].length}

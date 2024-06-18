@@ -33,6 +33,7 @@
                         {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
                         
                     ],
+                    "uploadedDate":[2024,"June",14],
                     "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com"],
                     "views": 100,
                     "postID": "123mmm321",
@@ -72,6 +73,7 @@
                 {
                     "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
                     "postMeidas":[],
+                    "uploadedDate":[2024,"June",10],
                     "usersLiked":["sirxmahdi7dqd9@gmail.com"],
                     "views": 24,
                     "postID": "1230mm321",
@@ -90,6 +92,7 @@
                     "postMeidas":[
                         {"image":"https://cdn-img1.imgworlds.com/assets/a5366382-0c26-4726-9873-45d69d24f819.jpg?key=home-gallery"}
                     ],
+                    "uploadedDate":[2024,"June",11],
                     "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com","sir133dqdhdi79@gmail.com","sirxmadqdqqqqqdhdi79@gmail.com","sirxmadqdqdhdi79@yahoo.com"],
                     "views": 300,
                     "postID": "123mmm621",
@@ -137,6 +140,7 @@
                         {"image":"https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE-1200x900.jpg"},
                         {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQApKW3CGh_rn6kTcMmsTbACk7sJ26-GPovRolUeA5ngJAqSpiTjEWRrSEwXj81oBXzpKs&usqp=CAU"}
                     ],
+                    "uploadedDate":[2024,"June",16],
                     "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser1@example.com", "fakeuser2@example.com"],
                     "views": 160,
                     "postID": "123m33321",
@@ -173,6 +177,7 @@
                         {"image":"https://www.fazaa.ae/upload/vouchers/img-world-including-5-vat-1700564667144.jpg"},
                         {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJWIc_0Ht6oXbqhdEnECdRxqjSt6o-DGoT-wZ0nZP3Qn13LLgxmtZpN8J8x-Q5_Gcx2ts&usqp=CAU"}
                     ],
+                    "uploadedDate":[2024,"June",1],
                     "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser3@example.com", "fakeuser4@example.com"],
                     "views": 452,
                     "postID": "123m99321",
@@ -233,6 +238,7 @@
                         {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s"}
                         
                     ],
+                    "uploadedDate":[2024,"June",2],
                     "usersLiked": ["kodoki9676@amankro.com", "fakeuser7@example.com", "fakeuser8@example.com"],
                     "views": 120,
                     "postID": "123mr4321",
@@ -268,6 +274,7 @@
                     "postMeidas":[
                         {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s"}
                     ],
+                    "uploadedDate":[2024,"June",6],
                     "usersLiked": ["kodoki9676@amankro.com", "fakeuser11@example.com", "fakeuser12@example.com"],
                     "views": 156,
                     "postID": "123mor321",
@@ -296,8 +303,8 @@
                     "title": "This is my third post on NewzCast!",
                     "postMeidas":[
                         {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXxfc2JeHYtzG7-MTjfaVcbwLMJktgj-RSx3om4IJtA&s"}
-                        
                     ],
+                    "uploadedDate":[2024,"June",5],
                     "usersLiked": ["kodoki9676@amankro.com", "fakeuser14@example.com", "fakeuser15@example.com"],
                     "views": 686,
                     "postID": "123rxm321",

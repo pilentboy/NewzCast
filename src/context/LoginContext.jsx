@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import UsersDB from '../db.json'
 import generateRandomPostID from "../utils/generateRandomPostID ";
 import manageUsersLiked from "../utils/manageUsersLikes";
+import handleUploadDate from "../utils/handleUploadDate";
 
 const LoginContext = createContext()
 
@@ -32,6 +33,7 @@ const LoginProvider = ({ children }) => {
         const newPost = {
             "title": title,
             "postMeidas":postMedias,
+            "uploadedDate": handleUploadDate(),
             "likes": 0,
             "usersLiked":[],
             "views": 0,

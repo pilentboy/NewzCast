@@ -29,16 +29,9 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [playingVideo,setPlayingVideo]= useState(false)
     const [postText, setPostText] = useState(userPostsInfo.title)
     const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
-	const [uploadedDate,setuploadedDate] = useState()
 	
-	useEffect(()=>{
-			// testing 
-			const currentDate=new Date()
-			const month = currentDate.toLocaleString('default', { month: 'long' });
-			const day= currentDate.getDate()
-			setuploadedDate(month + ' ' + day)
-	},[])
     
+
     return (
         <>
 
@@ -134,7 +127,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 </div>
                                 {/* date post uploaded */}
                                 <span className='px-2' title='uploaded time' aria-label='uploaded time'>
-								{uploadedDate}
+								{userPostsInfo.uploadedDate[1] + ' ' + userPostsInfo.uploadedDate[2]}
 								</span>
                                 {/* display post comments button */}
                                 <DisplayPostComments 

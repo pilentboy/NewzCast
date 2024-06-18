@@ -16,7 +16,7 @@ function AddFavorites({ postID }) {
         if(favorite){
             const updatedUserFavoritePosts=updateDB[LoggedUserIndex].favoritePosts.filter(favoriteID => favoriteID !== postID)
             updateDB[LoggedUserIndex].favoritePosts = updatedUserFavoritePosts
-       
+            setMainDB(updateDB)
         }else{
             updateDB[LoggedUserIndex].favoritePosts.push(postID)
             setMainDB(updateDB)

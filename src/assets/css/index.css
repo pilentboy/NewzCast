@@ -8,21 +8,23 @@
     }
 
     body::-webkit-scrollbar {
-        width: 10px;
+        width: 6px;
     }
 
-    ::-webkit-scrollbar-track {
+    body::-webkit-scrollbar-track {
         @apply bg-white;
     }
 
-    ::-webkit-scrollbar-thumb {
+    body::-webkit-scrollbar-thumb {
         @apply bg-gray-300
     }
 
-    ::-webkit-scrollbar-thumb:active {
+    body::-webkit-scrollbar-thumb:active {
         @apply bg-purple-1000;
     }
 
+
+ 
     button,
     a {
         @apply text-white font-medium
@@ -37,6 +39,24 @@
 
 @layer components {
     
+    .comment-box::-webkit-scrollbar{
+        width: 6px;
+        @apply rounded-lg
+    }
+
+    .comment-box::-webkit-scrollbar{
+        @apply bg-gray-300
+    }
+
+    .comment-box::-webkit-scrollbar-thumb {
+        @apply bg-gray-500 rounded-lg
+    }
+
+    .comment-box::-webkit-scrollbar-thumb:active {
+        @apply bg-purple-1000 
+    }
+
+
     .user-search::-webkit-scrollbar {
         width: 4px;
       

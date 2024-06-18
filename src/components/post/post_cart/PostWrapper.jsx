@@ -12,7 +12,7 @@ import DisplayPostComments from './DisplayPostComments';
 import ModalContainer from '../../modal/ModalContainer';
 import PostVideo from './PostVideo';
 import PostImage from './PostImage';
-import PostSlider from './swuppetest';
+import PostSlider from './PostSlider';
 import {SwiperSlide } from "swiper/react"
 import DropDown from '../../home/DropDown';
 import { LoginContext } from '../../../context/LoginContext';

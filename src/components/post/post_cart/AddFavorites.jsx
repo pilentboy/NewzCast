@@ -6,12 +6,21 @@ import manageUsersFavorites from "../../../utils/manageUsersFavorites";
 
 function AddFavorites({ postID }) {
 
-    const { userTokenInfo, userLoggedInfo, mainDB } = useContext(LoginContext)
+    const { userTokenInfo, userLoggedInfo, mainDB, setMainDB } = useContext(LoginContext)
     const [favorite,setFavorite]=useState(false)
 
 
     const handleAddFavorite = () => {
-  
+        const updateDB=[...mainDB]
+        const LoggedUserIndex=updateDB.findIndex(user => user.email === userLoggedInfo.email)
+        if(favorite){
+            const updatedUserFavoritePosts=updateDB[LoggedUserIndex].favoritePosts.filter(favoriteID => favoriteID !== postID)
+            updateDB[LoggedUserIndex].favoritePosts = updatedUserFavoritePosts
+       
+        }else{
+            updateDB[LoggedUserIndex].favoritePosts.push(postID)
+            setMainDB(updateDB)
+        }
     }
 
     useEffect(()=>{
@@ -20,7 +29,8 @@ function AddFavorites({ postID }) {
         }else{
             setFavorite(false)
         }
-    },[userTokenInfo])
+    },[userTokenInfo,mainDB])
+    
     return (
         <button type='button' onClick={handleAddFavorite}>
             <FaHeart

@@ -138,7 +138,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment}}>
+        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment}}>
             {children}
         </LoginContext.Provider>
     )

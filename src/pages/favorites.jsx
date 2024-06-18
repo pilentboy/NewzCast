@@ -27,7 +27,7 @@ const Favorites = () => {
 
     useEffect(()=>{
         setFavorites(handleUsersFavoritePosts())
-    },[])
+    },[mainDB])
 
 
     return (

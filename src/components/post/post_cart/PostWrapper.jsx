@@ -155,7 +155,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                         setDisplay={setDisplayComments}
                                     >
                                         <CommentBoxModal>
-                                            <div className='md:h-4/5 overflow-y-auto mt-2 comment-box'>
+                                            <div className='h-[85%] px-1 overflow-y-auto mt-2 comment-box'>
                                                 {userPostsInfo['comments'].map((commentInfo, index) => (
                                                     <div className='flex items-start  my-3 justify-between w-full border-b border-slate-500 pb-1' key={index}>
                                                         <UserProfile

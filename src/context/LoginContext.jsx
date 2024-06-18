@@ -92,7 +92,6 @@ const LoginProvider = ({ children }) => {
         const currentPost= userData.posts.filter((post) => post.postID !== postID)
         updatedDB[userAccIndex].posts=currentPost
         setMainDB(updatedDB)
-        console.log("xx")
     }
     
     const handlePostEdit  = (postID,newTitle) =>{
@@ -103,6 +102,26 @@ const LoginProvider = ({ children }) => {
         userData.posts[curretPost].title = newTitle
         updatedDB[userAccIndex] = userData
         setMainDB(updatedDB)
+    }
+
+
+
+    const handleSendComment= (commentValue,postID, postUserEmail) =>{
+        const updatedDB = [...mainDB];
+        const currentPostUser= updatedDB.findIndex(user => user.email === postUserEmail)
+        const curretPost= updatedDB[currentPostUser].posts.findIndex(post => post.postID === postID)
+        
+        updatedDB[currentPostUser].posts[curretPost].comments.push(
+            {
+                "username":userLoggedInfo.username,
+                "email": userLoggedInfo.email,
+                "profileImage":userLoggedInfo.profileImage,
+                "comment": commentValue
+            }
+        )
+
+        setMainDB(updatedDB)
+     
     }
 
     useEffect(() => {
@@ -117,7 +136,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit}}>
+        <LoginContext.Provider value={{mainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment}}>
             {children}
         </LoginContext.Provider>
     )

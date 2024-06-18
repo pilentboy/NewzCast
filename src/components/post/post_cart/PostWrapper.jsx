@@ -152,7 +152,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
 
                                         
                                 {/* comment input */}
-                                <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} />
+                                <CommentPostInput commentValue={commentValue} setCommentValue={setCommentValue} postID={userPostsInfo.postID} postUserEmail={userEmail}/>
 
                                 {/* display post comments */}
                           

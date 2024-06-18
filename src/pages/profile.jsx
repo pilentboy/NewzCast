@@ -33,7 +33,6 @@ const Profile = () => {
     const { email } = useParams();
 	
     useEffect(() => {
-		console.log("chanign")
         setLoading(true)
         if (userLoggedInfo && email === userLoggedInfo['email']) {
             setUserProfileInfo(userLoggedInfo)

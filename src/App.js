@@ -34,7 +34,11 @@ function App() {
 						}>
 							<Route path="" element={<Settings />} />
 						</Route>
-						<Route path="favorites" element={<Favorites />} />
+						<Route path="favorites" element={
+							<PrivateRoute /> 
+						}>
+							<Route path="" element={<Favorites />} />
+						</Route>
 					</Route>
 					<Route path="*" element={<Navigate to="/newzcast" />} />
 

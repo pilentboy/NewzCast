@@ -66,7 +66,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 <UserProfile styles={'space-x-1'} name={userName}  
                                 profileImage={profileImg} 
                                 userNameStyle={'text-[11px] text-purple-1000'}
-                                target={`profile/${userEmail}`}
+                                target={`/newzcast/profile/${userEmail}`}
                                 />
                             </div>
 							

@@ -2,6 +2,7 @@ import { BiSolidLike } from "react-icons/bi";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
 import manageUsersLiked from "../../../utils/manageUsersLikes";
+import manageUsersFavorites from "../../../utils/manageUsersFavorites";
 
 function LikePost({ postID, userEmail,usersLiked}) {
 

@@ -138,7 +138,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
 
                                 <PostInfoContainer styles={'justify-evenly border-b mb-3 border-gray-200 pb-2'}>
                                     <SharePost />
-                                    <AddFavorites/>
+                                    <AddFavorites postID={userPostsInfo.postID}/>
                                     <LikePost postID={userPostsInfo.postID} userEmail={userEmail} usersLiked={userPostsInfo.usersLiked}/>
                                 </PostInfoContainer>
 

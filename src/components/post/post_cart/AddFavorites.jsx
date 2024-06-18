@@ -1,17 +1,26 @@
 import { FaHeart } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
+import manageUsersFavorites from "../../../utils/manageUsersFavorites";
 
 
-function AddFavorites({ favoritePost }) {
+function AddFavorites({ postID }) {
 
-    const { userTokenInfo } = useContext(LoginContext)
-    const [favorite,setFavorite]=useState(favoritePost ? favoritePost : false)
+    const { userTokenInfo, userLoggedInfo, mainDB } = useContext(LoginContext)
+    const [favorite,setFavorite]=useState(false)
 
 
     const handleAddFavorite = () => {
-        userTokenInfo ? setFavorite(e => !e) : alert("Please log in first!")
+  
     }
+
+    useEffect(()=>{
+        if(userTokenInfo && manageUsersFavorites(postID,userLoggedInfo.email, mainDB)){
+            setFavorite(true)
+        }else{
+            setFavorite(false)
+        }
+    },[userTokenInfo])
     return (
         <button type='button' onClick={handleAddFavorite}>
             <FaHeart

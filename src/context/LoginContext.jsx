@@ -87,7 +87,7 @@ const LoginProvider = ({ children }) => {
     }
 
 
-    const handleDeletePost  = postID =>{
+    const handleDeletePost  = postID=>{
         const updatedDB = [...mainDB];
         const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
         const userData=updatedDB[userAccIndex]

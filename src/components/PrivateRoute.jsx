@@ -5,7 +5,7 @@ import { LoginContext } from '../context/LoginContext';
 const PrivateRoute = () => {
     const { userLoggedInfo } = useContext(LoginContext);
     
-    return userLoggedInfo ? <Outlet /> : null //<Navigate to="/authenticate" />;
+    return userLoggedInfo ? <Outlet /> :  <Navigate to="/newzcast" />;
 };
 
 export default PrivateRoute;

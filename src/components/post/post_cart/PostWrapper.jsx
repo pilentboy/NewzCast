@@ -28,7 +28,6 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [editPostModalDisplay,setEditPostModalDisplay]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     const [postText, setPostText] = useState(userPostsInfo.title)
-    const [removeAnima,setRemoveAnima]=useState()
     const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
 	
     
@@ -36,7 +35,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     return (
         <>
 
-                <div className={`w-[90%] min-h-[200px]  max-h-[600px] md:w-[450px] overflow-x-visible my-3  bg-white flex flex-col justify-between ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null} ${removeAnima}`} >
+                <div className={`w-[90%] min-h-[200px]  max-h-[600px] md:w-[450px] overflow-x-visible my-3  bg-white flex flex-col justify-between ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null} `} >
                     
                     {
                         userPostsInfo.postMeidas.length >= 1 ?(
@@ -116,6 +115,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                     setDeletePostModalDisplay('hidden')
                                     setDisplayPostEdit(false)
                                 }}
+                                
                                 />
                             </ModalContainer>
 

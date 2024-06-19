@@ -25,12 +25,11 @@ function HomeNav({setSearchModalDisplay}) {
 
     const { userTokenInfo, userLoggedInfo } = useContext(LoginContext)
 
-
+    
     const [dropDownDisplay, setDropDownDisplay] = useState(false)
 
     const dropDownItems = [
-        'Settings',
-		'Favorites'
+        'Settings'   
     ]
 
 

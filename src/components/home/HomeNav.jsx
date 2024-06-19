@@ -44,7 +44,7 @@ function HomeNav({setSearchModalDisplay}) {
                 <NavTopSmallScreen />
 
                 {/* main nav */}
-<div className="w-screen  py-3 border border-gray-300 fixed bottom-0 left-0 z-[999]   flex   rounded-md items-center bg-white space-y-2 shadow-md border-t    lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
+                <div className="w-screen  py-3 border border-gray-300 fixed bottom-0 left-0 z-[999]   flex   rounded-md items-center bg-white space-y-2 shadow-md border-t    lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
 
                     <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
 

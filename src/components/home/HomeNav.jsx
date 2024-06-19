@@ -15,6 +15,7 @@ import NavTopSmallScreen from "./NavTopSmallScreen";
 import UserProfile from "../profile/UserProfile";
 import Logout from "./Logout";
 import { MdHome } from "react-icons/md";
+import { BiHeart } from "react-icons/bi";
 
 
 
@@ -52,20 +53,23 @@ function HomeNav({setSearchModalDisplay}) {
 
 
 						
-                         <HomeNavLink target={'/newzcast'} linkTitle={'Trending'}>
-                              <SlEnergy className="text-xl" />
+                         <HomeNavLink target={'/newzcast'} >
+                              <SlEnergy  />
                         </HomeNavLink>
 
                      
 					   
 						<button type='button' className='font-sans  flex items-center  text-gray-600 text-sm hover:text-gray-600'
                          onClick={()=> setSearchModalDisplay('flex')} > 
-						<FaSearch className='mx-2'/>
-						Search
+						<FaSearch className="text-[20px]" />
+						
 						</button>
 
-                        <HomeNavLink target={'/newzcast/home'} linkTitle={'Home'}>
-                            <MdHome className="text-[19px]" />
+                        <HomeNavLink target={'/newzcast/favorites'} >
+                            <BiHeart  />
+                        </HomeNavLink>
+                        <HomeNavLink target={'/newzcast/home'} >
+                            <MdHome  />
                         </HomeNavLink>
 
 

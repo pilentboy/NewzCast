@@ -6,7 +6,7 @@ function HomeNavLink({ styles, children, target, linkTitle, button }) {
 			className={({ isActive, isPending }) =>
 					 `flex items-center font-sans text-sm hover:text-gray-600 ${
 					isActive ? 'text-purple-1000' : isPending ? 'text-gray-600' : 'text-gray-600'}`} >
-                <div className="mx-2">
+                <div className="mx-2 text-[24px]">
                     {children}
                 </div>
                 {linkTitle}

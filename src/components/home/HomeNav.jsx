@@ -40,15 +40,15 @@ function HomeNav({setSearchModalDisplay}) {
 
             <nav className="z-[999]  " >
 
-                {/* display logo and usesr's photo  */}
+                {/* display logo and user photo  */}
                 <NavTopSmallScreen />
 
                 {/* main nav */}
-                <div className="w-screen  py-3 border border-gray-300 fixed bottom-0 left-0 z-[999]   flex   rounded-md items-center bg-white space-y-2 shadow-md border-t    lg:block md:bottom-0 md:border-b md:relative md:rounded-none md:py-7">
+                <div className="h-[60px] items-center bg-white   py-3 border border-gray-300 fixed bottom-0 left-0 z-[999] flex flex-row rounded-md justify-around items-center md:h-[700px] md:w-[150px] md:flex-col md:left-0 md:bottom-[50%] md:translate-y-[50%] md:rounded-none md:py-16">
 
-                    <ColoredLogo styles={'hidden lg:absolute md:block lg:left-10 lg:top-4'} size={'h-16'} />
+                    <ColoredLogo styles={'hidden md:block  '} size={'h-16'} />
 
-                    <ul className="w-screen justify-evenly flex items-center md:justify-between mx-auto md:w-460">
+                    <ul className="w-screen justify-evenly flex  items-center md:flex-col md:w-full md:h-[450px]">
 
 
 						
@@ -58,29 +58,33 @@ function HomeNav({setSearchModalDisplay}) {
 
                      
 					   
-						<button type='button' className='font-sans  flex items-center  text-gray-600 text-sm hover:text-gray-600'
+						<button type='button' className='font-sans w-full  flex justify-center items-center md:py-6  duration-200 text-gray-600 text-sm  hover:md:bg-gray-100 hover:text-gray-600'
                          onClick={()=> setSearchModalDisplay('flex')} > 
 						<FaSearch className="text-[20px]" />
 						
 						</button>
 
-                        <HomeNavLink target={'/newzcast/favorites'} >
+						{
+							userTokenInfo ? <HomeNavLink target={'/newzcast/favorites'} >
                             <BiHeart  />
-                        </HomeNavLink>
+							</HomeNavLink> : null
+						}
+                        
+						
                         <HomeNavLink target={'/newzcast/home'} >
                             <MdHome  />
                         </HomeNavLink>
 
 
-                        <div className="hidden md:block">
+                        <div className="hidden md:block w-full">
 
                             {
-                                !userTokenInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Login'}>
+                                !userTokenInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Log in'}>
                                     <CiLogin />
                                 </HomeNavLink> : (
 
-                                    <div className="flex items-center">
-                                        <UserProfile name={userLoggedInfo['username']} profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2'}
+                                    <div className="flex justify-center items-center">
+                                        <UserProfile name={userLoggedInfo['username']} profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2 '}
                                             target={`profile/${userLoggedInfo['email']}`}
                                         />
                                         <ArrowBTN action={setDropDownDisplay}>
@@ -88,6 +92,7 @@ function HomeNav({setSearchModalDisplay}) {
                                                 display={dropDownDisplay}
                                                 setDropDownDisplay={setDropDownDisplay}
                                                 items={dropDownItems}
+												position='-top-4 left-6'
                                                 button={
                                                     <Logout />
                                                 }

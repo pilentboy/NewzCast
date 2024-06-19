@@ -33,10 +33,18 @@ function SharePost({ TextLimit }) {
 
         const file = Array.from(e.target.files)
         const newFilePath = file.map(file => URL.createObjectURL(file))
-
+        console.log(newFilePath)
         let objectKeyName= mediaType === 'video' ? 'video' : 'image'
 
-        const updatedFiles = [...postMeidas, { [objectKeyName]: newFilePath[0] }];
+        let combiteFiles=[]
+
+        newFilePath.forEach(path => {
+            combiteFiles.push({ [objectKeyName]: path });
+        })
+
+        const updatedFiles = [...postMeidas, ...combiteFiles];
+
+        console.log(updatedFiles)
         setPostMedias(updatedFiles)
         
     }

@@ -1,9 +1,7 @@
 import ReactPlayer from "react-player"
-import { useState } from "react"
 
 function PostVideo({url,playingVideo,setPlayingVideo}) {
   
-  // const [playingVideo,setPlayingVideo]= useState(false)
 
   return (
     <>

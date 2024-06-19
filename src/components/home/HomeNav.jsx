@@ -24,8 +24,8 @@ import { BiHeart } from "react-icons/bi";
 function HomeNav({setSearchModalDisplay}) {
 
     const { userTokenInfo, userLoggedInfo } = useContext(LoginContext)
+ 
 
-    
     const [dropDownDisplay, setDropDownDisplay] = useState(false)
 
     const dropDownItems = [

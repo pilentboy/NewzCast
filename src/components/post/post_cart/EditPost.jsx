@@ -10,8 +10,8 @@ function EditPost({children,postID, setDisplayPostEdit}) {
 
     const handleEnableEditgPost = () => {
         const res = userLoggedInfo.posts.filter(post => post['postID'] === postID)
-        if (res.length >= 1) {
-            setEnableEdit(true)
+        if (res.length > 0) {
+            setEnableEdit(true) 
         } else {
             setEnableEdit(false)
         }

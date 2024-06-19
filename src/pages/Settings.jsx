@@ -38,10 +38,8 @@ function Settings() {
 
     <HomeContainer justify={'justify-evenly'}>
 
-      <h1 className="font-medium text-base absolute top-[0%]">Settings</h1>
 
       
-
       <div>
 
       {

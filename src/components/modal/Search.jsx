@@ -37,7 +37,7 @@ function Search({setSearchModalDisplay}) {
 
 
   return (
-    <div className="absolute top-10 left-[50%] -translate-x-[50%]">
+    <div className="absolute top-10 animate__animated animate__bounceInDown  animate__fast  animate__delay-0s -translate-x-[50%]">
       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch} />
 
       {

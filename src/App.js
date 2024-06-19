@@ -1,5 +1,5 @@
 import './assets/css/index.css'
-
+import 'animate.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';

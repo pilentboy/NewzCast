@@ -9,7 +9,7 @@ import { BsCameraVideoFill } from "react-icons/bs";
 import { FaImage } from "react-icons/fa6";
 import MediaBoxIcon from '../../landing/MediaBox/MediaBoxIcon'
 import MediaBoxText from '../../landing/MediaBox/MediaBoxText'
-import CloseBTN from "../../landing/CloseBTN";
+import CloseBTN from "../../landing/MediaBox/CloseBTN";
 
 
 function SharePost({ TextLimit }) {
@@ -41,6 +41,12 @@ function SharePost({ TextLimit }) {
         
     }
 
+    const handleCloseBTN= (itemPath)=> {
+        const newPostMedias=postMeidas.filter(media => media !== itemPath )
+        setPostMedias(newPostMedias)
+    }
+
+
 
 
     return (
@@ -54,25 +60,24 @@ function SharePost({ TextLimit }) {
                             <div className=" h-20 px-1 flex items-center justify-start w-full my-1 space-x-2 ">
 
                             {
-                                postMeidas.map((media,index) => {
+                                postMeidas.map((media,id) => {
                                     const mediaType=Object.keys(media)[0]
 
                                     if(mediaType === 'image'){
-                                        console.log('xx',mediaType)
                                         return (
-                                            <MediaBox key={index} styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                                            <MediaBox key={id} styles={'border border-1 border-purple-1000   w-14 h-16'}>
                                             <MediaBoxIcon icon={<FaImage />} styles={'text-base text-purple-1000'} />
-                                            <MediaBoxText title={'Image 2'} styles={'text-purple-1000 text-xs'} />
-                                            <CloseBTN />
+                                            <MediaBoxText title={`File ${id + 1}`} styles={'text-purple-1000 text-xs'} />
+                                            <CloseBTN action={()=> handleCloseBTN(media)} />
                                             </MediaBox>
                                         
                                         )
                                     }
                                     return (
-                                        <MediaBox key={index} styles={'border border-1 border-purple-1000   w-14 h-16'}>
+                                        <MediaBox key={id} styles={'border border-1 border-purple-1000   w-14 h-16'}>
                                             <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-base text-purple-1000'} />
-                                            <MediaBoxText title={'Video 1'} styles={'text-purple-1000 text-xs'} />
-                                            <CloseBTN />
+                                            <MediaBoxText title={`File ${id +1}`} styles={'text-purple-1000 text-xs'} />
+                                            <CloseBTN action={()=> handleCloseBTN(media)} />
                                         </MediaBox>         
                                     )
                           

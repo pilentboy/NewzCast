@@ -6,7 +6,7 @@ import MediaBox from "./MediaBox/MediaBox"
 import MediaBoxIcon from "./MediaBox/MediaBoxIcon"
 import { IoMdMusicalNote, IoIosAddCircleOutline } from "react-icons/io";
 import MediaBoxText from "./MediaBox/MediaBoxText"
-import CloseBTN from "./CloseBTN"
+import CloseBTN from "./MediaBox/CloseBTN"
 import { BsCameraVideoFill } from "react-icons/bs";
 import GetStartedBTN from "./GetStartedBTN"
 import SecondMainText from './SecondMainText'

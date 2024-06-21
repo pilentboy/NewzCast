@@ -42,7 +42,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <PostSlider slideChange={setPlayingVideo}>
                                 {
                                     userPostsInfo.postMeidas.map((media,index) => (
-                                        <SwiperSlide key={index} className='rounded-md shadow-lg'>
+                                        <SwiperSlide key={index} className='rounded-md shadow-lg' >
                                             {
                                                 Object.keys(media)[0] === "image" ? <PostImage imageSRC={media.image}/> : <PostVideo url={media.video} playingVideo={playingVideo} setPlayingVideo={setPlayingVideo}/>
                                             }

@@ -12,7 +12,6 @@ import { LoginContext } from "../context/LoginContext"
 import ModalContainer from "../components/modal/ModalContainer"
 import { useParams } from "react-router-dom";
 import UserConnectiosList from "../components/modal/UserConnectiosList"
-import MainButton from "../components/landing/MainButton";
 import NotFoundProfile from "../components/profile/NotFoundProfile";
 import { IoIosSettings } from "react-icons/io";
 import ConnectionBTN from "../components/profile/ConnectionBTN";

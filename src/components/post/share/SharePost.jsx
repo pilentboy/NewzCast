@@ -34,7 +34,6 @@ function SharePost({ TextLimit }) {
 
         const file = Array.from(e.target.files)
         const newFilePath = file.map(file => URL.createObjectURL(file))
-        console.log(newFilePath)
         let objectKeyName= mediaType === 'video' ? 'video' : 'image'
 
         let combiteFiles=[]

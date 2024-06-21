@@ -126,6 +126,20 @@ const LoginProvider = ({ children }) => {
      
     }
 
+
+    const handleChangeProfilePic= e =>{
+        const file = Array.from(e.target.files)
+        const filePath = file.map(file => URL.createObjectURL(file))
+        const updatedDB = [...mainDB];
+        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
+
+        updatedDB[userDBIndex].profileImage= filePath[0]
+
+        setMainDB(updatedDB)
+
+    }
+
+
     useEffect(() => {
 
         handleUserAuth()
@@ -138,7 +152,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment}}>
+        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic}}>
             {children}
         </LoginContext.Provider>
     )

@@ -6,8 +6,8 @@ import InputWrapper from "../components/form/InputWrapper"
 import InputTitle from "../components/form/InputTitle"
 import FormInput from "../components/form/FormInput"
 import { IoChevronBack } from "react-icons/io5";
-import { useNavigate } from "react-router-dom"
 import { LoginContext } from "../context/LoginContext"
+import handleUpdateEmail from "../utils/handleUpdateEmail"
 
 function Settings() {
 
@@ -34,20 +34,20 @@ function Settings() {
   )
 
 
-  const navigate=useNavigate()
 
-  const handleSettingsChange=(e)=>{
+  const handleSettingsChange=async (e)=>{
     e.preventDefault()
-    
+
 
     if(clickedItem.includes("Username") && username.length > 4 ){
       handleUpdateUserInfo(username,'username')
     }
     else if (clickedItem.includes("Password")){
-      console.log("pass")
+      alert("not available")
     }
     else if(clickedItem.includes("Email")){
-      console.log("email")
+      alert("not available")
+      // await handleUpdateEmail(email)
     }
     else{
       alert("Error!")

@@ -1,7 +1,11 @@
 import test from '../../assets/images/1.webp'
 import UserConnectiosItem from './UserConnectiosItem'
 
-function UserConnectiosList({ title }) {
+function UserConnectiosList({ title,userEmail}) {
+
+    
+
+
     return (
         <div className="w-[330px] h-[400px] p-4  bg-white rounded-md flex flex-col">
             <div className="flex justify-center items-center pb-4">

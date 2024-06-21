@@ -100,13 +100,17 @@ const Profile = () => {
                             </ul>
                             {!userPer && <ConnectionBTN />}
                         </div>
+
+                        {/* modal to display user followers/following */}
                         <ModalContainer
                             display={modalContainerDisplay}
                             setDisplay={setModalContainerDisplay}>
                             <UserConnectiosList
                                 title={connectionInfoClickedTitle}
+                                userEmail={userProfileInfo.email}
                             />
                         </ModalContainer>
+
                     </div>
                     {userProfileInfo['posts'].length >= 1 ? 
                         userProfileInfo['posts'].map((post, id) => (

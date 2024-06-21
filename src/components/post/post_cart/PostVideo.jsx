@@ -3,7 +3,8 @@ import { FaCirclePlay } from "react-icons/fa6";
 import { FaPauseCircle } from "react-icons/fa";
 
 function PostVideo({url,playingVideo,setPlayingVideo}) {
-  
+
+  window.addEventListener("scroll",()=> setPlayingVideo(false) )
 
   return (
     <>

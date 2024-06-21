@@ -1,14 +1,18 @@
 import HomeContainer from "../components/home/HomeContainer"
 import Logout from '../components/home/Logout'
-import {useEffect, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import BoxBTN from "../components/settings/BoxBTN"
 import InputWrapper from "../components/form/InputWrapper"
 import InputTitle from "../components/form/InputTitle"
 import FormInput from "../components/form/FormInput"
 import { IoChevronBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom"
+import { LoginContext } from "../context/LoginContext"
 
 function Settings() {
+
+  const {handleUpdateUserInfo}=useContext(LoginContext)
+
 
 	useEffect(()=>{
 		document.title = "Settings"
@@ -22,16 +26,36 @@ function Settings() {
   // variables for each inputs in settings
   const [username,setUsername]=useState('')
   const [email,setEmail]=useState('')
-  const [name,setName]=useState('')
-  const [currentPassword,setCurrentPassword]=useState('')
-  const [newPassword,setNewPassword]=useState('')
-  const [confirmNewPassword,setConfirmNewPassword]=useState('')
+  // const [name,setName]=useState('')
+  const [updatePassword,setUpdatePassword]=useState(
+    [
+      '','',''
+    ]
+  )
 
 
   const navigate=useNavigate()
-  const handleSettings=(e)=>{
+
+  const handleSettingsChange=(e)=>{
     e.preventDefault()
-    navigate("/newzcast/home")
+    
+
+    if(clickedItem.includes("Username") && username.length > 4 ){
+      handleUpdateUserInfo(username,'username')
+    }
+    else if (clickedItem.includes("Password")){
+      console.log("pass")
+    }
+    else if(clickedItem.includes("Email")){
+      console.log("email")
+    }
+    else{
+      alert("Error!")
+    }
+
+    setUsername('')
+    setEmail('')
+    setUpdatePassword(['','',''])
   }
 
   return (
@@ -47,7 +71,7 @@ function Settings() {
 
 
         
-        <form action="" onSubmit={handleSettings}>
+        <form action="" onSubmit={handleSettingsChange}>
 
           <div className="space-y-3 px-6">
 
@@ -68,15 +92,15 @@ function Settings() {
               <>
               <InputWrapper>
               <InputTitle notFormik={true}  title={'Enter Old Password'} />
-              <FormInput notFormik={true} type={'password'} value={currentPassword} setInputValue={setCurrentPassword} name={clickedItem}/>
+              <FormInput notFormik={true} type={'password'} value={updatePassword[0]} customSetinput={setUpdatePassword} index={0} name={clickedItem}/>
             </InputWrapper>
               <InputWrapper>
               <InputTitle  title={'Enter New Password'} />
-              <FormInput notFormik={true}  type={'password'} value={newPassword}  setInputValue={setNewPassword} name={clickedItem}/>
+              <FormInput notFormik={true}  type={'password'} value={updatePassword[1]}  customSetinput={setUpdatePassword} index={1} name={clickedItem}/>
             </InputWrapper>
             <InputWrapper>
               <InputTitle title={'Confirm New Password'} />
-              <FormInput notFormik={true}  type={'password'} value={confirmNewPassword} setInputValue={setConfirmNewPassword} name={clickedItem}/>
+              <FormInput notFormik={true}  type={'password'} value={updatePassword[2]} customSetinput={setUpdatePassword} index={2} name={clickedItem}/>
             </InputWrapper>
 
        
@@ -95,9 +119,9 @@ function Settings() {
               <FormInput notFormik={true}  type={
                clickedItem === 'Change Email' ? 'email' : 'text'
               } 
-              value={clickedItem === 'Change Username' ? username : clickedItem === 'Change Name' ? name : clickedItem === 'Change Email' ? email : null} 
+              value={clickedItem === 'Change Username' ? username : clickedItem === 'Change Email' ? email : null} 
                setInputValue={
-                clickedItem === 'Change Username' ? setUsername : clickedItem === 'Change Name' ? setName : clickedItem === 'Change Email' ? setEmail : setClickedItem('')
+                clickedItem === 'Change Username' ? setUsername  : clickedItem === 'Change Email' ? setEmail : setClickedItem('')
                }/>
             </InputWrapper>
              </> 
@@ -105,7 +129,7 @@ function Settings() {
            
               {
                 clickedItem !== 'Deactive Account' ? 
-                  <button className="text-center rounded-md py-1 px-7 bg-purple-1000 font-semibold">
+                  <button className="text-center rounded-md py-1 px-7 bg-purple-1000 font-semibold duration-200 hover:opacity-80">
                 Save
               </button>
                  : null
@@ -119,7 +143,7 @@ function Settings() {
           <BoxBTN title='Change Username' action={setClickedItem}/>
           <BoxBTN title='Change Email' action={setClickedItem}/>
           <BoxBTN title='Change Password' action={setClickedItem}/>
-          <BoxBTN title='Change Name' action={setClickedItem}/>
+          {/* <BoxBTN title='Change Name' action={setClickedItem}/> */}
           <BoxBTN title='Deactive Account' action={setClickedItem} />
          </>
         

@@ -1,8 +1,13 @@
-export default function FormInput({ type,setInputValue,value, name, placeholder,notFormik, handleValue, handleBlur }) {
+export default function FormInput({ type,setInputValue,customSetinput,value, name, placeholder,notFormik, handleValue, handleBlur,index }) {
    
     const handleChange = (e) => {
-        setInputValue(e.target.value);
+           if(setInputValue){
+            setInputValue(e.target.value);
+           }else{
+            customSetinput(pre => [...pre,pre[index]=e.target.value] );
+           }
     }
+
    return <>
         <input
             type={type}

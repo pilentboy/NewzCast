@@ -140,7 +140,7 @@ const LoginProvider = ({ children }) => {
     }
 
     const handleDeleteProfilePic= () =>{
-              const updatedDB = [...mainDB];
+        const updatedDB = [...mainDB];
         const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
 
         updatedDB[userDBIndex].profileImage= defaultProfileImage
@@ -150,6 +150,12 @@ const LoginProvider = ({ children }) => {
     }
 
 
+    const handleUpdateUserInfo= (newValue,title) =>{
+        const updatedDB = [...mainDB];
+        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
+        updatedDB[userDBIndex][title]= newValue
+        setMainDB(updatedDB)
+    }
 
     useEffect(() => {
 
@@ -163,7 +169,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic,handleDeleteProfilePic}}>
+        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic,handleDeleteProfilePic,handleUpdateUserInfo}}>
             {children}
         </LoginContext.Provider>
     )

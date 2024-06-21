@@ -52,7 +52,7 @@ function HomeNav({setSearchModalDisplay}) {
 
 
 						
-                         <HomeNavLink target={'/newzcast'} >
+                         <HomeNavLink target={'/newzcast'} linkTitle={'Trending'} >
                               <SlEnergy  />
                         </HomeNavLink>
 

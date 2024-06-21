@@ -1,7 +1,7 @@
 import PostText from "./PostText"
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
-import {useState, useContext, useEffect } from "react"
+import {useState, useContext } from "react"
 import PostMedia from "./PostMedia";
 import { LoginContext } from "../../../context/LoginContext";
 import MediaBox from '../../landing/MediaBox/MediaBox'
@@ -27,6 +27,7 @@ function SharePost({ TextLimit }) {
         setPostText("")
         setPostMedias([])
     }
+
 
 
     const handleInputChange = (e, mediaType) => {

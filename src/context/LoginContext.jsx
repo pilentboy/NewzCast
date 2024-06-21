@@ -3,7 +3,7 @@ import UsersDB from '../db.json'
 import generateRandomPostID from "../utils/generateRandomPostID ";
 import manageUsersLiked from "../utils/manageUsersLikes";
 import handleUploadDate from "../utils/handleUploadDate";
-
+import defaultProfileImage from '../assets/images/blank_profile.webp'
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
@@ -139,6 +139,17 @@ const LoginProvider = ({ children }) => {
 
     }
 
+    const handleDeleteProfilePic= () =>{
+              const updatedDB = [...mainDB];
+        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
+
+        updatedDB[userDBIndex].profileImage= defaultProfileImage
+
+        setMainDB(updatedDB)
+
+    }
+
+
 
     useEffect(() => {
 
@@ -152,7 +163,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic}}>
+        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic,handleDeleteProfilePic}}>
             {children}
         </LoginContext.Provider>
     )

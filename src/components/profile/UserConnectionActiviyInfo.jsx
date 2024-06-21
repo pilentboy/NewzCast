@@ -1,14 +1,14 @@
 
 
-function UserConnectionActiviyInfo({ title, value, action, setActivityInfoClickedTitle }) {
+function UserConnectionActiviyInfo({ title, value, action, setConnectionInfoClickedTitle }) {
     return (
         <li
-            className={`flex flex-col items-center space-y-2 ${action ? 'cursor-pointer' : 'cursor-default'}`}
+            className={`flex flex-col items-center  space-y-2 ${action ? 'cursor-pointer' : 'cursor-default'}`}
 
             onClick={() => {
                 if (action) {
                     action()
-                    setActivityInfoClickedTitle(title)
+                    setConnectionInfoClickedTitle(title)
                 }
             }
             }

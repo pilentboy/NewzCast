@@ -9,7 +9,7 @@ function HomeNavLink({ styles, children, target, linkTitle, button, size }) {
                 <div className="mx-2 text-[24px]">
                     {children}
                 </div>
-                <span className="text-gray-600 text-sm">{linkTitle}</span>
+                <span className="text-gray-500 font-normal text-sm">{linkTitle}</span>
             </NavLink>
             {button}
         </li>

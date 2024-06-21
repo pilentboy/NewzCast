@@ -5,6 +5,7 @@ import HomeNavLink from "./HomeNavLink"
 import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
+import { IoHomeOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
@@ -44,7 +45,7 @@ function HomeNav({setSearchModalDisplay}) {
                 <NavTopSmallScreen />
 
                 {/* main nav */}
-                <div className="h-[60px] items-center bg-white   py-3 border border-gray-300 fixed bottom-0 left-0 z-[999] flex flex-row rounded-md justify-around items-center md:h-[700px] md:w-[150px] md:flex-col md:left-0 md:bottom-[50%] md:translate-y-[50%] md:rounded-none md:py-16">
+                <div className="h-[60px] items-center bg-white   py-3 border border-gray-300 fixed bottom-0 left-0 z-[999] flex flex-row rounded-md justify-around md:h-[700px] md:w-[150px] md:flex-col md:left-0 md:bottom-[50%] md:translate-y-[50%] md:rounded-none md:py-16">
 
                     <ColoredLogo styles={'hidden md:block  '} size={'h-16'} />
 
@@ -58,22 +59,27 @@ function HomeNav({setSearchModalDisplay}) {
 
                      
 					   
-						<button type='button' className='font-sans w-full  flex justify-center items-center md:py-6  duration-200 text-gray-600 text-sm  hover:md:bg-gray-100 hover:text-gray-600'
-                         onClick={()=> setSearchModalDisplay('flex')} > 
-						<FaSearch className="text-[20px]" />
-						
-						</button>
+			
 
 						{
-							userTokenInfo ? <HomeNavLink target={'/newzcast/favorites'} >
+							userTokenInfo ? <HomeNavLink target={'/newzcast/favorites'} linkTitle={'Favorites'} >
                             <BiHeart  />
 							</HomeNavLink> : null
 						}
                         
 						
-                        <HomeNavLink target={'/newzcast/home'} >
-                            <MdHome  />
+                        <HomeNavLink target={'/newzcast/home'} linkTitle={'Home'} >
+                            <IoHomeOutline  />
                         </HomeNavLink>
+
+
+                        <button type='button' 
+                        aria-label="Search"
+                        className='font-sans w-full  flex justify-center items-center md:py-6  duration-200 text-gray-600 text-sm  hover:scale-125'
+                         onClick={()=> setSearchModalDisplay('flex')} > 
+						<FaSearch className="text-[20px]" />
+
+						</button>
 
 
                         <div className="hidden md:block w-full">

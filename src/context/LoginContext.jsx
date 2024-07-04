@@ -19,7 +19,38 @@ const LoginProvider = ({ children }) => {
     const getUserInfo = (userEmail) => {
         const userInfo = mainDB.filter((usersInfo) => usersInfo.email === userEmail)
         
-        if (userInfo.length === 1) return userInfo[0]
+        if (userInfo.length === 1){
+			return userInfo[0]
+		}
+		const userSessionData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
+		const updateDB= mainDB
+		
+		
+		updateDB.push(
+			     {
+            "firstName": "User",
+            "lastName": "User",
+            "username": "username",
+            "profileImage":"",
+            "email": userSessionData['user']['email'],
+            "verified": false,
+            "userConnections": [
+               {
+                "Followers":["Reyhaneh212"]
+               },
+               {
+                "Following":[]
+               }
+            ],
+            "posts": [],
+            "favoritePosts":[
+                "123mr4321"
+            ]
+        }
+		)
+		
+		setMainDB(updateDB)
+		
     }
     
     
@@ -164,8 +195,8 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-		
-    }, [userLoggedInfo])
+	
+    }, [userLoggedInfo,mainDB])
 
 
     return (

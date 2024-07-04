@@ -90,7 +90,7 @@ function HomeNav({setSearchModalDisplay}) {
                                 </HomeNavLink> : (
 
                                     <div className="flex justify-center items-center">
-                                        <UserProfile name={userLoggedInfo['username']} profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2 '}
+                                        <UserProfile name={userLoggedInfo['username'] } profileImage={userLoggedInfo['profileImage']} styles={'flex-row space-x-2 '}
                                             target={`profile/${userLoggedInfo['email']}`}
                                         />
                                         <ArrowBTN action={setDropDownDisplay}>

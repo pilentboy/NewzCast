@@ -2,18 +2,17 @@
 import handleSignOut from "../../utils/handleSignOut"
 import { LoginContext } from "../../context/LoginContext"
 import { useContext } from "react"
-import { useNavigate } from "react-router-dom"
+
 function Logout() {
 
     const { handleUserAuth, setLoading } = useContext(LoginContext)
 
-    const navigate = useNavigate()
+ 
     const logOutUser = async () => {
         setLoading(true)
         const res = await handleSignOut()
         if (res) {
             handleUserAuth()
-            //navigate("/")
         } else {
             alert("error")
         }

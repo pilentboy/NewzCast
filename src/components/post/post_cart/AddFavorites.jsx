@@ -24,7 +24,7 @@ function AddFavorites({ postID }) {
     }
 
     useEffect(()=>{
-        if(userTokenInfo && manageUsersFavorites(postID,userLoggedInfo.email, mainDB)){
+        if(userLoggedInfo && manageUsersFavorites(postID,userLoggedInfo.email, mainDB)){
             setFavorite(true)
         }else{
             setFavorite(false)

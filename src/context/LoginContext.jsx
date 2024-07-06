@@ -22,9 +22,9 @@ const LoginProvider = ({ children }) => {
         if (userInfo.length === 1){
 			return userInfo[0]
 		}
+		
 		const userSessionData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
 		const updateDB= mainDB
-		
 		
 		updateDB.push(
 			     {
@@ -36,16 +36,14 @@ const LoginProvider = ({ children }) => {
             "verified": false,
             "userConnections": [
                {
-                "Followers":["Reyhaneh212"]
+                "Followers":[]
                },
                {
                 "Following":[]
                }
             ],
             "posts": [],
-            "favoritePosts":[
-                "123mr4321"
-            ]
+            "favoritePosts":[]
         }
 		)
 		
@@ -73,7 +71,6 @@ const LoginProvider = ({ children }) => {
             };
             
         updatedDB[userAccIndex].posts = [newPost, ...updatedDB[userAccIndex].posts];
-        console.log(postMedias,"xx")
         setMainDB(updatedDB);
     };
 
@@ -195,6 +192,8 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
+		
+		console.log("context")
 	
     }, [userLoggedInfo,mainDB])
 

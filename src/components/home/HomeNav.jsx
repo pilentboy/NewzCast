@@ -85,7 +85,7 @@ function HomeNav({setSearchModalDisplay}) {
                         <div className="hidden md:block w-full">
 
                             {
-                                !userTokenInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Log in'}>
+                                !userTokenInfo || !userLoggedInfo ? <HomeNavLink target={'/authenticate'} linkTitle={'Log in'}>
                                     <CiLogin />
                                 </HomeNavLink> : (
 

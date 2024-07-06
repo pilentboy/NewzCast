@@ -16,7 +16,7 @@ function PostSlider({ children, slideChange }) {
       speed={700}
       slidesPerView={1}
       onSlideChange={() => slideChange(false)}
-      className="w-full h-80 rounded-md"
+      className="w-full h-80 rounded-md "
     >
       {children}
     </Swiper>

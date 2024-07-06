@@ -8,7 +8,7 @@ function PostVideo({url,playingVideo,setPlayingVideo}) {
 
   return (
     <>
-        <div className='w-full h-80 rounded-md  overflow-hidden relative cursor-pointer' onClick={()=> setPlayingVideo(v=> !v)} >
+        <div className='w-full h-80 rounded-md overflow-hidden relative cursor-pointer' onClick={()=> setPlayingVideo(v=> !v)} >
              <ReactPlayer 
                 url={url}
                 playing={playingVideo}    

@@ -38,7 +38,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                 <div className={`w-[90%] min-h-[200px]  max-h-[600px] md:w-[450px] overflow-x-visible my-3  bg-white flex flex-col justify-between ${userPostsInfo.postMeidas.length === 0 ? 'border border-gray-200 rounded-md' : null} `} >
                     
                     {
-                        userPostsInfo.postMeidas.length >= 1 ?(
+                        userPostsInfo.postMeidas.length > 0 ?(
                             <PostSlider slideChange={setPlayingVideo}>
                                 {
                                     userPostsInfo.postMeidas.map((media,index) => (

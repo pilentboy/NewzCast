@@ -192,8 +192,7 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-		
-		console.log("context")
+	
 	
     }, [userLoggedInfo,mainDB])
 

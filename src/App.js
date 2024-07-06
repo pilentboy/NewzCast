@@ -24,7 +24,7 @@ function App() {
 					<Route path="/authenticate" element={<Authenticate />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Register />} />
-
+				
 					<Route path="/newzcast" element={<NewzNav />}>
 						<Route index element={<Trending />} />
 						<Route path="home" element={<Home />} />

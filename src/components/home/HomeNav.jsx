@@ -7,7 +7,7 @@ import { SlEnergy } from "react-icons/sl";
 import { GoSearch } from "react-icons/go";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../context/LoginContext";
 import { CiLogin } from "react-icons/ci";
 import ArrowBTN from "./ArrowBTN";
@@ -34,6 +34,7 @@ function HomeNav({setSearchModalDisplay}) {
     ]
 
 
+ 
 
 
     return (

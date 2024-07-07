@@ -39,7 +39,7 @@ function Settings() {
     e.preventDefault()
 
 
-    if(clickedItem.includes("Username") && username.length > 4 ){
+    if(clickedItem.includes("Username") && username.length > 4 && username.length <= 9 ){
       handleUpdateUserInfo(username,'username')
     }
     else if (clickedItem.includes("Password")){

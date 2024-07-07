@@ -4,7 +4,6 @@ import { IoMdCamera } from "react-icons/io";
 import {useState, useContext } from "react"
 import PostMedia from "./PostMedia";
 import { FaCheckSquare } from "react-icons/fa";
-import { MdError } from "react-icons/md";
 import { LoginContext } from "../../../context/LoginContext";
 import MediaBox from '../../landing/MediaBox/MediaBox'
 import { BsCameraVideoFill } from "react-icons/bs";

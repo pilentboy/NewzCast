@@ -3,6 +3,8 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoMdCamera } from "react-icons/io";
 import {useState, useContext } from "react"
 import PostMedia from "./PostMedia";
+import { FaCheckSquare } from "react-icons/fa";
+import { MdError } from "react-icons/md";
 import { LoginContext } from "../../../context/LoginContext";
 import MediaBox from '../../landing/MediaBox/MediaBox'
 import { BsCameraVideoFill } from "react-icons/bs";
@@ -10,19 +12,22 @@ import { FaImage } from "react-icons/fa6";
 import MediaBoxIcon from '../../landing/MediaBox/MediaBoxIcon'
 import MediaBoxText from '../../landing/MediaBox/MediaBoxText'
 import CloseBTN from "../../landing/MediaBox/CloseBTN";
-
+import SmallAlertBox from '../../alert/smallAlertBox'
 
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
     const [postMeidas,setPostMedias]=useState([])
     const {handleUploadNewPost}=useContext(LoginContext)
+    const [smallAlertDisplay,setSmallAlertDisplay]=useState('hidden')
 
 
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
 			handleUploadNewPost(postText,postMeidas)
+            setSmallAlertDisplay('flex')
+            setTimeout(()=> setSmallAlertDisplay('hidden'),3000)
 		}
         setPostText("")
         setPostMedias([])
@@ -133,6 +138,15 @@ function SharePost({ TextLimit }) {
 
                 </div>
             </div>
+
+
+            <SmallAlertBox 
+            display={smallAlertDisplay} 
+            bgColor='bg-purple-1000'
+            title='Post uploaded successfuly'
+            icon={<FaCheckSquare  className="text-lg text-white"/>}
+            />
+
         </form>
 
     )

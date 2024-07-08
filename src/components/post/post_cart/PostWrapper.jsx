@@ -1,4 +1,4 @@
-import React, {useContext, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import PostInfoContainer from './PostInfoContainer';
 import AddFavorites from './AddFavorites';
 import LikePost from './LikePost';
@@ -31,6 +31,9 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
 	
     
+    useEffect(()=>{
+        setPostText(userPostsInfo.title)
+    },[userPostsInfo.title])
 
     return (
         <>

@@ -53,7 +53,7 @@ function SharePost({ TextLimit }) {
         
     }
 
-    const handleCloseBTN= (itemPath)=> {
+    const handleDeleteMeida= (itemPath)=> {
         const newPostMedias=postMeidas.filter(media => media !== itemPath )
         setPostMedias(newPostMedias)
     }
@@ -80,7 +80,7 @@ function SharePost({ TextLimit }) {
                                             <MediaBox key={id} styles={'border border-1 border-purple-1000   w-14 h-16'}>
                                             <MediaBoxIcon icon={<FaImage />} styles={'text-base text-purple-1000'} />
                                             <MediaBoxText title={`File ${id + 1}`} styles={'text-purple-1000 text-xs'} />
-                                            <CloseBTN action={()=> handleCloseBTN(media)} />
+                                            <CloseBTN action={()=> handleDeleteMeida(media)} />
                                             </MediaBox>
                                         
                                         )
@@ -89,7 +89,7 @@ function SharePost({ TextLimit }) {
                                         <MediaBox key={id} styles={'border border-1 border-purple-1000   w-14 h-16'}>
                                             <MediaBoxIcon icon={<BsCameraVideoFill />} styles={'text-base text-purple-1000'} />
                                             <MediaBoxText title={`File ${id +1}`} styles={'text-purple-1000 text-xs'} />
-                                            <CloseBTN action={()=> handleCloseBTN(media)} />
+                                            <CloseBTN action={()=> handleDeleteMeida(media)} />
                                         </MediaBox>         
                                     )
                           

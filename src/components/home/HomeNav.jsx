@@ -1,10 +1,7 @@
 import ColoredLogo from "../ColoredLogo"
 import { Outlet } from "react-router-dom"
-import { Link,NavLink } from "react-router-dom"
 import HomeNavLink from "./HomeNavLink"
-import { FaHeart } from "react-icons/fa6";
 import { SlEnergy } from "react-icons/sl";
-import { GoSearch } from "react-icons/go";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
@@ -15,7 +12,6 @@ import DropDown from "./DropDown";
 import NavTopSmallScreen from "./NavTopSmallScreen";
 import UserProfile from "../profile/UserProfile";
 import Logout from "./Logout";
-import { MdHome } from "react-icons/md";
 import { BiHeart } from "react-icons/bi";
 
 

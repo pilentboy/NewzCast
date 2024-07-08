@@ -73,7 +73,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                             <EditPost postID={userPostsInfo.postID} setDisplayPostEdit={setDisplayPostEdit}>
                                 <DropDown 
                                 display={displayPostEdit} 
-                                setDropDownDisplay={setDisplayPostEdit} 
+                                // setDropDownDisplay={setDisplayPostEdit} 
                                 position={'-left-14 top-7 md:top-5 md:left-0 '}
                                 button={<div className=' flex flex-col  items-center text-sm '>
                                          <button

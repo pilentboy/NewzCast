@@ -28,9 +28,9 @@ const LoginProvider = ({ children }) => {
 		
 		updateDB.push(
 			     {
-            "firstName": "User",
+            "firstName": "New",
             "lastName": "User",
-            "username": "username",
+            "username": userSessionData['user']['email'].slice(0,5),
             "profileImage":"",
             "email": userSessionData['user']['email'],
             "verified": false,

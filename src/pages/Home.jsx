@@ -25,6 +25,7 @@ const Home = () => {
     return (
         <HomeContainer>
             {
+                
                 userLoggedInfo && userFollowers ? (
                     userFollowers.map(follower => (
                         mainDB.map(user => (
@@ -38,7 +39,7 @@ const Home = () => {
                     )
                 )
 
-                : <span className="border-b border-gray-400 ">Please <Link to={'/authenticate'} className="font-bold text-black">Log in</Link> to see your followers news</span>
+                : <span className="border-b border-gray-400 mt-10">Please <Link to={'/authenticate'} className="font-bold text-black">Log in</Link> to see your followers news</span>
             }
         </HomeContainer>
     )

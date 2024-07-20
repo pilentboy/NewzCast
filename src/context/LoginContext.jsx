@@ -111,7 +111,6 @@ const LoginProvider = ({ children }) => {
         } else {
             setUserTokenInfo(userSessionData)
             setUserLoggedInfo(getUserInfo(userSessionData['user']['email']))
-            console.log("updaing logged")
         }
     }
 

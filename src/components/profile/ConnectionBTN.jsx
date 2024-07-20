@@ -7,6 +7,29 @@ function ConnectionBTN({ username }) {
     const { userLoggedInfo, mainDB, setMainDB } = useContext(LoginContext);
     const navigate = useNavigate();
 
+    const updateUserFollowing= (username,unfollow) =>{
+       
+        setMainDB( prevDB => {
+            const updateDB= [...prevDB]
+            const userProfileInfoIndex=updateDB.findIndex(user => user.username === username)
+            const userProfileInfo=updateDB[userProfileInfoIndex]
+            const following=userProfileInfo['userConnections'][1].Following
+
+            if(unfollow){
+                const newFollowing=following.filter(user => user !== userLoggedInfo.username)
+                userProfileInfo.userConnections[1].Following= newFollowing
+                updateDB[userProfileInfoIndex]=userProfileInfo
+            }else{
+                userProfileInfo.userConnections[1].Following.push(userLoggedInfo.username)
+                updateDB[userProfileInfoIndex]=userProfileInfo
+            }
+
+            return updateDB
+
+        })
+        
+    }
+
     const handleUserConnectionChange = () => {
         if (userLoggedInfo) {
             setMainDB(prevDB => {
@@ -22,6 +45,7 @@ function ConnectionBTN({ username }) {
                     userFollowers.push(username);
                     userInfo.userConnections[0].Followers = userFollowers;
                 }
+                updateUserFollowing(username,userConnection)
 
                 updateDB[currentUserIndex] = userInfo;
                 return updateDB;

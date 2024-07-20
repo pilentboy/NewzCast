@@ -18,7 +18,7 @@ function UserConnectiosList({ title,userEmail}) {
         if(title){
             setUserConnections(handleConnectionList())
         }
-    },[title])
+    },[title,mainDB])
 
 
     return (

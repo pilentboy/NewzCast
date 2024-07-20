@@ -9,7 +9,7 @@
             "verified": true,
             "userConnections": [
                {
-                "Followers":["Reyhaneh212"]
+                "Followers":[]
                },
                {
                 "Following":[]
@@ -163,10 +163,10 @@
             "verified": false,
             "userConnections": [
                 {
-                 "Followers":["pilentboy"]
+                 "Followers":[]
                 },
                 {
-                 "Following":["selexted","Reyhaneh212"]
+                 "Following":[]
                 }
              ],
             "posts": [
@@ -254,10 +254,10 @@
             "verified": true,
             "userConnections": [
                 {
-                 "Followers":["pilentboy"]
+                 "Followers":[]
                 },
                 {
-                 "Following":["pilentboy"]
+                 "Following":[]
                 }
              ],
             "posts": [

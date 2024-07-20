@@ -22,7 +22,7 @@ const Authenticate = () => {
         <>
             <Container>
 
-
+                {/* slider only display on lg screens */}
                 <Slider />
 
 

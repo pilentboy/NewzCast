@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { LoginContext } from '../../context/LoginContext'
 import { useNavigate } from 'react-router-dom'
 
 
-function ConnectionBTN() {
+function ConnectionBTN({username}) {
 
     const [userConnection,setUserConnection]=useState(false)
     const {userLoggedInfo}=useContext(LoginContext)
+
     const navigate=useNavigate()
 
     const handleUserConnectionChange=()=>{
@@ -16,6 +17,25 @@ function ConnectionBTN() {
             navigate("/authenticate")
         }
     }
+
+    const checkConnectionState=()=>{
+        
+        const userFollowers=userLoggedInfo['userConnections'][0]['Followers']
+        const checkFollowerState=userFollowers.filter(user => user === username)
+
+        if(checkFollowerState.length > 0){
+            setUserConnection(true)
+            console.log('followers')
+        }else{
+            setUserConnection(false)
+            console.log("not follower")
+        }
+
+    }
+
+    useEffect(()=>{
+        checkConnectionState()
+    },[userLoggedInfo])
 
   return (
     <button type='button'

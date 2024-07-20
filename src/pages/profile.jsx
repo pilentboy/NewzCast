@@ -99,7 +99,7 @@ const Profile = () => {
                                     value={userProfileInfo['posts'].length}
                                 />
                             </ul>
-                            {!userPer && <ConnectionBTN />}
+                            {!userPer && <ConnectionBTN username={userProfileInfo['username']} />}
                         </div>
 
                         {/* modal to display user followers/following */}

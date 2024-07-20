@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { LoginContext } from '../../context/LoginContext';
 import { useNavigate } from 'react-router-dom';
 
-function ConnectionBTN({ username }) {
+function ConnectionBTN({ username, customeStyle}) {
     const [userConnection, setUserConnection] = useState(false);
     const { userLoggedInfo, mainDB, setMainDB } = useContext(LoginContext);
     const navigate = useNavigate();
@@ -65,15 +65,18 @@ function ConnectionBTN({ username }) {
         }
     }, [mainDB, userLoggedInfo]);
 
-    return (
-        <button
+    return (<>
+       <button
             type='button'
             onClick={handleUserConnectionChange}
-            className={`font-normal w-32 rounded-md h-9 mx-auto mt-5 mb-3 hover:opacity-90 duration-200 
+            className={`font-normal rounded-md  hover:opacity-90 duration-200 
+                ${customeStyle ? customeStyle : 'mx-auto mt-5 mb-3 w-32 h-9'}
             ${userConnection ? 'bg-white border border-purple-1000 text-purple-1000' : 'bg-purple-1000 text-white'}`}
         >
             {userConnection ? 'Following' : 'Follow'}
         </button>
+    </>
+     
     );
 }
 

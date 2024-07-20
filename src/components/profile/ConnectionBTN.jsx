@@ -66,7 +66,7 @@ function ConnectionBTN({ username, customeStyle}) {
         }
     }, [mainDB, userLoggedInfo]);
 
-    return (<>
+    return (
        <button
             type='button'
             onClick={handleUserConnectionChange}
@@ -76,7 +76,7 @@ function ConnectionBTN({ username, customeStyle}) {
         >
             {userConnection ? 'Following' : 'Follow'}
         </button>
-    </>
+    
      
     );
 }

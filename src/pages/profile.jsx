@@ -109,6 +109,7 @@ const Profile = () => {
                             <UserConnectiosList
                                 title={connectionInfoClickedTitle}
                                 userEmail={userProfileInfo.email}
+                                username={userProfileInfo['username']}
                             />
                         </ModalContainer>
 

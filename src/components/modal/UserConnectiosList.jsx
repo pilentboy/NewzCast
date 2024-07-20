@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import UserConnectiosItem from './UserConnectiosItem'
 import { LoginContext } from '../../context/LoginContext'
 
-function UserConnectiosList({ title,userEmail}) {
+function UserConnectiosList({ title,userEmail,username}) {
 
     const {mainDB}=useContext(LoginContext)
     const [userConnections,setUserConnections]=useState([])
@@ -33,9 +33,9 @@ function UserConnectiosList({ title,userEmail}) {
                     userConnections.length > 0 ? (
                         mainDB.map((user,index) => {
                             return (
-                                userConnections.map(username => {
-                                    if(user.username === username){
-                                        return  <UserConnectiosItem name={username} profileImage={user.profileImage} email={user.email} followState={true} 
+                                userConnections.map(connection => {
+                                    if(user.username === connection){
+                                        return  <UserConnectiosItem name={connection} profileImage={user.profileImage} email={user.email} username={username}
                                         key={index} />
                                     }
                                    

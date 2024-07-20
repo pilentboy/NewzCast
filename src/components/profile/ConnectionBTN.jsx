@@ -58,10 +58,11 @@ function ConnectionBTN({ username, customeStyle}) {
     useEffect(() => {
         if (userLoggedInfo) {
             const currentUser = mainDB.find(user => user.email === userLoggedInfo.email);
-            if (currentUser) {
-                const userFollowers = currentUser.userConnections[0].Followers;
-                setUserConnection(userFollowers.includes(username));
-            }
+            const userFollowers = currentUser.userConnections[0].Followers;
+            setUserConnection(userFollowers.includes(username));
+            
+        }else{
+            setUserConnection(false)
         }
     }, [mainDB, userLoggedInfo]);
 

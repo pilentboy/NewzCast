@@ -9,7 +9,7 @@ function UserConnectiosList({ title,userEmail}) {
 
     const handleConnectionList=()=>{
         const user=mainDB.filter(user => user.email === userEmail)[0]
-        const connectionList=user['userConnections'].filter(connectionType => connectionType[title])[0] // find what connection's requrested
+        const connectionList=user['userConnections'].filter(connectionType => connectionType[title])[0] // find what connection's requested
         const connectionUsernames= connectionList[Object.keys(connectionList)[0]]
         return connectionUsernames
     }

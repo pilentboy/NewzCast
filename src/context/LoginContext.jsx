@@ -111,6 +111,7 @@ const LoginProvider = ({ children }) => {
         } else {
             setUserTokenInfo(userSessionData)
             setUserLoggedInfo(getUserInfo(userSessionData['user']['email']))
+            console.log("updaing logged")
         }
     }
 
@@ -192,8 +193,7 @@ const LoginProvider = ({ children }) => {
         if (userLoggedInfo) {
             setVerifyUser(userLoggedInfo['verified'])
         }
-	
-    }, [userLoggedInfo,mainDB])
+    }, [userLoggedInfo,mainDB,setMainDB])
 
 
     return (

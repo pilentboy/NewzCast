@@ -5,18 +5,18 @@ import { LoginContext } from '../../context/LoginContext'
 function UserConnectiosList({ title,userEmail}) {
 
     const {mainDB}=useContext(LoginContext)
-    const [connectionUsersname,setConnectionUsernames]=useState([])
+    const [userConnections,setUserConnections]=useState([])
 
     const handleConnectionList=()=>{
         const user=mainDB.filter(user => user.email === userEmail)[0]
-        const connectionList=user['userConnections'].filter(connectionType => connectionType[title])[0]
+        const connectionList=user['userConnections'].filter(connectionType => connectionType[title])[0] // find what connection's requrested
         const connectionUsernames= connectionList[Object.keys(connectionList)[0]]
         return connectionUsernames
     }
 
     useEffect(()=>{
         if(title){
-            setConnectionUsernames(handleConnectionList())
+            setUserConnections(handleConnectionList())
         }
     },[title])
 
@@ -30,10 +30,10 @@ function UserConnectiosList({ title,userEmail}) {
             <div className='overflow-y-auto  no-scrollbar'>
 
                 {
-                    connectionUsersname.length > 0 ? (
+                    userConnections.length > 0 ? (
                         mainDB.map((user,index) => {
                             return (
-                                connectionUsersname.map(username => {
+                                userConnections.map(username => {
                                     if(user.username === username){
                                         return  <UserConnectiosItem name={username} profileImage={user.profileImage} email={user.email} followState={true} 
                                         key={index} />

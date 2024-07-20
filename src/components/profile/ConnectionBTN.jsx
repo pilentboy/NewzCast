@@ -25,10 +25,8 @@ function ConnectionBTN({username}) {
 
         if(checkFollowerState.length > 0){
             setUserConnection(true)
-            console.log('followers')
         }else{
             setUserConnection(false)
-            console.log("not follower")
         }
 
     }

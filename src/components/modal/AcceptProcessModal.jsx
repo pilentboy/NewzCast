@@ -1,9 +1,10 @@
 import { CgBorderStyleSolid } from "react-icons/cg";
 
 function AcceptProcessModal({title,size,acceptBG,acceptAction,secondAcceptAction,cancelAction,acceptActiontTitle,secondAcceptActionTitle,secondAcceptActionBG,children}) {
-  return (
+  
+    return (
     <div className={` max-w-full py-2 px-4 bg-white rounded-md flex flex-col justify-around items-center animate__animated animate__pulse ${size ? size : 'w-[300px] h-36'} `}>
-             <CgBorderStyleSolid/>
+             <CgBorderStyleSolid className="text-black"/>
 
         <span className='text-base font-medium text-black '>
             {title}

@@ -30,14 +30,14 @@ function ChangeProfilePic() {
         </button>
         <ModalContainer display={modalDisplay} setDisplay={setModalDisplay}>
             <AcceptProcessModal 
-            title='Change Profile Image'
-            acceptActiontTitle='Upload'
-            acceptBG='bg-purple-1000 hover:opacity-80 '
-            acceptAction={()=> handleFileSelect()}
-            cancelAction={()=> setModalDisplay('hidden')}
-            secondAcceptActionTitle='Delete'
-            secondAcceptAction={()=> handleDeleteProfilePic()}
-            secondAcceptActionBG={'bg-red-500 text-white'}
+                title='Change Profile Image'
+                acceptActiontTitle='Upload'
+                acceptBG='bg-purple-1000 hover:opacity-80 '
+                acceptAction={()=> handleFileSelect()}
+                cancelAction={()=> setModalDisplay('hidden')}
+                secondAcceptActionTitle='Delete'
+                secondAcceptAction={()=> handleDeleteProfilePic()}
+                secondAcceptActionBG={'bg-red-500 text-white'}
             ></AcceptProcessModal>
         </ModalContainer>
         </>

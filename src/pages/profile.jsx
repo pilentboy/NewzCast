@@ -55,6 +55,7 @@ const Profile = () => {
                 <>
                     <div className={`flex flex-col w-[90%] mb-6 ${userProfileInfo['verified'] || !userPer ? 'min-h-[330px]' : 'h-[260px]'} pt-2 border border-gray-200 rounded-md md:w-460`}>
                         <div className="flex flex-col border-b border-gray-200 pb-10 relative">
+                            {/* display profile settings  */}
                             {userPer && (
                                 <Link to="/newzcast/settings" className="block md:hidden">
                                     <IoIosSettings className="text-black absolute top-2 cursor-pointer left-5 text-lg hover:rotate-45 duration-200" />

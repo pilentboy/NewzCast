@@ -7,20 +7,20 @@ function ConnectionBTN({ username, customeStyle}) {
     const { userLoggedInfo, mainDB, setMainDB } = useContext(LoginContext);
     const navigate = useNavigate();
 
-    const updateUserFollowing= (username,unfollow) =>{
+    const updateUserFollowers= (username,unfollow) =>{
        
         setMainDB( prevDB => {
             const updateDB= [...prevDB]
             const userProfileInfoIndex=updateDB.findIndex(user => user.username === username)
             const userProfileInfo=updateDB[userProfileInfoIndex]
-            const following=userProfileInfo['userConnections'][1].Following
+            const followers=userProfileInfo['userConnections'][0].Followers
 
             if(unfollow){
-                const newFollowing=following.filter(user => user !== userLoggedInfo.username)
-                userProfileInfo.userConnections[1].Following= newFollowing
+                const newFollowers=followers.filter(user => user !== userLoggedInfo.username)
+                userProfileInfo.userConnections[0].Followers= newFollowers
                 updateDB[userProfileInfoIndex]=userProfileInfo
             }else{
-                userProfileInfo.userConnections[1].Following.push(userLoggedInfo.username)
+                userProfileInfo.userConnections[0].Followers.push(userLoggedInfo.username)
                 updateDB[userProfileInfoIndex]=userProfileInfo
             }
 
@@ -36,16 +36,16 @@ function ConnectionBTN({ username, customeStyle}) {
                 const updateDB = [...prevDB];
                 const currentUserIndex = updateDB.findIndex(user => user.email === userLoggedInfo.email);
                 const userInfo = updateDB[currentUserIndex]
-                const userFollowers = userInfo.userConnections[0].Followers;
+                const userFollowing = userInfo.userConnections[1].Following;
 
                 if (userConnection) {
-                    const updatedFollowers = userFollowers.filter(user => user !== username);
-                    userInfo.userConnections[0].Followers = updatedFollowers;
+                    const updatedFollowing = userFollowing.filter(user => user !== username);
+                    userInfo.userConnections[1].Following = updatedFollowing;
                 } else {
-                    userFollowers.push(username);
-                    userInfo.userConnections[0].Followers = userFollowers;
+                    userFollowing.push(username);
+                    userInfo.userConnections[1].Following = userFollowing;
                 }
-                updateUserFollowing(username,userConnection)
+                updateUserFollowers(username,userConnection)
 
                 updateDB[currentUserIndex] = userInfo;
                 return updateDB;
@@ -58,7 +58,7 @@ function ConnectionBTN({ username, customeStyle}) {
     useEffect(() => {
         if (userLoggedInfo) {
             const currentUser = mainDB.find(user => user.email === userLoggedInfo.email);
-            const userFollowers = currentUser.userConnections[0].Followers;
+            const userFollowers = currentUser.userConnections[1].Following;
             setUserConnection(userFollowers.includes(username));
             
         }else{

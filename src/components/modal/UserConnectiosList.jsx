@@ -35,7 +35,7 @@ function UserConnectiosList({ title,userEmail,username}) {
                             return (
                                 userConnections.map(connection => {
                                     if(user.username === connection){
-                                        return  <UserConnectiosItem name={connection} profileImage={user.profileImage} email={user.email} username={username}
+                                        return  <UserConnectiosItem name={connection} profileImage={user.profileImage} email={user.email} username={username} dispalyConnection={title !== 'Followers' ? true : false}
                                         key={index} />
                                     }
                                    

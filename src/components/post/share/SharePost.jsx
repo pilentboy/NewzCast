@@ -11,20 +11,21 @@ import { FaImage } from "react-icons/fa6";
 import MediaBoxIcon from '../../landing/MediaBox/MediaBoxIcon'
 import MediaBoxText from '../../landing/MediaBox/MediaBoxText'
 import CloseBTN from "../../landing/MediaBox/CloseBTN";
+import handleUploadNewPost from '../../../utils/handleUploadNewPost'
 import SmallAlertBox from '../../alert/smallAlertBox'
 
 function SharePost({ TextLimit }) {
 
     const [postText, setPostText] = useState("")
     const [postMeidas,setPostMedias]=useState([])
-    const {handleUploadNewPost}=useContext(LoginContext)
     const [smallAlertDisplay,setSmallAlertDisplay]=useState('hidden')
-
+    const {mainDB,setMainDB,userLoggedInfo}=useContext(LoginContext)
 
     const handleSharePost = (e) => {
         e.preventDefault()
         if(postText){
-			handleUploadNewPost(postText,postMeidas)
+            handleUploadNewPost(postText,postMeidas,mainDB,setMainDB,userLoggedInfo)
+			// handleUploadNewPost(postText,postMeidas)
             setSmallAlertDisplay('flex')
             setTimeout(()=> setSmallAlertDisplay('hidden'),3000)
 		}

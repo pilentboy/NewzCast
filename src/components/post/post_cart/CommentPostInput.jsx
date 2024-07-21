@@ -2,10 +2,11 @@
 import { useContext } from "react";
 import { IoSendSharp } from "react-icons/io5";
 import { LoginContext } from "../../../context/LoginContext";
+import handleSendComment from "../../../utils/handleSendComment";
 
 function CommentPostInput({ commentValue, setCommentValue, postID, postUserEmail}) {
 
-    const {handleSendComment, userTokenInfo}= useContext(LoginContext)
+    const {mainDB,setMainDB, userTokenInfo,userLoggedInfo}= useContext(LoginContext)
 
 
     const handleChange = (e) => {
@@ -14,7 +15,7 @@ function CommentPostInput({ commentValue, setCommentValue, postID, postUserEmail
 
     const checkUserInfo=()=>{
         if(userTokenInfo){
-            handleSendComment(commentValue, postID, postUserEmail)
+            handleSendComment(commentValue, postID, postUserEmail,mainDB,setMainDB,userLoggedInfo)
             setCommentValue("")
         }else{
             alert("log in first!")

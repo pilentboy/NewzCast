@@ -16,6 +16,8 @@ import PostSlider from './PostSlider';
 import {SwiperSlide } from "swiper/react"
 import DropDown from '../../home/DropDown';
 import { LoginContext } from '../../../context/LoginContext';
+import handlePostEdit from '../../../utils/handlePostEdit';
+import handleDeletePost from '../../../utils/handleDeletePost'
 import AcceptProcessModal from '../../modal/AcceptProcessModal';
 import PostText from '../share/PostText';
 
@@ -28,7 +30,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
     const [editPostModalDisplay,setEditPostModalDisplay]=useState('hidden')
     const [playingVideo,setPlayingVideo]= useState(false)
     const [postText, setPostText] = useState(userPostsInfo.title)
-    const {handleDeletePost,handlePostEdit,userLoggedInfo}= useContext(LoginContext)
+    const {mainDB,setMainDB,userLoggedInfo}= useContext(LoginContext)
 	
     
     useEffect(()=>{
@@ -98,7 +100,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                         size={'w-[330px] md:w-[400px] h-48'}
                                         acceptActiontTitle='Update'
                                         acceptBG='bg-purple-1000 hover:opacity-70'
-                                        acceptAction={() => handlePostEdit(userPostsInfo.postID,postText)}
+                                        acceptAction={() => handlePostEdit(userPostsInfo.postID,postText,userLoggedInfo,mainDB,setMainDB)}
                                         cancelAction={() => {
                                             setEditPostModalDisplay('hidden')
                                             setDisplayPostEdit(false)
@@ -113,7 +115,7 @@ function PostWrapper({userPostsInfo,userName,profileImg,userEmail}) {
                                 <AcceptProcessModal 
                                 title='Are you sure you want to delete this post?'
                                 acceptActiontTitle='Yes'
-                                acceptAction={() => handleDeletePost(userPostsInfo.postID)}
+                                acceptAction={() => handleDeletePost(userPostsInfo.postID,mainDB,setMainDB,userLoggedInfo)}
                                 cancelAction={() => {
                                     setDeletePostModalDisplay('hidden')
                                     setDisplayPostEdit(false)

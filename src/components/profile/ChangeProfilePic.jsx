@@ -3,11 +3,35 @@ import { MdEdit } from "react-icons/md";
 import { LoginContext } from "../../context/LoginContext";
 import AcceptProcessModal from "../modal/AcceptProcessModal";
 import ModalContainer from "../modal/ModalContainer";
+import defaultProfileImage from '../../assets/images/blank_profile.webp'
 
 function ChangeProfilePic() {
 
-    const {handleChangeProfilePic,handleDeleteProfilePic}=useContext(LoginContext)
+    const {mainDB,setMainDB,userLoggedInfo}=useContext(LoginContext)
     const [modalDisplay,setModalDisplay]=useState('hidden')
+
+    
+    const handleChangeProfilePic= e =>{
+        const file = Array.from(e.target.files)
+        const filePath = file.map(file => URL.createObjectURL(file))
+        const updatedDB = [...mainDB];
+        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
+
+        updatedDB[userDBIndex].profileImage= filePath[0]
+
+        setMainDB(updatedDB)
+
+    }
+
+    const handleDeleteProfilePic= () =>{
+        const updatedDB = [...mainDB];
+        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
+
+        updatedDB[userDBIndex].profileImage= defaultProfileImage
+
+        setMainDB(updatedDB)
+
+    }
 
     const handleFileSelect = () => {
         const input = document.createElement('input');

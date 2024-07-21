@@ -2,25 +2,30 @@ import { FaHeart } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { LoginContext } from "../../../context/LoginContext";
 import manageUsersFavorites from "../../../utils/manageUsersFavorites";
-
+import { useNavigate } from "react-router-dom";
 
 function AddFavorites({ postID }) {
 
     const { userTokenInfo, userLoggedInfo, mainDB, setMainDB } = useContext(LoginContext)
     const [favorite,setFavorite]=useState(false)
-
+    const navigate=useNavigate()
 
     const handleAddFavorite = () => {
-        const updateDB=[...mainDB]
-        const LoggedUserIndex=updateDB.findIndex(user => user.email === userLoggedInfo.email)
-        if(favorite){
-            const updatedUserFavoritePosts=updateDB[LoggedUserIndex].favoritePosts.filter(favoriteID => favoriteID !== postID)
-            updateDB[LoggedUserIndex].favoritePosts = updatedUserFavoritePosts
-            setMainDB(updateDB)
+        if(userLoggedInfo){
+            const updateDB=[...mainDB]
+            const LoggedUserIndex=updateDB.findIndex(user => user.email === userLoggedInfo.email)
+            if(favorite){
+                const updatedUserFavoritePosts=updateDB[LoggedUserIndex].favoritePosts.filter(favoriteID => favoriteID !== postID)
+                updateDB[LoggedUserIndex].favoritePosts = updatedUserFavoritePosts
+                setMainDB(updateDB)
+            }else{
+                updateDB[LoggedUserIndex].favoritePosts.push(postID)
+                setMainDB(updateDB)
+            }
         }else{
-            updateDB[LoggedUserIndex].favoritePosts.push(postID)
-            setMainDB(updateDB)
+            navigate('/authenticate')
         }
+        
     }
 
     useEffect(()=>{

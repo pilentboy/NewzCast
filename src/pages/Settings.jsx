@@ -8,10 +8,11 @@ import FormInput from "../components/form/FormInput"
 import { IoChevronBack } from "react-icons/io5";
 import { LoginContext } from "../context/LoginContext"
 import handleUpdateEmail from "../utils/handleUpdateEmail"
+import handleUpdateUserInfo from "../utils/handleUpdateUserInfo"
 
 function Settings() {
 
-  const {handleUpdateUserInfo}=useContext(LoginContext)
+  const {mainDB,setMainDB,userLoggedInfo}=useContext(LoginContext)
 
 
 	useEffect(()=>{
@@ -35,12 +36,12 @@ function Settings() {
 
 
 
-  const handleSettingsChange=async (e)=>{
+  const handleSettingsChange= e=>{
     e.preventDefault()
 
 
     if(clickedItem.includes("Username") && username.length > 4 && username.length <= 9 ){
-      handleUpdateUserInfo(username,'username')
+      handleUpdateUserInfo(username,'username',mainDB,setMainDB,userLoggedInfo)
     }
     else if (clickedItem.includes("Password")){
       alert("not available")
@@ -50,7 +51,7 @@ function Settings() {
       // await handleUpdateEmail(email)
     }
     else{
-      alert("Error!")
+      alert("not available")
     }
 
     setUsername('')
@@ -109,7 +110,8 @@ function Settings() {
 
             ) : clickedItem === 'Deactive Account' ? <div className="flex flex-col items-center space-y-4"> 
                   <span className="text-gray-600 text-base">Your account will be deactivated <b>untill you log in to your account</b>.</span>
-                 <button  className="bg-red-600 rounded-md text-white text-center py-1 px-6 hover:bg-red-700 duration-200" aria-label="deactive account">
+                 <button 
+                  className="bg-red-600 rounded-md text-white text-center py-1 px-6 hover:bg-red-700 duration-200" aria-label="deactive account">
                 Deactive Account
               </button>
 

@@ -1,9 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import UsersDB from '../db.json'
-import generateRandomPostID from "../utils/generateRandomPostID ";
-import manageUsersLiked from "../utils/manageUsersLikes";
-import handleUploadDate from "../utils/handleUploadDate";
-import defaultProfileImage from '../assets/images/blank_profile.webp'
+
 const LoginContext = createContext()
 
 const LoginProvider = ({ children }) => {
@@ -51,57 +48,6 @@ const LoginProvider = ({ children }) => {
 		
     }
     
-    
-
-    const handleUploadNewPost = (title,postMedias) => {
-
-        const updatedDB = [...mainDB];
-        
-        const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
-               
-        const newPost = {
-            "title": title,
-            "postMeidas":postMedias,
-            "uploadedDate": handleUploadDate(),
-            "likes": 0,
-            "usersLiked":[],
-            "views": 0,
-            "postID": generateRandomPostID(),
-            "comments": []
-            };
-            
-        updatedDB[userAccIndex].posts = [newPost, ...updatedDB[userAccIndex].posts];
-        setMainDB(updatedDB);
-    };
-
-
-    const handlePostLike=(postID,userEmail) => {
-
-        const updatedDB = [...mainDB];
-        const userAccIndex = updatedDB.findIndex(user => user.email === userEmail);
-
-        const currentPostIndex=updatedDB[userAccIndex].posts.findIndex(post => post.postID === postID)
-
-        const currentPost= updatedDB[userAccIndex].posts[currentPostIndex]
-        const manageUsersLikedRes= manageUsersLiked(currentPost.usersLiked,userLoggedInfo.email)
-
-       if(manageUsersLikedRes){
-            const updateCurrentPostLikes= currentPost.usersLiked.filter((usersEmail) => usersEmail !== userLoggedInfo.email)
-            currentPost.usersLiked = updateCurrentPostLikes
-       }else{
-            currentPost.usersLiked.push(userLoggedInfo.email)
-        }
-
-        updatedDB[userAccIndex][currentPostIndex] = currentPost 
-
-        setMainDB(updatedDB)
-        return manageUsersLikedRes
-
-    }
-
-  
-    
-	
 	
     const handleUserAuth = () => {
         const userSessionData = JSON.parse(localStorage.getItem('sb-sftspirecsaiuswinvmc-auth-token'))
@@ -112,77 +58,6 @@ const LoginProvider = ({ children }) => {
             setUserTokenInfo(userSessionData)
             setUserLoggedInfo(getUserInfo(userSessionData['user']['email']))
         }
-    }
-
-
-    const handleDeletePost  = postID=>{
-        const updatedDB = [...mainDB];
-        const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
-        const userData=updatedDB[userAccIndex]
-        const currentPost= userData.posts.filter((post) => post.postID !== postID)
-        updatedDB[userAccIndex].posts=currentPost
-        setMainDB(updatedDB)
-    }
-    
-    const handlePostEdit  = (postID,newTitle) =>{
-        const updatedDB = [...mainDB];
-        const userAccIndex = updatedDB.findIndex(user => user.email === userLoggedInfo.email);
-        const userData=updatedDB[userAccIndex]
-        const curretPost=userData.posts.findIndex(post => post.postID === postID)
-        userData.posts[curretPost].title = newTitle
-        updatedDB[userAccIndex] = userData
-        setMainDB(updatedDB)
-    }
-
-
-
-    const handleSendComment= (commentValue,postID, postUserEmail) =>{
-        const updatedDB = [...mainDB];
-        const currentPostUser= updatedDB.findIndex(user => user.email === postUserEmail)
-        const curretPost= updatedDB[currentPostUser].posts.findIndex(post => post.postID === postID)
-        
-        updatedDB[currentPostUser].posts[curretPost].comments.push(
-            {
-                "username":userLoggedInfo.username,
-                "email": userLoggedInfo.email,
-                "profileImage":userLoggedInfo.profileImage,
-                "comment": commentValue
-            }
-        )
-
-        setMainDB(updatedDB)
-     
-    }
-
-
-    const handleChangeProfilePic= e =>{
-        const file = Array.from(e.target.files)
-        const filePath = file.map(file => URL.createObjectURL(file))
-        const updatedDB = [...mainDB];
-        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
-
-        updatedDB[userDBIndex].profileImage= filePath[0]
-
-        setMainDB(updatedDB)
-
-    }
-
-    const handleDeleteProfilePic= () =>{
-        const updatedDB = [...mainDB];
-        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
-
-        updatedDB[userDBIndex].profileImage= defaultProfileImage
-
-        setMainDB(updatedDB)
-
-    }
-
-
-    const handleUpdateUserInfo= (newValue,title) =>{
-        const updatedDB = [...mainDB];
-        const userDBIndex= updatedDB.findIndex(user => user.email === userLoggedInfo.email)
-        updatedDB[userDBIndex][title]= newValue
-        setMainDB(updatedDB)
     }
 
     useEffect(() => {
@@ -196,7 +71,7 @@ const LoginProvider = ({ children }) => {
 
 
     return (
-        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser, handleUploadNewPost, handlePostLike,handleDeletePost,handlePostEdit, handleSendComment,handleChangeProfilePic,handleDeleteProfilePic,handleUpdateUserInfo}}>
+        <LoginContext.Provider value={{mainDB, setMainDB, getUserInfo, userTokenInfo, setUserTokenInfo, handleUserAuth, userLoggedInfo, loading, setLoading, verifyUser}}>
             {children}
         </LoginContext.Provider>
     )

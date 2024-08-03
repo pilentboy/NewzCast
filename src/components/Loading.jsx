@@ -1,6 +1,6 @@
 import { Puff } from "react-loader-spinner"
 
-function Loading({ display }) {
+function Loading({ display, noBG }) {
     return (
         <Puff
             visible={display}
@@ -9,7 +9,7 @@ function Loading({ display }) {
             color="rgb(11, 45, 131)"
             ariaLabel="puff-loading"
             wrapperStyle={{}}
-            wrapperClass={`w-screen h-lvh flex fixed top-0 left-0 bg-[rgba(255,255,255,0.48)] o items-center justify-center `}
+            wrapperClass={`z-[1000] fixed top-0 left-0 w-screen h-lvh items-center justify-center  ${noBG ? 'bg-transparent   ' : 'bg-[rgba(255,255,255,0.48)]  '} `}
         />
     )
 }

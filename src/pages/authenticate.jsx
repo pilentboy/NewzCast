@@ -4,17 +4,25 @@ import RegisterLinkItems from "../components/authenticate/RegisterLinkItems"
 import Wrapper from "../components/authenticate/Wrapper"
 import MainLink from "../components/landing/MainLink"
 import Slider from "../components/slider/Slider"
+import {useEffect} from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
 
 const Authenticate = () => {
+	
+	
+	
+	useEffect(()=>{
+		document.title = "Authenticate"
+	},[])
+
 
 
     return (
         <>
             <Container>
 
-
+                {/* slider only display on lg screens */}
                 <Slider />
 
 

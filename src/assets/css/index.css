@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	
+	
+   
+    body {
+        @apply font-roboto overflow-x-hidden 
+    }
+
+    body::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    body::-webkit-scrollbar-track {
+        @apply bg-white;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        @apply bg-gray-300
+    }
+
+    body::-webkit-scrollbar-thumb:active {
+        @apply bg-purple-1000;
+    }
+
+
+ 
+    button,
+    a {
+        @apply text-white font-medium
+    }
+
+    li {
+        @apply list-none
+    }
+
+  
+}
+
+@layer components {
+	
+	
+    
+    .comment-box::-webkit-scrollbar{
+        width: 6px;
+        @apply rounded-lg
+    }
+
+    .comment-box::-webkit-scrollbar{
+        @apply bg-gray-300
+    }
+
+    .comment-box::-webkit-scrollbar-thumb {
+        @apply bg-gray-500 rounded-lg
+    }
+
+    .comment-box::-webkit-scrollbar-thumb:active {
+        @apply bg-purple-1000 
+    }
+
+
+    .user-search::-webkit-scrollbar {
+        width: 4px;
+      
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .likeAnima {
+        animation-name: like;
+        animation-duration: 200ms;
+    }
+
+    @keyframes like {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10%);
+
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .header-bg {
+        background: linear-gradient(rgb(101, 146, 252), rgb(14, 50, 135));
+    }
+
+    .slide-anima {
+        animation-name: slideShow;
+        animation-duration: 10s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    .main-btn-hover {
+        @apply hover:bg-white border hover:border-purple-1000 hover:text-purple-1000 duration-150
+    }
+
+    @keyframes slideShow {
+        0% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        50% {
+            transform: scale(0.9);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+    }
+
+
+    .scroll-top {
+        animation-name: scrolly;
+        animation-duration: 500ms;
+    }
+
+    @keyframes scrolly {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 2%;
+        }
+    }
+
+    .search-result {
+        animation-name: searchResult;
+        animation-duration: 600ms;
+    }
+
+    @keyframes searchResult {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+
+    .info-box {
+        animation-name: info-box-anima;
+        animation-duration: 400ms;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes info-box-anima {
+        from {
+            margin-right: 10px;
+        }
+
+        to {
+            margin-right: 0px;
+        }
+    }
+
+    .modal-container{
+        animation-name: modal-container-anima;
+        animation-duration: 200ms;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes modal-container-anima{
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .screen-shot-anima{
+        animation-name: screen-shot-anima;
+        animation-duration: 600ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes screen-shot-anima{
+        from {
+            transform: translateX(0);
+            scale: 1;
+        }
+
+        to {
+            transform: translateX(-25%);
+            scale: 0.8;
+        }
+    }
+    .started-btn-anima {
+        animation-name: started-btn-anima ;
+        animation-duration: 500ms;
+        animation-delay: 1000ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+    }
+
+    @keyframes started-btn-anima {
+        from {
+            opacity: 0;
+			
+        }
+
+        to {
+            opacity: 1;
+			
+			
+        }
+    }
+    .bottom-box-anima {
+        animation-name:bottom-box-anima ;
+        animation-duration: 500ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        transform: translateX(-50%);
+    }
+
+    @keyframes  bottom-box-anima {
+        from {
+            transform: translate(-50%,100%);
+        }
+
+        to {
+            transform: translateY(-50%,0%);
+        }
+
+    }
+
+  
+
+ 
+}

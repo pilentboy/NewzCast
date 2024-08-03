@@ -1,47 +1,51 @@
-import './style/index.css'
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import './assets/css/index.css'
+import 'animate.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './pages/landing';
 import Authenticate from './pages/Authenticate';
-import Login from './pages/login'
-import Register from './pages/register'
+import Login from './pages/login';
+import Register from './pages/register';
 import LoginProvider from './context/LoginContext';
 import NewzNav from './pages/NewzNav';
-import Trending from './pages/Trending'
-import Profile from './pages/Profile'
-import Favorites from './pages/Favorites'
-import Search from './pages/Search';
-import HomeContainer from './components/home/HomeContainer';
+import Trending from './pages/Trending';
+import PrivateRoute from './components/PrivateRoute';
+import Profile from './pages/profile';
+import Favorites from './pages/Favorites';
+import Settings from './pages/Settings';
+import Home from './pages/Home';
+
 
 function App() {
-
 	return (
-		<>
-			<BrowserRouter>
-
-				<LoginProvider>
-					<Routes>
-
-						<Route path='/' element={<Landing />} />
-						<Route path='authenticate' element={<Authenticate />} />
-						<Route path='/login' element={<Login />} />
-						<Route path='/register' element={<Register />} />
-
-						<Route path='/newzcast' element={<NewzNav />} >
-							<Route index element={<Trending />} />
-							<Route path='profile' element={<Profile />} />
-							<Route path='favorites' element={<Favorites />} />
-							<Route path='search' element={<Search />} />
+		<BrowserRouter>
+			<LoginProvider>
+				<Routes>
+					<Route path="/" element={<Landing />} />
+					<Route path="/authenticate" element={<Authenticate />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
+				
+					<Route path="/newzcast" element={<NewzNav />}>
+						<Route index element={<Trending />} />
+						<Route path="home" element={<Home />} />
+						<Route path="profile/:email" element={<Profile />} />
+						<Route path="settings" element={
+							<PrivateRoute /> 
+						}>
+							<Route path="" element={<Settings />} />
 						</Route>
+						<Route path="favorites" element={
+							<PrivateRoute /> 
+						}>
+							<Route path="" element={<Favorites />} />
+						</Route>
+					</Route>
+					<Route path="*" element={<Navigate to="/newzcast" />} />
 
 
-					</Routes>
-				</LoginProvider>
-
-			</BrowserRouter >
-		</>
-
+				</Routes>
+			</LoginProvider>
+		</BrowserRouter>
 	);
 }
 

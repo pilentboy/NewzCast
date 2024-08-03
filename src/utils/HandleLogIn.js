@@ -8,10 +8,11 @@ const handleLogIn = async (LoginFormValues) => {
             password: LoginFormValues.Password
         })
 
+
+
+
         if (!error) {
-            console.log("logged insuccessfuly!")
-            console.log(data)
-            return true
+            return data
         }
 
         console.log(error, "log in error")

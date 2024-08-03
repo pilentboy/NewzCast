@@ -1,22 +1,42 @@
 import SharePost from '../components/post/share/SharePost'
 import HomeContainer from '../components/home/HomeContainer'
 import PostWrapper from '../components/post/post_cart/PostWrapper'
+import {useEffect, useContext, useState } from 'react'
+import { LoginContext } from '../context/LoginContext'
 
-import postimg1 from '../assets/images/1.jpg'
-import postimg2 from '../assets/images/2.jpg'
-import postimg3 from '../assets/images/3.jpg'
 
 function Trending() {
+
+ 
+    const { userLoggedInfo, mainDB, verifyUser } = useContext(LoginContext)
+
+
+    const x=()=>{
+        mainDB.forEach((e,index) => {
+            e.posts.map((post,id) => (
+                <PostWrapper userPostsInfo={post} key={id}  />
+            ))
+        })
+    }
+
+	useEffect(()=>{
+		document.title = "Trending"
+	},[])
+
+
+
     return (
         <HomeContainer>
-            <SharePost />
-            <PostWrapper img={postimg1} />
-            <PostWrapper img={postimg2} />
-            <PostWrapper img={postimg3} />
-
-
+            {userLoggedInfo && <SharePost TextLimit={verifyUser} />}
+            {
+                mainDB.map((user, userIndex) => (
+                    user.posts.map((post, postIndex) => (
+                        <PostWrapper userPostsInfo={post} userName={user.username} profileImg={user.profileImage} userEmail={user.email} key={`${userIndex}-${postIndex}`} />
+                    ))
+                ))
+            }
         </HomeContainer>
-    )
+    );
 }
 
 export default Trending

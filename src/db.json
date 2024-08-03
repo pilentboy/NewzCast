@@ -1,0 +1,364 @@
+{
+    "UsersData": [
+        {
+            "firstName": "Mahdi",
+            "lastName": "Ebrahimi",
+            "username": "pilentboy",
+            "profileImage":"https://png.pngtree.com/thumb_back/fh260/background/20230612/pngtree-man-wearing-glasses-is-wearing-colorful-background-image_2905240.jpg",
+            "email": "sirxmahdi79@gmail.com",
+            "verified": true,
+            "userConnections": [
+               {
+                "Followers":[]
+               },
+               {
+                "Following":[]
+               }
+            ],
+            "posts": [
+                {
+                    "title": "This is my first post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg"},
+                        {"video":"https://sample-videos.com/video321/mp4/240/big_buck_bunny_240p_1mb.mp4"}
+                        
+                    ],
+                    "uploadedDate":[2024,"June",14],
+                    "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com"],
+                    "views": 100,
+                    "postID": "123mmm321",
+                    "comments": [
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username":"tyler",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "sirxfqwfhdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "sirxfqwfhdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "sirxfqwfhdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "sirxfqwfhdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        } 
+                    ]
+                },
+                {
+                    "title": "I'm interested in compunter sicence and wanna share my info here daily! I'm excited to see your comments!",
+                    "postMeidas":[],
+                    "uploadedDate":[2024,"June",10],
+                    "usersLiked":["sirxmahdi7dqd9@gmail.com"],
+                    "views": 24,
+                    "postID": "1230mm321",
+                    "comments": [
+                        {
+                            "username": "wdwqd22",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "nice! can't wait to see it!"
+                        }
+                    
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://cdn-img1.imgworlds.com/assets/a5366382-0c26-4726-9873-45d69d24f819.jpg?key=home-gallery"}
+                    ],
+                    "uploadedDate":[2024,"June",11],
+                    "usersLiked":["sirxmahdi79@gmail.com","sirxmahdi7dqd9@gmail.com","sirxmadqdqdhdi79@gmail.com","sir133dqdhdi79@gmail.com","sirxmadqdqqqqqdhdi79@gmail.com","sirxmadqdqdhdi79@yahoo.com"],
+                    "views": 300,
+                    "postID": "123mmm621",
+                    "comments": [
+                        {
+                            "username": "maryam214",
+                            "email": "sfwfi79@gmail.com",
+                            "profileImage":"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "wonderful!"
+                        }
+                    ]
+                }
+            ],
+            "favoritePosts":[
+                "123mr4321","123m33321"
+            ]
+        },
+        {
+            "firstName": "Mohammad",
+            "lastName": "Ebrahimi",
+            "username": "selexted",
+            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+            "email": "bepobe1813@lewenbo.com",
+            "verified": false,
+            "userConnections": [
+                {
+                 "Followers":[]
+                },
+                {
+                 "Following":[]
+                }
+             ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "postMeidas":[
+                        {"image":"https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp"},
+                        {"image":"https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/hfpqyV7B-IMG-Dubai-UAE-1200x900.jpg"},
+                        {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQApKW3CGh_rn6kTcMmsTbACk7sJ26-GPovRolUeA5ngJAqSpiTjEWRrSEwXj81oBXzpKs&usqp=CAU"}
+                    ],
+                    "uploadedDate":[2024,"June",16],
+                    "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser1@example.com", "fakeuser2@example.com"],
+                    "views": 160,
+                    "postID": "123m33321",
+                    "comments": [
+                        {
+                            "username": "wdwqdq2d22",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "nice! can't wait!"
+                        },
+                        {
+                            "username": "wdgrge2",
+                            "email": "fakeuser1@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "would you like to edit your images before posting?"
+                        },
+                        {
+                            "username": "gr34324",
+                            "email": "fakeuser2@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "hey! you always post the best news earlier than others!"
+                        },
+                        {
+                            "username": "newuser1",
+                            "email": "newuser1@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Love this post!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://www.fazaa.ae/upload/vouchers/img-world-including-5-vat-1700564667144.jpg"},
+                        {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJWIc_0Ht6oXbqhdEnECdRxqjSt6o-DGoT-wZ0nZP3Qn13LLgxmtZpN8J8x-Q5_Gcx2ts&usqp=CAU"}
+                    ],
+                    "uploadedDate":[2024,"June",1],
+                    "usersLiked": ["bepobe1813@lewenbo.com", "fakeuser3@example.com", "fakeuser4@example.com"],
+                    "views": 452,
+                    "postID": "123m99321",
+                    "comments": [
+                        {
+                            "username": "pilentboy",
+                            "email": "sirxmahdi79@gmail.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "hey! how you doing today?!"
+                        },
+                        {
+                            "username": "ail21234",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "amazing! honestly you are one of the best!"
+                        },
+                        {
+                            "username": "newuser2",
+                            "email": "newuser2@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Fantastic content!"
+                        }
+                    ]
+                }
+        
+            ],
+            "favoritePosts":[
+                "123mmm321","123mr4321"
+            ]
+        },
+        {
+            "firstName": "Reyhaneh",
+            "lastName": "Behrooz",
+            "username": "Reyhaneh212",
+            "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOZTUrjs2YdHUb_BFutIvvmFf9LtVf4uiDXHLQzTrDAA&s",
+            "email": "kodoki9676@amankro.com",
+            "verified": true,
+            "userConnections": [
+                {
+                 "Followers":[]
+                },
+                {
+                 "Following":[]
+                }
+             ],
+            "posts": [
+                {
+                    "title": "share my posts guys!!",
+                    "postMeidas":[
+                        {"image":"https://images.freeimages.com/images/large-previews/c56/scn-prk-012-jpg-1364337.jpg?fmt=webp&w=500"},
+                        {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s"}
+                        
+                    ],
+                    "uploadedDate":[2024,"June",2],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser7@example.com", "fakeuser8@example.com"],
+                    "views": 120,
+                    "postID": "123mr4321",
+                    "comments": [
+                        {
+                            "username": "dq2223",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "dqw1ddq23",
+                            "email": "fakeuser9@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "please check your email!"
+                        },
+                        {
+                            "username": "eli212",
+                            "email": "fakeuser10@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great!!"
+                        },
+                        {
+                            "username": "newuser4",
+                            "email": "newuser4@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Nice work!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my second post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJgboA8SGHQ9U9cxUAHJYg0RsebajtjSwwzFvp8G_cA&s"}
+                    ],
+                    "uploadedDate":[2024,"June",6],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser11@example.com", "fakeuser12@example.com"],
+                    "views": 156,
+                    "postID": "123mor321",
+                    "comments": [
+                        {
+                            "username": "honest",
+                            "email": "bepobe1813@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "very nice!"
+                        },
+                        {
+                            "username": "john212",
+                            "email": "fakeuser13@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "newuser5",
+                            "email": "newuser5@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Awesome post!"
+                        }
+                    ]
+                },
+                {
+                    "title": "This is my third post on NewzCast!",
+                    "postMeidas":[
+                        {"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTXxfc2JeHYtzG7-MTjfaVcbwLMJktgj-RSx3om4IJtA&s"}
+                    ],
+                    "uploadedDate":[2024,"June",5],
+                    "usersLiked": ["kodoki9676@amankro.com", "fakeuser14@example.com", "fakeuser15@example.com"],
+                    "views": 686,
+                    "postID": "123rxm321",
+                    "comments": [
+                        {
+                            "username": "john212",
+                            "email": "bepobe182213@lewenbo.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "great! keep going!"
+                        },
+                        {
+                            "username": "newuser6",
+                            "email": "newuser6@example.com",
+                            "profileImage": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+                            "comment": "Incredible post!"
+                        }
+                    ]
+                }
+            ],
+            "favoritePosts":[
+                "123mmm321","123mr4321","123mmm621"
+            ]
+        }
+    ]
+}
+
+

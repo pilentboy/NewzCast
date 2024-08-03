@@ -1,7 +1,7 @@
 
-function HomeContainer({ children }) {
+function HomeContainer({ children,justify }) {
     return (
-        <div className="w-screen min-h-lvh flex flex-col items-center pt-2 pb-16  mx-auto bg-gray-100  md:pb-2">
+        <div className={`w-screen min-h-lvh flex  flex-col items-center pt-2 pb-16  mx-auto bg-white  md:pb-2 ${justify ? justify : 'justify-start'}`}>
             {children}
         </div>
     )

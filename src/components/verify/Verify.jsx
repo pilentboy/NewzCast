@@ -1,10 +1,12 @@
 import ColoredLogo from '../ColoredLogo'
 
-export default function Verify({ icon, action }) {
+export default function Verify({ icon, action ,Cborder}) {
 
-	return <div className='w-72 py-1 my-1 rounded-md border border-1 border-purple-1000 flex justify-center relative '>
+	return <div className={`w-72 py-1 my-1 rounded-md border mx-auto  flex justify-center items-center relative 
+		${!Cborder ? 'border-1 border-purple-1000' : Cborder}
+	`}>
 
-		<ColoredLogo size={'h-12'} />
+		<ColoredLogo size={'h-12'} target={' '} />
 
 		<button
 			type='button'

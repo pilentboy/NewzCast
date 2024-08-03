@@ -7,9 +7,8 @@ import InputTitle from '../components/form/InputTitle'
 import MainButton from '../components/landing/MainButton'
 import AcceptButton from '../components/form/AcceptButton'
 import TermsOfUse from '../components/authenticate/TermsOfUse'
-import ModalBox from '../components/modal/ModalBox'
 import ModalContainer from '../components/modal/ModalContainer'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useFormik } from 'formik'
 import handleSignUp from '../utils/handleSignUp'
 import Loading from '../components/Loading'
@@ -21,7 +20,7 @@ import { MdError } from "react-icons/md";
 import HandleSignedUpEmails from '../utils/handleSignedUpEmails'
 import TextModal from '../components/modal/TextModal'
 import Verify from '../components/verify/Verify'
-import VerifyInfo from '../components/verify/VerifyInfo'
+import InfoBox from '../components/verify/InfoBox'
 
 
 const Register = () => {
@@ -35,10 +34,11 @@ const Register = () => {
 
 
 
-
+	// username is not required while developing
     const RegisterSchema = Yup.object({
         Email: Yup.string().email('Invalid email address').required('Required'),
         Password: Yup.string().min(8, 'Your password must contains at least 8 characters').required('Required'),
+		Username: Yup.string().min(5,'username must includes at least 5 and max 20 characters').max(20,'username must includes at least 5 and max 20 characters'),
         ConfirmPassword: Yup.string().oneOf([Yup.ref('Password'), null], 'Passwords must match')
             .required('Required'),
         Accept: Yup.boolean().oneOf([true], 'You must accept the terms of use').required('Required')
@@ -47,6 +47,7 @@ const Register = () => {
 
     const RegisterControl = useFormik({
         initialValues: {
+			Username:'',
             Email: '',
             Password: '',
             ConfirmPassword: '',
@@ -78,6 +79,12 @@ const Register = () => {
         },
         validationSchema: RegisterSchema
     })
+	
+	
+	useEffect(()=>{
+		document.title = "Register"
+	},[])
+
 
 
 
@@ -122,7 +129,14 @@ const Register = () => {
                             )
                         }
 
-                        <Verify icon={<VerifyInfo />} />
+                        <Verify icon={<InfoBox 
+                        title='What types of accounts get verified?'
+                        textContent='An account may be verified if it is determined to be an
+                        account of public interest. Typically this includes accounts
+                        maintained by users in media, journalism, government,
+                        politics, business, religion,music, sports, celebrity, and other
+                        areas of public interests.'
+                        />} />
 
 
                         <div className='space-x-4 flex items-center justify-center w-72 px-4 my-2'>

@@ -5,7 +5,7 @@ import { FaAppStore } from "react-icons/fa";
 function AppDownloadLinks() {
 
     return (
-        <div className=" w-[260px] h-24 bg-white rounded-md flex flex-col justify-around  md:mt-20 px-4 py-4 ">
+        <div className=" w-[260px] h-24 bg-white  rounded-md shadow-lg translate-y-20  mb-10 md:shadow-none flex flex-col justify-around  md:mt-20 md:mb-0 md:translate-y-0 px-4 py-4 ">
             <h3 className="font-bold text-sm ">
                 Available in
             </h3>

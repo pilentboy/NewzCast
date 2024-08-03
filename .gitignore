@@ -9,8 +9,7 @@
 *.mp4
 .zip
 
-supabaseAdmin.js
-supabaseClient.js
+
 
 
 # testing
